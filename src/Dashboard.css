@@ -65,8 +65,10 @@
 .grid-contentDash {
     display: grid;
     grid-template-columns: 30em 30em;
-    margin-left: 4em;
+    margin-left: 5.5em;
     margin-top: 6em;
+    grid-gap: 4em;
+
 }
 
   .grid-publicados {
