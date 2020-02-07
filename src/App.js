@@ -1,28 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "ed-grid";
 import './App.css';
-import Inicio from "./Components/Inicio"; 
-import Deshboard from "./Components/Deshboard";
+import "./Login.css";
+import "./Dashboard.css"
+import Login from "./Components/Login"; 
+import Dashboard from './Components/Dashboard';
 
 function App () {
     return (
+      /*inicio presentación, se manda a llamar al componente login */
    <div className="Wrapper">
-    <div className="Grid-route">
-        <h2>Boletin</h2>
-        <Router>     
-            <ul>
-              <li><Link to= "/">Inicio</Link></li>
-              <li><Link to="/Deshboard" >Deshboard</Link></li>
-              <Link></Link>
-            </ul>     
-          <Route path="/"/>
-          <Route path="/Deshboard" component= {Deshboard}/>         
-        </Router>
+    <div className="Grid-inicio">
+        <h1 className="titular-inicio">Boletines</h1>   
     </div>
-      <div className="Grid-inicio">
-        <h2>Inicio</h2>
+      <div className="Grid-inicioSesion">
+        <div className="text-inicio">
+        <h2>Inicie sesión ahora...</h2>
+        <p>Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
+        </div>
+        <Login/> 
       </div>
+
+      <Dashboard/>
    </div>
       
     );

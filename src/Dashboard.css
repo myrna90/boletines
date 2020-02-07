@@ -1,0 +1,82 @@
+/*Diseño dashboard*/
+.Grid-general {
+    display: var(--grid-general-display);
+    grid-template-columns: var(--grid-template-columns);
+    height: 100vh;
+  }
+  
+  .menuDash {
+    text-align: center;
+    background-color: var(--grid-color-blue);
+    color: var(--color-white);
+  }
+  
+  h3{
+    text-align: left;
+    margin: 2em;
+  }
+  
+  .Grid-titulo {
+   display: var(--grid-general-display);
+   grid-template-columns: 10em 10em;
+  }
+  
+  .img {
+    width: var(--width-img);
+    height: var(--height-img);
+  }
+  
+  .Grid-btn {
+    text-align: right;
+    margin-top: 1.5em;
+    margin-right: 1em;
+  }
+  .btn-config {
+    text-align: right;
+    background-color: var(--grid-color-blue);
+  }
+  
+  .Link{
+    margin: 2em;
+    display: flex;
+    color: var(--color-white); 
+  }
+  
+  .viewBolet {
+    background-color:var(--color-white);
+  }
+
+  .grid-cabecera {
+      display: var(--grid-display-cabecera);
+      grid-template-columns: var(--grid-template-cabecera);
+      border: .1em solid #D6D3D2;
+  }
+
+  .img-margin {
+      margin-left: var(--img-margin);
+      margin-top: var(--margin-top);     
+  }
+
+  .h1 {
+      margin-top: .5em;
+      color: var(--color-grey);
+  }
+
+.grid-contentDash {
+    display: grid;
+    grid-template-columns: 30em 30em;
+    margin-left: 4em;
+    margin-top: 6em;
+}
+
+  .grid-publicados {
+      width: 30em;
+      height: 25em;
+      box-shadow: 0 0 .3em .1em slategray;
+  }
+
+  .grid-proyectos {
+    width: 30em;
+    height: 25em;
+    box-shadow: 0 0 .3em .1em slategray;
+  }
