@@ -9,7 +9,7 @@ class Dashboard extends Component {
         return(
             <div className="Grid-general">
              {/* Dashboard menu & boletines publicados*/}
-            <div className="menuDash">
+            <div className="menu manuDash">
               <div className="Grid-titulo">
               <h3 className="Grid-h3">Boletines</h3>
               <div className="Grid-btn">
@@ -38,10 +38,17 @@ class Dashboard extends Component {
 
             <div className="grid-contentDash">
             <div className="grid-publicados">
-                <h3>Boletines</h3>
-
+                <h3 className="h3">Boletines</h3>
+            <div>
+            <input className="form-bol"/><br/>
+            <input className="form-bol"/><br/>
+            <input className="form-bol"/><br/>
+            <input className="form-bol"/>
+            </div>
               </div>
-              <div className="grid-proyectos"></div>
+              <div className="grid-proyectos">
+                <h3 className="h3">Mis proyectos</h3>
+              </div>
             </div>
              
             </div>

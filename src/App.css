@@ -4,6 +4,7 @@
   --grid-color-blue: #004040;
   --color-white: whitesmoke;
   --color-grey: #3e3e3e;
+  --color-blue: #007F7F;
   --width-img: 2em;
   --height-img: 2em;
   --grid-general-display: grid; 
@@ -27,6 +28,12 @@ h2 {
   display: grid;
   grid-template-columns: 25em 69.9em;
   height: 100vh;
+}
+
+.menu {
+  text-align: center;
+  background-color: var(--grid-color-blue);
+  color: var(--color-white);
 }
 
 @media (prefers-reduced-motion: no-preference) {

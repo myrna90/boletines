@@ -46,7 +46,7 @@
     display:block;
     margin:2em 0 0;
     text-align: left;
-    font-size:1.5em;
+    font-size:1em;
     color:#5a5a5a;
   }
   
@@ -54,7 +54,7 @@
     float:right;
     padding:1em 4em;
     margin:.5em 0 0;
-    background-color: #007F7F;
+    background-color: var(--color-blue);
     border-radius: 1em;
     color:var(--color-white);
     cursor:pointer;

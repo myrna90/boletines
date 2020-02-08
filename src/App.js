@@ -2,9 +2,11 @@ import React from 'react';
 import "ed-grid";
 import './App.css';
 import "./Login.css";
-import "./Dashboard.css"
+import "./Dashboard.css";
+import "./Boletines.css";
 import Login from "./Components/Login"; 
 import Dashboard from './Components/Dashboard';
+import Boletines from './Components/Boletines';
 
 function App () {
     return (
@@ -21,7 +23,7 @@ function App () {
         <Login/> 
       </div>
 
-      <Dashboard/>
+      <Boletines/>
    </div>
       
     );
