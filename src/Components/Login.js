@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
      /*Función login  */
@@ -50,8 +51,17 @@ class Login extends Component {
 
     render(){
         return(
-           /*Formulario login */
-            <div className="login">
+            /*inicio presentación, se manda a llamar al componente login */
+   <div className="Wrapper">
+   <div className="Grid-inicio">
+       <h1 className="titular-inicio">Boletines</h1>   
+   </div>
+     <div className="Grid-inicioSesion">
+       <div className="text-inicio">
+       <h2>Inicie sesión ahora...</h2>
+       <p>Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
+       </div>
+       <div className="login">
                 <form className="form" onSubmit={this.handleSubmit}>
                     {
                         this.state.error && 
@@ -68,9 +78,12 @@ class Login extends Component {
                     <input className="input-login" type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} placeholder="**********"/>
                     </label>
                     
-                    <button className="btn-login" type="submit" value=" Log In" data-test="submit">LOGIN</button>
+                   <Link to="/Dashboard"><button className="btn" type="submit" value=" Log In" data-test="submit">LOGIN</button></Link> 
                     
                 </form>
+            </div>
+     </div>
+            
             </div>
         )
     }

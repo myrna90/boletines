@@ -1,9 +1,4 @@
 /*Diseño dashboard*/
-.Grid-general {
-    display: var(--grid-general-display);
-    grid-template-columns: var(--grid-template-columns);
-    height: 100vh;
-  }
   
   h3{
     text-align: left;
@@ -34,10 +29,6 @@
     margin: 2em;
     display: flex;
     color: var(--color-white); 
-  }
-  
-  .viewBolet {
-    background-color:var(--color-white);
   }
 
   .grid-cabecera {

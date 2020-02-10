@@ -1,30 +1,10 @@
 /*Diseño boletines*/
-  
-.formulario {
-    background-color: var(--color-white);
-    position: relative;
-    /*display: grid;
-    grid-template-areas: 
-    "header header" 
-    "main main" 
-    "headre2 header2"
-    "main2 main2"
-    "header3 header3"
-    "main3 main3";*/
-}
-
-div label {
-  padding: 1.2em 1.2em .6em;
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-}
 
 .label{
     color: var(--color-blue);
     padding: 1em 1.5em .8em;
 }
+
 
 .div {
     margin-top: 1em;
@@ -32,8 +12,11 @@ div label {
     border-bottom:.1em solid #bebed2;
 }
 
-input {
+.contenForm {
     display: inline-block;
+}
+
+.input { 
       width: 16.2em;
       height: 2em;
       padding-left: .6em;
@@ -46,16 +29,3 @@ input {
       border: none;
       
 }
-
-/*.label1 {grid-area: header;}
-
-.input1 {grid-area: main;}
-
-.label2 {grid-area: header2;}
-
-.input2 {grid-area: main2;}
-
-.label3{grid-area: headre3;}
-
-.input3 {grid-area: main3;}*/
-
