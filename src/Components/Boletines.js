@@ -6,22 +6,23 @@ class Boletines extends Component{
     render(){
         return(
             <Row className="conteiner-general row">
-                <Col xs={12} md={3} large={4} className="menu">
+            <Col xs={12} md={3} large={4} className="menu">
                 <div className="Grid-titulo">
-              <h3 className="Grid-h3">Boletines</h3>
-              <div className="Grid-btn">
-              {/*<button className="btn-config"><img className="img" src="https://image.flaticon.com/icons/svg/1790/1790042.svg"/></button>*/}
-              </div>
-              <Link to="/Dashboard" className="Link">Dashboard</Link>
-              <Link to="/Boletines" className="Link">Boletines</Link>
-              <Link to="/Soporte" className="Link">Soporte</Link>
-              <Link to="/Login" className="Link">Salir</Link>
-              </div>              
-                </Col>
-                <Col xs={12} md={9} large={8} className="conteiner-view-general">
+                <h3 className="Grid-h3">Boletines</h3>
+                <div className="Grid-btn">
+                {/*<button className="btn-config"><img className="img" src="https://image.flaticon.com/icons/svg/1790/1790042.svg"/></button>*/}
+                </div>
+                <Link to="/Dashboard" className="Link">Dashboard</Link>
+                <Link to="/Boletines" className="Link">Boletines</Link>
+                <Link to="/Soporte" className="Link">Soporte</Link>
+                <Link to="/Login" className="Link">Salir</Link>
+                </div>              
+            </Col>
+            <Col xs={12} md={9} large={8} className="conteiner-view-general">
                 <div>
                 <h3>Nuevo boletin</h3>
-                </div>  
+                </div> 
+
                 <form>
                 <div className="div">
                     <p>1. Folio</p>
@@ -30,6 +31,7 @@ class Boletines extends Component{
                     <input className="input" placeholder="TN-B-01" required></input>
                     </div>
                 </div>
+
                 <div className="div">   
                     <p>2. Proyecto</p>
                     <div className="contenForm">
@@ -107,10 +109,10 @@ class Boletines extends Component{
                         
                 </div>
 
-                    <button className="btn">Crear</button>
+                <button className="btn">Crear</button>
                     
                 </form>
-                </Col>
+            </Col>
             </Row>
         )
     }

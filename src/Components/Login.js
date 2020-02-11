@@ -55,15 +55,15 @@ class Login extends Component {
     }
     render(){
         return(
-                <Row className="row">
-                <Col xs={12} md={4} large={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
+            <Row className="row">
+            <Col xs={12} md={4} large={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
                 <h1 className="titular-inicio">Boletines</h1>
-                </Col>
-                <Col xs={12} md={8} large={7} className="conteiner-sesion" style={{backgroundColor: "var(--color-white)"}}>
-                    <div className="text-inicio">
-                    <h2>Inicie sesión ahora...</h2>
-                    <p>Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
-                    </div>
+            </Col>
+            <Col xs={12} md={8} large={7} className="conteiner-sesion" style={{backgroundColor: "var(--color-white)"}}>
+                <div className="text-inicio">
+                <h2>Inicie sesión ahora...</h2>
+                <p>Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
+                </div>
                 <div className="login">
                 <form className="form" onSubmit={this.handleSubmit}>
                 {
@@ -83,11 +83,11 @@ class Login extends Component {
                     
                 <Link to="/Dashboard"><button className="btn" type="submit" value=" Log In" data-test="submit">LOGIN</button></Link>
                     
-            </form>
+                </form>
                 </div>
                 
-                </Col>
-                </Row>     
+            </Col>
+            </Row>     
         )
     }
 }
