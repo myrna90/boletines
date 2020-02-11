@@ -1,51 +1,55 @@
-/*Diseño pagina inicio*/
-.Grid-inicio {
-    text-align: center;
-    background-color: var(--grid-color-blue);
-    color: var(--color-white);
-    
-  }
-  
-  .titular-inicio {
-    margin-top: 6em;
-  }
-  
-  .Grid-inicioSesion {
-    text-align: center;
-    background-color: var(--color-white);
-  }
-  
-  .text-inicio {
-    text-align: left;
-    margin: 8em;
-    color: #007F7F;
-  }
-  
-  .form {
-    margin: 6em;
-    width: 40em;
-    height: 20em;
-    box-sizing:border-box;
-    position:relative;
-  }
-  
-  .input-login {
-    width:100%;
-    padding:2em;
-    box-sizing:border-box;
-    background:none;
-    outline:none;
-    resize:none;
-    border:0;
-    transition:all .3s;
-    border-bottom:.2em solid #bebed2;
-  }
-  
-  .text-login {
-    content:attr(type);
-    display:block;
-    margin:2em 0 0;
-    text-align: left;
-    font-size:.9em;
-    color:#5a5a5a;
-  }
+.conteiner-titulo{
+  display: inline-flex;
+  flex-wrap: wrap;
+  background-color: var(--drid-color-blue);
+  height: 100vh;
+  width: 100vw;
+}
+.conteiner-sesion{
+  display: inline-flex;
+  flex-wrap: wrap;
+  background-color: var(--color-white);
+  height: 100vh;
+  width: 100vw;
+  color: var(--color-blue);
+}
+
+.titular-inicio {
+  margin-top: 6em;
+}
+
+.text-inicio {
+  text-align: left;
+  margin-top: 4em;
+  color: #007F7F;
+}
+
+.form {
+  margin: 6em;
+  width: 40em;
+  height: 20em;
+  box-sizing:border-box;
+  position:relative;
+}
+
+
+.input-login {
+  width:100%;
+  padding:2em;
+  box-sizing:border-box;
+  background:none;
+  outline:none;
+  resize:none;
+  border:0;
+  transition:all .3s;
+  border-bottom:.2em solid #bebed2;
+}
+
+.text-login {
+  content:attr(type);
+  display:block;
+  margin:2em 0 0;
+  text-align: left;
+  font-size:.9em;
+  color:#5a5a5a;
+}

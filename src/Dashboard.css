@@ -1,86 +1,76 @@
 /*Diseño dashboard*/
   
-  h3{
-    text-align: left;
-    margin: 2em;
-  }
-  
-  .Grid-titulo {
-   display: var(--grid-general-display);
-   grid-template-columns: 10em 10em;
-  }
-  
-  .img {
-    width: var(--width-img);
-    height: var(--height-img);
-  }
-  
-  .Grid-btn {
-    text-align: right;
-    margin-top: 1.5em;
-    margin-right: 1em;
-  }
-  .btn-config {
-    text-align: right;
-    background-color: var(--grid-color-blue);
-  }
-  
-  .Link{
-    margin: 2em;
-    display: flex;
-    color: var(--color-white); 
-  }
+h3{
+  text-align: left;
+  margin: 2em;
+}
 
-  .grid-cabecera {
-      display: var(--grid-display-cabecera);
-      grid-template-columns: var(--grid-template-cabecera);
-      border: .1em solid #D6D3D2;
-  }
+.img {
+  width: var(--width-img);
+  height: var(--height-img);
+}
 
-  .img-margin {
-      margin-left: var(--img-margin);
-      margin-top: var(--margin-top);     
-  }
+.Grid-btn {
+  text-align: right;
+  margin-top: 1.5em;
+  margin-right: 1em;
+}
+.btn-config {
+  text-align: right;
+  background-color: var(--grid-color-blue);
+}
 
-  .h1 {
-      margin-top: .5em;
-      color: var(--color-grey);
-  }
+.Link{
+  margin: 2em;
+  display: flex;
+  color: var(--color-white); 
+}
+
+.img-margin {
+    margin-left: var(--img-margin);
+    margin-top: var(--margin-top);     
+}
+
+.h1 {
+    margin-top: .5em;
+    color: var(--color-grey);
+}
 
 .grid-contentDash {
-    display: grid;
-    grid-template-columns: 30em 30em;
-    margin-left: 5.5em;
-    margin-top: 6em;
-    grid-gap: 4em;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 5.5em;
+  margin-top: 6em;
+  grid-gap: 4em;
 
 }
 
-  .grid-publicados {
-      width: 30em;
-      height: 25em;
-      box-shadow: 0 0 .3em .1em slategray;
-  }
-
-  .grid-proyectos {
+.grid-publicados {
     width: 30em;
     height: 25em;
     box-shadow: 0 0 .3em .1em slategray;
-  }
+}
 
-  .h3 {
-      color: var(--color-blue);
-  }
+.grid-proyectos {
+  width: 30em;
+  height: 25em;
+  box-shadow: 0 0 .3em .1em slategray;
+}
 
-  .form-bol {
-      width: 28em;
-    padding:2em;
-    box-sizing:border-box;
-    background:none;
-    outline:none;
-    resize:none;
-    border:0;
-    transition:all .3s;
-    border-bottom:.2em solid #bebed2;
-    margin-left: 1em;
-  }
+.h3 {
+    color: var(--color-blue);
+}
+
+.form-bol {
+    width: 28em;
+  padding:2em;
+  box-sizing:border-box;
+  background:none;
+  outline:none;
+  resize:none;
+  border:0;
+  transition:all .3s;
+  border-bottom:.2em solid #bebed2;
+  margin-left: 1em;
+}
