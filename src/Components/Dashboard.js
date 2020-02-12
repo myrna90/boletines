@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
 
 class Dashboard extends Component {
     render(){
@@ -12,10 +15,14 @@ class Dashboard extends Component {
               <div className="Grid-btn">
               {/*<button className="btn-config"><img className="img" src="https://image.flaticon.com/icons/svg/1790/1790042.svg"/></button>*/}
               </div>
+              <div className="nav-menu">
               <Link to="/Dashboard" className="Link">Dashboard</Link>
               <Link to="/Boletines" className="Link">Boletines</Link>
               <Link to="/Soporte" className="Link">Soporte</Link>
-              <Link to="/Login" className="Link">Salir</Link>
+              <Link to="/" className="Link">Salir</Link>
+              </div>
+              
+              
               </div>
             </Col>
             <Col xs={12} md={9} large={8} className="conteiner-view-general">   

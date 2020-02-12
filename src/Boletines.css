@@ -28,3 +28,9 @@
     color: var(--color-blue);
     padding: 1em 1.5em .8em;
 }
+
+@media only screen and (max-width: 600px){
+    .conteiner-boletin{
+        font-size: 1.2em;
+    }
+}

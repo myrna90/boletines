@@ -1,31 +1,15 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import {userRoute} from 'config/routes';
-import { isAuthenticated } from 'Ducks/selector';
+import Login from './Login'
 
-const PublicRoute = ({ component:   Component, isAuthenticated, ...rest}) =>(
-    <Route
-        {...rest}
-        render={props => !isAuthenticated ? (
-            <Component {...props}/>
-        ) : (
-            <Redirect to= {userRoute()}/>
-        )
-    }
-    />
-);
-
-PublicRoute.PropTypes = {
-    component: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool
+const PublicRoute = ({ component:   Component, restricted, ...rest}) => {
+    return(
+        <Route {...rest} render={props => (
+            Login() && restricted ?
+            <Redirect to='/Dashboard'/>
+            : <Component {...props} />
+        )} />
+    )
 }
 
-PublicRoute.defaultProps = {
-    isAuthenticated: false
-}
-
-export default connect(state => ({
-    isAuthenticated: isAuthenticated(state)
-}))(PublicRoute);
+export default PublicRoute;

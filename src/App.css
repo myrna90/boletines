@@ -40,3 +40,7 @@ h2{
   cursor:pointer;
   transition:all .3s
 }
+
+@media only screen and (max-width: 600px){
+  
+}

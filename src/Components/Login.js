@@ -1,6 +1,19 @@
 import React, {Component} from "react";
-import {Container, Row, Col} from 'react-bootstrap';
-import {Link } from 'react-router-dom';
+import { Row, Col} from 'react-bootstrap';
+import { Redirect, Link } from 'react-router-dom';
+
+
+/*const fakeAuth = {
+    isAuthenticated: false,
+    authenticate(cb) {
+      this.isAuthenticated = true
+      setTimeout(cb, 100)
+    },
+    signout(cb) {
+      this.isAuthenticated = false
+      setTimeout(cb, 100)
+    }
+  }*/
 
 class Login extends Component {
      /*Función login  */
@@ -10,7 +23,7 @@ class Login extends Component {
             username: "",
             password: "",
             error: "",
-            login:[]
+            redirectToReferrer: false
         };
 
         this.handlePassChange = this.handlePassChange.bind(this);
@@ -18,6 +31,14 @@ class Login extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.dismissError = this.dismissError.bind(this);
     }
+
+    /*login = () => {
+        fakeAuth.authenticate(() => {
+          this.setState(() => ({
+            redirectToReferrer: true
+          }))
+        })
+      }*/
 
     dismissError() {
         this.setState({ error: ""});
@@ -53,16 +74,23 @@ class Login extends Component {
         })
         console.log("si funciona contraseña")
     }
+
     render(){
+        /*const {from} = this.props.location.state || {from: {pathname: '/'}};
+        const { redirectToReferrer } = this.state;
+
+        if (redirectToReferrer === true) {
+        return <Redirect to={from} />
+    }*/
         return(
             <Row className="row">
-            <Col xs={12} md={4} large={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
+            <Col xs={12} sm={12} md={4} large={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
                 <h1 className="titular-inicio">Boletines</h1>
             </Col>
-            <Col xs={12} md={8} large={7} className="conteiner-sesion" style={{backgroundColor: "var(--color-white)"}}>
+            <Col xs={12} sm={12} md={8} large={7} className="conteiner-sesion" style={{backgroundColor: "var(--color-white)"}}>
                 <div className="text-inicio">
-                <h2>Inicie sesión ahora...</h2>
-                <p>Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
+                <h2 className="text">Inicie sesión ahora...</h2>
+                <p className="text">Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
                 </div>
                 <div className="login">
                 <form className="form" onSubmit={this.handleSubmit}>
@@ -81,7 +109,7 @@ class Login extends Component {
                 <input className="input-login" type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} placeholder="**********"/>
                 </label>
                     
-                <Link to="/Dashboard"><button className="btn" type="submit" value=" Log In" data-test="submit">LOGIN</button></Link>
+                <Link to="/Dashboard"><button /*onClick={this.login}*/ className="btn" type="submit" value=" Log In" data-test="submit">LOGIN</button></Link>
                     
                 </form>
                 </div>

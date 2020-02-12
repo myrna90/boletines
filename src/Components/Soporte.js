@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
 
 class Soporte extends Component{
     render(){
@@ -9,12 +10,15 @@ class Soporte extends Component{
                 <div className="Grid-titulo">
                 <h3 className="Grid-h3">Soporte</h3>
                 <div className="Grid-btn">
-                <button className="btn-config"><img className="img" src="https://image.flaticon.com/icons/svg/1790/1790042.svg"/></button>
+                {/*<button className="btn-config"><img className="img" src="https://image.flaticon.com/icons/svg/1790/1790042.svg"/></button>*/}
                 </div>
-                <Link to="/Dashboard" className="Link">Dashboard</Link>
-                <Link to="/Boletines" className="Link">Boletines</Link>
-                <Link to="/Soporte" className="Link">Soporte</Link>
-                <Link to="/Login" className="Link">Salir</Link>
+                <div className="nav-menu">
+              <Link to="/Dashboard" className="Link">Dashboard</Link>
+              <Link to="/Boletines" className="Link">Boletines</Link>
+              <Link to="/Soporte" className="Link">Soporte</Link>
+              <Link to="/" className="Link">Salir</Link>
+              </div>
+              
                 </div> 
             </div>
 
