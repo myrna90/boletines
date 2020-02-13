@@ -89,7 +89,7 @@ class Login extends Component {
             <Col xs={12} sm={12} md={4} large={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
                 <h1 className="titular-inicio">Boletines</h1>
             </Col>
-            <Col xs={12} sm={12} md={8} large={7} className="conteiner-sesion" style={{backgroundColor: "var(--color-white)"}}>
+            <Col xs={12} sm={12} md={8} large={7} className="conteiner-sesion" style={{backgroundColor: "white"}}>
                 <div className="text-inicio">
                 <h2 className="text-conten">Inicie sesión ahora...</h2>
                 <p className="text-conten   ">Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>

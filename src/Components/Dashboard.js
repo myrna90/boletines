@@ -24,7 +24,7 @@ class Dashboard extends Component {
             </div>
             </Col>
 
-            <Col xs={12} sm={12} md={10} large={8} className="conteiner-view-general">   
+            <Col xs={12} sm={12} md={9} large={8} className="conteiner-view-general conteiner-color">   
                 <div className="grid-cabecera">
                 <div className="img-dash"></div>
                 <h1 className="h1">Dashboard</h1>

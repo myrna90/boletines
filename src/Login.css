@@ -21,7 +21,7 @@
 .conteiner-sesion{
   display: inline-flex;
   flex-wrap: wrap;
-  background-color: var(--color-white);
+  background-color: white;
   width: 32.5em;
   height: 31.25em;
   color: var(--color-blue);
