@@ -26,7 +26,7 @@
 
 .label{
     display: flex;
-    color: var(--color-blue);
+    color: var(--color-blue-bajo);
     padding: 1em 1.5em .8em;
 }
 

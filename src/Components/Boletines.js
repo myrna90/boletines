@@ -8,19 +8,21 @@ class Boletines extends Component{
         return(
             <Row className="conteiner-general row">
             <Col xs={12} md={3} large={4} className="menu">
-                <div className="Grid-titulo">
-                <h3 className="Grid-h3">Boletines</h3>
-                <div className="Grid-btn">
-                {/*<button className="btn-config"><img className="img" src="https://image.flaticon.com/icons/svg/1790/1790042.svg"/></button>*/}
+            <div className="Grid-titulo">
+              <div className="conteiner-titulo">
+                <h3 className="h3">Boletines</h3>
+                <div className="btn-config">
                 </div>
-                <div className="nav-menu">
-              <Link to="/Dashboard" className="Link">Dashboard</Link>
-              <Link to="/Boletines" className="Link">Boletines</Link>
-              <Link to="/Soporte" className="Link">Soporte</Link>
-              <Link to="/" className="Link">Salir</Link>
               </div>
               
-                </div>              
+              <div className="nav-menu">
+              <Link to="/Dashboard" className="Link"><div className="img-dash-menu img"><div className="text-menu">Dashboard</div></div></Link>
+              <Link to="/Boletines" className="Link"><div className="img-bole-menu img"><div className="text-menu">Boletines</div></div></Link>
+              <Link to="/Soporte" className="Link"><div className="img-soperte-menu img"><div className="text-menu">Soporte</div></div></Link>
+              <Link to="/" className="Link link-out"><div className="img-out-menu img"><div className="text-menu">Salir</div></div></Link>
+              </div>
+              
+            </div>              
             </Col>
             <Col xs={12} md={9} large={8} className="conteiner-view-general conteiner-boletin">
                 <div>

@@ -5,6 +5,7 @@
   --color-white: whitesmoke;
   --color-grey: #3e3e3e;
   --color-blue: #007F7F;
+  --color-blue-bajo: #98D2DE;
 }
 
 .row {
@@ -13,7 +14,7 @@
 }
 
 h2{
-  color: var(--color-grey)
+  color: var(--color-grey);
 }
 
 .menu {
@@ -39,7 +40,7 @@ h2{
   border-radius: 1em;
   color:var(--color-white);
   cursor:pointer;
-  transition:all .3s
+  transition:all .3s;
 }
 
 @media only screen and (max-width: 600px){
