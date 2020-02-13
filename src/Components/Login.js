@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import { Row, Col} from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 import { Redirect, Link } from 'react-router-dom';
+
 
 
 /*const fakeAuth = {
@@ -83,7 +84,8 @@ class Login extends Component {
         return <Redirect to={from} />
     }*/
         return(
-            <Row className="row">
+            <Container className="conteiner-general-login">
+            <Row className="row row-login">
             <Col xs={12} sm={12} md={4} large={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
                 <h1 className="titular-inicio">Boletines</h1>
             </Col>
@@ -101,21 +103,26 @@ class Login extends Component {
                         {this.state.error}
                     </h3>
                 }
-                <label className="text-login text-user">Correo electronico:
+                
+                <label className="text-login text-user">Correo electronico:</label>
                 <input className="input-login" type= "text" data-test= "username" value={this.state.username} onChange={this.handleUserChange} placeholder="Usuario@telenetdemexico.com"/>
-                </label>
-                    
-                <label className="text-login text-passw">Contraseña:
+                
+                
+                <label className="text-login text-passw">Contraseña: </label>
                 <input className="input-login" type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} placeholder="**********"/>
-                </label>
+               
                     
-                <Link to="/Dashboard"><button /*onClick={this.login}*/ className="btn" type="submit" value=" Log In" data-test="submit">LOGIN</button></Link>
+                <Link to="/Dashboard"><button /*onClick={this.login}*/ className="btn-login" type="submit" value=" Log In" data-test="submit">LOGIN</button></Link>
                     
                 </form>
                 </div>
-                
+                <div className="miImg">
+            </div> 
             </Col>
-            </Row>     
+            
+            </Row>
+            <footer className="footer">Telenet de México S.A. de C.V.</footer> 
+            </Container>   
         )
     }
 }

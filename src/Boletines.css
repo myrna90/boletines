@@ -25,6 +25,7 @@
 }
 
 .label{
+    display: flex;
     color: var(--color-blue);
     padding: 1em 1.5em .8em;
 }

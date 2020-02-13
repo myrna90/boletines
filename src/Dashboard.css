@@ -1,13 +1,35 @@
 /*Diseño dashboard*/
-  
+.col-md-3{
+  max-width: 250px;
+} 
+
 h3{
   text-align: left;
   margin: 2em;
 }
 
-.img {
-  width: var(--width-img);
-  height: var(--height-img);
+.grid-cabecera{
+  display: inline-flex;
+  width: 1116px;
+  height: 50.5px;
+  border-bottom-color: #bebed2;
+}
+
+.img-dash{
+  margin-top: 1em;
+  width: 35px;
+  height: 30px;
+  background-image: url(../src/imgs/dashboard.png);
+}
+
+.h1 {
+  width: 111px;
+  height: 28px;
+  font-size: 30px;
+  margin-top: .5em;
+  color: var(--color-grey);
+  margin-left: 1em;
+  border-left-color: #CCC;
 }
 
 .Grid-btn {
@@ -32,11 +54,6 @@ h3{
 .img-margin {
     margin-left: var(--img-margin);
     margin-top: var(--margin-top);     
-}
-
-.h1 {
-    margin-top: .5em;
-    color: var(--color-grey);
 }
 
 .grid-contentDash {
@@ -103,4 +120,35 @@ h3{
   margin-top: 3em;
   margin-right: 4em;
 }
+}
+
+@media(min-width:767px) and (max-width: 992px){
+  /*.menu{
+    height: 30%;
+    color: var(--color-white);
+  }
+  
+  .nav-menu{
+    flex-direction: unset;
+    margin-top: -2em;
+    font-size: 1.3em;
+  }
+  
+  .conteiner-view-general{
+    font-size: 1em;
+  }
+  
+  .h1{
+    text-align: center;
+    font-size: 2.5em;
+  }
+  
+  .grid-contentDash{
+    margin-top: 3em;
+    margin-right: 4em;
+  }*/
+}
+
+@media(min-width:993px) and (max-width: 1200px){
+
 }
