@@ -6,24 +6,24 @@
 .row-login{
   margin-top: 7em;
   margin: center;
-  width: 800px;
-  height: 500px;
+  width: 50em;
+  height: 31.25em;
 }
 
 .conteiner-titulo{
   display: inline-flex;
   flex-wrap: wrap;
   background-color: var(--drid-color-blue);
-  width: 280px;
-  height: 500px;
+  width: 17.5em;
+  height: 31.25em;
 }
 
 .conteiner-sesion{
   display: inline-flex;
   flex-wrap: wrap;
   background-color: var(--color-white);
-  width: 520px;
-  height: 500px;
+  width: 32.5em;
+  height: 31.25em;
   color: var(--color-blue);
 }
 
@@ -75,8 +75,8 @@
 
 .btn-login{
   float: right;
-  width: 110px;
-  height: 30px;
+  width: 6.87em;
+  height: 1.9em;
   margin:.5em 0 0;
   background-color: var(--color-blue);
   border-radius: .5em;
@@ -89,8 +89,8 @@
   margin-top: -4em;
   margin-left: -17em;
   margin-bottom: 0;
-  width: 427px;
-  height: 200px;
+  width: 26.68em;
+  height: 12.5em;
   background-image: url('../src/imgs/img-login.png');
 }
 

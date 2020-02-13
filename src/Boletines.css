@@ -1,17 +1,41 @@
 /*Diseño boletines*/
-
 .div {
     margin-top: 1em;
     margin: 2em;
     border-bottom:.1em solid #bebed2;
 }
 
-.contenForm {
+.grid-cabecera-boletin {
     display: inline-flex;
+    width: 81.25em;
+    height: 3.15em;
+    margin-left: -1em;
+    border-bottom: .1em solid #bebed2;
+}
+
+.h3-boletin {
+    margin-left: 2em;
+    margin-top: .3em;
+}
+
+.btn-crear {
+    float: right;
+    margin-top: .5em;
+    margin-left: 57em;
+    width: 6.87em;
+    height: 1.9em;
+    background-color: #A3E2BA;
+    border-radius: .5em;
+    color: var(--color-white);
+  }
+
+.contenForm {
+    display: inline-block;
+    margin-left: 1em;
 }
 
 .input { 
-    width: 16.2em;
+    width: 15.18em;
     height: 2em;
     padding-left: .6em;
     padding-top: .18em;
@@ -24,10 +48,55 @@
     
 }
 
+.input-xs {
+    width: 8.56em;
+    height: 2em;
+}
+
+.text {
+    width: 23.75em;
+    height: 9.37em;
+    margin-top: .8em;
+}
+
+.div-img {
+    display: flex;
+}
+
+.conten-export-img {
+    width: 9.37em;
+    height: 9.37em;
+    background-color: white;
+    margin-left: 3em;
+    margin-top: .8em;
+    text-align: center;
+    border-top-style: dashed;
+    border-bottom-style: dashed;
+    border-right-style: dashed;
+    border-left-style: dashed;
+    border-top-color: #CCC;
+  border-right-color: #CCC;
+  border-bottom-color: #CCC;
+  border-left-color: #CCC;
+}
+
+.label-img {
+    margin-left: 2.4em;
+}
+
+.img-export {
+    width: 4em;
+    height: 4em;
+    background-image: url(../src/imgs/img.png);
+    margin-top: 2.5em;
+    border-radius: .8em;
+}
+
 .label{
     display: flex;
     color: var(--color-blue-bajo);
     padding: 1em 1.5em .8em;
+    margin-bottom: -1em;
 }
 
 @media only screen and (max-width: 600px){

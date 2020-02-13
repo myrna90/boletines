@@ -1,6 +1,6 @@
 /*Diseño dashboard*/
 .col-md-3 {
-  max-width: 250px;
+  max-width: 15.6em;
 } 
 
 .conteiner-titulo {
@@ -19,8 +19,8 @@
   margin-left: 4.5em;
   background-image: url(../src/imgs/config.png);
   margin-top: 1.7em;
-  width: 18px;
-  height: 18px;
+  width: 1.12em;
+  height: 1.12em;
 }
 
 .nav-menu {
@@ -41,8 +41,8 @@
 }
 
 .img {
-  width: 17px;
-  height: 13px;
+  width: 1.06em;
+  height: .8em;
 }
 
 .img-dash-menu {
@@ -55,8 +55,8 @@ background-image: url(../src/imgs/boletin.png);
 
 .img-soperte-menu {
 background-image: url(../src/imgs/soporte.png);
-width: 17px;
-height: 16px;
+width: 1.06em;
+height: 1em;
 }
 
 .img-out-menu {
@@ -70,23 +70,25 @@ height: 16px;
 
 .grid-cabecera{
   display: inline-flex;
-  width: 1286px;
-  height: 50.5px;
-  border-bottom: .2em solid #bebed2;
+  width: 81.25em;
+  height: 3.15em;
+  margin-left: -1em;
+  border-bottom: .1em solid #bebed2;
 }
 
 .img-dash{
-  margin-top: 1em;
-  width: 35px;
-  height: 30px;
+  margin-top: .6em;
+  width: 2.1em;
+  height: 1.9em;
   background-image: url(../src/imgs/dashboard.png);
+  margin-left: 1em;
 }
 
 .h1 {
-  width: 111px;
-  height: 28px;
-  font-size: 30px;
-  margin-top: .5em;
+  width: 6.9em;
+  height: 1.7em;
+  font-size: 1.9em;
+  margin-top: .3em;
   color: var(--color-grey);
   margin-left: 1em;
 }
@@ -108,14 +110,14 @@ height: 16px;
 }
 
 .grid-publicados {
-    width: 450px;
-    height: 362px;
+    width: 28.1em;
+    height: 22.6em;
     box-shadow: 0 0 .3em .1em slategray;
 }
 
 .grid-proyectos {
-  width:576px;
-  height: 362px;
+  width: 36em;
+  height: 22.6em;
   box-shadow: 0 0 .3em .1em slategray;
 }
 

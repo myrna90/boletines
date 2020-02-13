@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
 
 class Boletines extends Component{
+    
     render(){
         return(
             <Row className="conteiner-general row">
@@ -24,9 +24,9 @@ class Boletines extends Component{
               
             </div>              
             </Col>
-            <Col xs={12} md={9} large={8} className="conteiner-view-general conteiner-boletin">
-                <div>
-                <h3>Nuevo boletin</h3>
+            <Col xs={12} md={10} large={8} className="conteiner-view-general conteiner-boletin">
+                <div className="grid-cabecera-boletin">
+                <h3 className="h3-boletin">Crear boletín</h3><button className="btn-crear">+ Crear</button>
                 </div> 
 
                 <form>
@@ -34,7 +34,7 @@ class Boletines extends Component{
                     <p>1. Folio</p>
                     <div className="contenForm">
                     <label className="label">Numero de folio</label>
-                    <input className="input" placeholder="TN-B-01" required></input>
+                    <input className="input input-xs" placeholder="TN-B-01" required></input>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@ class Boletines extends Component{
 
                     <div className="contenForm">
                     <label className=" label">Fecha</label>
-                    <input className="input" placeholder="20/03/20" required></input>
+                    <input className="input input-xs" placeholder="20/03/20" required></input>
                     </div>
 
                     <div className="contenForm">
@@ -79,24 +79,28 @@ class Boletines extends Component{
 
                 <div className="div">  
                     <p>3. Descripción</p>
+                    <div className="div-img">
                     <div className="contenForm">
-                    <label className="label">Descripción del problema</label>
-                    <input className="input" required></input>
+                    <label className="label ">Descripción del problema</label>
+                    <textarea className=" text-problema text" required></textarea>
                     </div>
 
-                    <div className="contenForm">
-                    <label className="label">Problema imagen</label>
-                    <input className="input" type="file" required></input>
+                    <div className="contenForm conten-img">
+                    <label className="label label-img">Problema imagen</label>
+                    <div className=" conten-export-img" type="file" required><img className="img-export"/></div>
+                    </div>
                     </div>
 
+                    <div className="div-img">
                     <div className="contenForm">
-                    <label className="label">Solución del problema</label>
-                    <input className="input" required></input>
+                    <label className="label ">Solución del problema</label>
+                    <textarea className=" text-solucion text" required></textarea>
                     </div>
 
-                    <div className="contenForm">
-                    <label className="label">Solución imagen</label>
-                    <input className="input" type="file" required></input>
+                    <div className="contenForm conten-img">
+                    <label className="label label-img">Solución imagen</label>
+                    <div className=" conten-export-img" type="file" required><img className="img-export"/></div>
+                    </div> 
                     </div>
                        
                 </div>
@@ -114,8 +118,6 @@ class Boletines extends Component{
                     </div>
                         
                 </div>
-
-                <button className="btn">Crear</button>
                     
                 </form>
             </Col>

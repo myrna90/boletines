@@ -32,17 +32,6 @@ h2{
   flex-wrap: wrap;
 }
 
-.btn {
-  float: left;;
-  padding:1em 4em;
-  margin:.5em 0 0;
-  background-color: var(--color-blue);
-  border-radius: 1em;
-  color:var(--color-white);
-  cursor:pointer;
-  transition:all .3s;
-}
-
 @media only screen and (max-width: 600px){
   
 }
