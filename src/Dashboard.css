@@ -1,4 +1,5 @@
 /*Diseño dashboard*/
+
 .col-md-3 {
   max-width: 15.6em;
 }
@@ -73,10 +74,8 @@ height: 1em;
 }
 
 .grid-cabecera{
-  display: inline-flex;
-  width: 81.25em;
+  display: flex;
   height: 3.15em;
-  margin-left: -1em;
   border-bottom: .1em solid #bebed2;
 }
 
@@ -116,17 +115,17 @@ height: 1em;
 .grid-publicados {
     width: 28.1em;
     height: 22.6em;
+    margin-left: 1em;
     box-shadow: 0 0 .3em .1em slategray;
 }
 
 .grid-proyectos {
   width: 36em;
   height: 22.6em;
-  margin-left: 3em;
+  margin-left: 2em;
   box-shadow: 0 0 .3em .1em slategray;
 }
-
-
+*/
 @media only screen and (max-width: 600px){
 
 }

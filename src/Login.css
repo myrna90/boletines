@@ -1,11 +1,13 @@
 .conteiner-general-login{
-  width: max-content;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .row-login{
-  margin-top: 7em;
-  margin: center;
   width: 50em;
   height: 31.25em;
 }
@@ -96,7 +98,8 @@
 
 .footer{
   margin-top: 8em;
-  margin-left: 25em;
+  justify-content: center;
+  align-items: center;
   color: var(--color-grey);
   font-size: .7em;
   opacity: 0.9;

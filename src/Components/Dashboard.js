@@ -10,9 +10,9 @@ class Dashboard extends Component {
             <Col xs={12} sm={12} md={3} large={4} className="menu">
             <div className="Grid-titulo">
               <div className="conteiner-titulo">
-                <h3 className="h3">Boletines</h3>
-                <div className="btn-config">
-                </div>
+              <h3 className="h3">Boletines</h3>
+              <div className="btn-config">
+              </div>
               </div>
               
               <div className="nav-menu">
@@ -25,20 +25,19 @@ class Dashboard extends Component {
             </Col>
 
             <Col xs={12} sm={12} md={9} large={8} className="conteiner-view-general conteiner-color">   
-                <div className="grid-cabecera">
-                <div className="img-dash"></div>
-                <h1 className="h1">Dashboard</h1>
-                </div>
+              <div className="grid-cabecera">
+              <div className="img-dash"></div>
+              <h1 className="h1">Dashboard</h1>
+              </div>
 
-                <div className="grid-contentDash box-publish">
-                <div className="grid-publicados">
-                <h4 className="h4">Boletines</h4>
-                </div>
-                <div className="grid-proyectos box-publish">
-                <h4 className="h4">Mis proyectos</h4>
-                </div>
-                </div>
-             
+              <div className="grid-contentDash box-publish">
+              <div className="grid-publicados">
+              <h4 className="h4">Boletines</h4>
+              </div>
+              <div className="grid-proyectos box-publish">
+              <h4 className="h4">Mis proyectos</h4>
+              </div>
+              </div>
             </Col>
             </Row>
         )

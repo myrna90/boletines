@@ -6,14 +6,12 @@
   --color-grey: #3e3e3e;
   --color-blue: #007F7F;
   --color-blue-bajo: #98D2DE;
+  --color-grey-border: #bebed2;
+  --color-grey-border-img: #CCC;
 }
 
 body {
   background-color: var(--color-white);
-}
-.row {
-  height: 100vh;
-  width: 100vw;
 }
 
 h2{
@@ -29,10 +27,12 @@ h2{
 
 }
 
-.conteiner-view-general {
+.conteiner-general {
+  display: flex;
   background-color: var(--color-white);
-  justify-content: space-around;
   flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
 }
 
 @media only screen and (max-width: 600px){
