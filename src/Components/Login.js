@@ -112,7 +112,7 @@ class Login extends Component {
                 <input className="input-login" type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} placeholder="**********"/>
                 <div className="img-contraseña"></div>
                     
-                <Link to="/Dashboard"><button /*onClick={this.login}*/ className="btn-login" type="submit" value=" Log In" data-test="submit">LOGIN</button></Link>
+                <Link to="/Dashboard"><div /*onClick={this.login}*/ className="btn-login" type="submit" value=" Log In" data-test="submit">LOGIN</div></Link>
                     
                 </form>
                 </div>

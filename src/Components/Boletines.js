@@ -6,13 +6,9 @@ class Boletines extends Component{
 
     constructor(){
         super();
-        this.state = {value: ''};
-        this.add = this.add.bind(this);
+       
     }
-    add() {
-        this.props.onButtonClick(this.state.value);
-        this.setState({value: ''});
-    }
+    
 
     
 
@@ -38,8 +34,8 @@ class Boletines extends Component{
             </Col>
             <Col xs={12} md={10} large={8} className="conteiner-view-general conteiner-boletin">
                 <div className="grid-cabecera-boletin">
-                <h3 className="h3-boletin"  disabled={!this.state.value} onClick={this.add}>Crear boletín</h3>
-                <button className="btn-crear">+ Crear</button>
+                <h3 className="h3-boletin">Crear boletín</h3>
+                <div type="submit" className="btn-crear">+ Crear</div>
                 </div> 
 
                 <form>
@@ -49,7 +45,7 @@ class Boletines extends Component{
                     </div>
                     <div className="contenForm">
                     <label className="label">Numero de folio</label>
-                    <input className="input input-xs" value={this.state.value}  placeholder="TN-B-01" required></input>
+                    <input className="input input-xs"  required></input>
                     </div>
                 </div>
 
@@ -59,37 +55,37 @@ class Boletines extends Component{
                     </div>
                     <div className="contenForm">
                     <label className="label">Proyecto</label>
-                    <input className="input" value={this.state.value}  placeholder="La rioja" required></input>
+                    <input className="input" required></input>
                     </div>
 
                     <div className="contenForm">
                     <label className="label">Cliente</label>
-                    <input className="input" value={this.state.value}   placeholder="Jesus Contreras" required></input>
+                    <input className="input" required></input>
                     </div>
 
                     <div className="contenForm">
                     <label className=" label">Fecha</label>
-                    <input className="input input-xs" value={this.state.value}  placeholder="20/03/20" required></input>
+                    <input className="input input-xs" required></input>
                     </div>
 
                     <div className="contenForm">
                     <label className=" label">Sistema</label>
-                    <input className="input" value={this.state.value}  placeholder="video vogilancia (CCTV)"  required></input>
+                    <input className="input" required></input>
                     </div>
 
                     <div className="contenForm">
                     <label className=" label">Equipo</label>
-                    <input className="input" value={this.state.value}  placeholder="joystick" required></input>
+                    <input className="input"  required></input>
                     </div>
 
                     <div className="contenForm">
                     <label className=" label">Marca</label>
-                    <input className="input" value={this.state.value}  placeholder="Bosch" required></input>
+                    <input className="input"  required></input>
                     </div>
 
                     <div className="contenForm">
                     <label className=" label">Modelo</label>
-                    <input className="input" value={this.state.value}  placeholder="KBD-Digital" required></input>
+                    <input className="input" required></input>
                     </div>
 
                 </div>
@@ -100,25 +96,25 @@ class Boletines extends Component{
                     </div>
                     <div className="div-img">
                     <div className="contenForm">
-                    <label className="label ">Descripción del problema</label>
-                    <textarea className=" text-problema text" value={this.state.value}  required></textarea>
+                    <label className="label label-text-area">Descripción del problema</label>
+                    <textarea className=" text-problema text"  required></textarea>
                     </div>
 
                     <div className="contenForm conten-img">
                     <label className="label label-img">Problema imagen</label>
-                    <div className=" conten-export-img" value={this.state.value}  type="file" required><img className="img-export"/></div>
+                    <div className=" conten-export-img"  type="file" required><img className="img-export"/></div>
                     </div>
                     </div>
 
                     <div className="div-img">
                     <div className="contenForm">
-                    <label className="label ">Solución del problema</label>
-                    <textarea className=" text-solucion text" value={this.state.value}  required></textarea>
+                    <label className="label label-text-area ">Solución del problema</label>
+                    <textarea className=" text-solucion text" required></textarea>
                     </div>
 
                     <div className="contenForm conten-img">
                     <label className="label label-img">Solución imagen</label>
-                    <div className=" conten-export-img" value={this.state.value}  type="file" required><img className="img-export"/></div>
+                    <div className=" conten-export-img"  type="file" required><img className="img-export"/></div>
                     </div> 
                     </div>
                        
@@ -130,12 +126,12 @@ class Boletines extends Component{
                     </div>
                     <div className="contenForm">
                     <label className="label">Reporta</label>
-                    <input className="input" value={this.state.value}  placeholder="Rubén Jiménez" required></input>
+                    <input className="input" required></input>
                     </div>
 
                     <div className="contenForm">
                     <label className="label">Departamento</label>
-                    <input className="input" value={this.state.value}  placeholder="Ingeniería" required></input>
+                    <input className="input" required></input>
                     </div>   
                 </div>
                 </form>

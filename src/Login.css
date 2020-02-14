@@ -93,19 +93,19 @@
 }
 
 .btn-login{
+  text-align: center;
+  margin-top: 1em;
   float: right;
+  margin-left: 58em;
   width: 6.87em;
   height: 1.9em;
-  margin:.5em 0 0;
-  background-color: var(--color-blue);
-  border-radius: .5em;
-  color:var(--color-white);
-  cursor:pointer;
-  transition:all .3s
+  background-color: #A3E2BA;
+  border-radius: 5px;
+  color: var(--color-white);
 }
 
 .miImg{
-  margin-top: -3em;
+  margin-top: -3.5em;
   margin-left: -17em;
   margin-bottom: 0;
   width: 26.68em;
