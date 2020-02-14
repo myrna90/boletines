@@ -46,6 +46,7 @@
 .login{
   margin-top: 1em;
 }
+
 .form { 
   margin: 2em;
   width: 22em;
@@ -64,6 +65,22 @@
   border:0;
   transition:all .3s;
   border-bottom:.2em solid #bebed2;
+}
+
+.img-correo {
+  width: 20px;
+  height: 16px;
+  background-image: url(../src/imgs/correo.png);
+  margin-top: -1.5em;
+  margin-left: 20.4em;
+}
+
+.img-contraseña {
+  width: 16px;
+  height: 21px;
+  background-image: url(../src/imgs/contraseña.png);
+  margin-top: -1.8em;
+  margin-left: 20.5em;
 }
 
 .text-login {
@@ -88,7 +105,7 @@
 }
 
 .miImg{
-  margin-top: -4em;
+  margin-top: -3em;
   margin-left: -17em;
   margin-bottom: 0;
   width: 26.68em;

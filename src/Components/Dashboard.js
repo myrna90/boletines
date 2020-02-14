@@ -24,17 +24,17 @@ class Dashboard extends Component {
             </div>
             </Col>
 
-            <Col xs={12} sm={12} md={9} large={8} className="conteiner-view-general conteiner-color">   
+            <Col xs={12} sm={12} md={9} large={8} className="conteiner-general conteiner-color">   
               <div className="grid-cabecera">
               <div className="img-dash"></div>
               <h1 className="h1">Dashboard</h1>
               </div>
 
-              <div className="grid-contentDash box-publish">
+              <div className="grid-contentDash">
               <div className="grid-publicados">
               <h4 className="h4">Boletines</h4>
               </div>
-              <div className="grid-proyectos box-publish">
+              <div className="grid-proyectos">
               <h4 className="h4">Mis proyectos</h4>
               </div>
               </div>

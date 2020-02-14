@@ -28,7 +28,6 @@ h2{
 }
 
 .conteiner-general {
-  display: flex;
   background-color: var(--color-white);
   flex-wrap: wrap;
   width: 100vw;

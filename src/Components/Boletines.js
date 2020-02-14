@@ -38,7 +38,8 @@ class Boletines extends Component{
             </Col>
             <Col xs={12} md={10} large={8} className="conteiner-view-general conteiner-boletin">
                 <div className="grid-cabecera-boletin">
-                <h3 className="h3-boletin"  disabled={!this.state.value} onClick={this.add}>Crear boletín</h3><button className="btn-crear">+ Crear</button>
+                <h3 className="h3-boletin"  disabled={!this.state.value} onClick={this.add}>Crear boletín</h3>
+                <button className="btn-crear">+ Crear</button>
                 </div> 
 
                 <form>

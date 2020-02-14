@@ -106,11 +106,11 @@ class Login extends Component {
                 
                 <label className="text-login text-user">Correo electronico:</label>
                 <input className="input-login" type= "text" data-test= "username" value={this.state.username} onChange={this.handleUserChange} placeholder="Usuario@telenetdemexico.com"/>
-                
+                <div className="img-correo"></div>
                 
                 <label className="text-login text-passw">Contraseña: </label>
                 <input className="input-login" type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} placeholder="**********"/>
-               
+                <div className="img-contraseña"></div>
                     
                 <Link to="/Dashboard"><button /*onClick={this.login}*/ className="btn-login" type="submit" value=" Log In" data-test="submit">LOGIN</button></Link>
                     
