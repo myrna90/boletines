@@ -105,7 +105,7 @@
 }
 
 .miImg{
-  margin-top: -3.5em;
+  margin-top: -3em;
   margin-left: -17em;
   margin-bottom: 0;
   width: 26.68em;
@@ -123,46 +123,56 @@
 }
 
 @media only screen and (max-width: 600px){
+  
   .conteiner-titulo{
+    width: 500px;
     height: 6.2em;
     text-align: center;
   }
+
   .titular-inicio{
     text-align: center;
-    font-size: 1.7em;
-    margin-top: 1.5em;
-
-  }
-  .conteiner-sesion{
-    height: 75em;
     font-size: 1em;
-    
+    margin-top: 1.5em;
+  }
+
+  .conteiner-sesion{
+    font-size: 1em;
   }
 
   .text-inicio{
-    height: 20%;
+  margin: auto;
+  margin-left: 7em;
+  color: #007F7F;
   }
 
   .text{
-    margin-left: 3em;
-    font-size: 1.7em;
+    margin: auto;
+    font-size: 1.6em;
   }
 
   .login{
     width: 50em;
-    margin-top: -27em;
+    margin-top: -2em;
     font-size: 1em;
   }
 
   .form{
   font-size: 1.5em;
-  margin: 3em;
-  width: 20em;
+  justify-content: center;
+  align-items: center;
+  margin: 5em;
+  width: 18em;
   height: 10em;
   }
 
-  .btn{
+  .btn-login{
     margin-top: 2em;
+  }
+
+  .footer {
+    margin-top: 11em;
+    margin-left: -10em;
   }
 }
 
