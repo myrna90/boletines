@@ -1,6 +1,7 @@
 /*Diseño boletines*/
+
 .link-out-boletin {
-    margin-top: 58em;
+    margin-top: 57em;
 }
 
 .grid-cabecera-boletin {
@@ -17,8 +18,8 @@
 
 .btn-crear {
     text-align: center;
-    margin-top: .5em;
-    margin-left: 58em;
+    margin-top: -2em;
+    margin-left: 69em;
     width: 6.87em;
     height: 1.9em;
     background-color: #A3E2BA;
@@ -34,9 +35,14 @@
     padding-bottom: 1em;
 }
 
+.div-2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .conteiner-numero {
     color: #3E3E3E;
-    display: -webkit-box;
+    display: flex;
 }
 
 .numero {
@@ -57,6 +63,15 @@
     margin-left: 25px;
 }
 
+.conteinerForm-2 {
+    margin-top: 2em;
+    margin-left: -7.5em;
+}
+
+.conteinerForm-3 {
+    margin-top: 2em;
+}
+  
 .input { 
     background-color: white;
     width: 15em;

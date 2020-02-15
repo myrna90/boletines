@@ -49,30 +49,30 @@ class Boletines extends Component{
                     </div>
                 </div>
 
-                <div className="div">   
+                <div className="div div-2">   
                 <div className="conteiner-numero">
                     <div className="numero">2</div><strong><p className="p">Proyecto</p></strong>
                     </div>
-                    <div className="contenForm">
+                    <div className="contenForm conteinerForm-2">
                     <label className="label">Proyecto</label>
                     <input className="input" required></input>
                     </div>
 
-                    <div className="contenForm">
+                    <div className="contenForm conteinerForm-3">
                     <label className="label">Cliente</label>
                     <input className="input" required></input>
                     </div>
 
-                    <div className="contenForm">
+                    <div className="contenForm conteinerForm-3">
                     <label className=" label">Fecha</label>
                     <input className="input input-xs" required></input>
                     </div>
 
-                    <div className="contenForm">
+                    <div className="contenForm conteinerForm-3">
                     <label className=" label">Sistema</label>
                     <input className="input" required></input>
                     </div>
-
+                    <br></br>
                     <div className="contenForm">
                     <label className=" label">Equipo</label>
                     <input className="input"  required></input>
@@ -120,16 +120,16 @@ class Boletines extends Component{
                        
                 </div>
 
-                <div className="div">
+                <div className="div div-2">
                     <div className="conteiner-numero">
                     <div className="numero">4</div><strong><p className="p">Usuario</p></strong>
                     </div>
-                    <div className="contenForm">
+                    <div className="contenForm conteinerForm-2">
                     <label className="label">Reporta</label>
                     <input className="input" required></input>
                     </div>
 
-                    <div className="contenForm">
+                    <div className="contenForm conteinerForm-3">
                     <label className="label">Departamento</label>
                     <input className="input" required></input>
                     </div>   
