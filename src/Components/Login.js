@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Container, Row, Col} from 'react-bootstrap';
 import { Redirect, Link } from 'react-router-dom';
-
+import FormErrors from './FormErrors';
 
 
 /*const fakeAuth = {
@@ -18,106 +18,101 @@ import { Redirect, Link } from 'react-router-dom';
 
 class Login extends Component {
      /*Función login  */
-     constructor(){
-        super();
+     constructor(props){
+        super(props);
         this.state = {
-            username: "",
+            email: "",
             password: "",
-            error: "",
-            redirectToReferrer: false
+            formErrors: {email: '', password: ''},
+            emailValid: false,
+            passwordValid: false,
+            formValid: false
+           
         };
-
-        this.handlePassChange = this.handlePassChange.bind(this);
-        this.handleUserChange = this.handleUserChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.dismissError = this.dismissError.bind(this);
     }
 
-    /*login = () => {
-        fakeAuth.authenticate(() => {
-          this.setState(() => ({
-            redirectToReferrer: true
-          }))
-        })
-      }*/
-
-    dismissError() {
-        this.setState({ error: ""});
-    }
-
-    handleSubmit(evt){
-        evt.preventDefault();
-
-        if(!this.state.username){
-            return this.setState({error: "Nombre de usuario requerido"})
+    handleUserInput = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({[name]: value},
+                      () => { this.validateField(name, value) });
+      }
+    
+      validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let emailValid = this.state.emailValid;
+        let passwordValid = this.state.passwordValid;
+    
+        switch(fieldName) {
+          case 'email':
+            emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+            fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+            break;
+          case 'password':
+            passwordValid = value.length >= 6;
+            fieldValidationErrors.password = passwordValid ? '': ' is too short';
+            break;
+          default:
+            break;
         }
-
-        if(!this.state.password){
-            return this.setState({error: "Contraseña requerida"})
-        }
-
-        return this.setState({error: ""});
-    }
-
-
-
-    handleUserChange(evt){
-        this.setState({
-            username: evt.target.value,
-
-        })
-        console.log("Si funciona nombre")
-    }
-
-    handlePassChange(evt){
-        this.setState({
-            password: evt.target.value
-        })
-        console.log("si funciona contraseña")
-    }
+        this.setState({formErrors: fieldValidationErrors,
+                        emailValid: emailValid,
+                        passwordValid: passwordValid
+                      }, this.validateForm);
+      }
+    
+      validateForm() {
+        this.setState({formValid: this.state.emailValid && this.state.passwordValid});
+      }
+    
+      errorClass(error) {
+        return(error.length === 0 ? '' : 'has-error');
+      }
 
     render(){
-        /*const {from} = this.props.location.state || {from: {pathname: '/'}};
-        const { redirectToReferrer } = this.state;
-
-        if (redirectToReferrer === true) {
-        return <Redirect to={from} />
-    }*/
         return(
             <Container className="conteiner-general-login">
             <Row className="row row-login">
-            <Col xs={12} sm={12} md={4} large={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
+            <Col xs={12} sm={12} xl={4} lg={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
                 <h1 className="titular-inicio">Boletines</h1>
             </Col>
-            <Col xs={12} sm={12} md={8} large={7} className="conteiner-sesion" style={{backgroundColor: "white"}}>
+            <Col xs={12} sm={12} xl={8} lg={7} className="conteiner-sesion" style={{backgroundColor: "white"}}>
                 <div className="text-inicio">
                 <h2 className="text-conten">Inicie sesión ahora...</h2>
-                <p className="text-conten   ">Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
+                <p className="text-conten">Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
                 </div>
+                
                 <div className="login">
-                <form className="form" onSubmit={this.handleSubmit}>
-                {
-                    this.state.error && 
-                    <h3 data-test= "error" onClick={this.dismissError}>
-                        <button onClick={this.dismissError}>X</button>
-                        {this.state.error}
-                    </h3>
-                }
+                <form className="form">
+                <div className="panel panel-default">
+                <FormErrors formErrors={this.state.formErrors} />
+                </div>
+                    <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
+                    <label className="text-login text-user" htmlFor="email">Correo electronico:</label>
+                    <input required type= "email" className="input-login" name="email" 
+                    value={this.state.email}
+                    onChange={this.handleUserInput} 
+                    placeholder="Usuario@telenetdemexico.com"
+                    />
+                    <div className="img-correo"></div>
+                    </div>
+
+                    <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
+                    <label className="text-login text-passw" htmlFor="password">Contraseña: </label>
+                    <input className="input-login" type="password" name="password" 
+                    value={this.state.password}
+                    onChange={this.handleUserInput} 
+                    placeholder="**********"/>
+                    <div className="img-contraseña"></div>
+                    </div>
                 
-                <label className="text-login text-user">Correo electronico:</label>
-                <input className="input-login" type= "text" data-test= "username" value={this.state.username} onChange={this.handleUserChange} placeholder="Usuario@telenetdemexico.com"/>
-                <div className="img-correo"></div>
                 
-                <label className="text-login text-passw">Contraseña: </label>
-                <input className="input-login" type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} placeholder="**********"/>
-                <div className="img-contraseña"></div>
                     
-                <Link to="/Dashboard"><div /*onClick={this.login}*/ className="btn-login" type="submit" value=" Log In" data-test="submit">LOGIN</div></Link>
+                <Link className="btn-login" to="/Dashboard" disabled={!this.state.formValid} type="submit">LOGIN</Link>
                     
                 </form>
                 </div>
-                <div className="miImg">
-            </div> 
+                <div className="miImg"></div> 
             </Col>
             
             </Row>

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-
 :root {
   --grid-color-blue: #004040;
   --color-white: whitesmoke;
@@ -8,13 +7,15 @@
   --color-blue-bajo: #98D2DE;
   --color-grey-border: #bebed2;
   --color-grey-border-img: #EBEBEB;
+  /*Incluye algunas medidas que estes usando con frecuencia*/
+  /*También las medidas de cada dispositivo para el responsive design*/
 }
 
 body {
   background-color: var(--color-white);
 }
 
-h2{
+h2 {
   color: var(--color-grey);
 }
 
@@ -24,7 +25,6 @@ h2{
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: var(--grid-color-blue);
-
 }
 
 .conteiner-general {
@@ -34,6 +34,4 @@ h2{
   height: 100vh;
 }
 
-@media only screen and (max-width: 600px){
-  
-}
+@media only screen and (max-width: var(--size-phone)) {}
