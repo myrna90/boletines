@@ -73,10 +73,10 @@ class Login extends Component {
         return(
             <Container className="conteiner-general-login">
             <Row className="row row-login">
-            <Col xs={12} sm={12} xl={4} lg={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
+            <Col xs={12} sm={12} md="auto"  xl="auto" lg={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
                 <h1 className="titular-inicio">Boletines</h1>
             </Col>
-            <Col xs={12} sm={12} xl={8} lg={7} className="conteiner-sesion" style={{backgroundColor: "white"}}>
+            <Col xs={12} sm={12} xl="auto" lg={7} className="conteiner-sesion" style={{backgroundColor: "white"}}>
                 <div className="text-inicio">
                 <h2 className="text-conten">Inicie sesión ahora...</h2>
                 <p className="text-conten">Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
@@ -84,9 +84,10 @@ class Login extends Component {
                 
                 <div className="login">
                 <form className="form">
-                <div className="panel panel-default">
-                <FormErrors formErrors={this.state.formErrors} />
-                </div>
+                    <div className="panel panel-default">
+                    <FormErrors formErrors={this.state.formErrors} />
+                    </div>
+
                     <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
                     <label className="text-login text-user" htmlFor="email">Correo electronico:</label>
                     <input required type= "email" className="input-login" name="email" 
@@ -105,8 +106,6 @@ class Login extends Component {
                     placeholder="**********"/>
                     <div className="img-contraseña"></div>
                     </div>
-                
-                
                     
                 <Link className="btn-login" to="/Dashboard" disabled={!this.state.formValid} type="submit">LOGIN</Link>
                     
