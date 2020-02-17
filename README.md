@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Boletínes mejora continúa
 
-## Available Scripts
 
-In the project directory, you can run:
+El proyecto de Boletines de mejora continua, es involucrar a todas las áreas que intervienen en la ejecución y realización de un proyecto (Ventas, Ingeniería, proyectos y Supervisión). 
 
-### `npm start`
+En el proceso de un proyecto desde su concepción, hasta su realización surgen cambios, mejoras, omisiones, etc…. Ya sea por parte del área de proyectos, cambios en obra, cambios de equipos, cambios en aplicaciones o por cambio de equipo por que se descontinúan… por el motivo que sea, es importante documentar y hacer del conocimiento de todos, los cambios o mejoras que se realizaron, con esto evitaremos cometer los mismos errores, así como actualizarnos en las mejores formas y manera de darle solución a las necesidades del proyecto.
+De esta forma se logrará:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  - Documentar los cambios y mejoras realizadas en proyectos.
+  - Lograr tener un conjunto de boletines que se podrán consultar por cualquiera.
+  - Aclarar dudas, o ver las soluciones aplicadas en casos específicos.
 
-### `npm test`
+# Proceso
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Es responsabilidad de todos los involucrados levantar un boletín (plataforma) en forma correcta y a tiempo para notificar los cambios y/o mejoras realizadas en los proyectos.
 
-### `npm run build`
+ Al mismo tiempo en la plataforma se realizará el boletín en PDF, donde se guardará automáticamente en una carpeta en la red, para ser consultados por todo el personal de Telenet de México.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Paso 1: 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Abrir la plataforma de mejora continua, la misma plataforma te dará un folio.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![folio](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/imgs/folio.jpg)
 
-### `npm run eject`
+### Paso 2:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Tendrás que llenar los siguientes espacios.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![proyecto](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/imgs/proyecto.jpg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Paso 3:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Se describe el problema y se documenta con alguna fotografía para hacer mas claro el problema y la solución.
 
-## Learn More
+![descripción](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/imgs/descripci%C3%B3n.jpg)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Paso 4:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Se llenará en automático el nombre de quien levanta el boletín y el departamento al que pertenece.
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![usuario](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/imgs/usuario.jpg)
