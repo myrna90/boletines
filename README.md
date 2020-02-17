@@ -40,3 +40,6 @@ Es responsabilidad de todos los involucrados levantar un boletín (plataforma) e
 - Se llenará en automático el nombre de quien levanta el boletín y el departamento al que pertenece.
 
 ![usuario](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/imgs/usuario.jpg)
+
+Una vez que se guarde el boletín, se enviara la notificación a todos los involucrados y se guardara un archivo en PDF donde podrán ser consultados los boletines por cualquier personal.
+Con este sistema lograremos estar todos informados y mejorando la forma de hacer proyectos.
