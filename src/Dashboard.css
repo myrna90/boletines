@@ -125,7 +125,9 @@ height: 1em;
   margin-left: 2em;
   box-shadow: 0 0 .3em .1em slategray;
 }
-*/
-@media only screen and (max-width: 600px){
 
+@media only screen and (max-width: 600px) {
+  .menu {
+    height: 6.2em;
+  }
 }
