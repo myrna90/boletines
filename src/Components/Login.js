@@ -2,9 +2,10 @@ import React, {Component} from "react";
 import { Container, Row, Col} from 'react-bootstrap';
 import { Redirect, Link } from 'react-router-dom';
 import FormErrors from './FormErrors';
+import ForgotPassword from './ForgotPassword';
 
 
-/*const fakeAuth = {
+const fakeAuth = {
     isAuthenticated: false,
     authenticate(cb) {
       this.isAuthenticated = true
@@ -14,7 +15,7 @@ import FormErrors from './FormErrors';
       this.isAuthenticated = false
       setTimeout(cb, 100)
     }
-  }*/
+  }
 
 class Login extends Component {
      /*Función login  */
@@ -71,11 +72,14 @@ class Login extends Component {
 
     render(){
         return(
+          /*Contenedor general*/
             <Container className="conteiner-general-login">
             <Row className="row row-login">
+              {/*Contenedor titulo */}
             <Col xs={12} sm={12} md="auto"  xl="auto" lg={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
                 <h1 className="titular-inicio">Boletines</h1>
             </Col>
+            {/*Contenedor login form */}
             <Col xs={12} sm={12} xl="auto" lg={7} className="conteiner-sesion" style={{backgroundColor: "white"}}>
                 <div className="text-inicio">
                 <h2 className="text-conten">Inicie sesión ahora...</h2>
@@ -88,6 +92,7 @@ class Login extends Component {
                     <FormErrors formErrors={this.state.formErrors} />
                     </div>
 
+                      {/*div para introducir email */}
                     <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
                     <label className="text-login text-user" htmlFor="email">Correo electronico:</label>
                     <input required type= "email" className="input-login" name="email" 
@@ -98,6 +103,7 @@ class Login extends Component {
                     <div className="img-correo"></div>
                     </div>
 
+                      {/*div para introducir password */}
                     <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
                     <label className="text-login text-passw" htmlFor="password">Contraseña: </label>
                     <input className="input-login" type="password" name="password" 
@@ -107,8 +113,17 @@ class Login extends Component {
                     <div className="img-contraseña"></div>
                     </div>
                     
-                <Link className="btn-login" to="/Dashboard" disabled={!this.state.formValid} type="submit">LOGIN</Link>
+                      {/*div para recordar usuario */}
                     
+                      <div className="custom-control custom-checkbox">
+                      <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                        <label className="custom-control-label" htmlFor="customCheck1">Recordarme</label>
+                      </div>
+                    
+                <Link className="btn-login" to="/Dashboard" disabled={!this.state.formValid} type="submit">LOGIN</Link>
+                <p className="forgot-password text-right">
+                    Olvidaste tu <Link to="/ForgotPassword">contraseña?</Link>
+                </p>
                 </form>
                 </div>
                 <div className="miImg"></div> 
