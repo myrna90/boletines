@@ -9,7 +9,6 @@ import Soporte from './Components/Soporte';
 import Boletines from './Components/Boletines';
 /*import PrivateRoute from './components/PriveteRoute';*/
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import ForgoPassword from './Components/ForgotPassword';
 
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
       <Route path="/Dashboard" component={Dashboard} />
       <Route path="/Boletines" component={Boletines} />
       <Route path="/Soporte" component={Soporte} />
-      <Route path="/ForgotPassword" component={ForgoPassword}/>
     </Router>
   );
 }

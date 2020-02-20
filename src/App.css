@@ -27,11 +27,4 @@ h2 {
   background-color: var(--grid-color-blue);
 }
 
-.conteiner-general {
-  background-color: var(--color-white);
-  flex-wrap: wrap;
-  width: 100vw;
-  height: 100vh;
-}
-
 @media only screen and (max-width: var(--size-phone)) {}

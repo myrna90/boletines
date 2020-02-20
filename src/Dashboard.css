@@ -1,27 +1,42 @@
 /*Diseño dashboard*/
-
-.col-md-3 {
-  max-width: 15.6em;
+.contenedor {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 50px auto;
+  grid-template-areas: "aside header" "aside conten";
+  width: 100vw;
+  height: 100vh;
 }
 
-.conteiner-color {
+.menu {
+  grid-area: aside;
+  background-color: var(--grid-color-blue);
+}
+
+.cabecera {
+  grid-area: header;
   background-color: var(--color-white);
 }
 
-.conteiner-titulo {
+.contenido {
+  grid-area: conten;
+  background-color: var(--color-white);
+}
+
+.contenedor-titulo {
   display: inline-flex;
 }
 
 .h3 {
   text-align: left;
-  margin-left: 1.5em;
+  margin-left: .5em;
   margin-top: .6em;
   color: var(--color-white);
 }
 
 .btn-config {
   text-align: right;
-  margin-left: 4.5em;
+  margin-left: 2em;
   background-image: url(../src/imgs/config.png);
   margin-top: 1.7em;
   width: 1.12em;
@@ -29,10 +44,9 @@
 }
 
 .nav-menu {
+  margin-top: 6em;
   display: flex;
   flex-direction: column;
-  margin-top: -22em;
-  margin-left: 2em;
 }
 
 .Link {
@@ -73,9 +87,8 @@ height: 1em;
   margin-top: -.4em;
 }
 
-.grid-cabecera{
+.cabecera-dashboard{
   display: flex;
-  height: 3.15em;
   border-bottom: .1em solid #bebed2;
 }
 
@@ -126,8 +139,3 @@ height: 1em;
   box-shadow: 0 0 .3em .1em slategray;
 }
 
-@media only screen and (max-width: 600px) {
-  .menu {
-    height: 6.2em;
-  }
-}

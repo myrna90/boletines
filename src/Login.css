@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 50px);
   justify-content: center;
   align-items: center;
+
 }
 
 .row-login{
+  margin-top: 100px;
   width: 50em;
-  height: 31.25em;
 }
 
 .conteiner-titulo{
@@ -27,6 +28,13 @@
   width: 32.5em;
   height: 31.25em;
   color: var(--color-blue);
+  box-sizing: border-box;
+}
+
+.panel-default {
+  position: absolute;
+  color: red;
+  margin-top: 26em;
 }
 
 .titular-inicio {
@@ -44,7 +52,8 @@
 }
 
 .login{
-  margin-top: 1em;
+  margin-top: -1.5em;
+  box-sizing: border-box;
 }
 
 .form { 
@@ -52,6 +61,7 @@
   width: 22em;
   box-sizing:border-box;
   position:relative;
+  box-sizing: border-box;
 }
 
 .input-login {
@@ -64,7 +74,7 @@
   resize:none;
   border:0;
   transition:all .3s;
-  border-bottom:.2em solid #bebed2;
+  border-bottom: 1px solid #bebed2;
 }
 
 .img-correo {
@@ -102,11 +112,12 @@
   background-color: #A3E2BA;
   border-radius: 5px;
   color: var(--color-white);
+  border: none;
 }
 
 .miImg{
-  margin-top: -9em;
-  margin-left: -17em;
+  margin-top: 8em;
+  margin-left: -5em;
   margin-bottom: 0;
   width: 26.68em;
   height: 12.5em;
@@ -114,12 +125,11 @@
 }
 
 .footer{
-  margin-top: 8em;
-  justify-content: center;
-  align-items: center;
+  height: 50px;
   color: var(--color-grey);
   font-size: .7em;
   opacity: 0.9;
+  padding: 5em;
 }
 
 @media only screen and (max-width: 600px){
@@ -149,7 +159,7 @@
   }
 
   .text-inicio {
-    margin-top: 2em;
+    margin-top: 3em;
   }
 
   .text-conten{
@@ -162,7 +172,7 @@
 
   .login{
     margin-left: 190px;
-    margin-top: -9em;
+    margin-top: 2em;
     font-size: 18px;
   }
 
@@ -184,7 +194,10 @@
   .btn-login{
     margin-top: 3em;
   }
-
+.panel-default {
+  margin-left: -20em;
+  margin-top: 20em;
+}
   .miImg {
    display: none;
   }
@@ -197,13 +210,15 @@
 @media(min-width:600px) and (max-width: 991px){
   
   .row-login {
-    margin-top: -315px;
+    margin-top: -41px;
+    width: 62em;
+    height: 75em;
   }
   
   .conteiner-titulo{
     display: flex;
-    width: 991px;
-    height: 130px;
+    width: 784px;
+    height: 150px;
     text-align: center;
     background-color: var(--grid-color-blue);
   }
@@ -213,9 +228,10 @@
   }
 
   .conteiner-sesion {
+    margin-top: -1em;
     display: flex;
     flex-wrap: wrap;
-    height: 908px;
+    height: 1031px;
   }
 
   .text-inicio {
@@ -225,13 +241,13 @@
   .text-conten{
     margin-top: 2em;
     margin-left: 2em;
-    font-size: 25px;
+    font-size: 26px;
 
   }
 
   .login{
     margin-left: 2em;
-    margin-top: -2em;
+    margin-top: -5em;
     font-size: 26px;
   }
 
@@ -245,14 +261,11 @@
   }
   
   .btn-login{
-    margin-top: 2em;
+    margin-top: 3em;
   }
 
   .miImg {
-    background-repeat: no-repeat;
- margin-top: -14em;
- margin-left: 110px;
- font-size: -1em;
+    display: none;
   }
 
   .footer {
@@ -278,8 +291,8 @@
   }
 
   .miImg {
-    margin-top: -9em;
-    margin-left: -300px;
+    margin-top: 8em;
+    margin-left: -6em;
     font-size: 1em;
   }
 

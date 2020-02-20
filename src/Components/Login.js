@@ -1,27 +1,19 @@
 import React, {Component} from "react";
 import { Container, Row, Col} from 'react-bootstrap';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FormErrors from './FormErrors';
-import ForgotPassword from './ForgotPassword';
+import Data from './data';
+import BtnLogin from './ButtonLogin';
 
 
-const fakeAuth = {
-    isAuthenticated: false,
-    authenticate(cb) {
-      this.isAuthenticated = true
-      setTimeout(cb, 100)
-    },
-    signout(cb) {
-      this.isAuthenticated = false
-      setTimeout(cb, 100)
-    }
-  }
+const data = Data;
 
 class Login extends Component {
      /*Función login  */
      constructor(props){
         super(props);
         this.state = {
+            data: Data,
             email: "",
             password: "",
             formErrors: {email: '', password: ''},
@@ -31,6 +23,13 @@ class Login extends Component {
            
         };
     }
+
+    /*auth = (e) => {
+      const email = e.data.email;
+      const password = e.data.password;
+      this.setState({[email]: data.email}, () => {this.auth(email, password)} )
+      console.log(email, password)
+    }*/
 
     handleUserInput = (e) => {
         const name = e.target.name;
@@ -47,11 +46,11 @@ class Login extends Component {
         switch(fieldName) {
           case 'email':
             emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-            fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+            fieldValidationErrors.email = emailValid ? '' : ' is invalid ';
             break;
           case 'password':
-            passwordValid = value.length >= 6;
-            fieldValidationErrors.password = passwordValid ? '': ' is too short';
+            passwordValid = value.length >= 2;
+            fieldValidationErrors.password = passwordValid ? '': ' error';
             break;
           default:
             break;
@@ -70,17 +69,22 @@ class Login extends Component {
         return(error.length === 0 ? '' : 'has-error');
       }
 
+      btnForgot() {
+        return alert("favor de comunicarse con soporte técnico")
+      }
+
     render(){
         return(
           /*Contenedor general*/
             <Container className="conteiner-general-login">
             <Row className="row row-login">
               {/*Contenedor titulo */}
-            <Col xs={12} sm={12} md="auto"  xl="auto" lg={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
+            <Col xs={12} sm="auto" md="auto"  xl="auto" lg={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
                 <h1 className="titular-inicio">Boletines</h1>
+                <div className="miImg"></div> 
             </Col>
             {/*Contenedor login form */}
-            <Col xs={12} sm={12} xl="auto" lg={7} className="conteiner-sesion" style={{backgroundColor: "white"}}>
+            <Col xs={12} sm="auto" xl="auto" lg={7} className="conteiner-sesion" style={{backgroundColor: "white"}}>
                 <div className="text-inicio">
                 <h2 className="text-conten">Inicie sesión ahora...</h2>
                 <p className="text-conten">Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
@@ -88,10 +92,7 @@ class Login extends Component {
                 
                 <div className="login">
                 <form className="form">
-                    <div className="panel panel-default">
-                    <FormErrors formErrors={this.state.formErrors} />
-                    </div>
-
+                    
                       {/*div para introducir email */}
                     <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
                     <label className="text-login text-user" htmlFor="email">Correo electronico:</label>
@@ -120,18 +121,22 @@ class Login extends Component {
                         <label className="custom-control-label" htmlFor="customCheck1">Recordarme</label>
                       </div>
                     
-                <Link className="btn-login" to="/Dashboard" disabled={!this.state.formValid} type="submit">LOGIN</Link>
+                <BtnLogin/>
                 <p className="forgot-password text-right">
-                    Olvidaste tu <Link to="/ForgotPassword">contraseña?</Link>
+                    Olvidaste tu <Link onClick={this.btnForgot}>contraseña?</Link>
                 </p>
                 </form>
                 </div>
-                <div className="miImg"></div> 
+                <div className="panel panel-default" formErrors={this.state.form}>
+                <FormErrors formErrors={this.state.formErrors} />
+                </div>
             </Col>
-            
             </Row>
-            <footer className="footer">Telenet de México S.A. de C.V.</footer> 
+            <div className="footer">
+            <footer>Telenet de México S.A. de C.V.</footer>
+            </div>
             </Container>   
+            
         )
     }
 }
