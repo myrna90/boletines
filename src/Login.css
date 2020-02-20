@@ -14,12 +14,23 @@
 }
 
 .conteiner-titulo{
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
   background-color: var(--drid-color-blue);
   width: 17.5em;
   height: 31.25em;
 }
+
+.titular-inicio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  padding: 4em;
+}
+
 
 .conteiner-sesion{
   display: inline-flex;
@@ -35,13 +46,6 @@
   position: absolute;
   color: red;
   margin-top: 26em;
-}
-
-.titular-inicio {
-  display: flex;
-  margin-top: 4em;
-  color: var(--color-white);
-  margin-left: 1em;
 }
 
 .text-inicio {
@@ -116,7 +120,7 @@
 }
 
 .miImg{
-  margin-top: 8em;
+  margin-top: -2em;
   margin-left: -5em;
   margin-bottom: 0;
   width: 26.68em;
@@ -138,6 +142,10 @@
   }
   
   .conteiner-titulo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
     width: 375px;
     height: 104px;
     text-align: center;
@@ -145,10 +153,8 @@
   }
 
   .titular-inicio {
-    margin: auto;
-    margin-top: .5em;
-    margin-left: 7.5em;
     text-align: center;
+    margin-top: -3.2em;
   }
 
   .conteiner-sesion {
@@ -176,10 +182,10 @@
   }
 
   .form{
-  justify-content: center;
-  align-items: center;
-  width: 16em;
-  height: 10em;
+    justify-content: center;
+    align-items: center;
+    width: 16em;
+    height: 10em;
   }
 
   .img-correo {
@@ -195,11 +201,11 @@
   }
 
  .panel-default {
-  margin-left: 14em;
-  margin-top: 28em;
+    margin-left: 14em;
+    margin-top: 28em;
 }
   .miImg {
-   display: none;
+    display: none;
   }
 
   .footer {
@@ -216,7 +222,6 @@
   }
   
   .conteiner-titulo{
-    display: flex;
     width: 55em;
     height: 150px;
     text-align: center;
@@ -224,9 +229,8 @@
   }
 
   .titular-inicio {
-    margin: auto;
-    margin-left: 10em;
-    margin-top: 2em;
+    margin-top: -2em;
+    padding-left: 6em;
   }
 
   .conteiner-sesion {
@@ -299,7 +303,7 @@
   }
 
   .miImg {
-    margin-top: 8em;
+    margin-top: -2em;
     margin-left: -6em;
     font-size: 1em;
   }
