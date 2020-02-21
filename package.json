@@ -10,6 +10,7 @@
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "init": "^0.1.2",
+    "material-design-icons": "^3.0.1",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",

@@ -1,7 +1,10 @@
+/*Medidas generales que se reutilizan en el diseño*/
+
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 :root {
   --grid-color-blue: #004040;
   --color-white: whitesmoke;
+  --color-white-light: #FFFFFF;
   --color-grey: #3e3e3e;
   --color-blue: #007F7F;
   --color-blue-bajo: #98D2DE;
@@ -21,7 +24,6 @@ h2 {
 
 .menu {
   display: flex;
-  width: 250px;
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: var(--grid-color-blue);

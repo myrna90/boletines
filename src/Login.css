@@ -119,6 +119,10 @@
   border: none;
 }
 
+.a-forgot {
+  color: var(--color-grey);
+}
+
 .miImg{
   margin-top: -2em;
   margin-left: -5em;

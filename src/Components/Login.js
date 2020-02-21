@@ -123,7 +123,7 @@ class Login extends Component {
                     
                 <BtnLogin/>
                 <p className="forgot-password text-right">
-                    Olvidaste tu <Link onClick={this.btnForgot}>contraseña?</Link>
+                    Olvidaste tu <Link className="a-forgot" onClick={this.btnForgot}>contraseña?</Link>
                 </p>
                 </form>
                 </div>

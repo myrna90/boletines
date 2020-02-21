@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-
+    /*Router de la aplicación */
     <Router>
       <Route exact path="/" component={Login} />
       <Route path="/Dashboard" component={Dashboard} />
