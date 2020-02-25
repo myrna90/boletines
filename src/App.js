@@ -3,11 +3,11 @@ import './App.css';
 import './Login.css';
 import './Dashboard.css';
 import './Boletines.css';
+import './MenuToggle.css';
 import Login from './Components/Login';
 import Dashboard from './Components/Dashboard';
 import Soporte from './Components/Soporte';
 import Boletines from './Components/Boletines';
-/*import PrivateRoute from './components/PriveteRoute';*/
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 

@@ -12,8 +12,6 @@
 .menu {
   grid-area: aside;
   background-color: var(--grid-color-blue);
-  display: unset;
-  overflow: hidden;
 }
 
 .cabecera {
@@ -21,6 +19,7 @@
   background-color: var(--color-white-light);
   display: flex;
   color: var(--color-grey-border);
+  position: relative;
 }
 
 .contenido {
@@ -38,7 +37,7 @@
 
 .h3 {
   text-align: left;
-  margin-left: .5em;
+  margin-left: -.5em;
   margin-top: .6em;
   color: var(--color-white);
 }
@@ -60,6 +59,7 @@
   margin: 1em;
   color: var(--color-white);
   display: inline-flex; 
+  transition: 0.3s;
 }
 
 .material-icons .md-24 {
@@ -67,7 +67,7 @@
 }
 
 .link-out {
-  margin-top: 24em;
+  margin-top: 22em;
 }
 
 .text-menu {
@@ -77,10 +77,6 @@
 
 a {
   color: var(--color-white)
-}
-
-.menu-bar {
-  display: none;
 }
 
 .cabecera-dashboard{
@@ -106,10 +102,10 @@ a {
 .grid-contentDash {
   background-color: var(--color-white-light);
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
   overflow: hidden;
   height: 100vh;
+  width: 100vw;
   padding: 5em;
 }
 
@@ -129,21 +125,25 @@ a {
 .grid-proyectos {
   width: 36em;
   height: 22.6em;
-  margin-left: 2em;
+  margin-left: 6em;
   box-shadow: 0 0 .3em .1em slategray;
 }
 
 @media only screen and (max-width: 600px){
   .contenedor {
-    grid-template-areas: "aside aside" "header header" "conten conten";
+    grid-template-areas: "aside aside" " header header" "conten conten";
     grid-template-rows: 50px 50px auto;
     min-width: 375px;
     max-width: 600px;
     max-height: 812px;
   }
 
-  .menu {
-    
-  }
-
+.h3 {
+  margin-top: -.2em;
+  margin-left: .5em;
+}
+.btn-config {
+  margin-top: 0em;
+  margin-left: 10em;
+}
 }

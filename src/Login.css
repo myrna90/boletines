@@ -1,3 +1,4 @@
+/*estilos del componente login*/
 .conteiner-general-login{
   display: flex;
   flex-direction: column;
@@ -140,6 +141,8 @@
   padding: 5em;
 }
 
+
+/*Media querie la cual controla el responsive para dispositivos moviles */
 @media only screen and (max-width: 600px){
   .row-login {
     margin-top: 20px;
@@ -217,6 +220,7 @@
   }
 }
 
+/*Media querie la cual controla el responsive para dispositivos medianos Ipad */
 @media(min-width:600px) and (max-width: 991px){
   
   .row-login {
@@ -289,6 +293,7 @@
   }
 }
 
+/*Media querie la cual controla el responsive para dispositivos grandes Ipad-pro */
 @media(min-width:992px) and (max-width: 1024px){
   .conteiner-general-login {
     display: block;

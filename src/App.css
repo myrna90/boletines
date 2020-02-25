@@ -12,6 +12,9 @@
   --color-grey-border-img: #EBEBEB;
   /*Incluye algunas medidas que estes usando con frecuencia*/
   /*También las medidas de cada dispositivo para el responsive design*/
+  --medida-phone: (max-width: 600px);
+  --medida-ipad: (min-width:600px) and (max-width: 991px);
+  --media-ipad-pro: (min-width:992px) and (max-width: 1024px);
 }
 
 body {
