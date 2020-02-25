@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import MenuToggle from './MenuToggle';
 import CabeceraDashboard from './CabeceraDashboard';
 
-
+/*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
+se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
 class Dashboard extends Component {
     render(){
         return(

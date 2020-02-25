@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+
+/*Componende cabecera que contiene el header del componente dashboard */
 class CabeceraDashboard extends Component {
     render(){
         return(

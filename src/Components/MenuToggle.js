@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Menu from './Menu';
 
+
+/*Componente eel cual contiene el menú que renderiza en el dashboard, 
+al igual que las funciones para hacerlo visible y cuando cambia el estado del botón */
 class MenuToggle extends Component {
     constructor(props) {
         super(props);

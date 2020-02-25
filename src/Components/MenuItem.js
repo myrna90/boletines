@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+/*Componente que utilice para hacer el menú pero al momento de adaptarlo 
+no se necesito por las rutas que ya contiene el menú con Links */
 class MenuItem extends Component{
 
     /*navigate = (hash) => {
