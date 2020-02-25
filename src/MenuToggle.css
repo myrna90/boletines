@@ -1,17 +1,17 @@
-.menu-toggle {
+/*.menu {
   display:block;
 
   @menu-width:250px;
-  
+
   div {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    width: @menu-width; 
-    height: 100%; 
-    box-sizing:border-box; 
-    transition: (-webkit-transform ease 250ms); 
-    transition:(transform ease 250ms);
+    position:absolute;
+    z-index:2;
+    top:0;
+    width:@menu-width; 
+    height:100%; 
+    box-sizing: border-box;
+    transition: -webkit-transform ease 250ms; 
+    transition: transform ease 250ms;
 
     &.left {
       background:#273D7A;
@@ -19,7 +19,7 @@
     }
 
     &.visible.left {
-      transform: (translate3d(@menu-width, 0, 0));
+      transform: translate3d(@menu-width, 0, 0);
     }
 
     &.right {
@@ -28,12 +28,12 @@
     }
 
     &.visible.right {
-      transform: (translate3d(@menu-width*-1, 0, 0));
+      transform: translate3d(@menu-width*-1, 0, 0);
     }
-  }
+}
 }
 
-/*.menu {
+.menu {
     height: 100%;
     width: 0;
     position: fixed;
@@ -52,10 +52,6 @@
     display: inline-flex; 
     transition: 0.3s;
   }
-  .contenido-dash{
-    transition: margin-left .5s;
-  }
+*/
 
-  .cabecera{
-    transition: margin-left .5s;
-  }*/
+

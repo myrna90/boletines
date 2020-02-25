@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import Child from './MenuToggle';
 
 
 /*Componende cabecera que contiene el header del componente dashboard */
 class CabeceraDashboard extends Component {
+
     render(){
         return(
             <div id="cabecera" className="cabecera">
@@ -12,5 +14,8 @@ class CabeceraDashboard extends Component {
         )
     }
 }
+
+
+
 
 export default CabeceraDashboard;
