@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import { Container, Row, Col} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import FormErrors from './FormErrors';
-import Data from './data';
-import BtnLogin from './ButtonLogin';
+import FormErrors from '../Componentes-login/FormErrors';
+import Data from '../Componentes-login/data';
+import BtnLogin from '../Componentes-login/ButtonLogin';
 
 
 const data = Data;

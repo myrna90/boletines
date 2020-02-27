@@ -9,10 +9,9 @@ class CabeceraDashboard extends Component {
     render(){
         return(
             <div id="cabecera" className="cabecera">
-                {/*<BotonMenu/>*/}
-              <i class="material-icons md-48">dashboard</i>
-              <h1 className="h1">Dashboard</h1>
-              </div>
+                <i class="material-icons md-48">dashboard</i>
+                <h1 className="h1">Dashboard</h1>
+            </div>
         )
     }
 }

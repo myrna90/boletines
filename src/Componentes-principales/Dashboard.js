@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import CabeceraDashboard from './CabeceraDashboard';
-import {Link} from 'react-router-dom';
-import Menu from './Menu';
+import CabeceraDashboard from '../Componentes-secundarios/CabeceraDashboard';
 import BotonMenu from '../Componentes-menu/BotonMenu';
 import MenuToggle from '../Componentes-menu/MenuToggle';
 
@@ -24,19 +22,21 @@ class Dashboard extends Component {
     render(){
         return(
             <div className="contenedor contenedor-dash">
-            <MenuToggle visible={this.state.visible}/>
-            <CabeceraDashboard/>
-              <div id="contenido" className="contenido-dash">
-              <div className="grid-contentDash">
-              <BotonMenu toggleMenu={this.toggleMenu}/>
-              <div className="grid-publicados">
-              <h4 className="h4">Boletines</h4>
-              </div>
-              <div className="grid-proyectos">
-              <h4 className="h4">Mis proyectos</h4>
-              </div>
-              </div>
-              </div>
+                <MenuToggle visible={this.state.visible}/>
+                <CabeceraDashboard/>
+                <div id="contenido" className="contenido-dash">
+                    <div className="grid-contentDash">
+                    <div className="contenedor-boton">
+                    <BotonMenu toggleMenu={this.toggleMenu}/>
+                    </div>
+                    <div className="grid-publicados">
+                    <h4 className="h4">Boletines</h4>
+                    </div>
+                    <div className="grid-proyectos">
+                    <h4 className="h4">Mis proyectos</h4>
+                    </div>
+                    </div>
+                </div>
             </div>
             
         )

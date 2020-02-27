@@ -49,7 +49,7 @@
 }
 
 .link-out {
-  margin-top: 22em;
+  margin-top: 23em;
 }
 
 .text-menu {
@@ -75,6 +75,22 @@
     background-image: url();
     transition: transform 0.3s ease-in;
 }*/
+
+.contenedor-boton {
+  height: 32px;
+  display: flex;
+  margin-top: -4.5em;
+  margin-left: -4.5em;
+}
+
+.boton-dash {
+  height: 31px;
+}
+
+.boton-boletines {
+  margin-top: 0.3em;
+  margin-left: 0.5em;
+}
 
 
 

@@ -6,11 +6,12 @@ const FormErrors = ({formErrors}) =>
       if(formErrors[fieldName].length > 0){
         return (
           <p className='formError' key={i}>{fieldName} {formErrors[fieldName]}</p>
-        )        
-      } else {
+          )        
+        } else {
         return '';
-      }
-    })}
+        }
+      })
+    }
   </div>
 
 export default FormErrors;

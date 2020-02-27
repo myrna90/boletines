@@ -5,12 +5,11 @@ class BotonMenu extends Component {
         super(props)
         
     }
-
     render(){
         return(
-            <div className="contenedor-boton">
-            <button className="boton btn" onClick={this.props.toggleMenu}>Menu!</button>
-            </div>
+        <div className="contenedor-boton boton-boletines">
+        <button className="boton-dash boton-boletines btn" onClick={this.props.toggleMenu}>Menu!</button>
+        </div>
         )
     }
 }

@@ -16,7 +16,7 @@ class Autenticacion extends Component{
     constructor(){
         super();
         state={
-            redirectToReferrer: false
+          redirectToReferrer: false
         }
     }
 
@@ -24,7 +24,7 @@ class Autenticacion extends Component{
     login = () => {
         fakeAuth.authenticate(() => {
           this.setState(() => ({
-            redirectToReferrer: true
+          redirectToReferrer: true
           }))
         })
       }
@@ -37,7 +37,7 @@ class Autenticacion extends Component{
         return <Redirect to={from} />
     }
         return(
-            <div></div>
+          <div></div>
         )
     }
 }
