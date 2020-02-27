@@ -1,57 +1,81 @@
-/*.menu {
-  display:block;
-
-  @menu-width:250px;
-
-  div {
-    position:absolute;
-    z-index:2;
-    top:0;
-    width:@menu-width; 
-    height:100%; 
-    box-sizing: border-box;
-    transition: -webkit-transform ease 250ms; 
-    transition: transform ease 250ms;
-
-    &.left {
-      background:#273D7A;
-      left:@menu-width*-1;
-    }
-
-    &.visible.left {
-      transform: translate3d(@menu-width, 0, 0);
-    }
-
-    &.right {
-      background:#6B1919;
-      right:@menu-width*-1;
-    }
-
-    &.visible.right {
-      transform: translate3d(@menu-width*-1, 0, 0);
-    }
-}
-}
-
 .menu {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
+  display: block;
+}
+
+.contenedor-dash {
+  position:absolute;
+  z-index:2;
+  top:0;
+  height: 100%; 
+  box-sizing: border-box; 
+  transition:  ease 250ms; 
+  transition:  ease 250ms;
+}
+
+.contenedor-titulo {
+  display: inline-flex;
+  color: var(--color-white);
+}
+
+.h3 {
+  text-align: left;
+  margin-left: .4em;
+  margin-top: .6em;
+  color: var(--color-white);
+}
+
+.btn-config {
+  display: flex;
+  margin-left: 2em;
+  margin-top: 1.6em;
+
+}
+
+.nav-menu {
+  margin-top: 6em;
+  display: flex;
+  flex-direction: column;
+}
+
+.Link {
+  margin: 1em;
+  color: var(--color-white);
+  display: inline-flex; 
+  transition: 0.3s;
+}
+
+.material-icons .md-24 {
+  line-height: .5em;
+}
+
+.link-out {
+  margin-top: 22em;
+}
+
+.text-menu {
+  margin-left: 1.5em;
+  margin-top: .1em;
+}
+
+.conten-boton {
+  height: 30px;
+  margin-top: -4.9em;
+}
+
+/*.boton::before,
+.boton::after { 
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
+    display: block;
+    width: 30px;
+    height: 20px;
+    background-color: black;
+    background-image: url();
+    transition: transform 0.3s ease-in;
+}*/
 
-  .Link {
-    margin: 1em;
-    color: var(--color-white);
-    display: inline-flex; 
-    transition: 0.3s;
-  }
-*/
+
 
 

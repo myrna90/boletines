@@ -1,0 +1,23 @@
+a {
+    color: var(--color-white)
+  }
+  
+  .cabecera-dashboard{
+    display: flex;
+    border-bottom: .1em solid #bebed2;
+  }
+  
+  .material-icons.md-48 { 
+    font-size: 48px; 
+    margin-left: .2em;
+  }
+  
+  .h1 {
+    text-align: left;
+    margin-top: .3em;
+    width: 6.9em;
+    height: 1.7em;
+    font-size: 1.9em;
+    color: var(--color-grey);
+    padding-left: .5em;
+  }

@@ -2,8 +2,47 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
 class Boletines extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            folio: '',
+            proyecto: '',
+            cliente: '',
+            fecha: '',
+            sistema: '',
+            equipo: '',
+            marca: '',
+            modelo: '',
+            problema: '',
+            solucion: '',
+            usuario: '',
+            departamento: ''
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        const {name, value} = event.target
+        this.setState({[name]: value});
+        
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        const values = 
+        JSON.stringify(this.state);
+        console.log(values);
+    }
+
+    handleFormReset () {
+        this.setState(() => this.state)
+    }
 
     render(){
+        const {folio, proyecto, cliente, fecha, sistema, equipo, marca, modelo, problema, solucion, usuario, departamento} = this.state;
+
         return(
                 /*contenedor general */
             <div className="contenedor">
@@ -28,13 +67,13 @@ class Boletines extends Component{
               <div className="cabecera">
                   <div className="titulo-cabecera">
                   <h3 className="h3-boletin">Crear boletín</h3>
-                  <button type="submit" className="btn-crear">+ Crear</button>
+                  
                   </div>
               </div>
 
                 {/*Contenedor el cual muestra el fomulario para llenar los campos requeridos */}
               <div className="contenido">
-              <form>
+              <form onReset={this.handleFormReset} onSubmit={this.handleSubmit}>
 
                   {/*parte del fomulario para llenar folio */}
                 <div className="div">
@@ -43,8 +82,9 @@ class Boletines extends Component{
                     </div>
                     <div className="contenForm">
                     <label className="label">Numero de folio</label>
-                    <input className="input"  required></input>
+                    <input className="input" name="folio" value={folio} onChange={this.handleChange}  required></input>
                     </div>
+                    <button type="submit" className="btn-crear">+ Crear</button>
                 </div>
 
                     {/*formulario para especificaciones del proyecto */}
@@ -54,37 +94,37 @@ class Boletines extends Component{
                     </div>
                     <div className="contenForm conteinerForm-2">
                     <label className="label">Proyecto</label>
-                    <input className="input" required></input>
+                    <input className="input" name="proyecto" value={proyecto} onChange={this.handleChange} required></input>
                     </div>
 
                     <div className="contenForm conteinerForm-3">
                     <label className="label">Cliente</label>
-                    <input className="input" required></input>
+                    <input className="input" name="cliente" value={cliente} onChange={this.handleChange} required></input>
                     </div>
 
                     <div className="contenForm conteinerForm-3">
                     <label className=" label">Fecha</label>
-                    <input className="input input-xs" required></input>
+                    <input className="input input-xs" name="fecha" value={fecha} onChange={this.handleChange} required></input>
                     </div>
 
                     <div className="contenForm conteinerForm-3">
                     <label className=" label">Sistema</label>
-                    <input className="input" required></input>
+                    <input className="input" name="sistema" value={sistema} onChange={this.handleChange} required></input>
                     </div>
                     <br></br>
                     <div className="contenForm">
                     <label className=" label">Equipo</label>
-                    <input className="input"  required></input>
+                    <input className="input" name="equipo" value={equipo} onChange={this.handleChange}  required></input>
                     </div>
 
                     <div className="contenForm">
                     <label className=" label">Marca</label>
-                    <input className="input"  required></input>
+                    <input className="input" name="marca" value={marca} onChange={this.handleChange}  required></input>
                     </div>
 
                     <div className="contenForm">
                     <label className=" label">Modelo</label>
-                    <input className="input" required></input>
+                    <input className="input" name="modelo" value={modelo} onChange={this.handleChange} required></input>
                     </div>
                 </div>
 
@@ -96,7 +136,7 @@ class Boletines extends Component{
                     <div className="div-img">
                     <div className="contenForm">
                     <label className="label label-text-area">Descripción del problema</label>
-                    <textarea className=" text-problema text"  required></textarea>
+                    <textarea className=" text-problema text" name="problema" value={problema} onChange={this.handleChange} required></textarea>
                     </div>
 
                     <div className="contenForm conten-img">
@@ -108,7 +148,7 @@ class Boletines extends Component{
                     <div className="div-img">
                     <div className="contenForm">
                     <label className="label label-text-area ">Solución del problema</label>
-                    <textarea className=" text-solucion text" required></textarea>
+                    <textarea className=" text-solucion text" name="solucion" value={solucion} onChange={this.handleChange} required></textarea>
                     </div>
 
                     <div className="contenForm conten-img">
@@ -125,12 +165,12 @@ class Boletines extends Component{
                     </div>
                     <div className="contenForm conteinerForm-2">
                     <label className="label">Reporta</label>
-                    <input className="input" required></input>
+                    <input className="input" name="usuario" value={usuario} onChange={this.handleChange} required></input>
                     </div>
 
                     <div className="contenForm conteinerForm-3">
                     <label className="label">Departamento</label>
-                    <input className="input" required></input>
+                    <input className="input" name="departamento" value={departamento} onChange={this.handleChange} required></input>
                     </div>   
                 </div>
                 </form>

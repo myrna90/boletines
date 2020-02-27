@@ -4,6 +4,7 @@ import './Login.css';
 import './Dashboard.css';
 import './Boletines.css';
 import './MenuToggle.css';
+import './cabecera.css';
 import Login from './Components/Login';
 import Dashboard from './Components/Dashboard';
 import Soporte from './Components/Soporte';
