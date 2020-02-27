@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import MenuToggle from '../Componentes-menu/MenuToggle';
+import BotonMenu from '../Componentes-menu/BotonMenu';
 
 class Boletines extends Component{
     constructor(props){
@@ -16,11 +18,17 @@ class Boletines extends Component{
             problema: '',
             solucion: '',
             usuario: '',
-            departamento: ''
+            departamento: '',
+            visible: true
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.toggleMenu = this.toggleMenu.bind(this);
+    }
+
+    toggleMenu() {
+        this.setState({visible: !this.state.visible})
     }
 
     handleChange(event) {
@@ -47,24 +55,11 @@ class Boletines extends Component{
                 /*contenedor general */
             <div className="contenedor">
                 {/* contenedor menu*/}
-                <div className="menu">
-                <div className="contenedor-titulo">
-                <h3 className="h3">Boletines</h3>
-                <div className="btn-config">
-                </div>
-                </div>
-
-                {/*Menu para redireccionar a los componentes */}
-              <div className="nav-menu">
-              <Link to="/Dashboard" className="Link"><div className="img-dash-menu img"><div className="text-menu">Dashboard</div></div></Link>
-              <Link to="/Boletines" className="Link"><div className="img-bole-menu img"><div className="text-menu">Boletines</div></div></Link>
-              <Link to="/Soporte" className="Link"><div className="img-soperte-menu img"><div className="text-menu">Soporte</div></div></Link>
-              <Link to="/" className="Link link-out"><div className="img-out-menu img"><div className="text-menu">Salir</div></div></Link>
-              </div>
-              </div>
+                <MenuToggle visible={this.state.visible}/>
 
                 {/*Contenedor general header */}
               <div className="cabecera">
+              <BotonMenu toggleMenu={this.toggleMenu}/>
                   <div className="titulo-cabecera">
                   <h3 className="h3-boletin">Crear boletín</h3>
                   
