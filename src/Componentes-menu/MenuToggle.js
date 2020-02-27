@@ -6,27 +6,14 @@ import Menu from '../Components/Menu';
 /*Componente el cual contiene el menú que renderiza en el dashboard, 
 al igual que las funciones para hacerlo visible y cuando cambia el estado del botón */
 class MenuToggle extends Component {
-    /*constructor(props) {
+    constructor(props) {
         super(props);
-    
-        this.state = {
-            visible: true  
-        };
-    
-        this.toggleMenu = this.toggleMenu.bind(this);
     }
-    
-    toggleMenu() {
-        this.setState({visible: !this.state.visible})
-    }
-
     render(){
         return(
-            
-                
+            <React.Fragment>
+            {this.props.visible && 
             <div className="menu">
-           
-           {this.state.visible && 
            <div className="menu-toggle">
            <div className="contenedor-titulo">
              <h3 className="h3">Boletines</h3>
@@ -43,11 +30,13 @@ class MenuToggle extends Component {
              </Menu>
            
              </div>
-           </div> }
-             </div> 
+           </div> 
+             </div> }
+            </React.Fragment>
+            
            
         )
-    }*/
+    }
 }
 
 

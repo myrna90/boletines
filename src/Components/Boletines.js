@@ -84,7 +84,7 @@ class Boletines extends Component{
                     <label className="label">Numero de folio</label>
                     <input className="input" name="folio" value={folio} onChange={this.handleChange}  required></input>
                     </div>
-                    <button type="submit" className="btn-crear">+ Crear</button>
+                    <button type="submit" className="btn-crear btn">+ Crear</button>
                 </div>
 
                     {/*formulario para especificaciones del proyecto */}
@@ -129,7 +129,7 @@ class Boletines extends Component{
                 </div>
 
                     {/*parte del formulario para descripcion y solución del problema */}
-                <div className="div">  
+                <div className="div div-textTarea">  
                 <div className="conteiner-numero">
                     <div className="numero">3</div><strong><p className="p">Descripción</p></strong>
                     </div>

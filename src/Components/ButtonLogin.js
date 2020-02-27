@@ -21,7 +21,7 @@ class BtnLogin extends Component {
         return(
 <div>
     {this.renderRedirect()}
-    <button className="btn-login" onClick={this.setRedirect}>Login</button>
+    <button className="btn-login btn" onClick={this.setRedirect}>Login</button>
 </div>
         )
     }

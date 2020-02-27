@@ -15,6 +15,14 @@
   --medida-phone: (max-width: 600px);
   --medida-ipad: (min-width:600px) and (max-width: 991px);
   --media-ipad-pro: (min-width:992px) and (max-width: 1024px);
+  /*medidas, color y bordes de los botones*/
+  --height-boton: 1.9em;
+  --width-boton: 6.87em;
+  --color-boton: #A3E2BA;
+  --border-radius-boton: 5px;
+  --border-boton: none;
+  --align-boton: center;
+  --top-boton: 1px;
 }
 
 body {
@@ -30,6 +38,18 @@ h2 {
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: var(--grid-color-blue);
+}
+
+.btn {
+  text-align: var(--align-boton);
+  width: var(--width-boton);
+  height: var(--height-boton);
+  background-color: var(--color-boton);
+  color: var(--color-white);
+  border-radius: var(--border-radius-boton);
+  color: var(--color-white);
+  border: var(--border-boton);
+  padding-top: var(--top-boton);
 }
 
 @media only screen and (max-width: var(--size-phone)) {}

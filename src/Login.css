@@ -108,16 +108,9 @@
 }
 
 .btn-login{
-  text-align: center;
   margin-top: 1em;
   float: right;
   margin-left: 58em;
-  width: 6.87em;
-  height: 1.9em;
-  background-color: #A3E2BA;
-  border-radius: 5px;
-  color: var(--color-white);
-  border: none;
 }
 
 .a-forgot {

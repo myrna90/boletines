@@ -1,9 +1,8 @@
-/*Diseño boletines
-.link-out-boletin {
-    margin-top: 57em;
-}
-*/
+/*Diseño boletines*/
 
+.contenido{
+    overflow-x: hidden;
+}
 
 .cabecera {
     background-color: #FFFFFF;
@@ -17,14 +16,10 @@
 }
 
 .btn-crear {
-    text-align: center;
-    margin-top: -2em;
-    width: 6.87em;
-    height: 1.9em;
-    background-color: #A3E2BA;
-    border-radius: 5px;
-    border: none;
-    color: var(--color-white);
+    position: relative;
+    margin-top: -9em;
+    float: right;
+    margin-right: 0.8em;
 }
 
 .div {
@@ -38,6 +33,7 @@
 .div-2 {
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .conteiner-numero {
@@ -125,6 +121,7 @@
     padding: 1.5em .8em;
     margin-bottom: -1em;
 }
+
 /*
 @media only screen and (max-width: 600px) {
     .menu {
