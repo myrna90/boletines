@@ -1,6 +1,35 @@
-.menu {
-  display: block;
+@keyframes btn-menu {
+  0%{width: 50px;}
+  100%{width: 200px;}
 }
+
+@keyframes menu-anim {
+  0%{width: 50px;}
+  100%{width: 200px;}
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--grid-color-blue);
+  transition: all 2s ease;
+  animation-duration: 2s;
+}
+
+/*#btn {
+animation-duration: 2s;
+transition: all 2s ease;
+
+}
+
+#btn:active{
+  animation-name: btn-menu;
+  .menu:active {
+  animation-name: menu-anim;
+}
+}*/
+
 
 .contenedor-dash {
   position:absolute;
@@ -8,8 +37,7 @@
   top:0;
   height: 100%; 
   box-sizing: border-box; 
-  transition:  ease 250ms; 
-  transition:  ease 250ms;
+  transition: ease 5s;
 }
 
 .contenedor-titulo {
@@ -91,7 +119,3 @@
   margin-top: 0.3em;
   margin-left: 0.5em;
 }
-
-
-
-

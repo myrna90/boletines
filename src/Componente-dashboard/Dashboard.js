@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CabeceraDashboard from '../Componentes-secundarios/CabeceraDashboard';
+import CabeceraDashboard from '../Componente-dashboard/CabeceraDashboard';
 import BotonMenu from '../Componentes-menu/BotonMenu';
 import MenuToggle from '../Componentes-menu/MenuToggle';
 

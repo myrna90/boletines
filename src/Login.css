@@ -147,21 +147,21 @@
     align-items: stretch;
     justify-content: center;
     width: 375px;
-    height: 104px;
+    height: 120px;
     text-align: center;
     background-color: var(--grid-color-blue);
   }
 
   .titular-inicio {
     text-align: center;
-    margin-top: -3.2em;
+    margin-top: -2.8em;
   }
 
   .conteiner-sesion {
     display: flex;
     flex-wrap: wrap;
     width: 375px;
-    height: 690px;
+    height: 720px;
   }
 
   .text-inicio {

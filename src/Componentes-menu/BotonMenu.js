@@ -8,7 +8,7 @@ class BotonMenu extends Component {
     render(){
         return(
         <div className="contenedor-boton boton-boletines">
-        <button className="boton-dash boton-boletines btn" onClick={this.props.toggleMenu}>Menu!</button>
+        <button id="btn" className="boton-dash boton-boletines btn" onClick={this.props.toggleMenu}>Menu!</button>
         </div>
         )
     }

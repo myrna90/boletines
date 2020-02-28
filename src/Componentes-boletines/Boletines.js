@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MenuToggle from '../Componentes-menu/MenuToggle';
 import BotonMenu from '../Componentes-menu/BotonMenu';
-import FormBoletines from '../Componentes-secundarios/FormBoletines';
+import FormBoletines from '../Componentes-boletines/FormBoletines';
 
 class Boletines extends Component{
     constructor(props){

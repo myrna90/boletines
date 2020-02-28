@@ -33,13 +33,6 @@ h2 {
   color: var(--color-grey);
 }
 
-.menu {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  background-color: var(--grid-color-blue);
-}
-
 .btn {
   text-align: var(--align-boton);
   width: var(--width-boton);

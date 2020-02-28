@@ -5,10 +5,10 @@ import './Dashboard.css';
 import './Boletines.css';
 import './MenuToggle.css';
 import './cabecera.css';
-import Login from './Componentes-principales/Login';
-import Dashboard from './Componentes-principales/Dashboard';
-import Soporte from './Componentes-principales/Soporte';
-import Boletines from './Componentes-principales/Boletines';
+import Login from './Componentes-login/Login';
+import Dashboard from './Componente-dashboard/Dashboard';
+import Soporte from './Componentes-soporte/Soporte';
+import Boletines from './Componentes-boletines/Boletines';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 

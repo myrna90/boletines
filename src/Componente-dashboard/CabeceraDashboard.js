@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import BotonMenu from '../Componentes-menu/BotonMenu';
-
 
 
 /*Componende cabecera que contiene el header del componente dashboard */

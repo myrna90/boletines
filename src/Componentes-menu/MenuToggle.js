@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import Menu from './Menu';
+import Menu from '../Componentes-menu/Menu';
 
 
 /*Componente el cual contiene el menú que renderiza en el dashboard, 
