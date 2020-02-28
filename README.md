@@ -1,7 +1,7 @@
 # Boletínes mejora continúa
 
 
-El proyecto de Boletines de mejora continua, es involucrar a todas las áreas que intervienen en la ejecución y realización de un proyecto (Ventas, Ingeniería, proyectos y Supervisión). 
+El objetivo del proyecto de Boletines de mejora continua, es involucrar a todas las áreas que intervienen en la ejecución y realización de un proyecto (Ventas, Ingeniería, proyectos y Supervisión). 
 
 En el proceso de un proyecto desde su concepción, hasta su realización surgen cambios, mejoras, omisiones, etc…. Ya sea por parte del área de proyectos, cambios en obra, cambios de equipos, cambios en aplicaciones o por cambio de equipo por que se descontinúan… por el motivo que sea, es importante documentar y hacer del conocimiento de todos, los cambios o mejoras que se realizaron, con esto evitaremos cometer los mismos errores, así como actualizarnos en las mejores formas y manera de darle solución a las necesidades del proyecto.
 De esta forma se logrará:
