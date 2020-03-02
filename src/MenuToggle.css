@@ -1,45 +1,3 @@
-@keyframes btn-menu {
-  0%{width: 50px;}
-  100%{width: 200px;}
-}
-
-@keyframes menu-anim {
-  0%{width: 50px;}
-  100%{width: 200px;}
-}
-
-.menu {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  background-color: var(--grid-color-blue);
-  transition: all 2s ease;
-  animation-duration: 2s;
-}
-
-/*#btn {
-animation-duration: 2s;
-transition: all 2s ease;
-
-}
-
-#btn:active{
-  animation-name: btn-menu;
-  .menu:active {
-  animation-name: menu-anim;
-}
-}*/
-
-
-.contenedor-dash {
-  position:absolute;
-  z-index:2;
-  top:0;
-  height: 100%; 
-  box-sizing: border-box; 
-  transition: ease 5s;
-}
-
 .contenedor-titulo {
   display: inline-flex;
   color: var(--color-white);
@@ -77,7 +35,7 @@ transition: all 2s ease;
 }
 
 .link-out {
-  margin-top: 23em;
+  margin-top: 22em;
 }
 
 .text-menu {
@@ -88,34 +46,4 @@ transition: all 2s ease;
 .conten-boton {
   height: 30px;
   margin-top: -4.9em;
-}
-
-/*.boton::before,
-.boton::after { 
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 30px;
-    height: 20px;
-    background-color: black;
-    background-image: url();
-    transition: transform 0.3s ease-in;
-}*/
-
-.contenedor-boton {
-  height: 32px;
-  display: flex;
-  margin-top: -4.5em;
-  margin-left: -4.5em;
-}
-
-.boton-dash {
-  height: 31px;
-}
-
-.boton-boletines {
-  margin-top: 0.3em;
-  margin-left: 0.5em;
 }

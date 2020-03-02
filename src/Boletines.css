@@ -4,17 +4,6 @@
     overflow-x: hidden;
 }
 
-.cabecera {
-    background-color: #FFFFFF;
-    border-bottom: .1em solid var(--color-grey-border);
-}
-
-.h3-boletin {
-    color: #3E3E3E;
-    margin-left: 1em;
-    margin-top: .3em;
-}
-
 .btn-crear {
     position: relative;
     margin-top: -9em;

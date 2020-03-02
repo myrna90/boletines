@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MenuToggle from '../Componentes-menu/MenuToggle';
-import BotonMenu from '../Componentes-menu/BotonMenu';
 import FormBoletines from '../Componentes-boletines/FormBoletines';
 
 class Boletines extends Component{
@@ -21,16 +20,16 @@ class Boletines extends Component{
 
         return(
             /*contenedor general */
-        <div className="contenedor">
+        <div className="conteiner">
             {/* contenedor menu*/}
-            <MenuToggle visible={this.state.visible}/>
+            <MenuToggle/>
 
             {/*Contenedor general header */}
-            <div className="cabecera">
-            <BotonMenu toggleMenu={this.toggleMenu}/>
-                <div className="titulo-cabecera">
-                <h3 className="h3-boletin">Crear boletín</h3>
-                </div>
+            <div className="header">
+                
+                <i class="material-icons md-48">line_weight</i>
+                <h1 className="h1">Crear boletín</h1>
+               
             </div>
             <FormBoletines/>
         </div>

@@ -1,3 +1,6 @@
+.contenido-soporte {
+    background-color: var(--color-white-light);
+}
 @media only screen and (max-width: 600px) {
     .menu {
         height: 6.2em;

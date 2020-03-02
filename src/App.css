@@ -23,10 +23,43 @@
   --border-boton: none;
   --align-boton: center;
   --top-boton: 1px;
+  --border-line: solid 1px;
 }
 
 body {
   background-color: var(--color-white);
+}
+
+.conteiner {
+  display: grid;
+  grid-template: 50px auto/auto 1fr;
+  grid-template-areas: "aside header" "aside section";
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.aside {
+  grid-area: aside;
+  background-color: var(--grid-color-blue);
+  width: 200px;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.header {
+  grid-area: header;
+  background-color: var(--color-white-light);
+  display: flex;
+  color: var(--color-grey-border);
+  overflow: hidden;
+  border-bottom: var(--border-line) var(--color-grey-border);
+}
+
+.section {
+  grid-area: section;
+  background-color: var(--color-white);
+  overflow-x: hidden;
 }
 
 h2 {
