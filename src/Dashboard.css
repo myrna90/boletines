@@ -35,27 +35,5 @@
 }
 
 @media only screen and (max-width: 600px){
-  .contenedor {
-    grid-template-areas: "aside header" " aside conten";
-    grid-template-rows: 50px auto;
-    min-width: 375px;
-    max-width: 600px;
-    max-height: 812px;
-  }
-
-  .menu {
-    display: hidden;
-    position: fixed;
-    top: 50px;
-    width: 200px;
-  }
-
-.h3 {
-  margin-top: -.2em;
-  margin-left: .5em;
-  }
-.btn-config {
-  margin-top: 0em;
-  margin-left: 10em;
-  }
+  
 }

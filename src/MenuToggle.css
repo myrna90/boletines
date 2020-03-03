@@ -1,49 +1,112 @@
+.hamburger{
+	position:fixed;
+  background-color:transparent;
+	left:0;
+	top:0;
+	height: 1.87em;
+	width: 1.87em;
+	padding: 1.25em .812em;
+	-webkit-transform:translate3d(0, 0, 0);
+	transform:translate3d(0, 0, 0);
+	-webkit-transition:-webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	z-index:1002;
+	cursor:pointer;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none
+  }
+
+
+._layer{
+	background:var(--color-white);
+	margin-bottom: .25em;
+	border-radius: .125em;
+	width: 1.75em;
+	height: .25em;
+	opacity:1;
+	-webkit-transform:translate3d(0, 0, 0);
+	transform:translate3d(0, 0, 0);
+	-webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  }
+
+.hamburger:hover .-top{
+	-webkit-transform:translateY(-100%);
+	-ms-transform:translateY(-100%);
+	transform:translateY(-100%);
+  } 
+
+.hamburger:hover .-bottom{
+	-webkit-transform:translateY(100%);
+	-ms-transform:translateY(100%);
+	transform:translateY(100%);
+  }
+  
+/*.hamburger.is-active .-top{
+	-webkit-transform:translateY(200%) rotate(45deg) !important;
+	-ms-transform:translateY(200%) rotate(45deg) !important;
+	transform:translateY(200%) rotate(45deg) !important;
+  }
+  .hamburger.is-active .-mid{
+	opacity:0;
+  }
+
+.hamburger.is-active .-bottom{
+	-webkit-transform:translateY(-200%) rotate(135deg) !important;
+	-ms-transform:translateY(-200%) rotate(135deg) !important;
+	transform:translateY(-200%) rotate(135deg) !important;
+  }*/
+
+
+
 .contenedor-titulo {
   display: inline-flex;
   color: var(--color-white);
-}
+  }
 
 .h3 {
   text-align: left;
   margin-left: .4em;
   margin-top: .6em;
   color: var(--color-white);
-}
+  }
 
 .btn-config {
   display: flex;
-  margin-left: 2em;
-  margin-top: 1.6em;
+  margin-left: 9em;
+  margin-top: 1.2em;
 
-}
+  }
 
 .nav-menu {
   margin-top: 6em;
   display: flex;
   flex-direction: column;
-}
+  }
 
 .Link {
   margin: 1em;
   color: var(--color-white);
   display: inline-flex; 
   transition: 0.3s;
-}
+  }
 
 .material-icons .md-24 {
   line-height: .5em;
-}
+  }
 
 .link-out {
-  margin-top: 22em;
-}
+  margin-top: 23em;
+  }
 
 .text-menu {
   margin-left: 1.5em;
-  margin-top: .1em;
-}
+  margin-top: 0em;
+  }
 
 .conten-boton {
-  height: 30px;
+  height: 1.87em;
   margin-top: -4.9em;
-}
+  }

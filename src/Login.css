@@ -83,16 +83,16 @@
 }
 
 .img-correo {
-  width: 20px;
-  height: 16px;
+  width: 1.25em;
+  height: 1em;
   background-image: url(../src/imgs/correo.png);
   margin-top: -1.5em;
   margin-left: 20.4em;
 }
 
 .img-contraseña {
-  width: 16px;
-  height: 21px;
+  width: 1em;
+  height: 1.31em;
   background-image: url(../src/imgs/contraseña.png);
   margin-top: -1.8em;
   margin-left: 20.5em;
@@ -127,7 +127,7 @@
 }
 
 .footer{
-  height: 50px;
+  height: 3.12em;
   color: var(--color-grey);
   font-size: .7em;
   opacity: 0.9;
@@ -138,7 +138,7 @@
 /*Media querie la cual controla el responsive para dispositivos moviles */
 @media only screen and (max-width: 600px){
   .row-login {
-    margin-top: 20px;
+    margin-top: 1.25em;
   }
   
   .conteiner-titulo{
@@ -146,8 +146,8 @@
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
-    width: 375px;
-    height: 104px;
+    width: 23.44em;
+    height: 6.5em;
     text-align: center;
     background-color: var(--grid-color-blue);
   }
@@ -160,8 +160,8 @@
   .conteiner-sesion {
     display: flex;
     flex-wrap: wrap;
-    width: 375px;
-    height: 690px;
+    width: 23.44em;
+    height: 43.12em;
   }
 
   .text-inicio {
@@ -171,14 +171,14 @@
   .text-conten{
     margin-top: 0px;
     margin-left: 11em;
-    font-size: 18px;
-    margin-right: 280px;
+    font-size: 1.12em;
+    margin-right: 17.5;
   }
 
   .login{
-    margin-left: 190px;
+    margin-left: 11.87em;
     margin-top: -9em;
-    font-size: 18px;
+    font-size: 1.12em;
   }
 
   .form{
@@ -217,14 +217,14 @@
 @media(min-width:600px) and (max-width: 991px){
   
   .row-login {
-    margin-top: 124px;
+    margin-top: 7.75em;
     width: 62em;
     height: 75em;
   }
   
   .conteiner-titulo{
     width: 55em;
-    height: 150px;
+    height: 9.37em;
     text-align: center;
     background-color: var(--grid-color-blue);
   }
@@ -238,7 +238,7 @@
     margin-top: 0em;
     display: flex;
     flex-wrap: wrap;
-    height: 1031px;
+    height: 64.44em;
     margin-left: 7em;
     width: 48em;
   }
@@ -250,14 +250,14 @@
   .text-conten{
     margin-top: 2em;
     margin-left: 2em;
-    font-size: 26px;
+    font-size: 1.62em;
 
   }
 
   .login{
     margin-left: 2em;
     margin-top: -9em;
-    font-size: 26px;
+    font-size: 1.62em;
   }
   .panel-default {
     margin-left: 6.5em;
@@ -293,7 +293,7 @@
   }
 
   .conteiner-titulo {
-    width: 1024px;
+    width: 64em;
   }
 
   .row-login {
@@ -312,6 +312,6 @@
 
   .footer {
     margin-top: 7em;
-    margin-left: 400px;
+    margin-left: 25em;
   }
 }

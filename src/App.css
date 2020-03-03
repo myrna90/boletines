@@ -19,11 +19,11 @@
   --height-boton: 1.9em;
   --width-boton: 6.87em;
   --color-boton: #A3E2BA;
-  --border-radius-boton: 5px;
+  --border-radius-boton: .31em;
   --border-boton: none;
   --align-boton: center;
-  --top-boton: 1px;
-  --border-line: solid 1px;
+  --top-boton: .06em;
+  --border-line: solid .06em;
 }
 
 body {
@@ -32,7 +32,7 @@ body {
 
 .conteiner {
   display: grid;
-  grid-template: 50px auto/auto 1fr;
+  grid-template: 3.12em auto/auto 1fr;
   grid-template-areas: "aside header" "aside section";
   height: 100vh;
   box-sizing: border-box;
@@ -42,7 +42,7 @@ body {
 .aside {
   grid-area: aside;
   background-color: var(--grid-color-blue);
-  width: 200px;
+  width: 12.5em;
   transition: all 1s;
   overflow: hidden;
 }

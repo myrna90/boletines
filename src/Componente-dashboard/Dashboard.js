@@ -4,7 +4,6 @@ import MenuToggle from '../Componentes-menu/MenuToggle';
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
 se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
 class Dashboard extends Component {
-    
     render(){
         return(
             <div className="conteiner contenedor-dash">
