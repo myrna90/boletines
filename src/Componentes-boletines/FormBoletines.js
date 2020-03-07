@@ -80,20 +80,7 @@ class FormBoletines extends Component {
                 <input className="input" name="sistema" value={sistema} onChange={this.handleChange} required></input>
                 </div>
                 <br></br>
-                <div className="contenForm">
-                <label className=" label">Equipo</label>
-                <input className="input" name="equipo" value={equipo} onChange={this.handleChange}  required></input>
-                </div>
-
-                <div className="contenForm">
-                <label className=" label">Marca</label>
-                <input className="input" name="marca" value={marca} onChange={this.handleChange}  required></input>
-                </div>
-
-                <div className="contenForm">
-                <label className=" label">Modelo</label>
-                <input className="input" name="modelo" value={modelo} onChange={this.handleChange} required></input>
-                </div>
+               
             </div>
 
                 {/*parte del formulario para descripcion y solución del problema */}
@@ -101,7 +88,7 @@ class FormBoletines extends Component {
                 <div className="conteiner-numero">
                 <div className="numero">3</div><strong><p className="p">Descripción</p></strong>
                 </div>
-
+                <div className="div1">
                 <div className="div-img">
                 <div className="contenForm">
                 <label className="label label-text-area">Descripción del problema</label>
@@ -125,6 +112,24 @@ class FormBoletines extends Component {
                 <div className=" conten-export-img"  type="file" required><img className="img-export"/></div>
                 </div> 
                 </div>
+                </div>
+                <div className="div2">
+                <div className="contenForm">
+                <label className=" label">Equipo</label>
+                <input className="input" name="equipo" value={equipo} onChange={this.handleChange}  required></input>
+                </div>
+
+                <div className="contenForm">
+                <label className=" label">Marca</label>
+                <input className="input" name="marca" value={marca} onChange={this.handleChange}  required></input>
+                </div>
+
+                <div className="contenForm">
+                <label className=" label">Modelo</label>
+                <input className="input" name="modelo" value={modelo} onChange={this.handleChange} required></input>
+                </div>
+                </div>
+                
             </div>
 
                 {/*parte del formulario para completar datos del usuario */}

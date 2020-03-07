@@ -9,6 +9,7 @@ import Login from './Componentes-login/Login';
 import Dashboard from './Componente-dashboard/Dashboard';
 import Soporte from './Componentes-soporte/Soporte';
 import Boletines from './Componentes-boletines/Boletines';
+import MiPerfil from './Componente-myprofile/MiPerfil';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
@@ -19,6 +20,7 @@ function App() {
       <Route exact path="/" component={Login} />
       <Route path="/Dashboard" component={Dashboard} />
       <Route path="/Boletines" component={Boletines} />
+      <Route path="/MiPerfil" component={MiPerfil}/>
       <Route path="/Soporte" component={Soporte} />
     </Router>
   );

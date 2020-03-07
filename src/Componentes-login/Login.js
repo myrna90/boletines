@@ -2,22 +2,18 @@ import React, {Component} from "react";
 import { Container, Row, Col} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FormErrors from '../Componentes-login/FormErrors';
-import Data from '../Componentes-login/data';
 import BtnLogin from '../Componentes-login/ButtonLogin';
-
-
-const data = Data;
+import Logo from '../imgs/logotn.png';
 
 class Login extends Component {
      /*Función login  */
      constructor(props){
         super(props);
         this.state = {
-            data: Data,
-            email: "",
+            userName: "",
             password: "",
-            formErrors: {email: '', password: ''},
-            emailValid: false,
+            formErrors: {userName: '', password: ''},
+            userNamelValid: false,
             passwordValid: false,
             formValid: false
            
@@ -40,13 +36,13 @@ class Login extends Component {
     
       validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors;
-        let emailValid = this.state.emailValid;
+        let userNameValid = this.state.userNameValid;
         let passwordValid = this.state.passwordValid;
     
         switch(fieldName) {
-          case 'email':
-            emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-            fieldValidationErrors.email = emailValid ? '' : ' is invalid ';
+          case 'userName':
+            userNameValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+            fieldValidationErrors.userName = userNameValid ? '' : ' is invalid ';
             break;
           case 'password':
             passwordValid = value.length >= 2;
@@ -56,13 +52,13 @@ class Login extends Component {
             break;
         }
         this.setState({formErrors: fieldValidationErrors,
-                        emailValid: emailValid,
+                        userNameValid: userNameValid,
                         passwordValid: passwordValid
                       }, this.validateForm);
       }
     
       validateForm() {
-        this.setState({formValid: this.state.emailValid && this.state.passwordValid});
+        this.setState({formValid: this.state.userNameValid && this.state.passwordValid});
       }
     
       errorClass(error) {
@@ -80,8 +76,11 @@ class Login extends Component {
             <Row className="row row-login">
               {/*Contenedor titulo */}
             <Col xs={12} sm="auto" md="auto"  xl="auto" lg={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
+               
                 <h1 className="titular-inicio">Boletines</h1>
-                <div className="miImg"></div> 
+                <h5 className='sub-titulo'>Mejora continua</h5>
+               <img src={Logo} className="logotn"/>
+                
             </Col>
             {/*Contenedor login form */}
             <Col xs={12} sm="auto" xl="auto" lg={7} className="conteiner-sesion" style={{backgroundColor: "white"}}>
@@ -94,12 +93,12 @@ class Login extends Component {
                 <form className="form">
                     
                       {/*div para introducir email */}
-                    <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
-                    <label className="text-login text-user" htmlFor="email">Correo electronico:</label>
-                    <input required type= "email" className="input-login" name="email" 
-                    value={this.state.email}
+                    <div className={`form-group ${this.errorClass(this.state.formErrors.userName)}`}>
+                    <label className="text-login text-user" htmlFor="email">Nombre de usuario:</label>
+                    <input required type= "userName" className="input-login" name="userName" 
+                    value={this.state.userName}
                     onChange={this.handleUserInput} 
-                    placeholder="Usuario@telenetdemexico.com"
+                    placeholder="Myrna Mares"
                     />
                     <div className="img-correo"></div>
                     </div>
@@ -130,6 +129,7 @@ class Login extends Component {
                 <div className="panel panel-default" formErrors={this.state.form}>
                 <FormErrors formErrors={this.state.formErrors} />
                 </div>
+                <div className="miImg"></div> 
             </Col>
             </Row>
             <div className="footer">

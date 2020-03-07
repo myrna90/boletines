@@ -8,7 +8,6 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
-    "express": "^4.17.1",
     "init": "^0.1.2",
     "material-design-icons": "^3.0.1",
     "node-sass": "^4.13.1",
