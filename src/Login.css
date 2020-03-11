@@ -122,6 +122,10 @@
   color:#5a5a5a;
 }
 
+.custom-control{
+  margin-top: 1em;
+}
+
 .btn-login{
   margin-top: 1em;
   float: right;

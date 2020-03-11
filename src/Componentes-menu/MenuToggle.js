@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 class MenuToggle extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            redirect: false
+        }
         this.aside = React.createRef();
         this.changeWidth = this.changeWidth.bind(this);
     }
@@ -15,6 +18,19 @@ class MenuToggle extends Component {
            this.aside.current.style.width = '12.5em'     
         }
          //this.aside.current.style.width = "3.44em";
+    }
+
+    setRedirect = () => {
+        this.setState({
+            redirect: true
+        })
+        localStorage.clear('user')
+    }
+
+    renderRedirect = () =>{
+        if(this.state.redirect) {
+            return <Redirect to='/'/>
+        }
     }
 
     render(){
@@ -37,7 +53,11 @@ class MenuToggle extends Component {
                 <Link to="/Boletines" className="Link"><i class="material-icons md-24">line_weight</i><div className="text-menu">Boletines</div></Link>
                 <Link to="MiPerfil" className="Link"><i class="material-icons md-24">person</i><div className="text-menu">Mi Perfil</div></Link>
                 <Link to="/Soporte" className="Link"><i class="material-icons md-24">help_outline</i><div className="text-menu">Soporte</div></Link>
-                <Link to="/" className="Link link-out"><i class="material-icons md-24">exit_to_app</i><div className="text-menu">Salir</div></Link>
+                <div>
+                {this.renderRedirect()}
+                <button to="/" type="submit" onClick={this.setRedirect} className="Link link-out"><i class="material-icons md-24">exit_to_app</i><div className="text-menu">Salir</div></button>
+                </div>
+                
             </div>
             </div> 
         </div> 
