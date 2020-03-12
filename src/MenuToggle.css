@@ -44,7 +44,7 @@
 	transform:translateY(100%);
   }
   
-/*.hamburger.is-active .-top{
+.hamburger.is-active .-top{
 	-webkit-transform:translateY(200%) rotate(45deg) !important;
 	-ms-transform:translateY(200%) rotate(45deg) !important;
 	transform:translateY(200%) rotate(45deg) !important;
@@ -57,7 +57,7 @@
 	-webkit-transform:translateY(-200%) rotate(135deg) !important;
 	-ms-transform:translateY(-200%) rotate(135deg) !important;
 	transform:translateY(-200%) rotate(135deg) !important;
-  }*/
+  }
 
 
 
@@ -99,6 +99,8 @@
 
 .link-out {
   margin-top: 21.5em;
+  background-color: transparent;
+  border: none;
   }
 
 .text-menu {

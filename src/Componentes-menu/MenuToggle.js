@@ -17,7 +17,6 @@ class MenuToggle extends Component {
         } else {
            this.aside.current.style.width = '12.5em'     
         }
-         //this.aside.current.style.width = "3.44em";
     }
 
     setRedirect = () => {

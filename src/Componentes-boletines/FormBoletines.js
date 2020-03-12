@@ -60,6 +60,7 @@ class FormBoletines extends Component {
                 <div className="conteiner-numero">
                 <div className="numero">2</div><strong><p className="p">Proyecto</p></strong>
                 </div>
+                <div className="div-conteinerForm">
                 <div className="contenForm conteinerForm-2">
                 <label className="label">Proyecto</label>
                 <input className="input" name="proyecto" value={proyecto} onChange={this.handleChange} required></input>
@@ -79,7 +80,7 @@ class FormBoletines extends Component {
                 <label className=" label">Sistema</label>
                 <input className="input" name="sistema" value={sistema} onChange={this.handleChange} required></input>
                 </div>
-                <br></br>
+                </div>
                
             </div>
 
@@ -88,7 +89,7 @@ class FormBoletines extends Component {
                 <div className="conteiner-numero">
                 <div className="numero">3</div><strong><p className="p">Descripción</p></strong>
                 </div>
-                <div className="div1">
+                <div className="div1 div-top">
                 <div className="div-img">
                 <div className="contenForm">
                 <label className="label label-text-area">Descripción del problema</label>
@@ -97,7 +98,7 @@ class FormBoletines extends Component {
 
                 <div className="contenForm conten-img">
                 <label className="label label-img">Problema imagen</label>
-                <div className=" conten-export-img"  type="file" required><img className="img-export"/></div>
+                <div className=" conten-export-img"  type="file" required><i className="img-export" class="material-icons md-50">add_photo_alternate</i></div>
                 </div>
                 </div>
 
@@ -109,24 +110,24 @@ class FormBoletines extends Component {
 
                 <div className="contenForm conten-img">
                 <label className="label label-img">Solución imagen</label>
-                <div className=" conten-export-img"  type="file" required><img className="img-export"/></div>
+                <div className=" conten-export-img"  type="file" required><i className="img-export" class="material-icons md-50">add_photo_alternate</i></div>
                 </div> 
                 </div>
                 </div>
-                <div className="div2">
+                <div className="div2 div-top">
                 <div className="contenForm">
                 <label className=" label">Equipo</label>
-                <input className="input" name="equipo" value={equipo} onChange={this.handleChange}  required></input>
+                <input className="input" name="equipo" value={equipo} onChange={this.handleChange}></input>
                 </div>
 
                 <div className="contenForm">
                 <label className=" label">Marca</label>
-                <input className="input" name="marca" value={marca} onChange={this.handleChange}  required></input>
+                <input className="input" name="marca" value={marca} onChange={this.handleChange}></input>
                 </div>
 
                 <div className="contenForm">
                 <label className=" label">Modelo</label>
-                <input className="input" name="modelo" value={modelo} onChange={this.handleChange} required></input>
+                <input className="input" name="modelo" value={modelo} onChange={this.handleChange}></input>
                 </div>
                 </div>
                 
@@ -137,7 +138,7 @@ class FormBoletines extends Component {
                 <div className="conteiner-numero">
                 <div className="numero">4</div><strong><p className="p">Usuario</p></strong>
                 </div>
-
+                <div className="div-conteinerForm">
                 <div className="contenForm conteinerForm-2">
                 <label className="label">Reporta</label>
                 <input className="input" name="usuario" value={usuario} onChange={this.handleChange} required></input>
@@ -146,7 +147,9 @@ class FormBoletines extends Component {
                 <div className="contenForm conteinerForm-3">
                 <label className="label">Departamento</label>
                 <input className="input" name="departamento" value={departamento} onChange={this.handleChange} required></input>
-                </div>   
+                </div> 
+                </div>
+                  
             </div>
             </form>
         </div>

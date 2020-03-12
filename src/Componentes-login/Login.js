@@ -80,7 +80,7 @@ class Login extends Component {
                
                 <h1 className="titular-inicio">Boletines</h1>
                 <h5 className='sub-titulo'>Mejora continua</h5>
-               <img src={Logo} className="logotn"/>
+                <img src={Logo} className="logotn"/>
                 
             </Col>
             {/*Contenedor login form */}
@@ -95,7 +95,7 @@ class Login extends Component {
                 <form className="form" onSubmit={this.handleFormSubmit}>
                 
                       {/*div para introducir email */}
-                    <div /*className={`form-group ${this.errorClass(this.state.formErrors.user)}`}*/>
+                    <div>
                     <label className="text-login text-user" htmlFor="user">Nombre de usuario:</label>
                     <input required type= "text" className="input-login" name="user" 
                     value={this.state.user}
@@ -106,7 +106,7 @@ class Login extends Component {
                     </div>
 
                       {/*div para introducir password */}
-                    <div /*className={`form-group ${this.errorClass(this.state.formErrors.password)}`}*/>
+                    <div >
                     <label className="text-login text-passw" htmlFor="password">Contraseña: </label>
                     <input className="input-login" type="password" name="password" 
                     value={this.state.password}
@@ -127,8 +127,6 @@ class Login extends Component {
                     Olvidaste tu <Link className="a-forgot" onClick={this.btnForgot}>contraseña?</Link>
                 </p>
                 </form>
-                </div>
-                <div className="panel panel-default" formErrors={this.state.form}>
                 </div>
                 <div className="miImg"></div> 
             </Col>

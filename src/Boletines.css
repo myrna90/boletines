@@ -48,6 +48,12 @@
     margin-left: 25px;
 }
 
+.div-conteinerForm {
+    display: inline-flex;
+    margin-left: -8em;
+    margin-top: 2em;
+}
+
 .input {
     background-color: white;
     width: 15em;
@@ -94,14 +100,10 @@
     margin-left: 2.4em;
 }
 
-.img-export {
-    width: 4em;
-    height: 4em;
-    /*puedes usar los iconos en vez de agregar el fondo o busca una mejor imagen*/
-    background-image: url(../src/imgs/img.png);
-    /*Centrar la imagen sin usar medidas estáticas*/
-    margin-top: 2.5em;
-    border-radius: .8em;
+.material-icons.md-50 {
+    font-size: 6.25em;
+    color: var(--color-grey-border-img);
+    margin-top: .2em;
 }
 
 .label {
@@ -111,6 +113,23 @@
     margin-bottom: -1em;
 }
 
+.div-textTarea {
+  display: flex;
+  flex-wrap: wrap;
+  height: 33em;
+  overflow: hidden;
+}
+
+.div-top {
+    margin-top: 2em;
+}
+.div1 {
+    margin-left: -11em;
+}
+
+.div2 {
+    margin-left: 8em;
+}
 /*
 @media only screen and (max-width: 600px) {
     .menu {
