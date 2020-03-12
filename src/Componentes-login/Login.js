@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import BtnLogin from '../Componentes-login/ButtonLogin';
 import Logo from '../imgs/logotn.png';
 import data from '../data.json';
+import axios from 'axios';
 
 const showData = data.map((data) => {
   return (
@@ -28,7 +29,7 @@ class Login extends Component {
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
-    /*auth(user, password){
+    /*auth(){
       fetch('http://10.10.1.24:3000/auth/signin',
       {
         method: 'POST',
@@ -42,6 +43,24 @@ class Login extends Component {
       })
       .then(res => res.json)
       .catch(error => console.error('Error:', error))
+    }*/
+
+    /*authLogin() {
+      axios({
+        url: 'http://10.10.1.24:3000/auth/signin',
+        method: 'post',
+        data: JSON.stringify(cn),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(Response => {
+        //
+        return Response.data
+      }).then(data => {
+        console.log(data)
+      }).catch(err => {
+        console.log(err)
+      })
     }*/
 
     
