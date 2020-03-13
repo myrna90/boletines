@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MenuToggle from '../Componentes-menu/MenuToggle';
+import UsuarioCabecera from '../Componentes-menu/Usuario-cabecera';
 
 class Soporte extends Component{
     constructor(props) {
@@ -20,8 +21,9 @@ class Soporte extends Component{
             <div className="contenedor conteiner">
               <MenuToggle/>
               <div className="cabecera-soporte header">
-                  <i class="material-icons md-48">help_outline</i>
+                  <i class="material-icons md-40">help_outline</i>
                   <h1 className="h1">Soporte</h1>
+                  <UsuarioCabecera/>
                   </div>
               <div className="contenido-soporte section">
                   

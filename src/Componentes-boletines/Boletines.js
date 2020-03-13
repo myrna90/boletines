@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MenuToggle from '../Componentes-menu/MenuToggle';
 import FormBoletines from '../Componentes-boletines/FormBoletines';
+import UsuarioCabecera from '../Componentes-menu/Usuario-cabecera';
 
 class Boletines extends Component{
     render(){
@@ -11,8 +12,9 @@ class Boletines extends Component{
             <MenuToggle/>
             {/*Contenedor general header */}
             <div className="header">
-                <i class="material-icons md-48">line_weight</i>
+                <i class="material-icons md-40">line_weight</i>
                 <h1 className="h1">Crear boletín</h1>
+                <UsuarioCabecera/>
             </div>
             <FormBoletines/>
         </div>

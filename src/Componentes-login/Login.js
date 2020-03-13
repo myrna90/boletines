@@ -51,6 +51,7 @@ class Login extends Component {
         method: 'post',
         data: JSON.stringify(cn),
         headers: {
+          Authorization: 'Bearer Token',
           'Content-Type': 'application/json'
         }
       }).then(Response => {

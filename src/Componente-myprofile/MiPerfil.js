@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import MenuToggle from '../Componentes-menu/MenuToggle';
+import UsuarioCabecera from '../Componentes-menu/Usuario-cabecera';
 
 class MiPerfil extends Component {
     render(){
@@ -7,8 +8,9 @@ class MiPerfil extends Component {
             <div className="conteiner contenedor-perfil">
                 <MenuToggle/>
                 <div id="cabecera" className="header">
-                <i class="material-icons md-48">person</i>
+                <i class="material-icons md-40">person</i>
                 <h1 className="h1">Perfil</h1>
+                <UsuarioCabecera/>
                 </div>
                 <div id="contenido" className="contenido contenido-perfil section">
 
