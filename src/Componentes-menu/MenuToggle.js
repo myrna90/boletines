@@ -50,7 +50,7 @@ class MenuToggle extends Component {
             <div className="nav-menu">
                 <Link to="/Dashboard" className="Link"><i class="material-icons md-24">dashboard</i><div className="text-menu">Dashboard</div></Link>
                 <Link to="/Boletines" className="Link"><i class="material-icons md-24">line_weight</i><div className="text-menu">Boletines</div></Link>
-                <Link to="MiPerfil" className="Link"><i class="material-icons md-24">person</i><div className="text-menu">Mi Perfil</div></Link>
+                <Link to="/MiPerfil" className="Link"><i class="material-icons md-24">person</i><div className="text-menu">Mi Perfil</div></Link>
                 <Link to="/Soporte" className="Link"><i class="material-icons md-24">help_outline</i><div className="text-menu">Soporte</div></Link>
                 <div>
                 {this.renderRedirect()}

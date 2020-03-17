@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 :root {
   --grid-color-blue: #004040;
-  --color-white: whitesmoke;
+  --color-white: #FBFBFB;
   --color-white-light: #FFFFFF;
   --color-grey: #3e3e3e;
   --color-blue: #007F7F;
@@ -13,6 +13,8 @@
   --color-border-input: #A7A7A7;
   --color-texts: #707070;
   --color-borde-redireccion: #99125C;
+  --color-pink: #D47F7F;
+  --color-boton: #A3E2BA;
   /*Incluye algunas medidas que estes usando con frecuencia*/
   /*También las medidas de cada dispositivo para el responsive design*/
   --medida-phone: (max-width: 600px);
@@ -21,12 +23,12 @@
   /*medidas, color y bordes de los botones*/
   --height-boton: 1.9em;
   --width-boton: 6.87em;
-  --color-boton: #A3E2BA;
-  --border-radius-boton: .31em;
+  --border-radius-boton: .32em;
   --border-boton: none;
   --align-boton: center;
   --top-boton: .06em;
   --border-line: solid .06em;
+  --boxShadow-dash: 0px 1px 6px 0px rgba(0,0,0,0.16);
 }
 
 body {

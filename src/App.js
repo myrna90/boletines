@@ -7,6 +7,7 @@ import './MenuToggle.css';
 import './cabecera.css';
 import './Perfil.css';
 import './Soporte.css';
+import './ListaBoletines.css';
 import Login from './Componentes-login/Login';
 import Dashboard from './Componente-dashboard/Dashboard';
 import Soporte from './Componentes-soporte/Soporte';
@@ -14,6 +15,7 @@ import Boletines from './Componentes-boletines/Boletines';
 import MiPerfil from './Componente-myprofile/MiPerfil';
 //import PageNotFound from './Componente-pageNotFound/PageNotFound';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import BoletinesView from './Componente-dashboard/BoletinesView';
 
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
       <Route path="/Boletines" component={Boletines} />
       <Route path="/MiPerfil" component={MiPerfil}/>
       <Route path="/Soporte" component={Soporte} />
+      <Route path="/BoletinView" component={BoletinesView}/>
       {/*<Route component={PageNotFound}/>*/}
     </Router>
   );

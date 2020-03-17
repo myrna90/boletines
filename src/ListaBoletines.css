@@ -1,0 +1,7 @@
+.boletin-select {
+    margin: 2em;
+    background-color: var(--color-white-light);
+    width: 45em;
+    height: 40em;
+    color: var(--color-grey);
+}

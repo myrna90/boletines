@@ -5,7 +5,7 @@
 }
 
 .grid-contentDash {
-  background-color: var(--color-white-light);
+  background-color: var(--color-white);
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
@@ -20,18 +20,103 @@
   color: var(--color-blue-bajo);
 }
 
+.grids-dash {
+  background-color: var(--color-white-light);
+  margin-top: -2em;
+  box-shadow: var(--boxShadow-dash);
+  border-radius: var(--border-radius-boton);
+}
+
 .grid-publicados {
     width: 28.1em;
     height: 22.6em;
     margin-left: -1em;
-    box-shadow: 0 0 .3em .1em slategray;
+   
 }
 
 .grid-proyectos {
   width: 36em;
   height: 22.6em;
   margin-left: 6em;
-  box-shadow: 0 0 .3em .1em slategray;
+}
+
+.boletines-general {
+  position: absolute;
+  width: 70em;
+  height: 14em;
+  overflow: hidden;
+  margin-top: -19em;
+  margin-left: 4em;
+  display: grid;
+  grid-template: 4em;
+  grid-template-areas: "encabezado paginacion" "boletines boletines";
+  background-color: var(--color-white-light);
+  border-radius: var(--border-radius-boton);
+  box-shadow: var(--boxShadow-dash)
+}
+
+.conteiner-encabezado {
+  display: inline-flex;
+  grid-area: encabezado;
+  width: 11em;
+}
+
+.conteiner-paginacion {
+  grid-area: paginacion;
+  margin-left: -1em;
+}
+
+.paginacion {
+  display: inline-flex;
+  width: 10em;
+  height: 3em;
+  margin-left: -9em;
+  margin-top: .5em;
+}
+
+.pag {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-blue-bajo);
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  padding: .5em;
+}
+
+.pag:hover {
+  background-color: var(--grid-color-blue);
+  opacity: .7;
+  color: var(--color-white);
+}
+
+.conteiner-bol-gen {
+grid-area: boletines;
+margin-left: 1em;
+}
+
+.bol-gen {
+  margin-top: 0em;
+  width: 10em;
+  height: 8em;
+  display: inline-flex;
+  background-color: var(--color-white);
+  margin-left: 1em;
+  border: 1px solid var(--color-blue-bajo);
+  border-radius: var(--border-radius-boton);
+}
+
+.bol-gen:hover {
+  background-color: var(--grid-color-blue);
+  opacity: .7;
+}
+
+.p-bol-gen {
+  margin: .6em;
+  color: var(--color-grey)
+}
+
+.p-bol-gen:hover {
+  color: var(--color-white);
 }
 
 .digsn-dash {
