@@ -1,0 +1,97 @@
+.view-bol {
+  display: grid;
+  grid-template-areas: "titulo" "input" "problema" "solucion";
+  margin: 2em;
+  background-color: var(--color-white-light);
+  width: 45em;
+  height: 40em;
+  color: var(--color-grey);
+  overflow: hidden;
+  border-radius: var(--border-radius-boton);
+  box-shadow:  var(--boxShadow-dash);
+}
+ 
+.titulo-view {
+  grid-area: titulo;
+  height: 5em;
+  margin-left: 1em;
+}
+
+.input-view  {
+  grid-area: input;
+  display: grid;
+  grid-template-areas: "proyecto cliente" "fecha sistema";
+  margin-top: 0em;
+  font-size: 16px;
+}
+
+.proyecto {
+  grid-area: proyecto;
+}
+
+.cliente {
+  grid-area: cliente;
+}
+
+.fecha {
+  grid-area: fecha;
+}
+
+.sistema {
+  grid-area: sistema;
+}
+.problema-view {
+  grid-area: problema;
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+.solucion-view {
+  grid-area: solucion;
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+#rectangle {
+    width: 45em;
+    height: 5em;
+    margin-left: 0;
+    background: var(--color-green-boletin);
+  }
+
+
+.h3-bol {
+    margin: 1em;
+    color: var(--color-white-light);
+  }
+
+.div-input {
+    display: inline-flex;
+    margin-left: 2em;
+  }
+
+.input-bol {
+    width: 15em;
+    height: 2em;
+    border: none;
+  }
+
+  .conteiner-problema {
+    display: block;
+  }
+
+  .titulo-problem {
+    background-color: var(--color-green-boletin);
+    width: 14.38em;
+    height: 25px;
+    color: var(--color-white-light);
+    text-align: center;
+    border-radius: var(--border-radius-boton);
+  }
+
+  .input-problema {
+    width: 14.38em;
+    height: 10em;
+    border: 1px solid var(--color-morado);
+    border-radius: var(--border-radius-boton);
+  }

@@ -7,7 +7,7 @@ import './MenuToggle.css';
 import './cabecera.css';
 import './Perfil.css';
 import './Soporte.css';
-import './ListaBoletines.css';
+import './BoletinesView.css';
 import Login from './Componentes-login/Login';
 import Dashboard from './Componente-dashboard/Dashboard';
 import Soporte from './Componentes-soporte/Soporte';

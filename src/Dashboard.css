@@ -17,7 +17,7 @@
 .h4 {
   margin-left: 1em;
   margin-top: .8em;
-  color: var(--color-blue-bajo);
+  color: var(--color-morado);
 }
 
 .grids-dash {
@@ -76,7 +76,7 @@
 
 .pag {
   background-color: var(--color-white);
-  border: 1px solid var(--color-blue-bajo);
+  border: 1px solid var(--color-morado);
   width: 3em;
   height: 3em;
   text-align: center;
@@ -101,7 +101,7 @@ margin-left: 1em;
   display: inline-flex;
   background-color: var(--color-white);
   margin-left: 1em;
-  border: 1px solid var(--color-blue-bajo);
+  border: 1px solid var(--color-morado);
   border-radius: var(--border-radius-boton);
 }
 
