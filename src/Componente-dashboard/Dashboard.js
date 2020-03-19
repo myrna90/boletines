@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
 import MenuToggle from '../Componentes-menu/MenuToggle';
 import UsuarioCabecera from '../Componentes-menu/Usuario-cabecera';
+import { Redirect } from 'react-router';
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
 se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
 class Dashboard extends Component {
+    state = {
+        redirect: false
+    }
+
+    setRedirect = () => {
+        this.setState({
+            redirect: true
+        })
+    }
+
+    renderRedirect = () => {
+        if(this.state.redirect) {
+            return <Redirect to='/BoletinView'/>
+        }
+    }
     render(){
         return(
             <div className="conteiner contenedor-dash">
@@ -19,10 +35,10 @@ class Dashboard extends Component {
                     
                     <div className="grid-publicados grids-dash">
                     <h4 className="h4">Boletines</h4>
-                    <div className="digsn-dash"><div className="circulo-boletin"></div><p className="p-boletines">TNB-00 | Casa cuervo-La rioja</p><div className="contenedor-icon"><i class="material-icons  md-18">open_in_new</i></div></div>
-                    <div className="digsn-dash"><div className="circulo-boletin2"></div><p className="p-boletines">TNB-01 | Punto sur- CCTV</p><div className="contenedor-icon"><i class="material-icons md-18">open_in_new</i></div></div>
-                    <div className="digsn-dash"><div className="circulo-boletin"></div><p className="p-boletines">TNB-02 | Andares-Plaza comercial </p><div className="contenedor-icon"><i class="material-icons md-18">open_in_new</i></div></div>
-                    <div className="digsn-dash"><div className="circulo-boletin2"></div><p className="p-boletines">TNB-03 | Hines-Control de accesos</p><div className="contenedor-icon"><i class="material-icons md-18">open_in_new</i></div></div>
+                    <div className="digsn-dash"><div className="circulo-boletin"></div><p className="p-boletines">TNB-00 | Casa cuervo-La rioja</p><div className="contenedor-icon">{this.renderRedirect()}<button className="btn-bol contenedor-icon" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div></div>
+                    <div className="digsn-dash"><div className="circulo-boletin2"></div><p className="p-boletines">TNB-01 | Punto sur- CCTV</p><div className="contenedor-icon">{this.renderRedirect()}<button className="btn-bol contenedor-icon" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div></div>
+                    <div className="digsn-dash"><div className="circulo-boletin"></div><p className="p-boletines">TNB-02 | Andares-Plaza comercial </p><div className="contenedor-icon">{this.renderRedirect()}<button className="btn-bol contenedor-icon" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div></div>
+                    <div className="digsn-dash"><div className="circulo-boletin2"></div><p className="p-boletines">TNB-03 | Hines-Control de accesos</p><div className="contenedor-icon">{this.renderRedirect()}<button className="btn-bol contenedor-icon" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div></div>
                     
                     
                     </div>
@@ -49,12 +65,12 @@ class Dashboard extends Component {
                     </div>
                     
                     <div className="conteiner-bol-gen">
-                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-00</strong><br/>Proyecto: Casa cuervo<br/>Problema: CCTV</p></div>
-                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-02</strong><br/>Proyecto: Punto sur<br/>Problema: Control de accesos</p></div>
-                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-03</strong><br/>Proyecto: Hines<br/>Problema: CCTV</p></div>
-                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-04</strong><br/>Proyecto: Casa cuervo<br/>Problema: CCTV</p></div>
-                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-05</strong><br/>Proyecto: Punto sur<br/>Problema: Control de accesos</p></div>
-                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-06</strong><br/>Proyecto: Hines<br/>Problema: CCTV</p></div> 
+                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-00</strong><br/>Proyecto: Casa cuervo<br/>Problema: CCTV</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div>
+                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-02</strong><br/>Proyecto: Punto sur<br/>Problema: Control de accesos</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div>
+                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-03</strong><br/>Proyecto: Hines<br/>Problema: CCTV</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div>
+                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-04</strong><br/>Proyecto: Casa cuervo<br/>Problema: CCTV</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div>
+                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-05</strong><br/>Proyecto: Punto sur<br/>Problema: Control de accesos</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div>
+                    <div className="bol-gen"><p className="p-bol-gen"><strong>BMC-06</strong><br/>Proyecto: Hines<br/>Problema: CCTV</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div> 
                     </div>             
                     </div>
                     </div>

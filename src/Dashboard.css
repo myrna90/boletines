@@ -17,7 +17,7 @@
 .h4 {
   margin-left: 1em;
   margin-top: .8em;
-  color: var(--color-morado);
+  color: var(--color-blue-bajo);
 }
 
 .grids-dash {
@@ -76,7 +76,7 @@
 
 .pag {
   background-color: var(--color-white);
-  border: 1px solid var(--color-morado);
+  border: 1px solid var(--color-blue-bajo);
   width: 3em;
   height: 3em;
   text-align: center;
@@ -97,26 +97,18 @@ margin-left: 1em;
 .bol-gen {
   margin-top: 0em;
   width: 10em;
-  height: 8em;
+  height: 9em;
   display: inline-flex;
   background-color: var(--color-white);
   margin-left: 1em;
-  border: 1px solid var(--color-morado);
+  border: 1px solid var(--color-blue-bajo);
   border-radius: var(--border-radius-boton);
 }
 
-.bol-gen:hover {
-  background-color: var(--grid-color-blue);
-  opacity: .7;
-}
 
 .p-bol-gen {
   margin: .6em;
   color: var(--color-grey)
-}
-
-.p-bol-gen:hover {
-  color: var(--color-white);
 }
 
 .digsn-dash {
@@ -174,7 +166,19 @@ margin-left: 1em;
 
 .contenedor-icon {
   position: absolute;
-  margin-left: 23em;
+  margin-top: -6em;
+  margin-left: 16em;
+}
+
+.btn-bol {
+  background-color: transparent;
+  position: absolute;
+  width: 3em;
+  height: 2em;
+  text-align: center;
+  margin-top: 6.5em;
+  margin-left: 6.5em;
+  border: none;
 }
 @media only screen and (max-width: 600px){
   
