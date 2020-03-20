@@ -37,10 +37,6 @@
   --margin-conten: 2em;
 }
 
-body {
-  background-color: var(--color-white);
-}
-
 .conteiner {
   display: grid;
   grid-template: 3.12em auto/auto 1fr;
