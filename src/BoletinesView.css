@@ -1,10 +1,14 @@
+.contenedor-view{
+  height: 100vh;
+  overflow: hidden;
+}
 .view-bol {
   display: grid;
   grid-template-areas: "titulo" "input" "problema" "solucion";
   margin: 2em;
   background-color: var(--color-white-light);
   width: 45em;
-  height: 40em;
+  height: 41em;
   color: var(--color-grey);
   overflow: hidden;
   border-radius: var(--border-radius-boton);
@@ -20,7 +24,7 @@
 .input-view  {
   grid-area: input;
   display: grid;
-  grid-template-areas: "proyecto cliente" "fecha sistema";
+  grid-template-areas: "proyecto cliente" "fecha sistema" ;
   margin-top: 0em;
   font-size: 16px;
 }
@@ -40,6 +44,8 @@
 .sistema {
   grid-area: sistema;
 }
+
+
 .problema-view {
   grid-area: problema;
   display: inline-flex;

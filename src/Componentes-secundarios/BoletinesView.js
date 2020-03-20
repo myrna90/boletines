@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import MenuToggle from '../Componentes-menu/MenuToggle';
-import UsuarioCabecera from '../Componentes-menu/Usuario-cabecera';
+import MenuToggle from '../Componentes-secundarios/MenuToggle';
+import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
 
 function BoletinesView (){
    
@@ -14,12 +14,13 @@ function BoletinesView (){
     const [solucion, setSolucion] = useState(solucion);*/
 
     return(
-        <div className="conteiner contenedor-dash">
+        <div className="conteiner contenedor-view">
         <MenuToggle/>
         <div id="cabecera" className="header">
         <h1 className="h1">Boletin</h1>
         <UsuarioCabecera/>
         </div>
+        <div className="contenedor-view">
         <div className="view-bol">
         <div id="rectangle" className="titulo-view">
             <h3 className="h3-bol">BMC-00</h3>
@@ -29,6 +30,9 @@ function BoletinesView (){
             <div className="div-input cliente"><p>Cliente:</p> <input className="input-bol"></input></div>
             <div className="div-input fecha"><p>Fecha:</p><input className="input-bol"></input></div>
             <div className="div-input sistema"><p>Sistema:</p><input className="input-bol"></input></div>
+            <div className="div-input equipo"><p>Equipo:</p><input className="input-bol"></input></div>
+            <div className="div-input marca"><p>Marca:</p><input className="input-bol"></input></div>
+            <div className="div-input modelo"><p>Modelo:</p><input className="input-bol"></input></div>
         </div>
         <div className="problema-view disgn">
             <div className="conteiner-problema">
@@ -49,6 +53,8 @@ function BoletinesView (){
             </div>
         </div>
         </div>
+        </div>
+        
         </div>
     )
 } 

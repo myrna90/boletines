@@ -15,7 +15,7 @@ import Boletines from './Componentes-boletines/Boletines';
 import MiPerfil from './Componente-myprofile/MiPerfil';
 //import PageNotFound from './Componente-pageNotFound/PageNotFound';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import BoletinesView from './Componente-dashboard/BoletinesView';
+import BoletinesView from './Componentes-secundarios/BoletinesView';
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
       <Route path="/Boletines" component={Boletines} />
       <Route path="/MiPerfil" component={MiPerfil}/>
       <Route path="/Soporte" component={Soporte} />
-      <Route path="/BoletinView" component={BoletinesView}/>
+      <Route path="/BoletinesView" component={BoletinesView}/>
       {/*<Route component={PageNotFound}/>*/}
     </Router>
   );

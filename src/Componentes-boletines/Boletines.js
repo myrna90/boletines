@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import MenuToggle from '../Componentes-menu/MenuToggle';
+import MenuToggle from '../Componentes-secundarios/MenuToggle';
 import FormBoletines from '../Componentes-boletines/FormBoletines';
-import UsuarioCabecera from '../Componentes-menu/Usuario-cabecera';
+import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
 
 class Boletines extends Component{
     render(){

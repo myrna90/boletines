@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import MenuToggle from '../Componentes-menu/MenuToggle';
-import UsuarioCabecera from '../Componentes-menu/Usuario-cabecera';
+import MenuToggle from '../Componentes-secundarios/MenuToggle';
+import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
 
 class MiPerfil extends Component {
     render(){

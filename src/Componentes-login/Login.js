@@ -1,11 +1,9 @@
 import React, {Component} from "react";
-import { Container, Row, Col} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 //import FormErrors from '../Componentes-login/FormErrors';
 import BtnLogin from '../Componentes-login/ButtonLogin';
 import Logo from '../imgs/logotn.png';
 import data from '../data.json';
-import axios from 'axios';
 
 const showData = data.map((data) => {
   return (
