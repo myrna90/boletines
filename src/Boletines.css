@@ -130,6 +130,12 @@
 .div2 {
     margin-left: 8em;
 }
+
+.inputimg {
+    color: transparent;
+    background-color: transparent;
+    border: none;
+}
 /*
 @media only screen and (max-width: 600px) {
     .menu {

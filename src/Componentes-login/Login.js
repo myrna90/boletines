@@ -92,21 +92,18 @@ class Login extends Component {
     render(){
         return(
           /*Contenedor general*/
-            <Container className="conteiner-general-login">
-              {showData}
-            <Row className="row row-login">
-              {/*Contenedor titulo */}
-            <Col xs={12} sm="auto" md="auto"  xl="auto" lg={5} className="conteiner-titulo" style={{backgroundColor:"var(--grid-color-blue)"}}>
-               
-                <h1 className="titular-inicio">Boletines</h1>
-                <h5 className='sub-titulo'>Mejora continua</h5>
-                <img src={Logo} className="logotn"/>
-                
-            </Col>
-            {/*Contenedor login form */}
-            <Col xs={12} sm="auto" xl="auto" lg={7} className="conteiner-sesion" style={{backgroundColor: "white"}}>
             
-                <div className="text-inicio">
+              <div className="conteiner-general-login">
+              {showData}
+              <div className="row row-login">
+              <div className="conteiner-titulo">
+              <h1 className="titular-inicio">Boletines</h1>
+              <h5 className='sub-titulo'>Mejora continua</h5>
+              <img src={Logo} className="logotn"/>
+              <div className="miImg"></div>
+              </div>
+              <div className="conteiner-sesion">
+              <div className="text-inicio">
                 <h2 className="text-conten">Inicie sesión ahora...</h2>
                 <p className="text-conten">Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
                 </div>
@@ -148,13 +145,15 @@ class Login extends Component {
                 </p>
                 </form>
                 </div>
-                <div className="miImg"></div> 
-            </Col>
-            </Row>
-            <div className="footer">
-            <footer>Telenet de México S.A. de C.V.</footer>
-            </div>
-            </Container>   
+                 
+              </div>
+              </div>
+              <div className="footer">
+              <footer>Telenet de México S.A. de C.V.</footer>
+              </div>
+              </div>
+              
+            
             
         )
     }

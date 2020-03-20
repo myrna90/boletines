@@ -13,7 +13,9 @@ class FormBoletines extends Component {
             marca: '',
             modelo: '',
             problema: '',
+            imgProblema: '',
             solucion: '',
+            imgSolucion: '',
             usuario: '',
             departamento: ''
         }
@@ -37,7 +39,7 @@ class FormBoletines extends Component {
     }
 
     render(){
-        const {folio, proyecto, cliente, fecha, sistema, equipo, marca, modelo, problema, solucion, usuario, departamento} = this.state;
+        const {folio, proyecto, cliente, fecha, sistema, equipo, marca, modelo, problema, imgProblema, solucion, imgSolucion, usuario, departamento} = this.state;
         return(
         <div className="contenido section">
                 {/*Contenedor el cual muestra el fomulario para llenar los campos requeridos */}
@@ -98,7 +100,7 @@ class FormBoletines extends Component {
 
                 <div className="contenForm conten-img">
                 <label className="label label-img">Problema imagen</label>
-                <div className=" conten-export-img"  type="file" required><i className="img-export" class="material-icons md-50">add_photo_alternate</i></div>
+                <div className=" conten-export-img"  type="file" required><input type="file" name="attachment" className="inputimg"/><i className="img-export" class="material-icons md-50">add_photo_alternate</i></div>
                 </div>
                 </div>
 
@@ -110,7 +112,7 @@ class FormBoletines extends Component {
 
                 <div className="contenForm conten-img">
                 <label className="label label-img">Solución imagen</label>
-                <div className=" conten-export-img"  type="file" required><i className="img-export" class="material-icons md-50">add_photo_alternate</i></div>
+                <div  className=" conten-export-img"  type="file" required><input type="file" name="attachment" className="inputimg"/><i className="img-export" class="material-icons md-50">add_photo_alternate</i></div>
                 </div> 
                 </div>
                 </div>

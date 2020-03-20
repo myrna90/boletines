@@ -95,3 +95,22 @@
     border: 1px solid var(--color-morado);
     border-radius: var(--border-radius-boton);
   }
+
+  .material-icons.md-56 {
+    font-size: 120px;
+    color: var(--color-grey-border-img);
+    margin-top: .1em;
+  }
+
+  .img-problema {
+    height: 10em;
+    text-align: center;
+    border-top-style: dashed;
+    border-bottom-style: dashed;
+    border-right-style: dashed;
+    border-left-style: dashed;
+    border-top-color: var(--color-border-input);
+    border-right-color: var(--color-border-input);
+    border-bottom-color: var(--color-border-input);
+    border-left-color: var(--color-border-input);
+  }

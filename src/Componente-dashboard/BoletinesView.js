@@ -36,7 +36,7 @@ function BoletinesView (){
             <textarea className="input-problema"></textarea></div>
             <div className="conteiner-problema">
             <h6 className="titulo-problem">Imagen problema:</h6>
-            <div className="input-problema"></div>
+            <div className="img-problema"><i className="img-export-bol" class="material-icons md-56">add_photo_alternate</i></div>
             </div>
         </div>
         <div className="solucion-view disgn">
@@ -45,7 +45,7 @@ function BoletinesView (){
             <textarea className="input-problema"></textarea></div>
             <div className="conteiner-problema">
             <h6 className="titulo-problem">Imagen solución:</h6>
-            <div className="input-problema"></div>
+            <div className="img-problema"><i className="img-export-bol" class="material-icons md-56">add_photo_alternate</i></div>
             </div>
         </div>
         </div>
