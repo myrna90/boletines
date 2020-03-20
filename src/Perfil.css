@@ -1,3 +1,38 @@
 #contenido {
     background-color: var(--color-white-light);
 }
+
+.contenedor-perfil {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.contenido-perfil {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.conten-p {
+    display: grid;
+    grid-template-areas: "email" "nombre" "area" "hora";
+}
+
+.email {
+    grid-area: email;
+}
+
+.nombre {
+    grid-area: nombre;
+}
+
+.area {
+    grid-area: area;
+}
+
+.hora {
+    grid-area: hora;
+}
+
+.p-perfil {
+    margin-left: 3em;
+}

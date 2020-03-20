@@ -2,17 +2,19 @@
   height: 100vh;
   overflow: hidden;
 }
-.view-bol {
+
+.view {
   display: grid;
   grid-template-areas: "titulo" "input" "problema" "solucion";
-  margin: 2em;
+  margin: var(--margin-conten);
   background-color: var(--color-white-light);
-  width: 45em;
-  height: 41em;
+  width: var(--width-conten-view);
+  height: var(--height-conten-view);
   color: var(--color-grey);
   overflow: hidden;
   border-radius: var(--border-radius-boton);
   box-shadow:  var(--boxShadow-dash);
+  border: 1px solid var(--color-morado);
 }
  
 .titulo-view {

@@ -21,7 +21,7 @@ function BoletinesView (){
         <UsuarioCabecera/>
         </div>
         <div className="contenedor-view">
-        <div className="view-bol">
+        <div className="view">
         <div id="rectangle" className="titulo-view">
             <h3 className="h3-bol">BMC-00</h3>
         </div>
