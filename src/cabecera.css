@@ -3,7 +3,7 @@ a {
   }
   
   .cabecera-dashboard{
-    display: flex;
+    display: grid;
     border-bottom: .1em solid #bebed2;
   }
   

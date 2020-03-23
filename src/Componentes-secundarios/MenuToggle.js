@@ -52,13 +52,14 @@ class MenuToggle extends Component {
                 <Link to="/Boletines" className="Link"><i class="material-icons md-24">line_weight</i><div className="text-menu">Boletines</div></Link>
                 <Link to="/MiPerfil" className="Link"><i class="material-icons md-24">person</i><div className="text-menu">Mi Perfil</div></Link>
                 <Link to="/Soporte" className="Link"><i class="material-icons md-24">help_outline</i><div className="text-menu">Soporte</div></Link>
-                <div>
-                {this.renderRedirect()}
-                <button to="/" type="submit" onClick={this.setRedirect} className="Link link-out"><i class="material-icons md-24">exit_to_app</i><div className="text-menu">Salir</div></button>
-                </div>
+               <div className="logotnW"></div>
                 
             </div>
             </div> 
+            <div className="conteiner-btnOut">
+                {this.renderRedirect()}
+                <button to="/" type="submit" onClick={this.setRedirect} className="Link link-out"><i class="material-icons md-24">exit_to_app</i><div className="text-menu">Salir</div></button>
+            </div>
         </div> 
             
         )
