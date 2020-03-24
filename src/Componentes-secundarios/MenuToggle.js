@@ -43,17 +43,14 @@ class MenuToggle extends Component {
                             <div class="_layer -mid"></div>
                             <div class="_layer -bottom"></div>
                         </div>
-                        <div className="btn-config">
-                            <i class="material-icons">settings_applications</i>
-                        </div>
                     </div>
 
                     <div className="nav-menu">
+                        <img src={LogoW} className="logoW"/>
                         <Link to="/Dashboard" className="Link L-dashboard"><i class="material-icons md-24">dashboard</i><div className="text-menu">Dashboard</div></Link>
                         <Link to="/Boletines" className="Link L-boletines"><i class="material-icons md-24">line_weight</i><div className="text-menu">Boletines</div></Link>
                         <Link to="/MiPerfil" className="Link L-miperfil"><i class="material-icons md-24">person</i><div className="text-menu">Mi Perfil</div></Link>
                         <Link to="/Soporte" className="Link L-soporte"><i class="material-icons md-24">help_outline</i><div className="text-menu">Soporte</div></Link>
-                        <img src={LogoW} className="logoW"/>
                     </div>
                 </div>
                 <div className="conteiner-btnOut">

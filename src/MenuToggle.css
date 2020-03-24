@@ -1,5 +1,6 @@
 /*Diseño menu hamburguesa*/
 .hamburger{
+  grid-area: hamburguer;
 	position:fixed;
   background-color:transparent;
 	left:0;
@@ -67,25 +68,15 @@
  /*Contendor del titulo del menú y btn configuración*/
 .contenedor-titulo {
   display: grid;
-  grid-template-areas: "h3 config";
+  grid-template-areas: "hamburguer";
   color: var(--color-white);
-  height: 100px;
-  }
-
-.h3 {
-  grid-area: h3;
-  color: var(--color-white);
-  }
-
-.btn-config {
-  grid-area: config;
-  margin-top: 1.2em;
+  height: 70px;
   }
 
   /*Contenedor diseño links menú incluyendo btn out*/
 .nav-menu {
   display: grid;
-  grid-template-areas: "dashboard" "boletines" "perfil" "soporte" "logo";
+  grid-template-areas: "logo" "dashboard" "boletines" "perfil" "soporte";
   }
 
 .L-dashboard {
@@ -106,10 +97,11 @@
 
 /*Contenedor img Telenet*/
 .logoW {
-  margin: 1em;
-  margin-top: 2em;
+  grid-area: logo;
+  margin-left: 1em;
   height: 9em;
   width: 9em;
+  margin-bottom: 2em;
 }
 
 .Link {
