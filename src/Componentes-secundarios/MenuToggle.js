@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import LogoW from '../imgs/logotnW.png';
 
 class MenuToggle extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class MenuToggle extends Component {
         if (this.aside.current.style.width !== '3.44em') {
             this.aside.current.style.width = '3.44em'
         } else {
-            this.aside.current.style.width = '12.5em'
+            this.aside.current.style.width = '12.5em';
         }
     }
 
@@ -52,7 +53,7 @@ class MenuToggle extends Component {
                         <Link to="/Boletines" className="Link L-boletines"><i class="material-icons md-24">line_weight</i><div className="text-menu">Boletines</div></Link>
                         <Link to="/MiPerfil" className="Link L-miperfil"><i class="material-icons md-24">person</i><div className="text-menu">Mi Perfil</div></Link>
                         <Link to="/Soporte" className="Link L-soporte"><i class="material-icons md-24">help_outline</i><div className="text-menu">Soporte</div></Link>
-                        <div className="logotnW"></div>
+                        <img src={LogoW} className="logoW"/>
                     </div>
                 </div>
                 <div className="conteiner-btnOut">

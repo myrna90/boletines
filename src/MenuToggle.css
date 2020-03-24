@@ -105,13 +105,12 @@
 }
 
 /*Contenedor img Telenet*/
-.logotnW {
-  grid-area: logo;
-  background-image:  url('../src/imgs/logotnWhite.png');
+.logoW {
+  margin: 1em;
+  margin-top: 2em;
   height: 9em;
   width: 9em;
-  text-align: center;
-  }
+}
 
 .Link {
   margin: 1em;
