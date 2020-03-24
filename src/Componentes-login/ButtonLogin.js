@@ -12,13 +12,13 @@ class BtnLogin extends Component {
         })
     }
 
-    renderRedirect = () =>{
-        if(this.state.redirect) {
-            return <Redirect to='/Dashboard'/>
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/Dashboard' />
         }
     }
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 {this.renderRedirect()}
                 <button className="btn-login btn" onClick={this.setRedirect}>Login</button>

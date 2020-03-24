@@ -3,9 +3,7 @@
 	position:fixed;
   background-color:transparent;
 	left:0;
-	top:0;
-	height: 1.87em;
-	width: 1.87em;
+  top:0;
 	padding: 1.25em .812em;
 	-webkit-transform:translate3d(0, 0, 0);
 	transform:translate3d(0, 0, 0);
@@ -68,29 +66,51 @@
 }
  /*Contendor del titulo del menú y btn configuración*/
 .contenedor-titulo {
-  display: inline-flex;
+  display: grid;
+  grid-template-areas: "h3 config";
   color: var(--color-white);
+  height: 100px;
   }
 
 .h3 {
-  text-align: left;
-  margin-left: .4em;
-  margin-top: .6em;
+  grid-area: h3;
   color: var(--color-white);
   }
 
 .btn-config {
-  display: flex;
-  margin-left: 9em;
+  grid-area: config;
   margin-top: 1.2em;
-
   }
 
   /*Contenedor diseño links menú incluyendo btn out*/
 .nav-menu {
-  margin-top: 6em;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas: "dashboard" "boletines" "perfil" "soporte" "logo";
+  }
+
+.L-dashboard {
+ grid-area: dashboard;
+} 
+
+.L-boletines {
+ grid-area: boletines;
+}
+
+.L-miperfil {
+ grid-area: perfil;
+}
+
+.L-soporte {
+ grid-area: soporte;
+}
+
+/*Contenedor img Telenet*/
+.logotnW {
+  grid-area: logo;
+  background-image:  url('../src/imgs/logotnWhite.png');
+  height: 9em;
+  width: 9em;
+  text-align: center;
   }
 
 .Link {
@@ -123,9 +143,4 @@
   border: none;
   }
 
-  /*Contenedor img Telenet*/
-  .logotnW {
-    background-image:  url('../src/imgs/logotnWhite.png');
-    height: 9em;
-    width: 9em;
-    }
+  

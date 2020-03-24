@@ -1,33 +1,32 @@
-a {
-    color: var(--color-white)
-  }
+.header {
+  display: grid;
+  grid-template-areas: "icono h2 usuario";
+  grid-template-columns: 50px;
+  overflow: hidden;
+}
   
-  .cabecera-dashboard{
-    display: grid;
-    border-bottom: .1em solid #bebed2;
-  }
-  
-  .material-icons.md-40 { 
+  .material-icons.md-40 {
+    grid-area: icono; 
     font-size: 2.3em; 
-    margin-left: .2em;
+    text-align: center;
     margin-top: .2em;
   }
   
-  .h1 {
+  .h2 {
+    grid-area: h2;
     text-align: left;
-    margin-top: .3em;
-    width: 6.9em;
-    height: 1.7em;
-    font-size: 1.9em;
     color: var(--color-grey);
-    padding-left: .5em;
+    margin-top: .2em;
   }
 
   .conteiner-usuario {
+    grid-area: usuario;
     display: inline-flex;
-    height: 1.5em;
-    border-radius: 5px;
-    position: absolute;
-    margin-left: 66em;
-    margin-top: .8em;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: 1em;
+  }
+
+  .input-usuario {
+    margin-bottom: 0em;
   }

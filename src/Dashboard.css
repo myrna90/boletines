@@ -1,17 +1,16 @@
 /*Diseño dashboard*/
-
 .contenido-dash {
   overflow: hidden; 
+  background-color: var(--color-white);
+  display: grid;
+  grid-template-areas: "bolProy" "generales";
 }
 
 .grid-contentDash {
-  background-color: var(--color-white);
-  display: flex;
-  flex-wrap: wrap;
+  grid-area: bolProy;
   overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-  padding: 5em;
+  display: grid;
+  grid-template-areas: "publicados proyectos";
 }
 
 .h4 {
@@ -21,40 +20,41 @@
 }
 
 .grids-dash {
+  margin-top: 2em;
   background-color: var(--color-white-light);
-  margin-top: -2em;
   box-shadow: var(--boxShadow-dash);
   border-radius: var(--border-radius-boton);
 }
 
 .grid-publicados {
-    width: 28.1em;
-    height: 22.6em;
-    margin-left: -1em;
-   
+  grid-area: publicados;
+  width: 450px;
+  height: 362px;
+  margin-left: 3em;
 }
 
 .grid-proyectos {
-  width: 36em;
-  height: 22.6em;
-  margin-left: 6em;
+  grid-area: proyectos;
+  width: 576px;
+  height: 362px;
 }
 
 .boletines-general {
-  position: absolute;
-  width: 70em;
-  height: 14em;
-  overflow: hidden;
-  margin-top: -19em;
-  margin-left: 4em;
+  grid-area: generales;
+}
+
+.contenedor-Bgeneral {
+  width: 1154px;
+  height: 240px;
   display: grid;
+  margin-top: .5em;
+  margin-left: 3em;
   grid-template: 4em;
   grid-template-areas: "encabezado paginacion" "boletines boletines";
   background-color: var(--color-white-light);
   border-radius: var(--border-radius-boton);
   box-shadow: var(--boxShadow-dash)
 }
-
 .conteiner-encabezado {
   display: inline-flex;
   grid-area: encabezado;
@@ -100,7 +100,7 @@ margin-left: 1em;
   height: 9em;
   display: inline-flex;
   background-color: var(--color-white);
-  margin-left: 1em;
+  margin-left: 1.5em;
   border: 1px solid var(--color-blue-bajo);
   border-radius: var(--border-radius-boton);
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class FormBoletines extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             folio: '',
@@ -23,139 +23,134 @@ class FormBoletines extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleChange(event) {
-        const {name, value} = event.target
-        this.setState({[name]: value});  
+        const { name, value } = event.target
+        this.setState({ [name]: value });
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        const values = 
-        JSON.stringify(this.state);
+        const values =
+            JSON.stringify(this.state);
         console.log(values);
     }
 
-    handleFormReset () {
+    handleFormReset() {
         this.setState(() => this.state)
     }
 
-    render(){
-        const {folio, proyecto, cliente, fecha, sistema, equipo, marca, modelo, problema, imgProblema, solucion, imgSolucion, usuario, departamento} = this.state;
-        return(
-        <div className="contenido section">
+    render() {
+        const { folio, proyecto, cliente, fecha, sistema, equipo, marca, modelo, problema, imgProblema, solucion, imgSolucion, usuario, departamento } = this.state;
+        return (
+            <div className="contenido section ">
                 {/*Contenedor el cual muestra el fomulario para llenar los campos requeridos */}
-            <form onReset={this.handleFormReset} onSubmit={this.handleSubmit}>
+                <form className="contenido-form" onReset={this.handleFormReset} onSubmit={this.handleSubmit}>
 
-                {/*parte del fomulario para llenar folio */}
-            <div className="div">
-                <div className="conteiner-numero">
-                <div className="numero">1</div><strong><p className="p">Folio</p></strong>
-                </div>
-                <div className="contenForm">
-                <label className="label">Numero de folio</label>
-                <input className="input" name="folio" value={folio} onChange={this.handleChange}  required></input>
-                </div>
-                <button type="submit" className="btn-crear btn">+ Crear</button>
+                    {/*parte del fomulario para llenar folio */}
+                    <div className="div div-1">
+                        <div className="conteiner-numero numero-div1">
+                            <div className="numero">1</div><strong><p className="p">Folio</p></strong>
+                        </div>
+                        <button type="submit" className="btn-crear btn">+ Crear</button>
+                        <div className="contenForm1">
+                            <label className="label">Numero de folio</label>
+                            <input className="input" name="folio" value={folio} onChange={this.handleChange} required></input>
+                        </div>
+                        
+                    </div>
+
+                    {/*formulario para especificaciones del proyecto */}
+                    <div className="div div-2">
+                        <div className="conteiner-numero">
+                            <div className="numero">2</div><strong><p className="p">Proyecto</p></strong>
+                        </div>
+                            <div className=" conteinerForm1">
+                                <label className="label">Proyecto</label>
+                                <input className="input" name="proyecto" value={proyecto} onChange={this.handleChange} required></input>
+                            </div>
+
+                            <div className="conteinerForm2">
+                                <label className="label">Cliente</label>
+                                <input className="input" name="cliente" value={cliente} onChange={this.handleChange} required></input>
+                            </div>
+
+                            <div className="conteinerForm3">
+                                <label className=" label">Fecha</label>
+                                <input className="input input-xs" name="fecha" value={fecha} onChange={this.handleChange} required></input>
+                            </div>
+
+                            <div className="conteinerForm4">
+                                <label className=" label">Sistema</label>
+                                <input className="input" name="sistema" value={sistema} onChange={this.handleChange} required></input>
+                            </div>
+                    </div>
+
+                    {/*parte del formulario para descripcion y solución del problema */}
+                    <div className="div div-3 div-textTarea">
+                        <div className="conteiner-numero">
+                            <div className="numero">3</div><strong><p className="p">Descripción</p></strong>
+                        </div>
+                        <div className="div1 ">
+                            <div className="div-img">
+                                <div className="contenForm">
+                                    <label className="label label-text-area">Descripción del problema</label>
+                                    <textarea className=" text-problema text" name="problema" value={problema} onChange={this.handleChange} required></textarea>
+                                </div>
+
+                                <div className="contenForm conten-img">
+                                    <label className="label label-img">Problema imagen</label>
+                                    <div className=" conten-export-img" type="file" required><input type="file" name="attachment" className="inputimg" /><i className="img-export" class="material-icons md-50">add_photo_alternate</i></div>
+                                </div>
+                            </div>
+
+                            <div className="div-img">
+                                <div className="contenForm">
+                                    <label className="label label-text-area ">Solución del problema</label>
+                                    <textarea className=" text-solucion text" name="solucion" value={solucion} onChange={this.handleChange} required></textarea>
+                                </div>
+
+                                <div className="contenForm conten-img">
+                                    <label className="label label-img">Solución imagen</label>
+                                    <div className=" conten-export-img" type="file" required><input type="file" name="attachment" className="inputimg" /><i className="img-export" class="material-icons md-50">add_photo_alternate</i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="div2 ">
+                            <div className="">
+                                <label className=" label">Equipo</label>
+                                <input className="input" name="equipo" value={equipo} onChange={this.handleChange}></input>
+                            </div>
+
+                            <div className="">
+                                <label className=" label">Marca</label>
+                                <input className="input" name="marca" value={marca} onChange={this.handleChange}></input>
+                            </div>
+
+                            <div className="">
+                                <label className=" label">Modelo</label>
+                                <input className="input" name="modelo" value={modelo} onChange={this.handleChange}></input>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {/*parte del formulario para completar datos del usuario */}
+                    <div className="div div-4">
+                        <div className="conteiner-numero">
+                            <div className="numero">4</div><strong><p className="p">Usuario</p></strong>
+                        </div>
+                            <div className="contenForm conteinerForm-2">
+                                <label className="label">Reporta</label>
+                                <input className="input" name="usuario" value={usuario} onChange={this.handleChange} required></input>
+                            </div>
+
+                            <div className="contenForm conteinerForm-3">
+                                <label className="label">Departamento</label>
+                                <input className="input" name="departamento" value={departamento} onChange={this.handleChange} required></input>
+                            </div>
+                    </div>
+                </form>
             </div>
 
-                {/*formulario para especificaciones del proyecto */}
-            <div className="div div-2">   
-                <div className="conteiner-numero">
-                <div className="numero">2</div><strong><p className="p">Proyecto</p></strong>
-                </div>
-                <div className="div-conteinerForm">
-                <div className="contenForm conteinerForm-2">
-                <label className="label">Proyecto</label>
-                <input className="input" name="proyecto" value={proyecto} onChange={this.handleChange} required></input>
-                </div>
-
-                <div className="contenForm conteinerForm-3">
-                <label className="label">Cliente</label>
-                <input className="input" name="cliente" value={cliente} onChange={this.handleChange} required></input>
-                </div>
-
-                <div className="contenForm conteinerForm-3">
-                <label className=" label">Fecha</label>
-                <input className="input input-xs" name="fecha" value={fecha} onChange={this.handleChange} required></input>
-                </div>
-
-                <div className="contenForm conteinerForm-3">
-                <label className=" label">Sistema</label>
-                <input className="input" name="sistema" value={sistema} onChange={this.handleChange} required></input>
-                </div>
-                </div>
-               
-            </div>
-
-                {/*parte del formulario para descripcion y solución del problema */}
-            <div className="div div-textTarea">  
-                <div className="conteiner-numero">
-                <div className="numero">3</div><strong><p className="p">Descripción</p></strong>
-                </div>
-                <div className="div1 div-top">
-                <div className="div-img">
-                <div className="contenForm">
-                <label className="label label-text-area">Descripción del problema</label>
-                <textarea className=" text-problema text" name="problema" value={problema} onChange={this.handleChange} required></textarea>
-                </div>
-
-                <div className="contenForm conten-img">
-                <label className="label label-img">Problema imagen</label>
-                <div className=" conten-export-img"  type="file" required><input type="file" name="attachment" className="inputimg"/><i className="img-export" class="material-icons md-50">add_photo_alternate</i></div>
-                </div>
-                </div>
-
-                <div className="div-img">
-                <div className="contenForm">
-                <label className="label label-text-area ">Solución del problema</label>
-                <textarea className=" text-solucion text" name="solucion" value={solucion} onChange={this.handleChange} required></textarea>
-                </div>
-
-                <div className="contenForm conten-img">
-                <label className="label label-img">Solución imagen</label>
-                <div  className=" conten-export-img"  type="file" required><input type="file" name="attachment" className="inputimg"/><i className="img-export" class="material-icons md-50">add_photo_alternate</i></div>
-                </div> 
-                </div>
-                </div>
-                <div className="div2 div-top">
-                <div className="contenForm">
-                <label className=" label">Equipo</label>
-                <input className="input" name="equipo" value={equipo} onChange={this.handleChange}></input>
-                </div>
-
-                <div className="contenForm">
-                <label className=" label">Marca</label>
-                <input className="input" name="marca" value={marca} onChange={this.handleChange}></input>
-                </div>
-
-                <div className="contenForm">
-                <label className=" label">Modelo</label>
-                <input className="input" name="modelo" value={modelo} onChange={this.handleChange}></input>
-                </div>
-                </div>
-                
-            </div>
-
-                {/*parte del formulario para completar datos del usuario */}
-            <div className="div div-2">
-                <div className="conteiner-numero">
-                <div className="numero">4</div><strong><p className="p">Usuario</p></strong>
-                </div>
-                <div className="div-conteinerForm">
-                <div className="contenForm conteinerForm-2">
-                <label className="label">Reporta</label>
-                <input className="input" name="usuario" value={usuario} onChange={this.handleChange} required></input>
-                </div>
-
-                <div className="contenForm conteinerForm-3">
-                <label className="label">Departamento</label>
-                <input className="input" name="departamento" value={departamento} onChange={this.handleChange} required></input>
-                </div> 
-                </div>
-                  
-            </div>
-            </form>
-        </div>
-            
         )
     }
 }
