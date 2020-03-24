@@ -1,56 +1,10 @@
 /*Diseño boletines*/
-/*css grid form*/
+/*css grid form general*/
 .contenido-form{
     overflow-x: hidden;
     display: grid;
     grid-template-areas: "div1" "div2" "div3" "div4";
 }
-
-/*css grid div 1*/
-.div-1 {
-    grid-area: div1;
-    display: grid;
-    grid-template-areas: "numero1 btn1" "contenForm1 btn1";
-}
-
-.btn-crear {
-    grid-area: btn1;
-}
-
-.numero-div1 {
- grid-area: numero1;
-}
-
-.contenForm1 {
-    grid-area: contenForm1;
-    margin-left: 2em;
-    display: grid;
-    grid-template-areas: "label1" "input1";
-} 
-
-.label-div1 {
-    grid-area: label1;
-}
-
-.input-div1 {
-    grid-area: input1;
-}
-
-/*css grid div 2*/
-.div-2 {
-    grid-area: div2;
-}
-
-
-/*css grid div 3*/
-.div-3 {
-    grid-area: div3;
-}
-/*css grid div 4*/
-.div-4 {
-    grid-area: div4;
-}
-
 .div {
     background-color: #FFFFFF;
     margin-top: 10px;
@@ -78,35 +32,188 @@
     margin-left: 1em;
 }
 
+.label {
+    width: 15em;
+    color: var(--color-blue-bajo);
+}
 
 .input {
-    background-color: white;
     width: 15em;
+    background-color: white;
     border-radius: 5px;
     border: none;
     border: 1px solid var(--color-border-input);
 }
 
+/*css grid div 1*/
+.div-1 {
+    grid-area: div1;
+    display: grid;
+    grid-template-areas: "numero1 btn1" "contenForm1 btn1";
+}
+
+.btn-crear {
+    grid-area: btn1;
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+.numero-div1 {
+ grid-area: numero1;
+}
+
+.contenForm1 {
+    grid-area: contenForm1;
+    margin-left: 2em;
+    display: grid;
+    grid-template-areas: "label1" "input1";
+} 
+
+.label-div1 {
+    grid-area: label1;
+}
+
+.input-div1 {
+    grid-area: input1;
+    width: 15em;
+}
+
+/*css grid div 2*/
+.div-2 {
+    grid-area: div2;
+    display: grid;
+    grid-template-areas: "cont1" "cont2";
+}
+
+.numero-div2 {
+    grid-area: cont1;
+    
+}
+
+.contenedor-form-div2 {
+    grid-area: cont2;
+    display: grid;
+    grid-template-areas: "L1 L2 L3 L4" "I1 I2 I3 I4";
+    margin-left: 2em;
+}
+
+.label1 {
+    grid-area: L1;
+}
+
+.label2 {
+    grid-area: L2;
+}
+
+.label3 {
+    grid-area: L3;
+}
+
+.label4 {
+    grid-area: L4;
+}
+
+.input1 {
+    grid-area: I1;
+}
+
+.input2 {
+    grid-area: I2;
+}
+
+.input3 {
+    grid-area: I3;
+}
+
+.input4 {
+    grid-area: I4;
+}
+
+
+/*css grid div 3*/
+.div-3 {
+    grid-area: div3;
+    display: grid;
+    height: 33em;
+    overflow: hidden;
+    grid-template-areas: "N3" "conten3";
+}
+
+.numero-div3 {
+    grid-area: N3;
+}
+
+.div3-content {
+    grid-area: conten3;
+    display: grid;
+    grid-template-areas: "c1 c3 c5" "c2 c4 c5";
+    margin-left: 2em;
+}
+
+.contenForm {
+    grid-area: c1;
+    display: inline-grid;
+}
+
+.contenForm2 {
+    grid-area: c2;
+    display: inline-grid;
+}
+
+.conten-img {
+    grid-area: c3;
+    display: inline-grid;
+}
+
+.conten-img2 {
+    grid-area: c4;
+    display: inline-grid;
+}
+
+.content-inputs {
+    grid-area: c5;
+    display: grid;
+    grid-template-areas: "b1" "b4" "b2" "b5" "b3" "b6";
+}
+
+.label-div {
+    grid-area: b1;
+}
+
+.label-div2 {
+    grid-area: b2;
+}
+
+.label-div3 {
+    grid-area: b3;
+}
+
+.input-div {
+    grid-area: b4;
+    height: 2em;
+}
+
+.input-div2 {
+    grid-area: b5;
+    height: 2em;
+}
+
+.input-div3 {
+    grid-area: b6;
+    height: 2em;
+}
 
 .text {
     width: 23.75em;
     height: 9.37em;
-    margin-top: .8em;
     border-radius: 5px;
     border: 1px solid var(--color-border-input);
-}
-
-.div-img {
-    display: flex;
-    margin-left: 25px;
 }
 
 .conten-export-img {
     width: 9.37em;
     height: 9.37em;
     background-color: white;
-    margin-left: 3em;
-    margin-top: .8em;
     text-align: center;
     border-top-style: dashed;
     border-bottom-style: dashed;
@@ -118,9 +225,6 @@
     border-left-color: var(--color-border-input);
 }
 
-.label-img {
-    margin-left: 2.4em;
-}
 
 .material-icons.md-50 {
     font-size: 6.25em;
@@ -128,22 +232,28 @@
     margin-top: .2em;
 }
 
-.label {
-    display: flex;
-    color: var(--color-blue-bajo);
-    padding: 1.5em .8em;
-    margin-bottom: -1em;
-}
-
-.div-textTarea {
-  display: flex;
-  flex-wrap: wrap;
-  height: 33em;
-  overflow: hidden;
-}
-
 .inputimg {
     color: transparent;
     background-color: transparent;
     border: none;
+}
+
+/*css grid div 4*/
+.div-4 {
+    grid-area: div4;
+    display: grid;
+    grid-template-areas: "u1 u1" "u2 u3";
+}
+
+.numero-div4 {
+    grid-area: u1;
+}
+
+.conteinerForm-2 {
+    grid-area: u2;
+    margin-left: 2em;
+}
+
+.conteinerForm-3 {
+    grid-area: u3;
 }
