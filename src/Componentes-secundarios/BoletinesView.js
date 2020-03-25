@@ -15,7 +15,6 @@ function BoletinesView() {
 
     return (
         <div className="conteiner contenedor-view">
-            <MenuToggle />
             <div id="cabecera" className="header">
                 <h1 className="h1">Boletin</h1>
                 <UsuarioCabecera />

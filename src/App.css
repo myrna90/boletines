@@ -40,8 +40,8 @@
 
 .conteiner {
   display: grid;
-  grid-template: 3.12em auto/auto 1fr;
-  grid-template-areas: "aside header" "aside section";
+  grid-template: 3.12em / 1fr;
+  grid-template-areas: "header" "section";
   height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -92,4 +92,13 @@ h2 {
   color:  var(--color-white);
 }
 
-@media only screen and (max-width: var(--size-phone)) {}
+/*conteiner vista
+.conteiner-vista {
+  display: grid;
+  grid-template-areas: "aside Dcomponentes";
+}
+
+.div-componentes {
+  grid-area: Dcomponentes;
+}
+*/

@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import MenuToggle from '../Componentes-secundarios/MenuToggle';
 import FormBoletines from '../Componentes-boletines/FormBoletines';
 import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
 
 class Boletines extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
-            /*contenedor general */
             <div className="conteiner">
-                {/* contenedor menu*/}
-                <MenuToggle />
                 {/*Contenedor general header */}
                 <div className="header">
                     <i class="material-icons md-40">line_weight</i>
@@ -18,7 +18,6 @@ class Boletines extends Component {
                 </div>
                 <FormBoletines />
             </div>
-
         )
     }
 }

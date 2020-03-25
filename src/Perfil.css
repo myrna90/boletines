@@ -12,27 +12,22 @@
     overflow: hidden;
 }
 
-.conten-p {
+.contenedor-vista {
     display: grid;
-    grid-template-areas: "email" "nombre" "area" "hora";
+    grid-template-areas: "vista vista2";
+    height: 100vh;
 }
 
-.email {
-    grid-area: email;
+.cont-perfil2 {
+    grid-area: vista2;
 }
 
-.nombre {
-    grid-area: nombre;
-}
-
-.area {
-    grid-area: area;
-}
-
-.hora {
-    grid-area: hora;
-}
-
-.p-perfil {
-    margin-left: 3em;
+.cont-perfil {
+    grid-area: vista;
+    display: grid;
+    width: 350px;
+    border: 2px solid var(--color-blue-bajo);
+    margin-left: 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
 }
