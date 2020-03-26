@@ -16,7 +16,7 @@ function BoletinesView() {
     return (
         <div className="conteiner contenedor-view">
             <div id="cabecera" className="header">
-                <h1 className="h1">Boletin</h1>
+                <h2 className="h2">Boletin</h2>
                 <UsuarioCabecera />
             </div>
             <div className="contenedor-view">

@@ -18,10 +18,18 @@ class MiPerfil extends Component {
                         </div>
                         <div className="contenedor-vista">
                             <div className="cont-perfil">
-                            <div className="div-morado"></div>
-                            <div className="div-avatar"></div>
-                            <div className="div-nombre"></div>
-                            <div className="div-info"></div>
+                            <div className="div-morado">
+                            <div className="div-avatar"><span class="material-icons md-51">account_circle</span></div>
+                            <div className="div-nombre">
+                                <h4 className="h4-nombre">Myrna Mares</h4>
+                                <h5>Ingeniería</h5>
+                            </div>
+                            </div>
+                            <div className="div-info">
+                            <div className="correo-time"><span class="material-icons md-25">email</span><p className="p-correo-time">mmares@telenetdemexico.com</p></div>
+                            <div className="correo-time"><span class="material-icons md-25">restore</span><p className="p-correo-time">15:30</p></div>
+                            </div>
+                            
                             </div>
                             <div className="cont-perfil2"></div>
                         </div>

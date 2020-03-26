@@ -12,10 +12,15 @@
     overflow: hidden;
 }
 
+.view {
+    overflow: hidden;
+    height: 80vh;
+}
+
 .contenedor-vista {
     display: grid;
     grid-template-areas: "vista vista2";
-    height: 100vh;
+    height: 75vh;
 }
 
 .cont-perfil2 {
@@ -25,9 +30,65 @@
 .cont-perfil {
     grid-area: vista;
     display: grid;
-    width: 350px;
-    border: 2px solid var(--color-blue-bajo);
+    grid-template-areas: "morado" "info";
+    width: 330px;
+    height: 520px;
+    overflow: hidden;
+    box-shadow: var(--boxShadow-dash);
     margin-left: 2em;
     margin-top: 1em;
     margin-bottom: 2em;
+    border-radius: var(--border-radius-boton);
+}
+
+.div-morado {
+    grid-area: morado;
+    background-color: var(--color-blue-bajo);
+    height: 70px;
+    margin-bottom: 0em;
+    border-bottom: 1px;
+    
+}
+
+.div-avatar {
+    text-align: center;
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+    background-color: var(--color-white);
+    margin: auto;
+    margin-top: 1em;
+    border: 1px solid var(--color-grey-border);
+}
+
+.material-icons.md-51 {
+    font-size: 6em;
+    color: var(--color-grey-border);
+}
+
+.div-nombre {
+    margin-left: 4em;
+    color: var(--color-grey);
+    text-align: center;
+    height: 90px;
+    border-bottom: 1px solid var(--color-blue-bajo);
+    width: 60%;
+}
+
+.div-info {
+    grid-area: info;
+}
+
+.material-icons.md-25 {
+    color: var(--color-blue-bajo);
+    margin-left: 1em;
+}
+
+.correo-time {
+    display: inline-flex;
+    margin-top: 2em;
+}
+.p-correo-time {
+    margin-left: 1em;
+    font-size: 15px;
 }

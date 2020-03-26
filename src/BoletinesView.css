@@ -79,9 +79,11 @@
   }
 
 .input-bol {
+  margin-left: .5em;
     width: 15em;
     height: 2em;
-    border: none;
+    border: 1px solid var(--color-grey-border-img);
+    border-radius: var(--border-radius-boton);
   }
 
   .conteiner-problema {
