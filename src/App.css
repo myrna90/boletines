@@ -1,5 +1,5 @@
 /*Medidas generales que se reutilizan en el diseño*/
-
+/*Incluye algunas medidas que estes usando con frecuencia*/
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 :root {
   --grid-color-blue: #004040;
@@ -17,11 +17,6 @@
   --color-morado: #800D61;
   --color-pink: #D47F7F;
   --color-boton: #A3E2BA;
-  /*Incluye algunas medidas que estes usando con frecuencia*/
-  /*También las medidas de cada dispositivo para el responsive design*/
-  --medida-phone: (max-width: 600px);
-  --medida-ipad: (min-width:600px) and (max-width: 991px);
-  --media-ipad-pro: (min-width:992px) and (max-width: 1024px);
   /*medidas, color y bordes de los botones*/
   --height-boton: 1.9em;
   --width-boton: 6.87em;
