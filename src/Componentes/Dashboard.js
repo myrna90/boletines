@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
-import MenuToggle from '../Componentes-secundarios/MenuToggle';
-import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
+import React, { Component } from 'react';
+import MenuToggle from '../Componentes/Componentes-secundarios/MenuToggle';
+import UsuarioCabecera from '../Componentes/Componentes-secundarios/Usuario-cabecera';
 import { Redirect } from 'react-router';
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
@@ -21,7 +21,7 @@ class Dashboard extends Component {
 
     renderRedirect = () => {
         if (this.state.redirect) {
-            return <Redirect to='/BoletinesView' />
+            return <Redirect to='/View' />
         }
     }
     render() {
@@ -42,8 +42,6 @@ class Dashboard extends Component {
                             <div className="digsn-dash "><div className="circulo-boletin2"></div><p className="p-boletines">B-01 | Punto sur- CCTV</p><div className="contenedor-icon">{this.renderRedirect()}<button className="btn-bol contenedor-icon" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div></div>
                             <div className="digsn-dash disgn"><div className="circulo-boletin"></div><p className="p-boletines">B-02 | Andares-Plaza comercial </p><div className="contenedor-icon">{this.renderRedirect()}<button className="btn-bol contenedor-icon" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div></div>
                             <div className="digsn-dash disgn"><div className="circulo-boletin2"></div><p className="p-boletines">B-03 | Hines-Control de accesos</p><div className="contenedor-icon">{this.renderRedirect()}<button className="btn-bol contenedor-icon" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div></div>
-
-
                         </div>
                         <div className="grid-proyectos grids-dash">
                             <h4 className="h4">Mis proyectos</h4>

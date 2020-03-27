@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 //import FormErrors from '../Componentes-login/FormErrors';
 import BtnLogin from '../Componentes-login/ButtonLogin';
 import Logo from '../imgs/logotn.png';
-import data from '../data.json';
+import data from '../Componentes-login/data.json';
 
 const showData = data.map((data) => {
   return (

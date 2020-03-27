@@ -13,12 +13,10 @@ class MenuToggle extends Component {
     }
 
     changeWidth() {
-        const f = '3.44em';
-        const t = '12.5em';
-        if (this.aside.current.style.width !== f) {
-            this.aside.current.style.width = f;
+        if (this.aside.current.style.width !== '3.44em') {
+            this.aside.current.style.width = '3.44em';
         } else {
-            this.aside.current.style.width = t;
+            this.aside.current.style.width = '12.5em';
         }
     }
 

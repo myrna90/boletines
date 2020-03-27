@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MenuToggle from '../Componentes-secundarios/MenuToggle';
-import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
+import MenuToggle from '../Componentes/Componentes-secundarios/MenuToggle';
+import UsuarioCabecera from '../Componentes/Componentes-secundarios/Usuario-cabecera';
 
 class MiPerfil extends Component {
     render() {
@@ -14,9 +14,7 @@ class MiPerfil extends Component {
                 </div>
                 <div id="contenido" className="contenido contenido-perfil section">
                     <div className="view mi-perfil">
-                        <div id="rectangle" className="titulo-view">
-                            <h3 className="h3-bol">Información perfil</h3>
-                        </div>
+        
                         <div className="contenedor-vista">
                             <div className="cont-perfil">
                             <div className="div-morado">
