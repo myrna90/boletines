@@ -27,6 +27,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="conteiner contenedor-dash">
+                <MenuToggle/>
                 <div id="cabecera" className="header">
                     <i class="material-icons md-40">dashboard</i>
                     <h2 className="h2">Dashboard</h2>

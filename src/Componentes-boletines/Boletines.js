@@ -10,6 +10,7 @@ class Boletines extends Component {
     render() {
         return (
             <div className="conteiner">
+                <MenuToggle/>
                 {/*Contenedor general header */}
                 <div className="header">
                     <i class="material-icons md-40">line_weight</i>

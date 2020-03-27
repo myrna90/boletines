@@ -35,8 +35,8 @@
 
 .conteiner {
   display: grid;
-  grid-template: 3.12em / 1fr;
-  grid-template-areas: "header" "section";
+  grid-template: 3.12em auto/auto 1fr;
+  grid-template-areas: "aside header" "aside section";
   height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
