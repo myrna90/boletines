@@ -13,8 +13,6 @@ class MiPerfil extends Component {
                     <UsuarioCabecera />
                 </div>
                 <div id="contenido" className="contenido contenido-perfil section">
-                    <div className="view mi-perfil">
-        
                         <div className="contenedor-vista">
                             <div className="cont-perfil">
                             <div className="div-morado">
@@ -28,13 +26,10 @@ class MiPerfil extends Component {
                             <div className="correo-time"><span class="material-icons md-25">email</span><p className="p-correo-time">mmares@telenetdemexico.com</p></div>
                             <div className="correo-time"><span class="material-icons md-25">restore</span><p className="p-correo-time">15:30</p></div>
                             </div>
-                            
                             </div>
-                            <div className="cont-perfil2"></div>
                         </div>
                     </div>
                 </div>
-            </div>
         )
     }
 }

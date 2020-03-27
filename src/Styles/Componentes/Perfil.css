@@ -12,31 +12,23 @@
     overflow: hidden;
 }
 
-.view {
-    overflow: hidden;
-    height: 80vh;
-}
-
 .contenedor-vista {
-    display: grid;
-    grid-template-areas: "vista vista2";
+    display: flex;
+    justify-content: center;
     height: 75vh;
 }
 
-.cont-perfil2 {
-    grid-area: vista2;
-}
 
 .cont-perfil {
     grid-area: vista;
     display: grid;
     grid-template-areas: "morado" "info";
     width: 330px;
-    height: 520px;
+    height: 330px;
     overflow: hidden;
     box-shadow: var(--boxShadow-dash);
     margin-left: 2em;
-    margin-top: 1em;
+    margin-top: 80px;
     margin-bottom: 2em;
     border-radius: var(--border-radius-boton);
 }
@@ -47,7 +39,6 @@
     height: 70px;
     margin-bottom: 0em;
     border-bottom: 1px;
-    
 }
 
 .div-avatar {
@@ -70,23 +61,23 @@
     margin-left: 4em;
     color: var(--color-grey);
     text-align: center;
-    height: 90px;
     border-bottom: 1px solid var(--color-blue-bajo);
     width: 60%;
 }
 
 .div-info {
     grid-area: info;
+    margin-top: 6em;
 }
 
 .material-icons.md-25 {
-    color: var(--color-blue-bajo);
+    color: var(--color-blue);
     margin-left: 1em;
 }
 
 .correo-time {
     display: inline-flex;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 .p-correo-time {
     margin-left: 1em;
