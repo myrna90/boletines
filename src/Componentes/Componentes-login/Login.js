@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 //import FormErrors from '../Componentes-login/FormErrors';
 import BtnLogin from '../Componentes-login/ButtonLogin';
-import Logo from '../imgs/logotn.png';
+//import Logo from '../src/imgs/logotn.png';
 import data from '../Componentes-login/data.json';
 
 const showData = data.map((data) => {
@@ -97,7 +97,7 @@ class Login extends Component {
           <div className="conteiner-titulo">
             <h1 className="titular-inicio">Boletines</h1>
             <h5 className='sub-titulo'>Mejora continua</h5>
-            <img src={Logo} className="logotn" />
+            {/*<img src={Logo} className="logotn" />*/}
             <div className="miImg"></div>
           </div>
           <div className="conteiner-sesion">
