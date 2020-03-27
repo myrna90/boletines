@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-//import LogoW from './imgs/logotnW.png';
+import LogoW from '../imgs/logotnW.png';
 
 class MenuToggle extends Component {
     constructor(props) {
@@ -46,7 +46,7 @@ class MenuToggle extends Component {
                     </div>
 
                     <div className="nav-menu">
-                        {/*<img src={LogoW} className="logoW"/> */}
+                        <img src={LogoW} className="logoW"/>
                         <Link to="/Dashboard" className="Link L-dashboard"><i class="material-icons md-24">dashboard</i><div className="text-menu">Dashboard</div></Link>
                         <Link to="/Boletines" className="Link L-boletines"><i class="material-icons md-24">line_weight</i><div className="text-menu">Boletines</div></Link>
                         <Link to="/MiPerfil" className="Link L-miperfil"><i class="material-icons md-24">person</i><div className="text-menu">Mi Perfil</div></Link>

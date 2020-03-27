@@ -65,11 +65,10 @@
 
 .miImg{
   margin-left: -3em;
-  margin-top: 1em;
+  margin-top: 2em;
   margin-bottom: 0;
   width: 26.68em;
   height: 12.5em;
- /* background-image: url('../src/imgs/img-login.png');*/
 }
 
 .panel-default {
@@ -114,17 +113,15 @@
 .img-correo {
   width: 1.25em;
   height: 1em;
-  /*background-image: url(../src/Componentes/imgs/correo.png);*/
   margin-top: -1.5em;
-  margin-left: 20.4em;
+  margin-left: 18.5em;
 }
 
 .img-contraseña {
   width: 1em;
   height: 1.31em;
- /* background-image: url(../src/Componentes/imgs/contraseña.png);*/
   margin-top: -1.8em;
-  margin-left: 20.5em;
+  margin-left: 18.5em;
 }
 
 .text-login {

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 //import FormErrors from '../Componentes-login/FormErrors';
 import BtnLogin from '../Componentes-login/ButtonLogin';
 //import Logo from '../src/imgs/logotn.png';
+import Logo from '../imgs/logotn.png';
+import ImgPersonas from '../imgs/img-login.png'
 import data from '../Componentes-login/data.json';
 
 const showData = data.map((data) => {
@@ -97,8 +99,8 @@ class Login extends Component {
           <div className="conteiner-titulo">
             <h1 className="titular-inicio">Boletines</h1>
             <h5 className='sub-titulo'>Mejora continua</h5>
-            {/*<img src={Logo} className="logotn" />*/}
-            <div className="miImg"></div>
+            <img src={Logo} className="logotn" />
+            <img src={ImgPersonas} className="miImg"/>
           </div>
           <div className="conteiner-sesion">
             <div className="text-inicio">
@@ -117,7 +119,7 @@ class Login extends Component {
                     onChange={this.handleChange}
                     placeholder="Myrna Mares"
                   />
-                  <div className="img-correo"></div>
+                  <div className="img-correo"><span class="material-icons md-25">email</span></div>
                 </div>
 
                 {/*div para introducir password */}
@@ -127,7 +129,7 @@ class Login extends Component {
                     value={this.state.password}
                     onChange={this.handleChange}
                     placeholder="**********" />
-                  <div className="img-contraseña"></div>
+                  <div className="img-contraseña"><span class="material-icons md-25">https</span></div>
                 </div>
 
                 {/*div para recordar usuario */}
