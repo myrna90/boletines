@@ -24,7 +24,7 @@
   --border-boton: none;
   --align-boton: center;
   --top-boton: .06em;
-  --border-line: solid .06em;
+  --border-line: solid .06em #A7A7A7;
   --boxShadow-dash: 0px 1px 6px 0px rgba(0,0,0,0.16);
   /*css contenedores perfil y view boletines*/
   --width-conten-view: 45em;

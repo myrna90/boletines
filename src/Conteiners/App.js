@@ -8,12 +8,14 @@ import '../Styles/Componentes/cabecera.css';
 import '../Styles/Componentes/Perfil.css';
 import '../Styles/Componentes/Soporte.css';
 import '../Styles/Componentes/BoletinesView.css';
+import '../Styles/Componentes/Listado.css';
 import Login from '../Componentes/Componentes-login/Login';
 import Dashboard from '../Componentes/Dashboard';
 import Soporte from '../Componentes/Soporte';
 import Boletines from '../Componentes/Componentes-boletines/Boletines';
 import MiPerfil from '../Componentes/MiPerfil';
 import BoletinesView from '../Componentes/Componentes-secundarios/BoletinesView';
+import Listado from '../Componentes/ListadoBoletines';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 //import PageNotFound from './Componente-pageNotFound/PageNotFound';
 
@@ -28,6 +30,7 @@ function App() {
     <Route path="/Boletines" component={Boletines} />
     <Route path="/MiPerfil" component={MiPerfil} />
     <Route path="/Soporte" component={Soporte} />
+    <Route path="/Listado" component={Listado}/>
     <Route path="/View" component={BoletinesView} />
     {/*<Route component={PageNotFound}/>*/}
     </Router>

@@ -1,0 +1,48 @@
+.content-list {
+    display: grid;
+    grid-template-areas: "filtro" "tabla" "pag";
+    grid-template-rows: 50px auto 50px;
+    background-color: var(--color-white-light);
+    margin-top: 2em;
+    width: 100vw;
+    height: 85vh;
+    overflow: hidden;
+    box-shadow: var(--boxShadow-dash);
+    color: var(--color-border-input);
+}
+
+.div-filtro {
+    grid-area: filtro;
+    display: inline-flex;
+}
+
+.material-icons.md-28 {
+    color: var(--color-grey);
+    margin-top: .5em;
+    margin-left: 3em;
+}
+
+.h6-filtro {
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.div-tabla {
+    grid-area: tabla;
+}
+
+.div-paginacion {
+    grid-area: pag;
+}
+
+.tabla{
+    width: 82vw;
+    margin-left: 2em;
+    text-align: center;
+}
+
+.tr-th {
+    border-top: var(--border-line);
+    border-bottom: var(--border-line);
+    height: 3em;
+}
