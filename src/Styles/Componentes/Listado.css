@@ -39,10 +39,21 @@
     width: 82vw;
     margin-left: 2em;
     text-align: center;
+    border-bottom: var(--border-line);
 }
 
 .tr-th {
     border-top: var(--border-line);
     border-bottom: var(--border-line);
     height: 3em;
+}
+
+.tr-td-white {
+    height: 2.5em;
+}
+
+.tr-td-grey {
+    height: 2.5em;
+    background-color: var(--color-border-input);
+    opacity: .23;
 }
