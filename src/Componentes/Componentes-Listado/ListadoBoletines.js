@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import MenuToggle from '../Componentes/Componentes-secundarios/MenuToggle';
-import UsuarioCabecera from '../Componentes/Componentes-secundarios/Usuario-cabecera';
-import Tabla from '../Componentes/TablaListado';
+import MenuToggle from '../Componentes-secundarios/MenuToggle';
+import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
+import Tabla from './TablaListado';
 
 
 class Listado extends Component{

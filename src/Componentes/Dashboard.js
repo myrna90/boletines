@@ -9,7 +9,8 @@ class Dashboard extends Component {
     constructor(props) {
     super(props)
     this.state = {
-    redirect: false
+    redirect: false,
+    redirectList: false
     }
     }
 
@@ -17,6 +18,18 @@ class Dashboard extends Component {
         this.setState({
             redirect: true
         })
+    }
+
+    setRedirectList = () => {
+        this.setState({
+            redirectList: true
+        })
+    }
+
+    renderRedirectList = () => {
+        if(this.state.redirectList) {
+            return <Redirect to= '/Listado'/>
+        }
     }
 
     renderRedirect = () => {
@@ -44,7 +57,7 @@ class Dashboard extends Component {
                             <div className="digsn-dash disgn"><div className="circulo-boletin2"></div><p className="p-boletines">B-03 | Hines-Control de accesos</p><div className="contenedor-icon">{this.renderRedirect()}<button className="btn-bol contenedor-icon" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div></div>
                         </div>
                         <div className="grid-proyectos grids-dash">
-                            <h4 className="h4">Mis proyectos</h4>
+                           <h4 className="h4">Mis proyectos</h4>
                             <div className="digsn-dash2"><p className="p-boletines">Casa cuervo-La rioja</p></div>
                             <div className="digsn-dash2"><p className="p-boletines">Punto sur- CVTV</p></div>
                             <div className="digsn-dash2 disgn"><p className="p-boletines">Andares-Plaza comercial </p></div>
@@ -55,7 +68,8 @@ class Dashboard extends Component {
                     <div className="boletines-general">
                         <div className="contenedor-Bgeneral">
                         <div className="conteiner-encabezado">
-                            <h4 className="h4">Listado Boletines</h4>
+                        {this.renderRedirectList()}
+                        <button className="redirectList" onClick={this.setRedirectList}><h4 className="h4-list">Listado Boletines</h4></button>
                         </div>
                         {/*<div className="conteiner-paginacion">
                             <div className="paginacion">

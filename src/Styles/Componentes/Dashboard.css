@@ -60,6 +60,11 @@
   grid-area: encabezado;
   width: 11em;
 }
+.redirectList {
+  background: transparent;
+  border: none;
+  color: var(--color-blue-bajo);
+}
 
 .conteiner-paginacion {
   grid-area: paginacion;

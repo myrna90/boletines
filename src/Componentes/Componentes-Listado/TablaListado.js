@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import BarraFiltro from './BarraFiltro';
 
 class Tabla extends Component {
     constructor(props) {
@@ -22,10 +23,7 @@ class Tabla extends Component {
     render() {
         return(
             <div className="content-list">
-                    <div className="div-filtro">
-                    <span class="material-icons md-28">filter_list</span>
-                    <h6 className="h6-filtro">Filtro</h6>
-                    </div>
+                    <BarraFiltro/>
                     <div className="div-tabla">
                         <table className="tabla">
                             <tr className="tr-th">
