@@ -4,15 +4,6 @@ import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
 
 function BoletinesView() {
 
-    /*const [folio, setFolio] = useState(folio);
-    const [proyecto, setProyecto] = useState(proyecto);
-    const [cliente, setCliente] = useState(cliente);
-    const [fecha, setFecha] = useState(fecha);
-    const [displayName] = useState(displayName);
-    const [departamento, setDepartamento] = useState(departamento);
-    const [problema, setProblema] = useState(problema);
-    const [solucion, setSolucion] = useState(solucion);*/
-
     return (
         <div className="conteiner contenedor-view">
             <MenuToggle/>

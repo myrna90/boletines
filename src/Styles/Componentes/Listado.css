@@ -11,6 +11,7 @@
     color: var(--color-border-input);
 }
 
+/*Diseño area filtro*/
 .div-filtro {
     grid-area: filtro;
     display: inline-flex;
@@ -27,12 +28,10 @@
     margin-top: 1em;
 }
 
+
+/*Diseño área tabla*/
 .div-tabla {
     grid-area: tabla;
-}
-
-.div-paginacion {
-    grid-area: pag;
 }
 
 .tabla{
@@ -54,6 +53,17 @@
 
 .tr-td-grey {
     height: 2.5em;
-    background-color: var(--color-border-input);
-    opacity: .23;
+    background-color: var(--color-grey-border-img);
 }
+
+.btn-list {
+    background: transparent;
+    border: none;
+    color: var(--color-morado)
+}
+
+/*Diseño área paginación*/
+.div-paginacion {
+    grid-area: pag;
+}
+

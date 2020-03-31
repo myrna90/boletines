@@ -55,7 +55,7 @@ class Dashboard extends Component {
                     <div className="boletines-general">
                         <div className="contenedor-Bgeneral">
                         <div className="conteiner-encabezado">
-                            <h4 className="h4">Boletines</h4>
+                            <h4 className="h4">Listado Boletines</h4>
                         </div>
                         {/*<div className="conteiner-paginacion">
                             <div className="paginacion">
