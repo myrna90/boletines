@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import LogoW from '../imgs/logotnW.png';
+import Navegacion from '../Navegacion';
 
-class MenuToggle extends Component {
+/*class MenuToggle extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -65,4 +65,4 @@ class MenuToggle extends Component {
     }
 }
 
-export default MenuToggle;
+export default MenuToggle;*/

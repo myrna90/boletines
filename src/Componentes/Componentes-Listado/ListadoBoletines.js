@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MenuToggle from '../Componentes-secundarios/MenuToggle';
 import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
 import Tabla from './TablaListado';
 
@@ -9,7 +8,6 @@ class Listado extends Component{
         render() {
             return(
                 <div className="conteiner contenedor-dash">
-                    <MenuToggle/>
                     <div id="cabecera" className="header">
                     <h2 className="h2">Listado</h2>
                     <UsuarioCabecera />
