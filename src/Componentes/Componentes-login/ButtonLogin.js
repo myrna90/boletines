@@ -14,7 +14,7 @@ class BtnLogin extends Component {
 
     renderRedirect = () => {
         if (this.state.redirect) {
-            return <Redirect to='/Dashboard' />
+            return <Redirect to='/Vista/Dashboard' />
         }
     }
     render() {

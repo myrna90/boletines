@@ -86,14 +86,3 @@ h2 {
   opacity: 0.7;
   color:  var(--color-white);
 }
-
-/*conteiner vista
-.conteiner-vista {
-  display: grid;
-  grid-template-areas: "aside Dcomponentes";
-}
-
-.div-componentes {
-  grid-area: Dcomponentes;
-}
-*/
