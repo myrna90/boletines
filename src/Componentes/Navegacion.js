@@ -8,7 +8,6 @@ import BoletinesView from '../Componentes/Componentes-secundarios/BoletinesView'
 import Listado from '../Componentes/Componentes-Listado/ListadoBoletines';
 
 const Navegacion = () => (
-
     <Switch>
         {/**/}
         <Route exact path="/Vista/Dashboard" component={Dashboard} />
@@ -19,8 +18,6 @@ const Navegacion = () => (
         <Route path="/Vista/View" component={BoletinesView} />
         {/*<Route component={PageNotFound}/>*/}
     </Switch>
-
-
 )
 
 export default Navegacion;

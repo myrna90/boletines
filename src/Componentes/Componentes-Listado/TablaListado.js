@@ -17,7 +17,7 @@ class Tabla extends Component {
 
     renderRedirect = () => {
         if (this.state.redirect) {
-            return <Redirect to='/View' />
+            return <Redirect to='/Vista/View' />
         }
     }
     render() {

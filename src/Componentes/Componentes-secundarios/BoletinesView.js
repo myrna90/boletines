@@ -9,7 +9,7 @@ function BoletinesView() {
                 <h2 className="h2">Boletin</h2>
                 <UsuarioCabecera />
             </div>
-            <div className="contenedor-view">
+            <div className="contenedor-view section">
                 <div className="view">
                     <div id="rectangle" className="titulo-view">
                         <h3 className="h3-bol">BMC-00</h3>

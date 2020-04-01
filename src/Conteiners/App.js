@@ -19,9 +19,9 @@ function App() {
   return (
     /*Router de la aplicación */
     <Router>
-    <Route exact path="/" component={Login} />
+      <Route exact path="/" component={Login} />
       <Route path="/Vista">
-      <Vista />
+        <Vista />
       </Route>
     </Router>
   );

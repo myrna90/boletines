@@ -28,13 +28,13 @@ class Dashboard extends Component {
 
     renderRedirectList = () => {
         if(this.state.redirectList) {
-            return <Redirect to= '/Listado'/>
+            return <Redirect to= '/Vista/Listado'/>
         }
     }
 
     renderRedirect = () => {
         if (this.state.redirect) {
-            return <Redirect to='/View' />
+            return <Redirect to='/Vista/View' />
         }
     }
     render() {

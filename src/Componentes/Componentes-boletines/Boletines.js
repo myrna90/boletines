@@ -11,7 +11,7 @@ class Boletines extends Component {
             <div className="conteiner">
                 {/*Contenedor general header */}
                 <div className="header">
-                    <i class="material-icons md-40">line_weight</i>
+                    <span class="material-icons md-40">add_circle</span>
                     <h2 className="h2">Crear boletín</h2>
                     <UsuarioCabecera />
                 </div>
