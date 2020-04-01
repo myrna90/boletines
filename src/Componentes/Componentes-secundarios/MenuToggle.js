@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import Navegacion from '../Navegacion';
+import LogoW from '../imgs/logotnW.png';
 
-/*class MenuToggle extends Component {
+class MenuToggle extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,11 +47,11 @@ import Navegacion from '../Navegacion';
 
                     <div className="nav-menu">
                         <img src={LogoW} className="logoW"/>
-                        <Link to="/Dashboard" className="Link L-dashboard"><i class="material-icons md-24">dashboard</i><div className="text-menu">Dashboard</div></Link>
-                        <Link to="/Boletines" className="Link L-boletines"><span class="material-icons md-24">add_circle</span><div className="text-menu">Crear Boletin</div></Link>
-                        <Link to="/Listado" className="Link L-listado"><span class="material-icons md-24">view_list</span><div className="text-menu">Listado boletines</div></Link>
-                        <Link to="/MiPerfil" className="Link L-miperfil"><i class="material-icons md-24">person</i><div className="text-menu">Mi Perfil</div></Link>
-                        <Link to="/Soporte" className="Link L-soporte"><i class="material-icons md-24">help_outline</i><div className="text-menu">Soporte</div></Link>
+                        <Link to="/Vista/Dashboard" className="Link L-dashboard"><i class="material-icons md-24">dashboard</i><div className="text-menu">Dashboard</div></Link>
+                        <Link to="/Vista/Boletines" className="Link L-boletines"><span class="material-icons md-24">add_circle</span><div className="text-menu">Crear Boletin</div></Link>
+                        <Link to="/Vista/Listado" className="Link L-listado"><span class="material-icons md-24">view_list</span><div className="text-menu">Listado boletines</div></Link>
+                        <Link to="/Vista/MiPerfil" className="Link L-miperfil"><i class="material-icons md-24">person</i><div className="text-menu">Mi Perfil</div></Link>
+                        <Link to="/Vista/Soporte" className="Link L-soporte"><i class="material-icons md-24">help_outline</i><div className="text-menu">Soporte</div></Link>
                         
                     </div>
                 </div>
@@ -65,4 +65,4 @@ import Navegacion from '../Navegacion';
     }
 }
 
-export default MenuToggle;*/
+export default MenuToggle;
