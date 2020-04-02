@@ -1,9 +1,19 @@
+/*Contenedores principales*/
 .contenedor-view{
   height: 100vh;
   overflow: hidden;
 }
 
+.contenido-view {
+  display: grid;
+  grid-template-areas: "view view2";
+  overflow: hidden;
+}
+
+
+/*Inicio diseño contenedor vista boletin*/
 .view {
+  grid-area: view;
   display: grid;
   grid-template-areas: "titulo" "input" "problema" "solucion";
   margin: var(--margin-conten);
@@ -16,13 +26,27 @@
   box-shadow:  var(--boxShadow-dash);
   border: 1px solid var(--color-morado);
 }
- 
+
+/*Diseño grid titulo*/
 .titulo-view {
   grid-area: titulo;
   height: 5em;
   margin-left: 1em;
 }
 
+#rectangle {
+  width: auto;
+  height: 5em;
+  margin-left: 0;
+  background: var(--color-green-boletin);
+}
+
+.h3-bol {
+  margin: 1em;
+  color: var(--color-white-light);
+}
+
+/*Diseño grid informacion de inputs*/
 .input-view  {
   grid-area: input;
   display: grid;
@@ -47,7 +71,19 @@
   grid-area: sistema;
 }
 
+.div-input {
+  display: inline-flex;
+  margin-left: 2em;
+}
 
+.input-bol {
+  margin-left: .5em;
+  height: 2em;
+  border: 1px solid var(--color-grey-border-img);
+  border-radius: var(--border-radius-boton);
+}
+
+/*Diseño grid contenedores descripción e imagen*/
 .problema-view {
   grid-area: problema;
   display: inline-flex;
@@ -59,31 +95,6 @@
   display: inline-flex;
   justify-content: space-around;
 }
-
-#rectangle {
-    width: 45em;
-    height: 5em;
-    margin-left: 0;
-    background: var(--color-green-boletin);
-  }
-
-
-.h3-bol {
-    margin: 1em;
-    color: var(--color-white-light);
-  }
-
-.div-input {
-    display: inline-flex;
-    margin-left: 2em;
-  }
-
-.input-bol {
-    margin-left: .5em;
-    height: 2em;
-    border: 1px solid var(--color-grey-border-img);
-    border-radius: var(--border-radius-boton);
-  }
 
   .conteiner-problema {
     display: block;
@@ -123,3 +134,77 @@
     border-bottom-color: var(--color-border-input);
     border-left-color: var(--color-border-input);
   }
+
+
+  /*Inicio diseño contenedor comentarios*/
+.view-coment {
+  grid-area: view2;
+  display: grid;
+  grid-template-areas: "titulo-coment" "contador" "comentar" "comentarios";
+  grid-template-rows: 5em 90px 130px auto;
+  background-color: var(--color-white-light);
+  border: 1px solid var(--color-morado);
+  width: 30vw;
+  height: var(--height-conten-view);
+  margin: var(--margin-conten);
+  color: var(--color-grey);
+  overflow-x: hidden;
+  border-radius: var(--border-radius-boton);
+  box-shadow:  var(--boxShadow-dash);
+}
+
+.titulo-coment {
+  grid-area: titulo-coment;
+  width: auto;
+  height: 5em;
+  margin-left: 0;
+  background: var(--color-green-boletin);
+}
+
+.div-contador {
+  grid-area: contador;
+  width: 26vw;
+  height: 50px;
+  margin-left: 2em;
+  margin-top: 2em;
+  border-top: var(--border-line);
+  border-bottom: var(--border-line);
+}
+
+.input-contador {
+  margin-left: 1em;
+}
+
+.material-icons.md-5 {
+  margin-right: .5em;
+  margin-top: .4em;
+}
+
+.div-comentar {
+  grid-area: comentar;
+  display: flex;
+  margin-top: 2em;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-comentar {
+  width: 20em;
+  border-radius: var(--border-radius-boton);
+  border-color: var(--color-morado);
+}
+
+.btn-comentar {
+  margin-top: 1em;
+}
+
+.div-comentarios {
+  grid-area: comentarios;
+}
+
+.div-comentario {
+  width: 26vw;
+  margin-left: 2em;
+  margin-top: 2em;
+  border-bottom: var(--border-line);
+}

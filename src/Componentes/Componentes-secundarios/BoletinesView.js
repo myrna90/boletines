@@ -9,10 +9,10 @@ function BoletinesView() {
                 <h2 className="h2">Boletin</h2>
                 <UsuarioCabecera />
             </div>
-            <div className="contenedor-view section">
+            <div className="contenido-view section">
                 <div className="view">
                     <div id="rectangle" className="titulo-view">
-                        <h3 className="h3-bol">BMC-00</h3>
+                        <h3 className="h3-bol">B-00</h3>
                     </div>
                     <div className="input-view">
                         <div className="div-input proyecto"><p>Proyecto:</p> <input className="input-bol"></input></div>
@@ -40,6 +40,22 @@ function BoletinesView() {
                             <h6 className="titulo-problem">Imagen solución:</h6>
                             <div className="img-problema"><i className="img-export-bol" class="material-icons md-56">add_photo_alternate</i></div>
                         </div>
+                    </div>
+                </div>
+                <div className="view-coment">
+                    <div className="titulo-coment">
+                        <h3 className="h3-bol">Comentarios</h3>
+                    </div>
+                    <div className="div-contador">
+                        <p className="input-contador"><span class="material-icons md-5">mode_comment</span>10 </p>
+                        
+                    </div>
+                    <div className="div-comentar">
+                        <textarea className="input-comentar"></textarea>
+                        <button className="btn btn-comentar">Comentar</button>
+                    </div>
+                    <div className="div-comentarios">
+                        <div className="div-comentario"><span class="material-icons md-24">account_circle</span><p className="p.comentario">La solución al proble fue útil para poder implementar en otro similar</p></div>
                     </div>
                 </div>
             </div>
