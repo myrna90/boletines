@@ -39,7 +39,7 @@ class FormBoletines extends Component {
     }
 
     render() {
-        const { folio, proyecto, cliente, fecha, sistema, equipo, marca, modelo, problema, imgProblema, solucion, imgSolucion, usuario, departamento } = this.state;
+        const { folio, proyecto, cliente, fecha, sistema, equipo, marca, modelo, problema, solucion, usuario, departamento } = this.state;
         return (
             <div className="contenido section ">
                 {/*Contenedor el cual muestra el fomulario para llenar los campos requeridos */}

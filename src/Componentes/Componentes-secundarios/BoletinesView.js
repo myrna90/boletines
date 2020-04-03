@@ -3,6 +3,7 @@ import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
 
 function BoletinesView() {
     const [comment, setComment] = useState('');
+    const [count, setCount] = useState(0);
 
     return (
         <div className="conteiner contenedor-view">
@@ -48,12 +49,12 @@ function BoletinesView() {
                         <h3 className="h3-bol">Comentarios</h3>
                     </div>
                     <div className="div-contador">
-                        <p className="input-contador"><span class="material-icons md-5">mode_comment</span>10 </p>
+                        <p className="input-contador"><span class="material-icons md-5">mode_comment</span>{count} </p>
                         
                     </div>
                     <div className="div-comentar" >
                         <input className="input-comentar" onChange={(event) => setComment(event.target.value)}></input>
-                        <button className="btn btn-comentar">Comentar</button>
+                        <button className="btn btn-comentar" onClick={() => setCount(count +1)}>Comentar</button>
                     </div>
                     <div className="div-comentarios">
                         <div className="div-comentario"><span class="material-icons md-24">account_circle</span><p className="p.comentario">{comment}</p></div>

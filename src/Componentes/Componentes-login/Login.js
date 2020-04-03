@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
 //import FormErrors from '../Componentes-login/FormErrors';
 import BtnLogin from '../Componentes-login/ButtonLogin';
 //import Logo from '../src/imgs/logotn.png';
@@ -119,7 +118,7 @@ class Login extends Component {
                     onChange={this.handleChange}
                     placeholder="Myrna Mares"
                   />
-                  <div className="img-correo"><span class="material-icons md-25">email</span></div>
+                  <div className="img-correo"><span className="material-icons md-25">email</span></div>
                 </div>
 
                 {/*div para introducir password */}
@@ -129,7 +128,7 @@ class Login extends Component {
                     value={this.state.password}
                     onChange={this.handleChange}
                     placeholder="**********" />
-                  <div className="img-contraseña"><span class="material-icons md-25">https</span></div>
+                  <div className="img-contraseña"><span className="material-icons md-25">https</span></div>
                 </div>
 
                 {/*div para recordar usuario */}
@@ -141,7 +140,7 @@ class Login extends Component {
 
                 <BtnLogin />
                 <p className="forgot-password text-right">
-                  Olvidaste tu <Link className="a-forgot" onClick={this.btnForgot}>contraseña?</Link>
+                  Olvidaste tu <button className="a-forgot" onClick={this.btnForgot}>contraseña?</button>
                 </p>
               </form>
             </div>

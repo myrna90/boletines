@@ -145,6 +145,8 @@
 
 .a-forgot {
   color: var(--color-grey);
+  background-color: transparent;
+  border: none;
 }
 
 .footer{

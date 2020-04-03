@@ -38,10 +38,10 @@ class MenuToggle extends Component {
             <div className="aside" ref={this.aside}>
                 <div className="menu-toggle">
                     <div className="contenedor-titulo">
-                        <div class="hamburger" id="btn" onClick={this.changeWidth}>
-                            <div class="_layer -top"></div>
-                            <div class="_layer -mid"></div>
-                            <div class="_layer -bottom"></div>
+                        <div className="hamburger" id="btn" onClick={this.changeWidth}>
+                            <div className="_layer -top"></div>
+                            <div className="_layer -mid"></div>
+                            <div className="_layer -bottom"></div>
                         </div>
                     </div>
 
