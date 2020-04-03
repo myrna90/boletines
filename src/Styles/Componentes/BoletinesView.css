@@ -58,17 +58,29 @@
 .proyecto {
   grid-area: proyecto;
 }
+.input-proyecto {
+  margin-left: .5em;
+}
 
 .cliente {
   grid-area: cliente;
+}
+.input-cliente {
+  margin-left: 1em;
 }
 
 .fecha {
   grid-area: fecha;
 }
+.input-fecha {
+  margin-left: 1.8em;
+}
 
 .sistema {
   grid-area: sistema;
+}
+.input-sistema {
+  margin-left: .6em;
 }
 
 .div-input {
@@ -76,8 +88,19 @@
   margin-left: 2em;
 }
 
+.input-equipo {
+  margin-left: 1.3em;
+}
+
+.input-modelo {
+  margin-left: 1em;
+}
+
+.input-marca {
+  margin-left: 1.3em;
+}
+
 .input-bol {
-  margin-left: .5em;
   height: 2em;
   border: 1px solid var(--color-grey-border-img);
   border-radius: var(--border-radius-boton);
@@ -167,12 +190,13 @@
   height: 50px;
   margin-left: 2em;
   margin-top: 2em;
-  border-top: var(--border-line);
-  border-bottom: var(--border-line);
+  border-top: solid 1.5px var(--color-grey-border-img);
+  border-bottom: solid 1.5px var(--color-grey-border-img);
 }
 
 .input-contador {
   margin-left: 1em;
+  color: var( --color-border-input);
 }
 
 .material-icons.md-5 {
@@ -191,11 +215,12 @@
 .input-comentar {
   width: 20em;
   border-radius: var(--border-radius-boton);
-  border-color: var(--color-morado);
+  border: solid 1.5px var(--color-grey-border-img);
 }
 
 .btn-comentar {
   margin-top: 1em;
+  
 }
 
 .div-comentarios {
@@ -206,5 +231,5 @@
   width: 26vw;
   margin-left: 2em;
   margin-top: 2em;
-  border-bottom: var(--border-line);
+  border-bottom: solid 1.5px var(--color-grey-border-img);
 }

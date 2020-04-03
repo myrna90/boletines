@@ -6,8 +6,7 @@ function BarraFiltro() {
     return(
             <div className="div-filtro">
                     <span class="material-icons md-28">filter_list</span>
-                    <input className="input-filter" value={search}
-                    onChange={event => setSearch({term: event.target.value})}
+                    <input className="input-filter" 
                     placeholder="Filtro"/>
             </div> 
     )
