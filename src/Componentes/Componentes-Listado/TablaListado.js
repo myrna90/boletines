@@ -29,7 +29,7 @@ class Tabla extends Component {
                             <tr className="tr-th">
                                 <th><strong>Folio</strong></th>
                                 <th><strong>Proyecto</strong></th>
-                                <th><strong>Problema</strong></th>
+                                <th><strong>Sistema</strong></th>
                                 <th><strong>Cliente</strong></th>
                                 <th><strong>Vista</strong></th>
                             </tr>

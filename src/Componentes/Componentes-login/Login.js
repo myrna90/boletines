@@ -5,6 +5,7 @@ import BtnLogin from '../Componentes-login/ButtonLogin';
 import Logo from '../imgs/logotn.png';
 import ImgPersonas from '../imgs/img-login.png'
 import data from '../Componentes-login/data.json';
+import { Link } from "react-router-dom";
 
 const showData = data.map((data) => {
   return (
@@ -104,7 +105,7 @@ class Login extends Component {
           <div className="conteiner-sesion">
             <div className="text-inicio">
               <h2 className="text-conten">Inicie sesión ahora...</h2>
-              <p className="text-conten">Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
+              <p className="p-conten">Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
             </div>
 
             <div className="login">
@@ -140,7 +141,7 @@ class Login extends Component {
 
                 <BtnLogin />
                 <p className="forgot-password text-right">
-                  Olvidaste tu <button className="a-forgot" onClick={this.btnForgot}>contraseña?</button>
+                  Olvidaste tu <Link className="a-forgot" onClick={this.btnForgot}>contraseña?</Link>
                 </p>
               </form>
             </div>

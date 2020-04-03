@@ -28,7 +28,7 @@
   background-color: var(--color-white-light);
   width: 17.5em;
   height: 31.25em;
-  border: 2px solid var(--color-blue);
+  border-right: 2px solid var(--color-blue);
 }
 
 .conteiner-sesion{
@@ -82,6 +82,10 @@
   margin-left: 2em;
   margin-top: 4em;
   color: #007F7F;
+}
+
+.p-conten {
+  font-size: 14px;
 }
 
 .login{

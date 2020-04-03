@@ -15,7 +15,7 @@
   .h2 {
     grid-area: h2;
     text-align: left;
-    color: var(--color-grey);
+    color: var(--color-grey-border);
     margin-top: .2em;
   }
 
