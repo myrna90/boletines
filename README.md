@@ -21,25 +21,25 @@ Es responsabilidad de todos los involucrados levantar un boletín (plataforma) e
 
 - Abrir la plataforma de mejora continua, la misma plataforma te dará un folio.
 
-![folio](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/imgs/folio.jpg)
+![folio](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/Componentes/imgs/folio.jpg)
 
 ### Paso 2:
 
 - Tendrás que llenar los siguientes espacios.
 
-![proyecto](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/imgs/proyecto.jpg)
+![proyecto](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/Componentes/imgs/proyecto.jpg)
 
 ### Paso 3:
 
 - Se describe el problema y se documenta con alguna fotografía para hacer mas claro el problema y la solución.
 
-![descripción](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/imgs/descripci%C3%B3n.jpg)
+![descripción](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/Componentes/imgs/descripci%C3%B3n.jpg)
 
 ### Paso 4:
 
 - Se llenará en automático el nombre de quien levanta el boletín y el departamento al que pertenece.
 
-![usuario](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/imgs/usuario.jpg)
+![usuario](https://github.com/telenetdemexico/boletin/blob/desarrollo/src/Componentes/imgs/usuario.jpg)
 
 Una vez que se guarde el boletín, se enviara la notificación a todos los involucrados y se guardara un archivo en PDF donde podrán ser consultados los boletines por cualquier personal.
 Con este sistema lograremos estar todos informados y mejorando la forma de hacer proyectos.
