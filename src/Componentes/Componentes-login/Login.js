@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-//import FormErrors from '../Componentes-login/FormErrors';
 import BtnLogin from '../Componentes-login/ButtonLogin';
-//import Logo from '../src/imgs/logotn.png';
 import Logo from '../imgs/logotn.png';
 import ImgPersonas from '../imgs/img-login.png'
-import data from '../Componentes-login/data.json';
+import users from '../users.json';
 import { Link } from "react-router-dom";
 
-const showData = data.map((data) => {
+const showData = users.users.map((users) => {
   return (
-    console.log(data.displayName)
+    console.log(users.displayName)
   )
 });
 
@@ -29,21 +27,25 @@ class Login extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
-  /*auth(){
-    fetch('http://10.10.1.24:3000/auth/signin',
+  auth(){
+    fetch('http://localhost:3000/users',
     {
-      method: 'POST',
+      method: 'GET',
       headers: {
         user: '',
         password: '',
-        Authorization: 'Bearer Token',
+        //Authorization: 'Bearer Token',
         'Content-Type': 'application/json',
         'Accepts': 'application/json',
       }
     })
-    .then(res => res.json)
-    .catch(error => console.error('Error:', error))
-  }*/
+    .then((response) => {
+      return response.json()
+    })
+    .then((users) => {
+    this.setState({users: users})
+  })
+  }
 
   /*authLogin() {
     axios({
@@ -64,7 +66,7 @@ class Login extends Component {
     })
   }*/
 
-
+  
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }

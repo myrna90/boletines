@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class FormBoletines extends Component {
     constructor(props) {
         super(props);

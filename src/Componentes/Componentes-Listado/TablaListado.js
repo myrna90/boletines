@@ -1,14 +1,40 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import BarraFiltro from './BarraFiltro';
+import boletines from '../boletines.json';
+
+const data = boletines.boletines.map((boletines) => {
+    return (
+      console.log(boletines)
+    )
+  });
 
 class Tabla extends Component {
     constructor(props) {
         super(props)
         this.state = {
-        redirect: false
+        redirect: false,
+        boletines: boletines
         }
         }
+
+    data(){
+       fetch('http://localhost:3000/boletines', {
+           method: 'GET',
+           headers: {
+            //Authorization: '',
+            'Content-type': 'application/json; '
+           }
+        }
+       )
+       .then((response) => {
+           return response.json()
+       })
+       .then((boletines) => {
+           this.setState({boletines: boletines})
+       })
+   }
+
     setRedirect = () => {
         this.setState({
             redirect: true
@@ -23,6 +49,7 @@ class Tabla extends Component {
     render() {
         return(
             <div className="content-list">
+                {data}
                     <BarraFiltro/>
                     <div className="div-tabla">
                         <table className="tabla">
