@@ -2,22 +2,28 @@
 /*Incluye algunas medidas que estes usando con frecuencia*/
 
 :root {
+  /*colores verdes*/
   --grid-color-blue: #004040;
-  --color-white: #FBFBFB;
-  --color-white-light: #FFFFFF;
-  --color-grey: #3e3e3e;
   --color-blue: #0E8C8C;
   --color-green-boletin: #006666;
   --color-blue-bajo: #98D2DE;
+  --color-boton: #A3E2BA;
+  /*colores blancos*/
+  --color-white: #FBFBFB;
+  --color-white-light: #FFFFFF;
+  /*colores grices*/
+  --color-grey: #3e3e3e;
   --color-grey-border: #bebed2;
   --color-grey-border-img: #EBEBEB;
-  --color-border-input: #A7A7A7;
   --color-separacion-header: #DBDBDB;
   --color-texts: #707070;
+  --color-border-input: #A7A7A7;
+  --color-gray-bajo: #F2F2F2;
+  /*colores rosas*/
   --color-borde-redireccion: #99125C;
   --color-morado: #800D61;
   --color-pink: #D47F7F;
-  --color-boton: #A3E2BA;
+  
   /*medidas, color y bordes de los botones*/
   --height-boton: 1.9em;
   --width-boton: 6.87em;

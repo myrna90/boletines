@@ -50,7 +50,7 @@
 .input:focus {
     outline: none;
     border: solid 1.1px var(--color-green-boletin);
-    background-color: var(--color-grey-border);
+    background-color: var(--color-gray-bajo);
 }
 
 /*css grid div 1*/
