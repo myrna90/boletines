@@ -8,7 +8,13 @@ function BoletinesView() {
     return (
         <div className="conteiner contenedor-view">
             <div id="cabecera" className="header">
-                <h2 className="h2">Vista Boletin</h2>
+                <div className="div-icon-header">
+
+                </div>
+                <div className="div-h2">
+                    <hr className="v" />
+                    <h2 className="h2">Vista Boletin</h2>
+                </div>
                 <UsuarioCabecera />
             </div>
             <div className="contenido-view section">
@@ -50,11 +56,11 @@ function BoletinesView() {
                     </div>
                     <div className="div-contador">
                         <p className="input-contador"><span class="material-icons md-5">mode_comment</span>{count} </p>
-                        
+
                     </div>
                     <div className="div-comentar" >
                         <input className="input-comentar" onChange={(event) => setComment(event.target.value)}></input>
-                        <button className="btn btn-comentar" onClick={() => setCount(count +1)}>Comentar</button>
+                        <button className="btn btn-comentar" onClick={() => setCount(count + 1)}>Comentar</button>
                     </div>
                     <div className="div-comentarios">
                         <div className="div-comentario"><span class="material-icons md-24">account_circle</span><p className="p.comentario">{comment}</p></div>

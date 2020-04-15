@@ -14,7 +14,7 @@ class Tabla extends Component {
         super(props)
         this.state = {
         redirect: false,
-        boletines: boletines
+        boletines: []
         }
         }
 

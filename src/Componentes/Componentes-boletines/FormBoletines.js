@@ -66,7 +66,7 @@ class FormBoletines extends Component {
                         </div>
                         <div className="contenedor-form-div2">
                             <label className="label label1">Proyecto</label>
-                            <input className="input input1" name="proyecto" value={proyecto} onChange={this.handleChange} required></input>
+                            <select className="input input1" name="proyecto" value={proyecto} onChange={this.handleChange} required></select>
 
 
 
@@ -76,11 +76,11 @@ class FormBoletines extends Component {
 
 
                             <label className="label label3">Fecha</label>
-                            <input className="input input3" name="fecha" value={fecha} onChange={this.handleChange} required></input>
+                            <input className="input input3 input-fecha" name="fecha" type="date" value={fecha} onChange={this.handleChange} required></input>
 
 
                             <label className="label label4">Sistema</label>
-                            <input className="input input4" name="sistema" value={sistema} onChange={this.handleChange} required></input>
+                            <select className="input input4" name="sistema" value={sistema} onChange={this.handleChange} required></select>
 
                         </div>
 

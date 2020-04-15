@@ -39,10 +39,18 @@
 
 .input {
     width: 15em;
+    height: 1.8em;
     background-color: white;
     border-radius: 5px;
     border: none;
     border: 1px solid var(--color-border-input);
+    padding: 0.5em;
+}
+
+.input:focus {
+    outline: none;
+    border: solid 1.1px var(--color-green-boletin);
+    background-color: var(--color-grey-border);
 }
 
 /*css grid div 1*/
@@ -75,7 +83,7 @@
 
 .input-div1 {
     grid-area: input1;
-    width: 15em;
+    width: 200px;
 }
 
 /*css grid div 2*/
@@ -106,6 +114,8 @@
 
 .label3 {
     grid-area: L3;
+    margin-left: 2em;
+    width: 137px;
 }
 
 .label4 {
@@ -118,10 +128,12 @@
 
 .input2 {
     grid-area: I2;
+    width: 230px;
 }
 
 .input3 {
     grid-area: I3;
+    width: 137px;
 }
 
 .input4 {
@@ -207,6 +219,9 @@
     height: 9.37em;
     border-radius: 5px;
     border: 1px solid var(--color-border-input);
+    outline: none;
+    padding: 0.5em;
+    resize: none;
 }
 
 .conten-export-img {

@@ -11,6 +11,7 @@
   overflow: hidden;
   display: grid;
   grid-template-areas: "publicados proyectos";
+  width: calc(100% -100px);
 }
 
 .h4 {
@@ -30,7 +31,7 @@
   grid-area: publicados;
   width: 450px;
   height: 362px;
-  margin-left: 3em;
+  margin-left: 100px;
 }
 
 .grid-proyectos {
@@ -41,10 +42,11 @@
 
 .boletines-general {
   grid-area: generales;
+  margin-left: 50px;
 }
 
 .contenedor-Bgeneral {
-  width: 1154px;
+  width: 1135px;
   height: 240px;
   display: grid;
   margin-top: .5em;

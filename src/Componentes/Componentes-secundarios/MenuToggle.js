@@ -46,18 +46,21 @@ class MenuToggle extends Component {
                     </div>
 
                     <div className="nav-menu">
+                        <div className="div-logoW">
                         <img src={LogoW} className="logoW"/>
-                        <Link to="/Vista/Dashboard" className="Link L-dashboard"><i class="material-icons md-24">dashboard</i><div className="text-menu">Dashboard</div></Link>
-                        <Link to="/Vista/Boletines" className="Link L-boletines"><span class="material-icons md-24">add_circle</span><div className="text-menu">Crear Boletin</div></Link>
-                        <Link to="/Vista/Listado" className="Link L-listado"><span class="material-icons md-24">view_list</span><div className="text-menu">Listado boletines</div></Link>
-                        <Link to="/Vista/MiPerfil" className="Link L-miperfil"><i class="material-icons md-24">person</i><div className="text-menu">Mi Perfil</div></Link>
-                        <Link to="/Vista/Soporte" className="Link L-soporte"><i class="material-icons md-24">help_outline</i><div className="text-menu">Soporte</div></Link>
+                        </div>
+                        
+                        <Link to="/Vista/Dashboard" className="Link L-dashboard"><i class="material-icons md-24">dashboard</i><div className="textMenu">Dashboard</div></Link>
+                        <Link to="/Vista/Boletines" className="Link L-boletines"><span class="material-icons md-24">add_circle</span><div className="textMenu">Crear Boletin</div></Link>
+                        <Link to="/Vista/Listado" className="Link L-listado"><span class="material-icons md-24">view_list</span><div className="textMenu">Listado boletines</div></Link>
+                        <Link to="/Vista/MiPerfil" className="Link L-miperfil"><i class="material-icons md-24">person</i><div className="textMenu">Mi Perfil</div></Link>
+                        <Link to="/Vista/Soporte" className="Link L-soporte"><i class="material-icons md-24">help_outline</i><div className="textMenu">Soporte</div></Link>
                         
                     </div>
                 </div>
                 <div className="conteiner-btnOut">
                     {this.renderRedirect()}
-                    <button to="/" type="submit" onClick={this.setRedirect} className="Link link-out"><i class="material-icons md-24">exit_to_app</i><div className="text-menu">Salir</div></button>
+                    <button to="/" type="submit" onClick={this.setRedirect} className="Link link-out"><i class="material-icons md-24">exit_to_app</i><div className="textMenu">Salir</div></button>
                 </div>
             </div>
 

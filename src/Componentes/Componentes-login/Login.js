@@ -27,7 +27,7 @@ class Login extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
-  auth(){
+  /*auth(){
     fetch('http://localhost:3000/users',
     {
       method: 'GET',
@@ -45,7 +45,7 @@ class Login extends Component {
     .then((users) => {
     this.setState({users: users})
   })
-  }
+  }*/
 
   /*authLogin() {
     axios({

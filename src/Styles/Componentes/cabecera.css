@@ -3,32 +3,54 @@
   grid-template-areas: "icono h2 usuario";
   grid-template-columns: 50px;
   overflow: hidden;
+  align-items: center;
 }
-  
-  .material-icons.md-40 {
-    grid-area: icono; 
-    font-size: 2.3em; 
-    text-align: center;
-    margin-top: .2em;
-  }
-  
-  .h2 {
-    grid-area: h2;
-    text-align: left;
-    color: var(--color-grey-border);
-    margin-top: .2em;
+
+.div-icon-header {
+  grid-area: icono;   
+  text-align: center;
+  width: 60px;
+}
+
+.material-icons.md-40 {
+    font-size: 2em; 
   }
 
-  .conteiner-usuario {
+hr.v{
+    position: fixed;
+    width: 1px;
+    height: 48px;
+    background-color: var(--color-separacion-header);
+    margin-top: -.6em;
+  }
+
+.div-h2 {
+  grid-area: h2;
+  padding: 0.6em;
+  }  
+
+.h2 {
+    font-size: 25px;
+    text-align: left;
+    margin-left: 15px;
+    color: var(--color-grey-border);
+  }
+
+.conteiner-usuario {
     grid-area: usuario;
     display: inline-flex;
-    margin-top: 1em;
     margin-left: auto;
     margin-right: 1em;
   }
 
+  .material-icons.md-12 {
+    font-size: 18px;
+  }
+
   .input-usuario {
     margin-bottom: 0em;
+    font-size: 12px;
+    margin-left: 0.5em;
   }
 
   @media only screen and (max-width: 600px) {
