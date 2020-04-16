@@ -115,14 +115,14 @@ class FormBoletines extends Component {
                         <div className="contenedor-form-div2">
                             <label className="label label1">Proyecto</label>
                             <div className="div-icon-info">
-                            <select className="input input1" name="proyecto" value={proyecto} onChange={this.handleChange} required></select>
-                          
-                            <a className="caja3">
-                           <span className="material-icons md-4">info</span>
-                           <span className="info">Seleccionar proyecto <br/>donde ocurrio el problema</span>
-                           </a>
+                                <select className="input input1" name="proyecto" value={proyecto} onChange={this.handleChange} required></select>
+
+                                <a className="caja3">
+                                    <span className="material-icons md-4">info</span>
+                                    <span className="info">Seleccionar proyecto <br />donde ocurrio el problema</span>
+                                </a>
                             </div>
-                            
+
 
 
                             <label className="label label2">Cliente</label>
@@ -136,13 +136,13 @@ class FormBoletines extends Component {
 
                             <label className="label label4">Sistema</label>
                             <div className="div-icon-info">
-                            <select className="input input4" name="sistema" value={sistema} onChange={this.handleChange} required></select>
-                            <a className="caja3">
-                           <span className="material-icons md-4">info</span>
-                           <span className="info">Seleccionar proyecto <br/>donde ocurrio el problema</span>
-                           </a>
+                                <select className="input input4" name="sistema" value={sistema} onChange={this.handleChange} required></select>
+                                <a className="caja3">
+                                    <span className="material-icons md-4">info</span>
+                                    <span className="info">Seleccionar proyecto <br />donde ocurrio el problema</span>
+                                </a>
                             </div>
-                            
+
                         </div>
 
                     </div>
@@ -167,7 +167,7 @@ class FormBoletines extends Component {
 
 
                             <div className="contenForm conten-img">
-                            <label className="label label-img">Solución imagen</label>
+                                <label className="label label-img">Solución imagen</label>
                                 <input ref="uploadImg"
                                     type="file"
                                     name="selectedFile"
@@ -187,33 +187,33 @@ class FormBoletines extends Component {
                             <div className="content-inputs">
                                 <label className=" label label-div">Equipo</label>
                                 <div className="div-icon-info">
-                                <input className="input input-div" name="equipo" value={equipo} onChange={this.handleChange}></input>
-                                <a className="caja3">
-                           <span className="material-icons md-4">info</span>
-                           <span className="info">Seleccionar proyecto <br/>donde ocurrio el problema</span>
-                           </a>
+                                    <input className="input input-div" name="equipo" value={equipo} onChange={this.handleChange}></input>
+                                    <a className="caja3">
+                                        <span className="material-icons md-4">info</span>
+                                        <span className="info">Seleccionar proyecto <br />donde ocurrio el problema</span>
+                                    </a>
                                 </div>
-                                
-                                
+
+
                                 <label className=" label label-div2">Marca</label>
                                 <div className="div-icon-info">
-                                <input className="input input-div2" name="marca" value={marca} onChange={this.handleChange}></input>
-                                <a className="caja3">
-                           <span className="material-icons md-4">info</span>
-                           <span className="info">Seleccionar proyecto <br/>donde ocurrio el problema</span>
-                           </a>
-                           </div>
-                            
-                                
+                                    <input className="input input-div2" name="marca" value={marca} onChange={this.handleChange}></input>
+                                    <a className="caja3">
+                                        <span className="material-icons md-4">info</span>
+                                        <span className="info">Seleccionar proyecto <br />donde ocurrio el problema</span>
+                                    </a>
+                                </div>
+
+
                                 <label className=" label label-div3">Modelo</label>
                                 <div className="div-icon-info">
-                                <input className="input input-div3" name="modelo" value={modelo} onChange={this.handleChange}></input>
-                                <a className="caja3">
-                           <span className="material-icons md-4">info</span>
-                           <span className="info">Seleccionar proyecto <br/>donde ocurrio el problema</span>
-                           </a>
-                           </div>
-                                
+                                    <input className="input input-div3" name="modelo" value={modelo} onChange={this.handleChange}></input>
+                                    <a className="caja3">
+                                        <span className="material-icons md-4">info</span>
+                                        <span className="info">Seleccionar proyecto <br />donde ocurrio el problema</span>
+                                    </a>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -226,25 +226,19 @@ class FormBoletines extends Component {
                         <div className="contenForm conteinerForm-2">
                             <label className="label">Reporta</label>
                             <div className="div-icon-info">
-                            <input className="input" name="usuario" value={usuario} onChange={this.handleChange} required></input>
-                            <a className="caja3">
-                           <span className="material-icons md-4">info</span>
-                           <span className="info">Seleccionar proyecto <br/>donde ocurrio el problema</span>
-                           </a>
-                           </div>
-                           
+                                <input className="input" name="usuario" value={usuario} onChange={this.handleChange} required></input>
+                                
+                            </div>
+
                         </div>
 
                         <div className="contenForm conteinerForm-3">
                             <label className="label">Departamento</label>
                             <div className="div-icon-info">
-                            <input className="input" name="departamento" value={departamento} onChange={this.handleChange} required></input>
-                            <a className="caja3">
-                           <span className="material-icons md-4">info</span>
-                           <span className="info">Seleccionar proyecto <br/>donde ocurrio el problema</span>
-                           </a>
-                           </div>
-                            
+                                <input className="input" name="departamento" value={departamento} onChange={this.handleChange} required></input>
+                                
+                            </div>
+
                         </div>
                     </div>
                 </form>

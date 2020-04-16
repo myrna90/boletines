@@ -70,6 +70,7 @@
         width: 150px;
         height: 110px;
         padding: 5px;
+        margin-bottom: 5em;
         text-align: left;
         color: #eee;
         background: rgba(14,140,140,.8);
@@ -296,6 +297,7 @@
     grid-area: div4;
     display: grid;
     grid-template-areas: "u1 u1" "u2 u3";
+    overflow: hidden;
 }
 
 .numero-div4 {
