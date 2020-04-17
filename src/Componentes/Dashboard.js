@@ -73,7 +73,7 @@ class Dashboard extends Component {
                         <div className="contenedor-Bgeneral">
                             <div className="conteiner-encabezado">
                                 {this.renderRedirectList()}
-                                <button className="redirectList" onClick={this.setRedirectList}><h4 className="h4-list">Listado Boletines</h4></button>
+                                <button className="redirectList" onClick={this.setRedirectList}><h4 className="h4-list h4">Listado Boletines</h4></button>
                             </div>
                             {/*<div className="conteiner-paginacion">
                             <div className="paginacion">

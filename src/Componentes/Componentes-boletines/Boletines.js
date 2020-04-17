@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
-import FormBoletines from '../Componentes-boletines/FormBoletines';
-import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
+import Multistep from 'react-multistep';
+import {steps} from './Steps/steps'
+import FormBoletines from './FormBoletines';
 
 class Boletines extends Component {
+    constructor(props) {
+        super(props);
+        
+    }
+    /*handleFormReset() {
+        this.setState(() => this.state)
+    }*/
+    
     render() {
         return (
             <div className="conteiner">
@@ -15,9 +24,14 @@ class Boletines extends Component {
                     <hr className="v" />
                     <h2 className="h2">Crear boletín</h2>
                     </div>
-                    <UsuarioCabecera />
                 </div>
-                <FormBoletines />
+                <div className="contenido section ">
+                {/*Contenedor el cual muestra el fomulario para llenar los campos requeridos */}
+                <FormBoletines/>
+                    {/*<MultiStep Steps = {Steps}/>*/}
+                
+            </div>
+                
             </div>
         )
     }

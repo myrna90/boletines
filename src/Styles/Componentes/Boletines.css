@@ -33,6 +33,7 @@
 }
 
 .label {
+    font-size: 15px;
     width: 15em;
     color: var(--color-blue-bajo);
 }
