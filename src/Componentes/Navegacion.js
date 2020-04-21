@@ -13,9 +13,9 @@ const Navegacion = () => (
         <Route exact path="/Vista/Dashboard" component={Dashboard} />
         <Route path="/Vista/Boletines" component={Boletines} />
         <Route path="/Vista/Listado" component={Listado} />
+        <Route path="/Vista/View" component={BoletinesView} />
         <Route path="/Vista/MiPerfil" component={MiPerfil} />
         <Route path="/Vista/Soporte" component={Soporte} />
-        <Route path="/Vista/View" component={BoletinesView} />
         {/*<Route component={PageNotFound}/>*/}
     </Switch>
 )

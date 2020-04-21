@@ -42,6 +42,9 @@
   box-sizing: border-box;
 }
 
+.text-conten {
+  font-size: 20px;
+}
 .titular-inicio {
   display: flex;
   align-items: center;
@@ -51,6 +54,7 @@
 }
 
 .sub-titulo {
+  font-size: 20px;
   display: flex;
   color: var(--color-grey);
   margin-top: 0em;
@@ -89,21 +93,27 @@
 }
 
 .login{
+  font-size: 14px; 
+  width: 100%;
   margin-top: -1.5em;
   box-sizing: border-box;
 }
 
-.form { 
-  margin: 2em;
-  width: 22em;
+.form {
+  margin: 2.5em;
+  width: 37%;
   box-sizing:border-box;
   position:relative;
   box-sizing: border-box;
 }
 
+.conten-inputs {
+  border-bottom: 1px solid #bebed2;
+  padding-left: 1.5em;
+}
+
 .input-login {
   width:100%;
-  padding:-1em;
   margin-top: .5em;
   box-sizing:border-box;
   background:none;
@@ -111,21 +121,23 @@
   resize:none;
   border:0;
   transition:all .3s;
-  border-bottom: 1px solid #bebed2;
+ 
 }
 
 .img-correo {
   width: 1.25em;
   height: 1em;
   margin-top: -1.5em;
-  margin-left: 18.5em;
+  margin-left: 23em;
+  margin-bottom: 1em;
 }
 
 .img-contraseña {
   width: 1em;
   height: 1.31em;
   margin-top: -1.8em;
-  margin-left: 18.5em;
+  margin-left: 23em;
+  margin-bottom: 1em;
 }
 
 .text-login {

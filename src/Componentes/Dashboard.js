@@ -90,7 +90,6 @@ class Dashboard extends Component {
                                 <div className="bol-gen bol"><p className="p-bol-gen"><strong>B-03</strong><br />Proyecto: Hines<br />Problema: CCTV</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div>
                                 <div className="bol-gen bol"><p className="p-bol-gen"><strong>B-04</strong><br />Proyecto: Casa cuervo<br />Problema: CCTV</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div>
                                 <div className="bol-gen bol"><p className="p-bol-gen"><strong>B-05</strong><br />Proyecto: Punto sur<br />Problema: Control</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div>
-                                <div className="bol-gen bol"><p className="p-bol-gen"><strong>B-06</strong><br />Proyecto: Hines<br />Problema: CCTV</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div>
                             </div>
                         </div>
 

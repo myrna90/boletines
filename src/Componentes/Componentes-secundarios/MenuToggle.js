@@ -54,8 +54,7 @@ class MenuToggle extends Component {
                         <Link to="/Vista/Boletines" className="Link L-boletines"><span class="material-icons md-24">add_circle</span><div className="textMenu">Crear Boletin</div></Link>
                         <Link to="/Vista/Listado" className="Link L-listado"><span class="material-icons md-24">view_list</span><div className="textMenu">Listado boletines</div></Link>
                         <Link to="/Vista/MiPerfil" className="Link L-miperfil"><i class="material-icons md-24">person</i><div className="textMenu">Mi Perfil</div></Link>
-                        <Link to="/Vista/Soporte" className="Link L-soporte"><i class="material-icons md-24">help_outline</i><div className="textMenu">Soporte</div></Link>
-                        
+                       
                     </div>
                 </div>
                 <div className="conteiner-btnOut">

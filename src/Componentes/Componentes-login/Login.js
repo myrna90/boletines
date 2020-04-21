@@ -114,7 +114,7 @@ class Login extends Component {
               <form className="form" onSubmit={this.handleFormSubmit}>
 
                 {/*div para introducir email */}
-                <div>
+                <div className="conten-inputs">
                   <label className="text-login text-user" htmlFor="user">Nombre de usuario:</label>
                   <input required type="text" className="input-login" name="user"
                     value={this.state.user}
@@ -125,7 +125,7 @@ class Login extends Component {
                 </div>
 
                 {/*div para introducir password */}
-                <div >
+                <div className="conten-inputs">
                   <label className="text-login text-passw" htmlFor="password">Contraseña: </label>
                   <input className="input-login" type="password" name="password"
                     value={this.state.password}

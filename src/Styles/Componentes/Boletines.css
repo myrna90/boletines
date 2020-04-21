@@ -1,4 +1,25 @@
 /*Diseño boletines*/
+.header-crear {
+    display: grid;
+    
+}
+
+.div-icon-header-crear {
+    
+}
+
+.div-h2-crear {
+    padding: 0.6em;
+}
+
+.pasos {
+
+}
+
+.btn-crear {
+    margin-left: 6em;
+}
+
 /*css grid form general*/
 .contenido-form{
     overflow-x: hidden;
@@ -28,12 +49,13 @@
 }
 
 .p {
+    font-size: 15px;
     margin-top: .1em;
     margin-left: 1em;
 }
 
 .label {
-    font-size: 15px;
+    font-size: 14px;
     width: 15em;
     color: var(--color-blue-bajo);
 }
@@ -60,50 +82,37 @@
     margin-left: 0.5em;
 }
 
-    .caja3 {
-        position: relative;
-        width: 24px;
-        }
+.caja3 {
+    position: relative;
+    width: 24px;
+}
         
-        .info {
-        position: absolute;
-        opacity: 0;
-        width: 150px;
-        height: 110px;
-        padding: 5px;
-        margin-bottom: 5em;
-        text-align: left;
-        color: #eee;
-        background: rgba(14,140,140,.8);
-        -moz-transform:rotate(90deg); /*Inicialmente boca abajo*/
-        -webkit-transform:rotate(90deg);
-        transform:rotate(90deg);
-        -moz-transition:all linear 0.5s 0s;
-        -webkit-transition:all linear 0.5s 0s;
-        transition:all ease 0.5s 0s;
-        margin-right: 2em;
-        }
+.info {
+    position: absolute;
+    opacity: 0;
+    width: 140px;
+    height: 60px;
+    padding: 5px;
+    margin-bottom: 5em;
+    text-align: left;
+    color: #eee;
+    background: rgba(48,49,49,.8);
+    margin-right: 2em;
+    font-size: 12px;
+}
         
-        .caja3:hover .info {
-        filter: alpha(opacity=100);
-        opacity: 1;
-        right:-100px;
-        -moz-transform:rotate(0deg);
-        -webkit-transform:rotate(0deg);
-        transform:rotate(0deg);
-        }
+.caja3:hover .info {
+    filter: alpha(opacity=100);
+    opacity: 1;
+    right:-100px;
+    border-radius: 5px;
+}
 
 /*css grid div 1*/
 .div-1 {
     grid-area: div1;
     display: grid;
-    grid-template-areas: "numero1 btn1" "contenForm1 btn1";
-}
-
-.btn-crear {
-    grid-area: btn1;
-    margin-left: auto;
-    margin-right: 1em;
+    grid-template-areas: "numero1" "contenForm1";
 }
 
 .numero-div1 {
@@ -265,9 +274,9 @@
 }
 
 .conten-export-img {
-    width: 9.37em;
-    height: 9.37em;
-    background-color: white;
+    width: 11em;
+    height: 11em;
+    background-image: url("https://via.placeholder.com/150");
     text-align: center;
     border-top-style: dashed;
     border-bottom-style: dashed;
@@ -279,6 +288,11 @@
     border-left-color: var(--color-border-input);
 }
 
+.imgExport {
+    width: 10.8em;
+    height:9em;
+    
+}
 
 .material-icons.md-50 {
     font-size: 6.25em;
@@ -287,10 +301,8 @@
 }
 
 .inputimg {
-    color: transparent;
-    background-color: transparent;
-    border: none;
     outline: none;
+    display: none;
 }
 
 /*css grid div 4*/

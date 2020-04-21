@@ -22,7 +22,6 @@ class FormStepOne extends Component{
             <div className="conteiner-numero numero-div1">
                 <div className="numero">1</div><strong><p className="p">Folio</p></strong>
             </div>
-            <button type="submit" className="btn-crear btn">+ Crear</button>
             <div className="contenForm1">
                 <label className="label label-div1">Numero de folio</label>
                 <input className="input input-div1" name="folio" value={folio} onChange={this.handleChange} required></input>

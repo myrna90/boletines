@@ -11,7 +11,7 @@
   overflow: hidden;
   display: grid;
   grid-template-areas: "publicados proyectos";
-  width: calc(100% -100px);
+  grid-template-columns: 500px 650px;
 }
 
 .h4 {
@@ -32,26 +32,27 @@
   grid-area: publicados;
   width: 450px;
   height: 362px;
-  margin-left: 100px;
+  margin-left: 30px;
 }
 
 .grid-proyectos {
   grid-area: proyectos;
   width: 576px;
   height: 362px;
+  margin-left: 40px;
 }
 
 .boletines-general {
   grid-area: generales;
-  margin-left: 50px;
+  
 }
 
 .contenedor-Bgeneral {
-  width: 1135px;
+  width: calc(100% - 15.5em);
   height: 240px;
   display: grid;
   margin-top: .5em;
-  margin-left: 3em;
+  margin-left: 30px;
   grid-template: 4em;
   grid-template-areas: "encabezado encabezado" "boletines boletines";
   background-color: var(--color-white-light);
@@ -68,17 +69,12 @@
   background: transparent;
   border: none;
   color: var(--color-blue-bajo);
+  margin-left: .8em;
 }
-
-.conteiner-paginacion {
-  grid-area: paginacion;
-  margin-left: -1em;
-}
-
 
 .conteiner-bol-gen {
   grid-area: boletines;
-  margin-left: .3em;
+  margin-left: 1em;
 }
 
 .bol-gen {
@@ -87,9 +83,13 @@
   height: 9em;
   display: inline-flex;
   background-color: var(--color-white);
-  margin-left: 1.5em;
+  margin-left: 2em;
   border: 1px solid var(--color-blue-bajo);
   border-radius: var(--border-radius-boton);
+}
+
+.bol {
+  margin-left: 3em;
 }
 
 

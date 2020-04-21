@@ -24,7 +24,6 @@ class FormStepThree extends Component {
 
 
     imgUp = () => {
-
         const file = this.refs.uploadImg.files[0]
         const reader = new FileReader();
 
@@ -95,20 +94,26 @@ class FormStepThree extends Component {
                     {/*Div contenido espacio imagen problema */}
                     <div className="contenForm conten-img">
                         <label className="label label-img">Problema imagen</label>
+                        <div className=" conten-export-img">
                         <input ref="uploadImg"
                             type="file"
                             name="selectedFile"
                             onChange={this.imgUp} className="inputimg" />
-                        <img src={this.state.imagProb} className=" conten-export-img" required />
+                            <img src={this.state.imagProb} className="imgExport"  required />
+                            </div>
+                        
                     </div>
                     {/*Div contenido espacio imagen solución */}
                     <div className="contenForm conten-img2">
                         <label className="label label-img">Solución imagen</label>
+                        <div className=" conten-export-img">
                         <input ref="uploadImg2"
                             type="file"
                             name="selectedFile"
                             onChange={this.imgUp2} className="inputimg" />
-                        <img src={this.state.imagSolu} className=" conten-export-img" required />
+                        <img src={this.state.imagSolu} className="imgExport" required />
+                        </div>
+                        
                     </div>
                     
                     {/*Div contenido inputs equipo, modelo, marca */}

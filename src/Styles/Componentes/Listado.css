@@ -29,6 +29,8 @@
     margin-top: .5em;
     border-radius: var(--border-radius-boton);
     border: 1px solid var(--color-grey-border-img);
+    padding: 0.5em;
+    outline: none;
 }
 
 
@@ -50,13 +52,13 @@
     height: 3em;
 }
 
-.tr-td-white {
+table tbody tr:nth-child(odd) {
     height: 2.5em;
+	background: var(--color-grey-border-img);
 }
-
-.tr-td-grey {
+table tbody tr:nth-child(even) {
     height: 2.5em;
-    background-color: var(--color-grey-border-img);
+	background:var(--color-white-light);
 }
 
 .btn-list {
