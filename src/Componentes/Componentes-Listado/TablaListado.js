@@ -62,7 +62,6 @@ class Tabla extends Component {
                     <td >{boletines.folio}</td>
                     <td >{boletines.proyecto}</td>
                     <td >{boletines.sistema}</td>
-                    <td >{boletines.cliente}</td>
                 </tr>
             )
         });
@@ -75,7 +74,7 @@ class Tabla extends Component {
                         placeholder="Filtro"
                         onChange={(e) => this.searchSpace(e)} />
                 </div>
-                
+
                 <div className="div-tabla">
                     <table className="tabla">
                         <thead>
@@ -83,7 +82,6 @@ class Tabla extends Component {
                                 <th><strong>Folio</strong></th>
                                 <th><strong>Proyecto</strong></th>
                                 <th><strong>Sistema</strong></th>
-                                <th><strong>Cliente</strong></th>
                                 {/*<th><strong>Vista</strong></th>*/}
                             </tr>
                         </thead>

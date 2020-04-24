@@ -61,6 +61,7 @@
   }
 
  /*Contenedor general menú*/
+ 
  /*función para restar el div del btn out*/
 .menu-toggle {
   min-height: calc(100vh - 50px);
@@ -76,7 +77,14 @@
   /*Contenedor diseño links menú incluyendo btn out*/
 .nav-menu {
   display: grid;
-  grid-template-areas: "logo" "dashboard" "boletines" "perfil" "soporte";
+  grid-template-areas: "logo" "links";
+  grid-template-rows: 7em auto;
+  }
+
+  .div-link {
+    grid-area: links;
+    display: grid;
+    grid-template-areas: "dashboard" "boletines" "listado" "perfil";
   }
 
 .L-dashboard {
@@ -87,25 +95,23 @@
  grid-area: boletines;
 }
 
+.L-listado {
+  grid-area: listado;
+ }
+
 .L-miperfil {
  grid-area: perfil;
 }
 
-.L-soporte {
- grid-area: soporte;
-}
-
 /*Contenedor img Telenet*/
 .div-logoW {
+  grid-area: logo;
   text-align: center;
-  width: calc(100% - .6em);
 }
 
-.logoW {
-  grid-area: logo;
+.logoW-content {
   height: 7em;
   width: 7em;
-  margin-bottom: 1.5em;
 }
 
 .Link {
@@ -140,11 +146,31 @@
   }
 
   @media only screen and (max-width: 600px) {
-    .menu-toggle {
-      width: 50px;
-      min-height: calc(81vh - 50px);
+    .aside {
+      width: 3.44em;
+      height: 100vh;
     }
 
+  }
+
+  @media(min-width:600px) and (max-width: 991px) {
+    .aside {
+      width: 3.44em;
+      height: 100vh;
+    }
+
+    .nav-menu {
+      margin-top: 2em;
+    }
+
+
+  }
+
+  @media(min-width:992px) and (max-width: 1024px) {
+    .aside {
+      width: 3.44em;
+      height: 100vh;
+    }
   }
 
   

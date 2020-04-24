@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import UsuarioCabecera from '../Componentes/Componentes-secundarios/Usuario-cabecera';
+import users from './users.json';
 
+const user = users.users.map((users) => {
+    return (
+      console.log(users.cn)
+    )
+  });
 class MiPerfil extends Component {
     render() {
         return (

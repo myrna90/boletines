@@ -14,7 +14,6 @@ import Vista from './Vista';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 //import PageNotFound from './Componente-pageNotFound/PageNotFound';
 
-
 function App() {
   return (
     /*Router de la aplicación */

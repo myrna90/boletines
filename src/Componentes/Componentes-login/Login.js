@@ -4,6 +4,7 @@ import Logo from '../imgs/logotn.png';
 import ImgPersonas from '../imgs/img-login.png'
 import users from '../users.json';
 import { Link } from "react-router-dom";
+import LogoW from '../imgs/logotnW.png';
 
 const showData = users.users.map((users) => {
   return (
@@ -99,15 +100,20 @@ class Login extends Component {
         {showData}
         <div className="row row-login">
           <div className="conteiner-titulo">
-            <h1 className="titular-inicio">Boletines</h1>
-            <h5 className='sub-titulo'>Mejora continua</h5>
+            <div  className="titular-inicio">
+            <h1>Boletines</h1>
+            </div>
+            <div className='sub-titulo'>
+            <h5 >Mejora continua</h5>
+            </div>
             <img src={Logo} className="logotn" />
+            <img src={LogoW} className="logoW"/>
             <img src={ImgPersonas} className="miImg"/>
           </div>
           <div className="conteiner-sesion">
             <div className="text-inicio">
               <h2 className="text-conten">Inicie sesión ahora...</h2>
-              <p className="p-conten">Su cuenta esta vinculada con el dominio, puede acceder <br></br>al sistema usando las mismas credenciales.</p>
+              <p className="p-conten">Su cuenta esta vinculada con el dominio, puede acceder al sistema usando las mismas credenciales.</p>
             </div>
 
             <div className="login">
@@ -146,13 +152,14 @@ class Login extends Component {
                   Olvidaste tu <Link className="a-forgot" onClick={this.btnForgot}>contraseña?</Link>
                 </p>
               </form>
+              
             </div>
-
+            <img src={ImgPersonas} className="miImg2"/>
           </div>
         </div>
         <div className="footer">
-          <footer>Telenet de México S.A. de C.V.</footer>
-        </div>
+<footer>Telenet de México S.A. de C.V.</footer>
+</div>
       </div>
 
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import LogoW from '../imgs/logotnW.png';
+import LogoW2 from '../imgs/logotnW2.png'
 
 class MenuToggle extends Component {
     constructor(props) {
@@ -8,13 +9,14 @@ class MenuToggle extends Component {
         this.state = {
             redirect: false
         }
-        this.aside = React.createRef();
+        this.aside = React.createRef(true);
         this.changeWidth = this.changeWidth.bind(this);
     }
 
     changeWidth() {
         if (this.aside.current.style.width !== '3.44em') {
             this.aside.current.style.width = '3.44em';
+        
         } else {
             this.aside.current.style.width = '12.5em';
         }
@@ -47,14 +49,16 @@ class MenuToggle extends Component {
 
                     <div className="nav-menu">
                         <div className="div-logoW">
-                        <img src={LogoW} className="logoW"/>
+                        <img src={LogoW2} className="logoW-content"/>
                         </div>
-                        
+                        <div className="div-link">
                         <Link to="/Vista/Dashboard" className="Link L-dashboard"><i class="material-icons md-24">dashboard</i><div className="textMenu">Dashboard</div></Link>
                         <Link to="/Vista/Boletines" className="Link L-boletines"><span class="material-icons md-24">add_circle</span><div className="textMenu">Crear Boletin</div></Link>
                         <Link to="/Vista/Listado" className="Link L-listado"><span class="material-icons md-24">view_list</span><div className="textMenu">Listado boletines</div></Link>
                         <Link to="/Vista/MiPerfil" className="Link L-miperfil"><i class="material-icons md-24">person</i><div className="textMenu">Mi Perfil</div></Link>
                        
+                        </div>
+                        
                     </div>
                 </div>
                 <div className="conteiner-btnOut">

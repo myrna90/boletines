@@ -290,7 +290,7 @@
 
 .imgExport {
     width: 10.8em;
-    height:9em;
+    height: 10.8em;
     
 }
 
@@ -300,9 +300,16 @@
     margin-top: .2em;
 }
 
+input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+  }
+  
 .inputimg {
     outline: none;
-    display: none;
 }
 
 /*css grid div 4*/
