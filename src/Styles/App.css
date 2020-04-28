@@ -43,7 +43,7 @@
 .conteiner {
   display: grid;
   grid-template: 3.12em auto/auto 1fr;
-  grid-template-areas: "aside header" "aside section";
+  grid-template-areas: "aside header" "aside section" "aside footer";
   height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -70,6 +70,12 @@
   grid-area: section;
   background-color: var(--color-white);
   overflow-x: hidden;
+}
+
+.footer-content {
+grid-area: footer;
+text-align: center;
+margin-top: 0.5em;
 }
 
 h2 {

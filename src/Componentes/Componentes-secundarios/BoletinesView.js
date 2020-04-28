@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
+import Footer from '../Componentes-secundarios/Footer';
 
 function BoletinesView() {
     const [comment, setComment] = useState('');
@@ -25,7 +26,7 @@ function BoletinesView() {
                     <div className="input-view">
                         <div className="div-input proyecto"><p>Proyecto:</p> <input className="input-bol input-proyecto" ></input></div>
                         <div className="div-input cliente"><p>Cliente:</p> <input className="input-bol input-cliente"></input></div>
-                        <div className="div-input fecha"><p>Fecha:</p><input className="input-bol input-fecha"></input></div>
+                        <div className="div-input fecha"><p>Fecha:</p><input className="input-bol input-fecha-vista"></input></div>
                         <div className="div-input sistema"><p>Sistema:</p><input className="input-bol input-sistema"></input></div>
                         <div className="div-input equipo"><p>Equipo:</p><input className="input-bol input-equipo"></input></div>
                         <div className="div-input marca"><p>Marca:</p><input className="input-bol input-marca"></input></div>
@@ -67,7 +68,7 @@ function BoletinesView() {
                     </div>
                 </div>
             </div>
-
+        <Footer/>
         </div>
     )
 }

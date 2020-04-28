@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Multistep from 'react-multistep';
 import { steps } from './Steps/steps'
 import FormBoletines from './FormBoletines';
+import Footer from '../Componentes-secundarios/Footer';
 
 class Boletines extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class Boletines extends Component {
 
     render() {
         return (
-            <div className="conteiner">
+            <div className="conteiner conteiner-boletines">
                 {/*Contenedor general header */}
                 <div className=" header">
                     <div className="div-icon-header">

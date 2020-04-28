@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UsuarioCabecera from '../Componentes/Componentes-secundarios/Usuario-cabecera';
 import { Redirect } from 'react-router';
-import Footer from '../Componentes/Componentes-secundarios/Footer'
+import Footer from '../Componentes/Componentes-secundarios/Footer';
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
 se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
@@ -88,7 +88,9 @@ class Dashboard extends Component {
                         </div>
 
                     </div>
+                    
                 </div>
+                <Footer/>
             </div>
         )
     }

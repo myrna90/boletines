@@ -66,6 +66,7 @@
 .menu-toggle {
   min-height: calc(100vh - 50px);
 }
+
  /*Contendor del titulo del menú y btn configuración*/
 .contenedor-titulo {
   display: grid;
@@ -148,9 +149,12 @@
   @media only screen and (max-width: 600px) {
     .aside {
       width: 3.44em;
-      height: 100vh;
+      height: 92vh;
     }
-
+    .menu-toggle {
+      min-height: calc(90vh - 50px);
+      overflow-y: hidden;
+    }
   }
 
   @media(min-width:600px) and (max-width: 991px) {
@@ -169,7 +173,11 @@
   @media(min-width:992px) and (max-width: 1024px) {
     .aside {
       width: 3.44em;
-      height: 100vh;
+      height: 88.5vh;
+    }
+
+    .menu-toggle {
+      min-height: calc(88vh - 50px);
     }
   }
 

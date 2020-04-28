@@ -1,11 +1,9 @@
 import React from 'react';
 
-function Footer () {
-    return(
+function Footer() {
+    return (
         <div className="footer-content">
-             <footer >
-                Telenet de México S.A. de C.V.
-            </footer>
+            Telenet de México S.A. de C.V.
         </div>
     )
 }

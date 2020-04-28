@@ -1,20 +1,12 @@
 /*Diseño boletines*/
 .header-crear {
-    display: grid;
-    
-}
-
-.div-icon-header-crear {
-    
+    display: grid;   
 }
 
 .div-h2-crear {
     padding: 0.6em;
 }
 
-.pasos {
-
-}
 
 .btn-crear {
     margin-left: 6em;
@@ -89,6 +81,7 @@
         
 .info {
     position: absolute;
+    cursor: pointer;
     opacity: 0;
     width: 140px;
     height: 60px;
@@ -288,6 +281,9 @@
     border-left-color: var(--color-border-input);
 }
 
+.label-img {
+    cursor: pointer;
+}
 .imgExport {
     width: 10.8em;
     height: 10.8em;
@@ -331,4 +327,107 @@ input[type="file"] {
 
 .conteinerForm-3 {
     grid-area: u3;
+}
+
+@media only screen and (max-width: 600px) {
+    .conteiner-boletines {
+        min-width: 44vh;
+        height: 92vh;
+    }
+
+    .input {
+        width: 12em;
+    }
+
+    .label {
+        margin-top: 1em;
+    }
+
+    /*Movil div 2 proyecto info*/
+    .contenedor-form-div2 {
+        grid-template-areas: "L1" "I1" "L2" "I2" "L3" "I3" "L4" "I4";
+    }
+
+    .label-fecha {
+        margin-left: 0em;
+    }
+
+    .input-fecha {
+        margin-left: 0em;
+    }
+
+    /*Movil div 3 imagenes*/
+    .div-3 {
+        height: auto;
+    }
+    .div3-content {
+        grid-template-areas: "c1" "c3" "c2" "c4" "c5";
+    }
+
+    .text {
+        width: 20em;
+        font-size: 12px;
+    }
+
+    .conten-export-img {
+        width: 8.5em;
+        height: 8.5em;
+    }
+
+    .imgExport {
+        width: 8.5em;
+        height: 8.5em;
+    }
+
+    .contenForm {
+        margin-top: 1em;
+    }
+
+    .contenForm2 {
+        margin-top: 1em;
+    }
+
+    .content-inputs {
+        margin-top: 1em;
+    }
+
+    /*Movil div 4 usuario*/
+
+    .div-4 {
+        grid-template-areas: "u1" "u2" "u3";
+    }
+
+    .conteinerForm-3 {
+        margin-left: 2em;
+    }
+}
+
+@media(min-width:600px) and (max-width: 991px) {
+    /*Tablet div 2 proyecto*/ 
+    .contenedor-form-div2 {
+        grid-template-areas: "L1 L2" "I1 I2" "L3 L4" "I3 I4";
+    }
+
+    .label3 {
+        margin-left: 0em;
+    }
+
+    /*Tablet div 3 imagen*/ 
+    .div-3 {
+        height: auto;
+    }
+
+    .div3-content {
+        grid-template-areas: "c1 c3" "c2 c4" "c5 c5";
+    }
+}
+
+@media(min-width:992px) and (max-width: 1024px) {
+    .contenedor-form-div2 {
+        grid-template-areas: "L1 L2" "I1 I2" "L3 L4" "I3 I4";
+    }
+
+    .label3 {
+        margin-left: 0em;
+    }
 }

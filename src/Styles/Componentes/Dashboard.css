@@ -51,7 +51,7 @@
 .contenedor-Bgeneral {
   
   width: 81.5%;
-  height: 240px;
+  height: 210px;
   margin-top: .5em;
   margin-left: 30px;
   background-color: var(--color-white-light);
@@ -168,10 +168,9 @@
   border: none;
 }
 @media only screen and (max-width: 600px){
-
-  .contenido-dash {
-    height: 100vh;
-  }
+.contenedor-dash{
+  height: 92vh;
+}
 
   .grid-contentDash {
     display: inline-table;
@@ -206,8 +205,8 @@
   .digsn-dash {
     width: 85%;
     font-size: 12px;
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 0em;
   }
 
   .disgn1 {
@@ -225,9 +224,9 @@
 
 .digsn-dash2 {
   font-size: 13px;
-  margin-top: 1.5em;
-  margin-bottom: 1.3em;
-  width: 17em;
+  margin-top: 0.5em;
+  margin-bottom: .9em;
+  width: 15.5em;
 }
   
   .boletines-general {
@@ -238,6 +237,8 @@
 @media(min-width:600px) and (max-width: 991px){
   .contenedor-dash {
     width: auto;
+    min-height: auto;
+    
   }
 .grid-contentDash {
   display: inline-table;

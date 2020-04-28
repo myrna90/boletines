@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import LogoW from '../imgs/logotnW.png';
 import LogoW2 from '../imgs/logotnW2.png'
 
 class MenuToggle extends Component {

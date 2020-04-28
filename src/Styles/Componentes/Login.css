@@ -191,31 +191,32 @@
   .row-login {
     grid-template-areas: "tituloL" "sesion";
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
   }
 
   .conteiner-titulo {
     background-color: var(--grid-color-blue);
     width: 100vw;
-    height: 140px;
+    height: 10px;
     margin-top: 0em;
     display: grid;
   }
 
   .titular-inicio {
     color: var(--color-white-light);
-    margin-top: .5em;
+    margin-top: -7em;
   }
 
   .sub-titulo {
     color: var(--color-white-light);
     margin-left: 0.4em;
+    margin-top: -1.5em;
   }
 
   .conteiner-sesion {
     margin-top: 0em;
     width: 100vw;
-    height: 100vh;
+    min-height: 85vh;
     font-size: 1.5em;
     grid-template-rows: 20% 30%;
   }
@@ -245,6 +246,7 @@
   .miImg2 {
     display: unset;
     margin-left: 1em;
+    margin-top: -1em;
   }
 }
 
