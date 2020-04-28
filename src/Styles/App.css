@@ -100,3 +100,15 @@ h2 {
   opacity: 0.7;
   color:  var(--color-white);
 }
+
+@media(min-width:600px) and (max-width: 991px) {
+  .footer-content {
+    margin-top: -3em;
+  }
+}
+
+@media(min-width:992px) and (max-width: 1024px) {
+  .footer-content {
+    margin-top: -3em;
+  }
+}

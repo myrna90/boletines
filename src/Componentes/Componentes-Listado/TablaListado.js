@@ -67,7 +67,6 @@ class Tabla extends Component {
         });
         return (
             <div className="content-list">
-
                 <div className="div-filtro">
                     <span class="material-icons md-28">filter_list</span>
                     <input className="input-filter" type="text"

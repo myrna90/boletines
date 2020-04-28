@@ -72,3 +72,39 @@ table tbody tr:nth-child(even) {
     grid-area: pag;
 }
 
+@media only screen and (max-width: 600px) {
+    
+    .content-list {
+        width: auto;
+        margin-left: 0em;
+    }
+
+    .div-filtro {
+        width: auto;
+    }
+
+    .material-icons.md-28 {
+        margin-left: 1.5em;
+    }
+
+    .input-filter {
+        width: 13em;
+    }
+
+    .tabla {
+        margin-left: 1em;
+        width: 90%;
+    }
+}
+
+@media(min-width:600px) and (max-width: 991px) {
+    .content-list {
+        height: 80vh;
+    }
+}
+
+@media(min-width:992px) and (max-width: 1024px) {
+    .content-list {
+        height: 78.5vh;
+    }
+}

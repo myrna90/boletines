@@ -160,13 +160,15 @@
   @media(min-width:600px) and (max-width: 991px) {
     .aside {
       width: 3.44em;
-      height: 100vh;
+      height: 94vh;
     }
 
     .nav-menu {
       margin-top: 2em;
     }
-
+    .menu-toggle {
+      min-height: calc(92vh - 50px);
+    }
 
   }
 
@@ -178,6 +180,17 @@
 
     .menu-toggle {
       min-height: calc(88vh - 50px);
+    }
+  }
+
+  @media(min-width:992px) and (max-width: 1024px) {
+    .aside {
+      width: 3.44em;
+      height: 92vh;
+    }
+
+    .menu-toggle {
+      height: calc(90vh - 50px);
     }
   }
 
