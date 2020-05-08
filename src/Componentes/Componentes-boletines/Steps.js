@@ -2,6 +2,7 @@ import React from 'react';
 
 export default () => {
     return(
+        /*Componente steps tabla superios en boletines */
         <div className="div-steps">
             <div className="steps step1">
                 <p>1. Folio</p>
