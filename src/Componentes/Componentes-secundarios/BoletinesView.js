@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
-import Footer from '../Componentes-secundarios/Footer';
 
 function BoletinesView() {
     const [comment, setComment] = useState('');
@@ -35,7 +34,8 @@ function BoletinesView() {
                     <div className="problema-view disgn">
                         <div className="conteiner-problema">
                             <h6 className="titulo-problem">Problema:</h6>
-                            <textarea className="input-problema"></textarea></div>
+                            <textarea className="input-problema"></textarea>
+                            </div>
                         <div className="conteiner-problema">
                             <h6 className="titulo-problem">Imagen problema:</h6>
                             <div className="img-problema"><i className="img-export-bol" class="material-icons md-56">add_photo_alternate</i></div>
@@ -60,7 +60,7 @@ function BoletinesView() {
 
                     </div>
                     <div className="div-comentar" >
-                        <input className="input-comentar" onChange={(event) => setComment(event.target.value)}></input>
+                        <textarea className="input-comentar" onChange={(event) => setComment(event.target.value)}></textarea>
                         <button className="btn btn-comentar" onClick={() => setCount(count + 1)}>Comentar</button>
                     </div>
                     <div className="div-comentarios">
@@ -68,7 +68,6 @@ function BoletinesView() {
                     </div>
                 </div>
             </div>
-        <Footer/>
         </div>
     )
 }

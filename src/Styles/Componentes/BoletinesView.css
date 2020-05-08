@@ -1,10 +1,10 @@
 /*Contenedores principales*/
 .contenedor-view{
-  height: 100vh;
   overflow: hidden;
 }
 
 .contenido-view {
+  height: 100vh;
   display: grid;
   grid-template-areas: "view view2";
   overflow: hidden;
@@ -88,12 +88,24 @@
   margin-left: 2em;
 }
 
+.equipo {
+  grid-area: equipo;
+}
+
 .input-equipo {
   margin-left: 1.3em;
 }
 
+.modelo {
+  grid-area: modelo;
+}
+
 .input-modelo {
   margin-left: 1em;
+}
+
+.marca {
+  grid-area: marca;
 }
 
 .input-marca {
@@ -232,4 +244,160 @@
   margin-left: 2em;
   margin-top: 2em;
   border-bottom: solid 1.5px var(--color-grey-border-img);
+}
+
+@media only screen and (max-width: 600px) {
+
+  .contenido-view {
+    height: auto;
+    grid-template-areas: "view" "view2";
+    overflow: auto;
+  }
+
+    .view {
+      margin-left: 1em;
+      width: auto;
+      height: fit-content;
+    }
+    .div-input {
+      display: block;
+      margin-top: 0.5em;
+    }
+    .input-view {
+      margin-left: 0em;
+      
+    }
+  .input-view {
+    grid-template-areas:  "proyecto" "cliente" "fecha" "sistema" "equipo" "marca" "modelo";
+  }
+
+  .input-bol {
+    margin-left: 0em;
+    width: 13em;
+  }
+
+  .problema-view {
+    display: block;
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+
+  .solucion-view {
+    display: block;
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+
+  .img-problema {
+    width: 12em;
+    margin-left: 1em;
+  }
+
+  /*diseño div comentarios*/
+  .view-coment {
+    width: 75vw;
+    height: 60vh;
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+
+  .h3-bol {
+    margin-left: 1.5em;
+  }
+
+  .div-contador {
+    width: 65vw;
+    margin-left: 1em;
+  }
+.input-comentar {
+  width: 13em;
+}
+
+.div-comentario {
+  width: 65vw;
+  margin-left: 1em;
+}
+
+.footer-content {
+display: none;
+}
+}
+
+@media(min-width:600px) and (max-width: 991px) {
+  .contenido-view {
+    height: auto;
+  }
+
+  .contenido-view {
+    grid-template-areas: "view" "view2";
+    overflow: auto;
+  }
+
+  .view {
+    width: auto;
+  }
+
+  .input-view {
+    grid-template-areas: "proyecto cliente" 
+                         "fecha sistema" 
+                         "equipo marca" 
+                         "modelo modelo";
+  }
+
+  .view-coment {
+    width: 85vw;
+    height: 40vh;
+  }
+
+  .titulo-coment {
+    text-align: center;
+  }
+
+  .div-contador {
+    width: 75vw;
+  }
+
+  .div-comentarios {
+    width: 75vw;
+  }
+
+  .div-comentario {
+    width: 75vw;
+  }
+}
+
+@media(min-width:992px) and (max-width: 1024px) {
+  .contenido-view {
+    grid-template-areas: "view" "view2";
+    overflow: auto;
+  }
+
+  .view {
+    width: auto;
+  }
+
+  .input-view {
+    grid-template-areas: "proyecto cliente" 
+                         "fecha sistema" 
+                         "equipo marca" 
+                         "modelo modelo";
+  }
+
+  .view-coment {
+    width: 89vw;
+    height: 30vh;
+    margin-top: 0em;
+  }
+
+  .div-contador {
+    width: 83vw;
+  }
+
+  .input-comentar {
+    width: 30em;
+  }
+
+  .div-comentario {
+    width: 83vw;
+  }
 }

@@ -1,4 +1,8 @@
 /*Diseño dashboard*/
+.contenedor-dash {
+    height: 100vh;
+    overflow: hidden;
+}
 .contenido-dash {
   overflow: hidden; 
   background-color: var(--color-white);
@@ -167,6 +171,7 @@
   margin-left: 6.5em;
   border: none;
 }
+
 @media only screen and (max-width: 600px){
 .contenedor-dash{
   height: 92vh;
@@ -237,7 +242,6 @@
 @media(min-width:600px) and (max-width: 991px){
   .contenedor-dash {
     width: auto;
-    min-height: auto;
     
   }
 .grid-contentDash {

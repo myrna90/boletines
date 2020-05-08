@@ -45,7 +45,7 @@ class FormStepTwo extends Component {
 
                     {/*Input fecha */}
                     <label className="label label3 label-fecha">Fecha</label>
-                    <input className="input input3 input-fecha" name="fecha" type="month" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value={fecha} onChange={this.handleChange} required></input>
+                    <input className="input input3 input-fecha" name="fecha" type="date" value={fecha} onChange={this.handleChange} required></input>
 
                     {/*Input sistema */}
                     <label className="label label4">Sistema</label>

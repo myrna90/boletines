@@ -8,7 +8,6 @@
 }
 
 .contenido-perfil {
-    height: 100vh;
     overflow: hidden;
 }
 
@@ -82,4 +81,65 @@
 .p-correo-time {
     margin-left: 1em;
     font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .contenedor-perfil {
+        height: 92vh;
+        width: auto;
+    }
+
+    .contenedor-vista {
+        width: auto;
+    }
+
+    .cont-perfil {
+        margin-left: 1em;
+        width: 250px;
+        height: 250px;
+    }
+
+    .div-avatar {
+        margin-left: 4.7em;
+    }
+
+    .material-icons.md-51 {
+        font-size: 5.8em;
+        margin-top: 0.02em;
+    }
+
+    .div-nombre {
+        margin-left: 3em;
+    }
+
+    .h4-nombre {
+        font-size: 22px;
+    }
+
+    .h5-area {
+        font-size: 15px;
+    }
+
+    .p-correo-time {
+        margin-left: 1em;
+        font-size: 12px;
+    }
+    .correo {
+        margin-top: 1em;
+    }
+
+    .time {
+        margin-top: 0em;
+    }
+   .material-icons.md-25 {
+       margin-left: 0.5em;
+   }
+}
+
+@media(min-width:600px) and (max-width: 991px) {
+
+}
+
+@media(min-width:992px) and (max-width: 1024px) {
+    
 }

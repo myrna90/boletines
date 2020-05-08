@@ -1,12 +1,45 @@
 /*Diseño boletines*/
 .header-crear {
-    display: grid;   
+    grid-area: header;
+    background-color: var(--color-white-light);
+    color: var(--color-grey-border);
+    border-bottom: var(--border-line);
+    display: grid; 
+    grid-template-areas: "icono h2 steps usuario";  
+    grid-template-columns: 50px;
+    align-items: center;
+}
+
+.div-icon-header {
+    grid-area: icono;
 }
 
 .div-h2-crear {
-    padding: 0.6em;
+    grid-area: h2;
 }
 
+.div-steps {
+    grid-area: steps;
+    display: grid;
+    grid-template-areas: "step1 step2 step3 step4";
+    margin-top: 0.7em;
+}
+
+.step1 {
+    grid-area: step1;
+}
+
+.step2 {
+    grid-area: step2;
+}
+
+.step3 {
+    grid-area: step3;
+}
+
+.step4 {
+    grid-area: step4;
+}
 
 .btn-crear {
     margin-left: 6em;
@@ -175,7 +208,7 @@
 
 .input3 {
     grid-area: I3;
-    width: 150px;
+    width: 160px;
 }
 
 .input4 {
@@ -403,6 +436,7 @@ input[type="file"] {
 }
 
 @media(min-width:600px) and (max-width: 991px) {
+
     /*Tablet div 2 proyecto*/ 
     .contenedor-form-div2 {
         grid-template-areas: "L1 L2" "I1 I2" "L3 L4" "I3 I4";

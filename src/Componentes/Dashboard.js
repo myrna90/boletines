@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import UsuarioCabecera from '../Componentes/Componentes-secundarios/Usuario-cabecera';
 import { Redirect } from 'react-router';
-import Footer from '../Componentes/Componentes-secundarios/Footer';
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
 se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
@@ -86,11 +85,8 @@ class Dashboard extends Component {
                                 <div className="bol-gen bol bol5"><p className="p-bol-gen"><strong>B-05</strong><br />Proyecto: Punto sur<br />Problema: Control</p>{this.renderRedirect()}<button className="btn-bol" onClick={this.setRedirect}><i class="material-icons  md-18">open_in_new</i></button></div>
                             </div>
                         </div>
-
                     </div>
-                    
                 </div>
-                <Footer/>
             </div>
         )
     }

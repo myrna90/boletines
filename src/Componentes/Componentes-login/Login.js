@@ -67,7 +67,7 @@ class Login extends Component {
     })
   }*/
 
-  
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -100,15 +100,15 @@ class Login extends Component {
         {showData}
         <div className="row row-login">
           <div className="conteiner-titulo">
-            <div  className="titular-inicio">
-            <h1>Boletines</h1>
+            <div className="titular-inicio">
+              <h1>Boletines</h1>
             </div>
             <div className='sub-titulo'>
-            <h5 >Mejora continua</h5>
+              <h5 >Mejora continua</h5>
             </div>
             <img src={Logo} className="logotn" />
-            <img src={LogoW} className="logoW"/>
-            <img src={ImgPersonas} className="miImg"/>
+            <img src={LogoW} className="logoW" />
+            <img src={ImgPersonas} className="miImg" />
           </div>
           <div className="conteiner-sesion">
             <div className="text-inicio">
@@ -152,14 +152,14 @@ class Login extends Component {
                   Olvidaste tu <Link className="a-forgot" onClick={this.btnForgot}>contraseña?</Link>
                 </p>
               </form>
-              
+
             </div>
-            <img src={ImgPersonas} className="miImg2"/>
+            <img src={ImgPersonas} className="miImg2" />
           </div>
         </div>
         <div className="footer">
-<footer>Telenet de México S.A. de C.V.</footer>
-</div>
+          <footer>Telenet de México S.A. de C.V.</footer>
+        </div>
       </div>
 
 

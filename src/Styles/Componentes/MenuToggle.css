@@ -144,7 +144,7 @@
 .link-out {
   background-color: transparent;
   border: none;
-  }
+}
 
   @media only screen and (max-width: 600px) {
     .aside {
@@ -172,25 +172,25 @@
 
   }
 
-  @media(min-width:992px) and (max-width: 1024px) {
+  @media(min-width:600px) and (max-width: 991px) {
     .aside {
       width: 3.44em;
-      height: 88.5vh;
+      height: 92.5vh;
     }
 
     .menu-toggle {
-      min-height: calc(88vh - 50px);
+      min-height: calc(89vh - 50px);
     }
   }
 
   @media(min-width:992px) and (max-width: 1024px) {
     .aside {
       width: 3.44em;
-      height: 92vh;
+      height: 100vh;
     }
 
     .menu-toggle {
-      height: calc(90vh - 50px);
+      height: calc(80vh - 50px);
     }
   }
 

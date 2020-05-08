@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import BarraFiltro from './BarraFiltro';
 import boletines from '../boletines.json';
+import Paginacion from './Paginacion';
 
 
 class Tabla extends Component {
@@ -92,7 +93,7 @@ class Tabla extends Component {
                         </tbody>
                     </table>
                 </div>
-                <div className="div-paginacion"></div>
+                <Paginacion/>
             </div>
         )
     }

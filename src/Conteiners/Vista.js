@@ -9,7 +9,6 @@ class Vista extends Component {
             <div className="conteiner">
                 <MenuToggle />
                 <Navegacion />
-                
             </div>
         )
     }

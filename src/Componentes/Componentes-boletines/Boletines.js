@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Multistep from 'react-multistep';
-import { steps } from './Steps/steps'
 import FormBoletines from './FormBoletines';
-import Footer from '../Componentes-secundarios/Footer';
+import Steps from './Steps';
 
 class Boletines extends Component {
     constructor(props) {
@@ -17,16 +15,16 @@ class Boletines extends Component {
         return (
             <div className="conteiner conteiner-boletines">
                 {/*Contenedor general header */}
-                <div className=" header">
+                <div className="header-crear">
                     <div className="div-icon-header">
                         <span className="material-icons md-40">add_circle</span>
                     </div>
-                    <div className="div-h2">
+                    <div className="div-h2 div-h2-crear">
                         <hr className="v" />
                         <h2 className="h2">Crear boletín</h2>
-                        {/*<Multistep className="pasos" steps = {steps}/>*/}
+                        
                     </div>
-                    <div className="pasos"></div>
+                    <Steps/>
                     <div  className="conteiner-usuario">
                     <button type="submit" className="btn-crear btn">+ Crear</button>
                     </div>

@@ -1,3 +1,6 @@
+.contenedor-listado {
+    overflow: hidden;
+}
 .content-list {
     display: grid;
     grid-template-areas: "filtro" "tabla" "pag";
@@ -5,7 +8,7 @@
     background-color: var(--color-white-light);
     margin-top: 2em;
     width: 100vw;
-    height: 85vh;
+    height: 78vh;
     overflow: hidden;
     box-shadow: var(--boxShadow-dash);
     color: var(--color-border-input);

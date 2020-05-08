@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
 import Tabla from './TablaListado';
-import Footer from '../Componentes-secundarios/Footer';
 
 class Listado extends Component {
-
+    /*constructor()*/
     render() {
         return (
             <div className="conteiner contenedor-dash contenedor-listado">
@@ -21,7 +20,6 @@ class Listado extends Component {
                 <div className="contenido contenido-list section">
                     <Tabla />
                 </div>
-<Footer/>
             </div>
         )
     }

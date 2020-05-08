@@ -188,29 +188,33 @@
 
 /*Media querie la cual controla el responsive para dispositivos moviles */
 @media only screen and (max-width: 600px){
+
+  .conteiner-general-login {
+    height: 92.5vh;
+  }
   .row-login {
     grid-template-areas: "tituloL" "sesion";
     width: 100vw;
-    height: 70vh;
+    height: 100vh;
   }
 
   .conteiner-titulo {
     background-color: var(--grid-color-blue);
     width: 100vw;
-    height: 10px;
+    height: 120px;
     margin-top: 0em;
     display: grid;
   }
 
   .titular-inicio {
     color: var(--color-white-light);
-    margin-top: -7em;
+    margin-top: 2.3em;
   }
 
   .sub-titulo {
     color: var(--color-white-light);
     margin-left: 0.4em;
-    margin-top: -1.5em;
+    margin-top: 0em;
   }
 
   .conteiner-sesion {

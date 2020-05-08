@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import UsuarioCabecera from '../Componentes/Componentes-secundarios/Usuario-cabecera';
 import users from './users.json';
-import Footer from '../Componentes/Componentes-secundarios/Footer';
 
 const user = users.users.map((users) => {
     return (
@@ -29,17 +28,16 @@ class MiPerfil extends Component {
                                 <div className="div-avatar"><span class="material-icons md-51">account_circle</span></div>
                                 <div className="div-nombre">
                                     <h4 className="h4-nombre">Myrna Mares</h4>
-                                    <h5>Ingeniería</h5>
+                                    <h5 className="h5-area">Ingeniería</h5>
                                 </div>
                             </div>
                             <div className="div-info">
-                                <div className="correo-time"><span class="material-icons md-25">email</span><p className="p-correo-time">mmares@telenetdemexico.com</p></div>
-                                <div className="correo-time"><span class="material-icons md-25">restore</span><p className="p-correo-time">15:30</p></div>
+                                <div className="correo-time correo"><span class="material-icons md-25">email</span><p className="p-correo-time">mmares@telenetdemexico.com</p></div>
+                                <div className="correo-time time"><span class="material-icons md-25">restore</span><p className="p-correo-time">15:30</p></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <Footer />
             </div>
         )
     }
