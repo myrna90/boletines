@@ -41,6 +41,10 @@
     grid-area: step4;
 }
 
+.is-form-selected {
+    color: red;
+}
+
 .btn-crear {
     margin-left: 6em;
 }

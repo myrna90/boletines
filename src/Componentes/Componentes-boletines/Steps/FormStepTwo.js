@@ -1,24 +1,13 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react';
 
-class FormStepTwo extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            proyecto: '',
-            cliente: '',
-            fecha: '',
-            sistema: ''
-        }
-        this.handleChange = this.handleChange.bind(this);
-    }
+const FormStepTwo = (props) => { 
+    const {handleChange} = props;
 
-    handleChange(event) {
-        const { name, value } = event.target
-        this.setState({ [name]: value });
-    }
-
-    render() {
-        const { proyecto, cliente, fecha, sistema } = this.state;
+    const [formProyecto, setFormProyecto] = useState({proyecto: '',
+    cliente: '',
+    fecha: '',
+    sistema: ''});
+    
         return (
             /*formulario para especificaciones del proyecto */
             <div className="div div-2">
@@ -29,39 +18,39 @@ class FormStepTwo extends Component {
                     {/*Input proyecto */}
                     <label className="label label1">Proyecto</label>
                     <div className="div-icon-info">
-                        <select className="input input1" name="proyecto" value={proyecto} onChange={this.handleChange} required>
+                        <select className="input input1" name="proyecto" defaultValue={formProyecto.proyecto} onChange={(e) => handleChange(e)} >
 
                         </select>
                         <a className="caja3">
                             <span className="material-icons md-4">info</span>
-                            <span className="info">Seleccionar proyecto <br />donde ocurrio el problema</span>
+                            <span className="info">Seleccionar proyecto <br/>donde ocurrio el problema</span>
                         </a>
                     </div>
 
                     {/*Input cliente */}
                     <label className="label label2">Cliente</label>
-                    <input className="input input2" name="cliente" value={cliente} onChange={this.handleChange} required></input>
+                    <input className="input input2" name="cliente" defaultValue={formProyecto.cliente} onChange={(e) => handleChange(e)} required></input>
 
 
                     {/*Input fecha */}
                     <label className="label label3 label-fecha">Fecha</label>
-                    <input className="input input3 input-fecha" name="fecha" type="date" value={fecha} onChange={this.handleChange} required></input>
+                    <input className="input input3 input-fecha" name="fecha" type="date" defaultValue={formProyecto.fecha} onChange={(e) => handleChange(e)} required></input>
 
                     {/*Input sistema */}
                     <label className="label label4">Sistema</label>
                     <div className="div-icon-info">
-                        <select className="input input4" name="sistema" value={sistema} onChange={this.handleChange} required>
+                        <select className="input input4" name="sistema" defaultValue={formProyecto.sistema} onChange={(e) => handleChange(e)} >
 
                         </select>
                         <a className="caja3">
                             <span className="material-icons md-4">info</span>
-                            <span className="info">Seleccionar proyecto <br />donde ocurrio el problema</span>
+                            <span className="info">Seleccionar proyecto <br/>donde ocurrio el problema</span>
                         </a>
                     </div>
                 </div>
             </div>
         )
     }
-}
+
 
 export default FormStepTwo;
