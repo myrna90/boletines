@@ -1,21 +1,10 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-class FormStepOne extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            folio: ''
-        }
-        this.handleChange = this.handleChange.bind(this);
-    }
+const FormStepOne = (props) => {
+    const {handleChange} = props;
 
-    handleChange(event) {
-        const { name, value } = event.target
-        this.setState({ [name]: value });
-    }
-
-    render(){
-        const {folio} = this.state;
+    const [formFolio, setFormFolio] = useState({folio: ''});
+    
         return(
             /*parte del fomulario para llenar folio */
             <div className="div div-1">
@@ -24,12 +13,11 @@ class FormStepOne extends Component{
             </div>
             <div className="contenForm1">
                 <label className="label label-div1">Numero de folio</label>
-                <input className="input input-div1" name="folio" value={folio} onChange={this.handleChange} required></input>
+                <input className="input input-div1" name="folio" defaultValue={formFolio.folio} onChange={(e) => handleChange(e)}  required></input>
             </div>
     
         </div>
         )
     }
-}
 
 export default FormStepOne;

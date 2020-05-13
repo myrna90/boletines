@@ -23,6 +23,7 @@
     display: grid;
     grid-template-areas: "step1 step2 step3 step4";
     margin-top: 0.7em;
+    justify-content: space-between;
 }
 
 .step1 {
@@ -42,7 +43,8 @@
 }
 
 .is-form-selected {
-    color: red;
+    color: var(--color-green-steps);
+    border-bottom: var(--borde-steps);
 }
 
 .btn-crear {

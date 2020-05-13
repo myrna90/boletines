@@ -1,51 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState, useRef } from 'react';
 
-class FormStepThree extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            equipo: '',
-            marca: '',
-            modelo: '',
-            problema: '',
-            imgProblema: '',
-            solucion: '',
-            imgSolucion: '',
-            imagProb: '',
-            imagSolu: ''
-        }
-        this.handleChange = this.handleChange.bind(this);
-    }
+const FormStepThree = (props) => {
+    const {handleChange} = props;
 
-    handleChange(event) {
-        const { name, value } = event.target
-        this.setState({ [name]: value });
-    }
+    const [formImage, setFormImage] = useState({ equipo: '',
+                                                 marca: '',
+                                                 modelo: '',
+                                                 problema: '',
+                                                 imgProblema: '',
+                                                 solucion: '',
+                                                 imgSolucion: '',
+                                                 });
+    /*const upImage = useRef({ imagProb: '', imagSolu: '' });
 
-
-    imgUp = () => {
-        const file = this.refs.uploadImg.files[0]
+   const imgUp = () => {
+        const file = upImage.refs.files[0]
         const reader = new FileReader();
 
         reader.onloadend = () => {
-            this.setState({
+            upImage({
                 imagProb: reader.result
             })
         }
         if (file) {
             reader.readAsDataURL(file);
-            this.setState({
+            upImage({
                 imagProb: reader.result
             })
         }
         else {
-            this.setState({
+            upImage({
                 imagProb: ""
             })
         }
     }
 
-    imgUp2 = () => {
+    const imgUp2 = () => {
 
         const file = this.refs.uploadImg2.files[0]
         const reader = new FileReader();
@@ -68,16 +58,15 @@ class FormStepThree extends Component {
         }
     }
 
-    changeInput = (event) => {
+    const changeInput = (event) => {
         const file = event.target.files[0]
       
         // User cancelled
         if (!file) {
           return
         }
-    }
-    render() {
-        const { equipo, marca, modelo, problema, solucion } = this.state;
+    }*/
+    
         return (
             /*parte del formulario para descripcion y solución del problema */
             <div className="div div-3">
@@ -89,27 +78,27 @@ class FormStepThree extends Component {
                     {/*Div contenido espacio descripción problema*/}
                     <div className="contenForm">
                         <label className="label label-text-area">Descripción del problema</label>
-                        <textarea className=" text-problema text" name="problema" value={problema}
-                            onChange={this.handleChange} required></textarea>
+                        <textarea className=" text-problema text" name="problema" defaultValue={formImage.problema}
+                            onChange={(e) => handleChange(e)} required></textarea>
                     </div>
 
                     {/*Div contenido espacio descripción solución*/}
                     <div className="contenForm2">
                         <label className="label label-text-area ">Solución del problema</label>
-                        <textarea className=" text-solucion text" name="solucion" value={solucion}
-                            onChange={this.handleChange} required></textarea>
+                        <textarea className=" text-solucion text" name="solucion" defaultValue={formImage.solucion}
+                            onChange={(e) => handleChange(e)} required></textarea>
                     </div>
 
                     {/*Div contenido espacio imagen problema */}
                     <div className="contenForm conten-img">
                         <label for="myuniqueid" className="label label-img">Problema imagen</label>
                         <div className=" conten-export-img">
-                        <input ref="uploadImg"
-                            id="myuniqueid"
+                        <input /*ref="uploadImg"
+                            
+                            onChange={imgUp}*/ id="myuniqueid"
                             type="file"
-                            name="selectedFile"
-                            onChange={this.imgUp} className="inputimg" />
-                            <img  src={this.state.imagProb} className="imgExport"  required />
+                            name="selectedFile"className="inputimg" />
+                            <img  /*src={upImage.imagProb}*/ className="imgExport"  required />
                             </div>
                         
                     </div>
@@ -117,12 +106,13 @@ class FormStepThree extends Component {
                     <div className="contenForm conten-img2">
                         <label for="myuniqueid2" className="label label-img">Solución imagen</label>
                         <div className=" conten-export-img">
-                        <input ref="uploadImg2"
+                        <input /*ref="uploadImg2"
+                         onChange={this.imgUp2}*/
                             id="myuniqueid2"
                             type="file"
                             name="selectedFile"
-                            onChange={this.imgUp2} className="inputimg" />
-                        <img src={this.state.imagSolu} className="imgExport" required />
+                            className="inputimg" />
+                        <img /*src={this.state.imagSolu} */className="imgExport" required />
                         </div>
                         
                     </div>
@@ -132,7 +122,7 @@ class FormStepThree extends Component {
                         {/*Input equipo */}
                         <label className=" label label-div">Equipo</label>
                         <div className="div-icon-info">
-                            <input className="input input-div" name="equipo" value={equipo} onChange={this.handleChange}></input>
+                            <input className="input input-div" name="equipo" defaultValue={formImage.equipo} onChange={(e) => handleChange(e)}></input>
                             <a className="caja3">
                                 <span className="material-icons md-4">info</span>
                                 <span className="info">Seleccionar proyecto <br />donde ocurrio el problema</span>
@@ -142,7 +132,7 @@ class FormStepThree extends Component {
                         {/*Input marca */}
                         <label className=" label label-div2">Marca</label>
                         <div className="div-icon-info">
-                            <input className="input input-div2" name="marca" value={marca} onChange={this.handleChange}></input>
+                            <input className="input input-div2" name="marca" defaultValue={formImage.marca} onChange={(e) => handleChange(e)}></input>
                             <a className="caja3">
                                 <span className="material-icons md-4">info</span>
                                 <span className="info">Seleccionar proyecto <br />donde ocurrio el problema</span>
@@ -152,7 +142,7 @@ class FormStepThree extends Component {
                         {/*Input modelo */}
                         <label className=" label label-div3">Modelo</label>
                         <div className="div-icon-info">
-                            <input className="input input-div3" name="modelo" value={modelo} onChange={this.handleChange}></input>
+                            <input className="input input-div3" name="modelo" defaultValue={formImage.modelo} onChange={(e) => handleChange(e)}></input>
                             <a className="caja3">
                                 <span className="material-icons md-4">info</span>
                                 <span className="info">Seleccionar proyecto <br />donde ocurrio el problema</span>
@@ -164,6 +154,5 @@ class FormStepThree extends Component {
             </div>
         )
     }
-}
 
 export default FormStepThree;

@@ -4,9 +4,9 @@ const FormStepTwo = (props) => {
     const {handleChange} = props;
 
     const [formProyecto, setFormProyecto] = useState({proyecto: '',
-    cliente: '',
-    fecha: '',
-    sistema: ''});
+                                                      cliente: '',
+                                                      fecha: '',
+                                                      sistema: ''});
     
         return (
             /*formulario para especificaciones del proyecto */

@@ -12,10 +12,10 @@ const FormBoletines = (props) => {
             <div className="contenido section ">
                 {/*Contenedor el cual muestra el fomulario para llenar los campos requeridos */}
                 <form className="contenido-form">
-                <FormStepOne/>
+                <FormStepOne handleChange={handleChange}/>
                 <FormStepTwo handleChange={handleChange}/>
-                <FormStepThree/>
-                <FormStepFour/>
+                <FormStepThree handleChange={handleChange}/>
+                <FormStepFour handleChange={handleChange}/>
                 </form>
             </div>
         )

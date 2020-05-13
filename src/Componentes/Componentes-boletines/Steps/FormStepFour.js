@@ -1,22 +1,10 @@
 import React, { Component } from 'react';
+import { useState } from 'react';
 
-class FormStepFour extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            usuario: '',
-            departamento: ''
-        }
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        const { name, value } = event.target
-        this.setState({ [name]: value });
-    }
-
-    render() {
-        const {usuario, departamento} = this.state;
+const FormStepFour = (props) => {
+    const {handleChange} = props;
+    
+    const [formUsuario, setFormUsuario] = useState({usuario: '', departamento: ''});
         return (
             /*parte del formulario para completar datos del usuario */
             <div className="div div-4">
@@ -26,7 +14,7 @@ class FormStepFour extends Component {
             <div className="contenForm conteinerForm-2">
                 <label className="label">Reporta</label>
                 <div className="div-icon-info">
-                    <input className="input" name="usuario" value={usuario} onChange={this.handleChange} required></input>
+                    <input className="input" name="usuario" defaultValue={formUsuario.usuario} onChange={(e) => handleChange(e)} required></input>
 
                 </div>
 
@@ -35,7 +23,7 @@ class FormStepFour extends Component {
             <div className="contenForm conteinerForm-3">
                 <label className="label">Departamento</label>
                 <div className="div-icon-info">
-                    <input className="input" name="departamento" value={departamento} onChange={this.handleChange} required></input>
+                    <input className="input" name="departamento" defaultValue={formUsuario.departamento} onChange={(e) => handleChange(e)} required></input>
 
                 </div>
 
@@ -43,6 +31,5 @@ class FormStepFour extends Component {
         </div>
         )
     }
-}
 
 export default FormStepFour;

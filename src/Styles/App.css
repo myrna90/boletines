@@ -6,6 +6,7 @@
   --grid-color-blue: #004040;
   --color-blue: #0E8C8C;
   --color-green-boletin: #006666;
+  --color-green-steps: #007F7F;
   --color-blue-bajo: #98D2DE;
   --color-boton: #A3E2BA;
   /*colores blancos*/
@@ -32,6 +33,7 @@
   --align-boton: center;
   --top-boton: .06em;
   --border-line: solid .06em #A7A7A7;
+  --borde-steps: solid 0.2em #007F7F;
   --boxShadow-dash: 0px 1px 6px 0px rgba(0,0,0,0.16);
   /*css contenedores perfil y view boletines*/
   --width-conten-view: 45em;

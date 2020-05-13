@@ -15,10 +15,11 @@ const Boletines = () => {
     const getCurrentForm = (name) => {
         const identifier = {
             1: ['folio'],
-            2: ['cliente'],
-            3: ['problema'],
-            4: ['usuario']
+            2: ['proyecto', 'cliente', 'fecha', 'sistema'],
+            3: ['problema', 'imgProblema', 'solucion', 'imgSolucion', 'equipo', 'marca', 'modelo'],
+            4: ['usuario', 'departamento']
         };
+
     const properties = Object.keys(identifier);
     properties.forEach((property) => {
         if (identifier[property].includes(name)){
@@ -55,11 +56,9 @@ const Boletines = () => {
                 </div>
             </div>
             <div className="contenido section ">
-                {/*se pasa la función de handleChange como prop al componente de FormBoletines */}
-                
+                {/*se pasa la función de handleChange como prop al componente de FormBoletines */}               
                 <FormBoletines handleChange={handleChange}/>
-            </div>
-    
+            </div>   
         </div>
     )
     
