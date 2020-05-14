@@ -4,11 +4,11 @@ import Login from '../Componentes-principales/Login'
 
 const PublicRoute = ({ component:   Component, restricted, ...rest}) => {
     return(
-       /* <Route {...rest} render={props => (
+        <Route {...rest} render={props => (
             Login() && restricted ?
-            <Redirect to='/Dashboard'/>
+            <Redirect to='/login'/>
             : <Component {...props} />
-        )} />*/
+        )} />
     )
 }
 

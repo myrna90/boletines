@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
+import users from '../users.json';
 
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100)
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
-  }
-}
+const users = users.users.map((users) => {
+  return (
+    console.log(users.cn)
+  )
+})
 
 class Autenticacion extends Component {
   constructor() {
@@ -22,7 +17,7 @@ class Autenticacion extends Component {
 
 
   login = () => {
-    fakeAuth.authenticate(() => {
+    users.authenticate(() => {
       this.setState(() => ({
         redirectToReferrer: true
       }))

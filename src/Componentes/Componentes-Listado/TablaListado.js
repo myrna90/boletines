@@ -10,8 +10,6 @@ class Tabla extends Component {
         super(props)
         this.state = {
             redirect: false,
-            currentPage: 1,
-            todosPerPage: 12,
             boletines: [],
             search: null
         }
@@ -49,58 +47,8 @@ class Tabla extends Component {
             return <Redirect to='/Vista/View' />
         }
     }
-    handleClick(event) {
-        this.setState({
-          currentPage: Number(event.target.id)
-        });
-    }
-
     render() {
-
-    const { boletines, currentPage, todosPerPage } = this.state;
-    const indexOfLastTodo = currentPage * todosPerPage;
-    const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
-    const currentTodos = boletines.slice(indexOfFirstTodo, indexOfLastTodo);
-
-
-      const data = boletines.filter((boletines) => {
-        if (this.state.search == null)
-            return boletines
-        else if (boletines.proyecto.toLowerCase().includes(this.state.search.toLowerCase())
-            || boletines.sistema.toLowerCase().includes(this.state.search.toLowerCase())
-            || boletines.cliente.toLowerCase().includes(this.state.search.toLowerCase())) {
-            return boletines
-        }
-    });
-      const renderTodos = currentTodos.map((boletines, id) => {
-        return (
-
-            <tr className="tr-general" key={id}>
-                
-                <td >{boletines.folio}</td>
-                <td >{boletines.proyecto}</td>
-                <td >{boletines.sistema}</td>
-            </tr>
-        )
-    });
-
-      const pageNumbers = [];
-      for (let i = 1; i <= Math.ceil(boletines.length / todosPerPage); i++) {
-        pageNumbers.push(i);
-      }
-
-      const renderPageNumbers = pageNumbers.map(number => {
-        return (
-          <li
-            key={number}
-            id={number}
-            onClick={this.handleClick}
-          >
-            {number}
-          </li>
-        );
-      });
-       /* const data = boletines.boletines.filter((boletines) => {
+        const data = boletines.boletines.filter((boletines) => {
             if (this.state.search == null)
                 return boletines
             else if (boletines.proyecto.toLowerCase().includes(this.state.search.toLowerCase())
@@ -117,7 +65,7 @@ class Tabla extends Component {
                     <td >{boletines.sistema}</td>
                 </tr>
             )
-        });*/
+        });
         return (
             <div className="content-list">
                 <div className="div-filtro">
@@ -143,19 +91,10 @@ class Tabla extends Component {
                             {/*<td>{this.renderRedirect()}<button className="btn-list" onClick={this.setRedirect}><i class="material-icons  md-19">open_in_new</i></button></td>*/}
 
                         </tbody>
+                        
                     </table>
                 </div>
-                <div className="div-paginacion">
-               
-               
-              
-          <ul>
-            {renderTodos}
-          </ul>
-          <ul id="page-numbers">
-            {renderPageNumbers}
-          </ul>
-        </div>
+                {/*<Paginacion/>*/}
             </div>
         )
     }

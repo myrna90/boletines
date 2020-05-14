@@ -1,12 +1,12 @@
 
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import fakeAuth from '../Componentes-boletines/Login';
+import users from '../users.json';
 //COMENTAR SOLAMENTE EL CONTENIDO DE LA FUNCION PARA NO GENERAR ERRORES
 
 const PriveteRoute = ({component: Component, isAuthenticated, ...rest}) => (
    <Route {...rest} render={(props) =>(
-        fakeAuth.isAuthenticated === true
+        users.isAuthenticated === true
         ? <Component {...props}/>
         : <Redirect to={{
             pathname: 'Dashboard',
