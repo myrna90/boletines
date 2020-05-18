@@ -1,23 +1,15 @@
 import React, { Component } from "react";
-import BtnLogin from '../Componentes-login/ButtonLogin';
-import Logo from '../imgs/logotn.png';
-import ImgPersonas from '../imgs/img-login.png'
+import Titulo from './Titulo';
 import users from '../users.json';
-import { Link } from "react-router-dom";
-import LogoW from '../imgs/logotnW.png';
+import Sesion from "./Sesion";
+import { useState } from "react";
 
-const showData = users.users.map((users) => {
-  return (
-    console.log('Ok')
-  )
-});
-
-class Login extends Component {
+const Login = (props) => {
   /*Función login  */
-  constructor(props) {
+ /* constructor(props) {
     super(props);
     this.state = {
-      user: '',
+      name: '',
       password: '',
       formErrors: { user: '', password: '' },
       userValid: false,
@@ -26,136 +18,46 @@ class Login extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-  }
-
-  auth(){
-    fetch('http://localhost:3000/users',
-    {
-      method: 'GET',
-      headers: {
-        user: '',
-        password: '',
-        //Authorization: 'Bearer Token',
-        'Content-Type': 'application/json',
-        'Accepts': 'application/json',
-      }
-    })
-    .then((response) => {
-      return response.json()
-    })
-    .then((users) => {
-    this.setState({users: users})
-  })
-  }
-
-  /*authLogin() {
-    axios({
-      url: 'http://10.10.1.24:3000/auth/signin',
-      method: 'post',
-      data: JSON.stringify(cn),
-      headers: {
-        Authorization: 'Bearer Token',
-        'Content-Type': 'application/json'
-      }
-    }).then(Response => {
-      //
-      return Response.data
-    }).then(data => {
-      console.log(data)
-    }).catch(err => {
-      console.log(err)
-    })
   }*/
 
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  const showData = users.users.map((users) => {
+    return (
+      console.log('Ok')
+    )
+  });
+
+  const handleChange = (e) => {
+    setName({ [e.target.name]: e.target.value });
   }
 
-  handleFormSubmit(e) {
+ const handleFormSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('user', JSON.stringify(this.state));
+    localStorage.setItem('user', JSON.stringify(name));
   }
 
-  componentDidMount() {
-    this.showData = JSON.parse(localStorage.getItem('user'));
+  const localStorage = () => {
+    showData = JSON.parse(localStorage.getItem('user'));
 
     if (localStorage.getItem('user')) {
       this.setState({
-        user: this.showData.displayName,
-        password: this.state
+        user: showData.name,
+        password: showData.password
       })
     }
   }
 
-  btnForgot() {
-    return alert("favor de comunicarse con soporte técnico")
-  }
-
-  render() {
     return (
       /*Contenedor general*/
 
       <div className="conteiner-general-login">
         {showData}
         <div className="row row-login">
-          <div className="conteiner-titulo">
-            <div className="titular-inicio">
-              <h1>Boletines</h1>
-            </div>
-            <div className='sub-titulo'>
-              <h5 >Mejora continua</h5>
-            </div>
-            <img src={Logo} className="logotn" />
-            <img src={LogoW} className="logoW" />
-            <img src={ImgPersonas} className="miImg" />
-          </div>
-          <div className="conteiner-sesion">
-            <div className="text-inicio">
-              <h2 className="text-conten">Inicie sesión ahora...</h2>
-              <p className="p-conten">Su cuenta esta vinculada con el dominio, puede acceder al sistema usando las mismas credenciales.</p>
-            </div>
-
-            <div className="login">
-              <form className="form" onSubmit={this.handleFormSubmit}>
-
-                {/*div para introducir email */}
-                <div className="conten-inputs">
-                  <label className="text-login text-user" htmlFor="user">Nombre de usuario:</label>
-                  <input required type="text" className="input-login" name="user"
-                    value={this.state.user}
-                    onChange={this.handleChange}
-                    placeholder="Myrna Mares"
-                  />
-                  <div className="img-correo"><span className="material-icons md-25">email</span></div>
-                </div>
-
-                {/*div para introducir password */}
-                <div className="conten-inputs">
-                  <label className="text-login text-passw" htmlFor="password">Contraseña: </label>
-                  <input className="input-login" type="password" name="password"
-                    value={this.state.password}
-                    onChange={this.handleChange}
-                    placeholder="**********" />
-                  <div className="img-contraseña"><span className="material-icons md-25">https</span></div>
-                </div>
-
-                {/*div para recordar usuario */}
-
-                <div className="custom-control custom-checkbox">
-                  <input type="submit" className="custom-control-input" id="customCheck1" />
-                  <label className="custom-control-label" htmlFor="customCheck1">Recordarme</label>
-                </div>
-
-                <BtnLogin />
-                <p className="forgot-password text-right">
-                  Olvidaste tu <Link className="a-forgot" onClick={this.btnForgot}>contraseña?</Link>
-                </p>
-              </form>
-
-            </div>
-            <img src={ImgPersonas} className="miImg2" />
-          </div>
+          {localStorage}
+          <Titulo/>
+          <Sesion/>
         </div>
         <div className="footer">
           <footer>Telenet de México S.A. de C.V.</footer>
@@ -166,6 +68,5 @@ class Login extends Component {
 
     )
   }
-}
 
 export default Login;

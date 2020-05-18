@@ -5,7 +5,7 @@
       "lastName": "Posas",
       "email": "rrosas@telenetdemexico.com",
       "password": "123456",
-      "role": "Aministración",
+      "role": "Administración",
       "image": "",
       "status": "Active"
     },
@@ -14,7 +14,7 @@
       "lastName": "Leiva",
       "email": "cleiva@telenetdemexico.com",
       "password": "123456",
-      "role": "Ingeniería",
+      "role": "Ventas",
       "image": "",
       "status": "Active"
     },
@@ -23,7 +23,7 @@
       "lastName": "Garcia",
       "email": "mgarcia@telenetdemexico.com",
       "password": "123456",
-      "role": "",
+      "role": "Ingeniería",
       "image": "",
       "status": "Active"
     },
@@ -32,7 +32,7 @@
       "lastName": "Montaño",
       "email": "ymontaño@telenetdemexico.com",
       "password": "123456",
-      "role": "",
+      "role": "Ingeniería",
       "image": "",
       "status": "Active"
     },
@@ -41,7 +41,7 @@
       "lastName": "Orobio",
       "email": "sorobio@telenetdemexico.com",
       "password": "123456",
-      "role": "",
+      "role": "Ingeniería",
       "image": "",
       "status": "Active"
     },
@@ -50,7 +50,7 @@
       "lastName": "Barrera",
       "email": "ibarrera@telenetdemexico.com",
       "password": "123456",
-      "role": "",
+      "role": "Ingeniería",
       "image": "",
       "status": "Active"
     },
@@ -59,7 +59,7 @@
       "lastName": "Martinez",
       "email": "lmartinez@telenetdemexico.com",
       "password": "123456",
-      "role": "",
+      "role": "Ingeniería",
       "image": "",
       "status": "Active"
     },
@@ -68,7 +68,7 @@
       "lastName": "Garcia",
       "email": "mgarcia@telenetdemexico.com",
       "password": "123456",
-      "role": "",
+      "role": "Ventas",
       "image": "",
       "status": "Active"
     },
@@ -77,7 +77,7 @@
       "lastName": "Camacho",
       "email": "ecamacho@telenetdemexico.com",
       "password": "123456",
-      "role": "",
+      "role": "Ingeniería",
       "image": "",
       "status": "Active"
     },
@@ -86,7 +86,7 @@
       "lastName": "Ramos",
       "email": "jramos@telenetdemexico.com",
       "password": "123456",
-      "role": "",
+      "role": "Administración",
       "image": "",
       "status": "Active"
     },
@@ -95,7 +95,7 @@
       "lastName": "Mares",
       "email": "mmares@telenetdemexico.com",
       "password": "123456",
-      "role": "",
+      "role": "Ingeniería",
       "image": "",
       "status": "Active"
     }
