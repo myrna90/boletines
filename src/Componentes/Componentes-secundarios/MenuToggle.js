@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import LogoW2 from '../imgs/logotnW2.png'
+import context from '../Componentes-login/utils/context';
 
 class MenuToggle extends Component {
     constructor(props) {
@@ -61,8 +62,13 @@ class MenuToggle extends Component {
                     </div>
                 </div>
                 <div className="conteiner-btnOut">
+                    {/*!context.authState
+               <button onClick={() => context.authObj.logout()} className="Link link-out"><i class="material-icons md-24">exit_to_app</i><div className="textMenu">Salir</div></button>     
+                    
+                    */}
                     {this.renderRedirect()}
                     <button to="/" type="submit" onClick={this.setRedirect} className="Link link-out"><i class="material-icons md-24">exit_to_app</i><div className="textMenu">Salir</div></button>
+                    {/**/}
                 </div>
             </div>
 
