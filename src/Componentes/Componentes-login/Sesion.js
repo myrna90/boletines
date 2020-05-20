@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import React, { useContext, useState, useReducer } from 'react';
 import * as ACTIONS from '../Componentes-login/store/actions/actions';
 import * as FormReducer from '../Componentes-login/store/reducers/form_reducer';
-import Context from '../Componentes-login/utils/context';
+import context from '../Componentes-login/utils/context';
 
 const Sesion = (props) => {
-  const context = useContext(Context)
+  /*const context = useContext(context)*/
 
   const [valueChange, setValueChange] = useState({email:'', password: ''})
   const [valueSubmit, setValueSubmit] = useState('')
@@ -25,14 +25,14 @@ const Sesion = (props) => {
     setValueSubmit(event.target.useState.value)
   };
 
-  /*const handleuseReducerChange = (event) => (
+  const handleuseReducerChange = (event) => (
     dispatch(ACTIONS.user_input_change(event.target.value))
   );
 
   const handleuseReducerSubmit = (event) => {
     event.preventDefault();
     dispatch(ACTIONS.user_input_submit(event.target.useReducer.value))
-  };*/
+  };
 
     const btnForgot = () => {
         return alert("favor de comunicarse con soporte técnico")

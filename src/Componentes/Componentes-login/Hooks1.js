@@ -5,7 +5,7 @@ import Context from '../utils/context';
 
 
 const HooksContainer1 = () => {
-  const context = useContext(Context)
+  const context = useContext(context)
 
   const [value, setValue] = useState(0)
 
