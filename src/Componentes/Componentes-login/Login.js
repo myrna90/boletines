@@ -1,9 +1,20 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { Redirect } from 'react-router-dom';
 import Titulo from './Titulo';
 import users from '../users.json';
 import Sesion from "./Sesion";
-import { useState } from "react";
 
+const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb) {
+    this.isAuthenticated = true
+    setTimeout(cb, 100) // fake async
+  },
+  signout(cb) {
+    this.isAuthenticated = false
+    setTimeout(cb, 100) // fake async
+  }
+}
 const Login = (props) => {
   /*Función login  */
  /* constructor(props) {
@@ -20,42 +31,14 @@ const Login = (props) => {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }*/
 
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
-
-  const showData = users.users.map((users) => {
-    return (
-      console.log('Ok')
-    )
-  });
-
-  const handleChange = (e) => {
-    setName({ [e.target.name]: e.target.value });
-  }
-
- const handleFormSubmit = (e) => {
-    e.preventDefault();
-    localStorage.setItem('user', JSON.stringify(name));
-  }
-
-  const localStorage = () => {
-    showData = JSON.parse(localStorage.getItem('user'));
-
-    if (localStorage.getItem('user')) {
-      this.setState({
-        user: showData.name,
-        password: showData.password
-      })
-    }
-  }
+  
+ 
 
     return (
       /*Contenedor general*/
 
       <div className="conteiner-general-login">
-        {showData}
         <div className="row row-login">
-          {localStorage}
           <Titulo/>
           <Sesion/>
         </div>

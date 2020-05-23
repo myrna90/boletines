@@ -12,8 +12,6 @@ import '../Styles/Componentes/Listado.css';
 import Login from '../Componentes/Componentes-login/Login';
 import Vista from './Vista';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import history from '../Componentes/Componentes-login//utils/history';
-import ContextState from './context.state.config';
 //import PageNotFound from './Componente-pageNotFound/PageNotFound';
 
 
@@ -22,8 +20,7 @@ function App() {
 
     /*Router de la aplicación */
     <div>
-      <ContextState />
-      <Router history={history}>
+      <Router>
         <Route exact path="/" component={Login} />
         <Route path="/Vista">
           <Vista />

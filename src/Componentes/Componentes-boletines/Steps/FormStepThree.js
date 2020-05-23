@@ -11,10 +11,10 @@ const FormStepThree = (props) => {
                                                  solucion: '',
                                                  imgSolucion: '',
                                                  });
-    /*const upImage = useRef({ imagProb: '', imagSolu: '' });
+    const upImage = useRef({ imagProb: '', imagSolu: '' });
 
-   const imgUp = () => {
-        const file = upImage.refs.files[0]
+   imgUp = () => {
+        const file = this.refs.uploadImg.files[0]
         const reader = new FileReader();
 
         reader.onloadend = () => {
@@ -65,7 +65,7 @@ const FormStepThree = (props) => {
         if (!file) {
           return
         }
-    }*/
+    }
     
         return (
             /*parte del formulario para descripcion y solución del problema */
@@ -93,12 +93,11 @@ const FormStepThree = (props) => {
                     <div className="contenForm conten-img">
                         <label for="myuniqueid" className="label label-img">Problema imagen</label>
                         <div className=" conten-export-img">
-                        <input /*ref="uploadImg"
-                            
-                            onChange={imgUp}*/ id="myuniqueid"
+                        <input ref="uploadImg"
+                            onChange={imgUp} id="myuniqueid"
                             type="file"
                             name="selectedFile"className="inputimg" />
-                            <img  /*src={upImage.imagProb}*/ className="imgExport"  required />
+                            <img  src={upImage.imagProb} className="imgExport"  required />
                             </div>
                         
                     </div>
@@ -106,13 +105,13 @@ const FormStepThree = (props) => {
                     <div className="contenForm conten-img2">
                         <label for="myuniqueid2" className="label label-img">Solución imagen</label>
                         <div className=" conten-export-img">
-                        <input /*ref="uploadImg2"
-                         onChange={this.imgUp2}*/
+                        <input ref="uploadImg2"
+                         onChange={this.imgUp2}
                             id="myuniqueid2"
                             type="file"
                             name="selectedFile"
                             className="inputimg" />
-                        <img /*src={this.state.imagSolu} */className="imgExport" required />
+                        <img src={this.state.imagSolu} className="imgExport" required />
                         </div>
                         
                     </div>

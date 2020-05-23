@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import LogoW2 from '../imgs/logotnW2.png'
-import context from '../Componentes-login/utils/context';
 
 class MenuToggle extends Component {
     constructor(props) {

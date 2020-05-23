@@ -7,20 +7,16 @@ import MiPerfil from '../Componentes/MiPerfil';
 import BoletinesView from '../Componentes/Componentes-secundarios/BoletinesView';
 import Listado from '../Componentes/Componentes-Listado/ListadoBoletines';
 import PrivateRoute from '../Componentes/Componentes-login/PrivateRoute';
-import Context from '../Componentes/Componentes-login/utils/context';
-import AuthCheck from '../Componentes/Componentes-login/utils/authcheck';
-
-
 
 const Navegacion = () => (
     <Switch>
         {/**/}
-        <PrivateRoute exact path="/Vista/Dashboard" component={Dashboard} auth={Context.authState}/>
-        <PrivateRoute path="/Vista/Boletines" component={Boletines} auth={Context.authState}/>
-        <PrivateRoute path="/Vista/Listado" component={Listado} auth={Context.authState}/>
-        <PrivateRoute path="/Vista/View" component={BoletinesView} auth={Context.authState}/>
-        <PrivateRoute path="/Vista/MiPerfil" component={MiPerfil} auth={Context.authState}/>
-        <PrivateRoute path="/Vista/Soporte" component={Soporte} auth={Context.authState}/>
+        <PrivateRoute exact path="/Vista/Dashboard" component={Dashboard} />
+        <PrivateRoute path="/Vista/Boletines" component={Boletines} />
+        <PrivateRoute path="/Vista/Listado" component={Listado} />
+        <PrivateRoute path="/Vista/View" component={BoletinesView} />
+        <PrivateRoute path="/Vista/MiPerfil" component={MiPerfil} />
+        <PrivateRoute path="/Vista/Soporte" component={Soporte} />
         {/*<Route component={PageNotFound}/>*/}
     </Switch>
 )
