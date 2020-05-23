@@ -11,62 +11,25 @@ const FormStepThree = (props) => {
                                                  solucion: '',
                                                  imgSolucion: '',
                                                  });
-    /*const upImage = useRef({ imagProb: '', imagSolu: '' });
 
-   const imgUp = () => {
-        const file = upImage.refs.files[0]
-        const reader = new FileReader();
+    const [image, setImage] = useState({file: '', imagePreview: ''});
 
-        reader.onloadend = () => {
-            upImage({
-                imagProb: reader.result
-            })
-        }
-        if (file) {
-            reader.readAsDataURL(file);
-            upImage({
-                imagProb: reader.result
-            })
-        }
-        else {
-            upImage({
-                imagProb: ""
-            })
-        }
-    }
+    const handleImageChange = (e) => {
+        e.preventDefault();
 
-    const imgUp2 = () => {
-
-        const file = this.refs.uploadImg2.files[0]
-        const reader = new FileReader();
+        let reader = new FileReader();
+        let file = e.target.files[0];
 
         reader.onloadend = () => {
-            this.setState({
-                imagSolu: reader.result
+            setImage({
+                file,
+                imagePreview: reader.result
             })
         }
-        if (file) {
-            reader.readAsDataURL(file);
-            this.setState({
-                imagSolu: reader.result
-            })
-        }
-        else {
-            this.setState({
-                imagSolu: ""
-            })
-        }
+        reader.readAsDataURL(file);
     }
 
-    const changeInput = (event) => {
-        const file = event.target.files[0]
-      
-        // User cancelled
-        if (!file) {
-          return
-        }
-    }*/
-    
+  
         return (
             /*parte del formulario para descripcion y solución del problema */
             <div className="div div-3">
@@ -93,12 +56,17 @@ const FormStepThree = (props) => {
                     <div className="contenForm conten-img">
                         <label for="myuniqueid" className="label label-img">Problema imagen</label>
                         <div className=" conten-export-img">
-                        <input /*ref="uploadImg"
-                            
-                            onChange={imgUp}*/ id="myuniqueid"
+                        <input 
+                            id="myuniqueid"
                             type="file"
-                            name="selectedFile"className="inputimg" />
-                            <img  /*src={upImage.imagProb}*/ className="imgExport"  required />
+                            name="selectedFile"className="inputimg" onChange={(e) => handleImageChange(e)} 
+                            required />
+                            {
+                              image.imagePreview ? (<img src={image.imagePreview} className="imgExport" />) : (<span className="material-icons">
+                              insert_photo
+                              </span>) 
+                            }
+                            
                             </div>
                         
                     </div>
@@ -156,3 +124,60 @@ const FormStepThree = (props) => {
     }
 
 export default FormStepThree;
+
+  /*const upImage = useRef({ imagProb: '', imagSolu: '' });
+
+   const imgUp = () => {
+        const file = upImage.refs.files[0]
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            upImage({
+                imagProb: reader.result
+            })
+        }
+        if (file) {
+            reader.readAsDataURL(file);
+            upImage({
+                imagProb: reader.result
+            })
+        }
+        else {
+            upImage({
+                imagProb: ""
+            })
+        }
+    }
+
+    const imgUp2 = () => {
+
+        const file = this.refs.uploadImg2.files[0]
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            this.setState({
+                imagSolu: reader.result
+            })
+        }
+        if (file) {
+            reader.readAsDataURL(file);
+            this.setState({
+                imagSolu: reader.result
+            })
+        }
+        else {
+            this.setState({
+                imagSolu: ""
+            })
+        }
+    }
+
+    const changeInput = (event) => {
+        const file = event.target.files[0]
+      
+        // User cancelled
+        if (!file) {
+          return
+        }
+    }*/
+    
