@@ -155,6 +155,8 @@
       min-height: calc(90vh - 50px);
       overflow-y: hidden;
     }
+
+    
   }
 
   @media(min-width:600px) and (max-width: 991px) {

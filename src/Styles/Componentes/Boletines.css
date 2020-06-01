@@ -5,7 +5,7 @@
     color: var(--color-grey-border);
     border-bottom: var(--border-line);
     display: grid; 
-    grid-template-areas: "icono h2 steps usuario";  
+    grid-template-areas: "icono h2 steps boton";  
     grid-template-columns: 50px;
     align-items: center;
 }
@@ -24,6 +24,11 @@
     grid-template-areas: "step1 step2 step3 step4";
     margin-top: 0.7em;
     justify-content: space-between;
+}
+
+.conteiner-boton {
+    grid-area: boton;
+    width: 300px;
 }
 
 .step1 {
@@ -48,7 +53,7 @@
 }
 
 .btn-crear {
-    margin-left: 6em;
+    margin-left: 20em;
 }
 
 /*css grid form general*/
@@ -374,6 +379,21 @@ input[type="file"] {
         height: 92vh;
     }
 
+    .div-steps {
+        display: none;
+    }
+
+    .div-h2-crear {
+        display: none;
+    }
+
+    .conteiner-boton {
+        margin-left: 0em;
+    }
+
+    .btn-crear {
+        margin-left: 8em;
+    }
     .input {
         width: 12em;
     }
@@ -443,6 +463,23 @@ input[type="file"] {
 
 @media(min-width:600px) and (max-width: 991px) {
 
+    .div-h2-crear {
+        display: none;
+    }
+
+    .div-steps {
+        margin-left: 2em;
+        width: 400px;
+    }
+
+    .conteiner-boton {
+        margin-left: 0em;
+    }
+
+    .btn-crear {
+        margin-left: 6em;
+    }
+
     /*Tablet div 2 proyecto*/ 
     .contenedor-form-div2 {
         grid-template-areas: "L1 L2" "I1 I2" "L3 L4" "I3 I4";
@@ -463,6 +500,10 @@ input[type="file"] {
 }
 
 @media(min-width:992px) and (max-width: 1024px) {
+
+    .btn-crear {
+        margin-left: 12em;
+    }
     .contenedor-form-div2 {
         grid-template-areas: "L1 L2" "I1 I2" "L3 L4" "I3 I4";
     }

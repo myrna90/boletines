@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function BarraFiltro() {
-    /*return(
+  /*return(
             <div className="div-filtro">
                     <span class="material-icons md-28">filter_list</span>
                     <input className="input-filter" 

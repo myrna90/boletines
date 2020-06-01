@@ -1,38 +1,45 @@
-import React, { useState, createRef  } from "react";
+import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import LogoW2 from "../imgs/logotnW2.png";
+import context from "../Componentes-login/utils/context";
 
-const MenuToggle = (props) => {
+class MenuToggle extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      redirect: false,
+    };
+    this.aside = React.createRef(true);
+    this.changeWidth = this.changeWidth.bind(this);
+  }
 
-    const [link, setLink] = useState(false);
-    const aside = createRef(true)
+  changeWidth() {
+    if (this.aside.current.style.width !== "3.44em") {
+      this.aside.current.style.width = "3.44em";
+    } else {
+      this.aside.current.style.width = "12.5em";
+    }
+  }
 
-   const changeWidth = () => {
-        if (aside.current.style.width !== "3.44em") {
-          aside.current.style.width = "3.44em";
-        } else {
-          aside.current.style.width = "12.5em";
-        }
-      }
-    
-     /*const redirectLink = () => {
-        setLink({
-          redirect: true,
-        });
-        localStorage.clear("user");
-      };*/
-    
-     const renderRedirect = () => {
-        if (link.redirect) {
-          return <Redirect to="/" />;
-        }
-      };
+  setRedirect = () => {
+    this.setState({
+      redirect: true,
+    });
+    localStorage.clear("user");
+  };
 
-    return(
-        <div className="aside" ref={aside}>
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
+  };
+
+  render() {
+    return (
+      <div className="aside" ref={this.aside}>
         <div className="menu-toggle">
           <div className="contenedor-titulo">
-            <div className="hamburger" id="btn" onClick={changeWidth}>
+            <div className="hamburger" id="btn" onClick={this.changeWidth}>
               <div className="_layer -top"></div>
               <div className="_layer -mid"></div>
               <div className="_layer -bottom"></div>
@@ -62,13 +69,17 @@ const MenuToggle = (props) => {
               </Link>
             </div>
           </div>
-        </div> 
+        </div>
         <div className="conteiner-btnOut">
-          {renderRedirect()}
+          {/*!context.authState
+               <button onClick={() => context.authObj.logout()} className="Link link-out"><i class="material-icons md-24">exit_to_app</i><div className="textMenu">Salir</div></button>     
+                    
+                    */}
+          {this.renderRedirect()}
           <button
             to="/"
             type="submit"
-            onClick={renderRedirect()}
+            onClick={this.setRedirect}
             className="Link link-out"
           >
             <i class="material-icons md-24">exit_to_app</i>
@@ -77,7 +88,8 @@ const MenuToggle = (props) => {
           {/**/}
         </div>
       </div>
-    )
+    );
+  }
 }
 
 export default MenuToggle;

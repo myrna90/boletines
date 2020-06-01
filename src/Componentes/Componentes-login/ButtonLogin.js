@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router';
+import React, { Component } from "react";
+import { Redirect } from "react-router";
 
 class BtnLogin extends Component {
-    state = {
+  /*state = {
         redirect: false
     }
 
@@ -16,15 +16,17 @@ class BtnLogin extends Component {
         if (this.state.redirect) {
             return <Redirect to='/Vista/Dashboard' />
         }
-    }
-    render() {
-        return (
-            <div>
-                {this.renderRedirect()}
-                <button className="btn-login btn" onClick={this.setRedirect}>Login</button>
-            </div>
-        )
-    }
+    }*/
+  render() {
+    return (
+      <div>
+        {/*this.renderRedirect()*/}
+        <button className="btn-login btn" /*onClick={this.setRedirect}*/>
+          Login
+        </button>
+      </div>
+    );
+  }
 }
 
 export default BtnLogin;

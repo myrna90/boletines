@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Redirect } from 'react-router-dom';
-import Titulo from './Titulo';
-import users from '../users.json';
+import Titulo from "./Titulo";
+import users from "../users.json";
 import Sesion from "./Sesion";
+import Axios from 'axios';
 
 const fakeAuth = {
   isAuthenticated: false,
@@ -16,40 +16,70 @@ const fakeAuth = {
   }
 }
 const Login = (props) => {
-  /*Función login  */
- /* constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      password: '',
-      formErrors: { user: '', password: '' },
-      userValid: false,
-      passwordValid: false,
-      formValid: false
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
-  }*/
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
-  
- 
+  const showData = users.users.map((users) => {
+    return console.log("Ok");
+  });
 
-    return (
-      /*Contenedor general*/
-
-      <div className="conteiner-general-login">
-        <div className="row row-login">
-          <Titulo/>
-          <Sesion/>
-        </div>
-        <div className="footer">
-          <footer>Telenet de México S.A. de C.V.</footer>
-        </div>
-      </div>
-
-
-
-    )
+  const auth = () => {
+    fetch('http://localhost:3000/users',
+    {
+      method: 'GET',
+      headers: {
+        name: '',
+        password: '',
+        //Authorization: 'Bearer Token',
+        'Content-Type': 'application/json',
+        'Accepts': 'application/json',
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((users) => {
+    this.setState({users: users})
+  })
   }
+
+
+  const handleChange = (e) => {
+    setName({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("user", JSON.stringify(name));
+  };
+
+  const localStorage = () => {
+    showData = JSON.parse(localStorage.getItem("user"));
+
+    if (localStorage.getItem("user")) {
+      this.setState({
+        user: showData.name,
+        password: showData.password,
+      });
+    }
+  };
+
+  return (
+    /*Contenedor general*/
+
+    <div className="conteiner-general-login">
+      <div className="row row-login">
+          {auth}
+        <Titulo />
+        <Sesion />
+      </div>
+      <div className="footer">
+        <footer> Telenet de México S.A.de C.V. </footer>
+      </div>
+    </div>
+  );
+};
 
 export default Login;

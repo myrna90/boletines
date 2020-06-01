@@ -1,23 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const FormStepOne = (props) => {
-    const {handleChange} = props;
+  const { handleChange } = props;
 
-    const [formFolio, setFormFolio] = useState({folio: ''});
-    
-        return(
-            /*parte del fomulario para llenar folio */
-            <div className="div div-1">
-            <div className="conteiner-numero numero-div1">
-                <div className="numero">1</div><strong><p className="p">Folio</p></strong>
-            </div>
-            <div className="contenForm1">
-                <label className="label label-div1">Numero de folio</label>
-                <input className="input input-div1" name="folio" defaultValue={formFolio.folio} onChange={(e) => handleChange(e)}  required></input>
-            </div>
-    
-        </div>
-        )
-    }
+  const [formFolio, setFormFolio] = useState({ folio: "" });
+
+  return (
+    /*parte del fomulario para llenar folio */
+    <div className="div div-1">
+      <div className="conteiner-numero numero-div1">
+        <div className="numero">1</div>
+        <strong>
+          <p className="p">Folio</p>
+        </strong>
+      </div>
+      <div className="contenForm1">
+        <label className="label label-div1">Numero de folio</label>
+        <input
+          className="input input-div1"
+          name="folio"
+          defaultValue={formFolio.folio}
+          onChange={(e) => handleChange(e)}
+          required
+        ></input>
+      </div>
+    </div>
+  );
+};
 
 export default FormStepOne;
