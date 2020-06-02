@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
 import { Redirect } from "react-router";
 import boletines from './boletines.json';
-
+import {userService} from '../Componentes/Componentes-login/services/user.service'
 
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
@@ -13,8 +13,18 @@ class Dashboard extends Component {
     this.state = {
       redirect: false,
       redirectList: false,
+      user: {},
+      users: []
     };
   }
+
+componentDidMount() {
+    this.setState({ 
+        user: JSON.parse(localStorage.getItem('user')),
+        users: { loading: true }
+    });
+    userService.getAll().then(users => this.setState({ users }));
+}
 
   setRedirect = () => {
     this.setState({
@@ -40,14 +50,29 @@ class Dashboard extends Component {
     }
   };
 
-  random = () => {
-    const data = boletines.boletines.map((data) => {
-    return ( 
-      <div>
- <div className="digsn-dash">
+  render() {
+    const { user, users } = this.state;
+    return (
+      <div className="conteiner contenedor-dash">
+        <div id="cabecera" className="header">
+          <div className="div-icon-header">
+            <i class="material-icons md-40">dashboard</i>
+          </div>
+
+          <div className="div-h2">
+            <hr className="v" />
+            <h2 className="h2">Dashboard</h2>
+          </div>
+          <UsuarioCabecera />
+        </div>
+        <div id="contenido" className="contenido contenido-dash section">
+          <div className="grid-contentDash">
+            <div className="grid-publicados grids-dash">
+              <h4 className="h4">Boletines</h4>
+              <div className="digsn-dash">
 
 <div className="circulo-boletin"></div>
-<p className="p-boletines">{data.folio}</p><p>{data.proyecto}</p>
+<p className="p-boletines"></p><p></p>
 <div className="contenedor-icon">
   {this.renderRedirect()}
   <button
@@ -97,29 +122,6 @@ class Dashboard extends Component {
   </button>
 </div>
 </div>
-      </div>
-   )
-    })
-  }
-  render() {
-    return (
-      <div className="conteiner contenedor-dash">
-        <div id="cabecera" className="header">
-          <div className="div-icon-header">
-            <i class="material-icons md-40">dashboard</i>
-          </div>
-
-          <div className="div-h2">
-            <hr className="v" />
-            <h2 className="h2">Dashboard</h2>
-          </div>
-          <UsuarioCabecera />
-        </div>
-        <div id="contenido" className="contenido contenido-dash section">
-          <div className="grid-contentDash">
-            <div className="grid-publicados grids-dash">
-              <h4 className="h4">Boletines</h4>
-              {this.random()}
             </div>
             <div className="grid-proyectos grids-dash">
               <h4 className="h4">Mis proyectos</h4>

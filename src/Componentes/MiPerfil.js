@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import context from "../Componentes/Componentes-login/utils/context";
 import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
-import users from "./users.json";
+import users from "../Componentes/Componentes-login/user.json";
 
 const MiPerfil = () => {
   

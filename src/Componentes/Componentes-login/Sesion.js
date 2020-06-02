@@ -1,10 +1,43 @@
 import BtnLogin from "../Componentes-login/ButtonLogin";
 import ImgPersonas from "../imgs/img-login.png";
 import { Link } from "react-router-dom";
-import React, { useContext, useState, useReducer } from "react";
+import React, { useState } from "react";
+import { userService } from "./services/user.service";
+
 const Sesion = (props) => {
-  const [email, setEmail] = useState("");
+  userService.logout();
+
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setName({ [name]: value });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    setSubmitted({ submitted: true });
+    const { name, password, returnUrl } = useState;
+
+    // Deténgase aquí si la forma es inválida
+    if (!(name && password)) {
+      return;
+    }
+
+    setLoading({ loading: true });
+    userService.login(name, password).then(
+      (user) => {
+        const { from } = props.location.useState || { from: { pathname: "/" } };
+        props.history.push(from);
+      },
+      (error) => setError({ error, loading: false })
+    );
+  };
 
   const btnForgot = () => {
     return alert("favor de comunicarse con soporte técnico");
@@ -20,12 +53,14 @@ const Sesion = (props) => {
       </div>
 
       <div className="login">
-        <form
-          className="form"
-         /*onSubmit={handleFormSubmit}*/
-        >
+        <form className="form" onSubmit={handleFormSubmit}>
           {/*div para introducir email */}
-          <div className="conten-inputs">
+          <div
+            className={
+              "form-group conten-inputs" +
+              (submitted && !name ? " has-error" : "")
+            }
+          >
             <label className="text-login text-user" htmlFor="user">
               Nombre de usuario:
             </label>
@@ -35,15 +70,24 @@ const Sesion = (props) => {
               className="input-login"
               name="user"
               placeholder="Myrna Mares"
-            
+              valueDefault={name}
+              onChange={handleChange}
             />
+            {submitted && !name && (
+              <div className="help-block">El nombre es requerido</div>
+            )}
             <div className="img-correo">
               <span className="material-icons md-25">email</span>
             </div>
           </div>
 
           {/*div para introducir password */}
-          <div className="conten-inputs">
+          <div
+            className={
+              "form-group conten-inputs" +
+              (submitted && !password ? " has-error" : "")
+            }
+          >
             <label className="text-login text-passw" htmlFor="password">
               Contraseña:{" "}
             </label>
@@ -52,8 +96,12 @@ const Sesion = (props) => {
               type="password"
               name="password"
               placeholder="**********"
-              
+              valueDefault={password}
+              onChange={handleChange}
             />
+            {submitted && !password && (
+              <div className="help-block">La contraseña es requerida</div>
+            )}
             <div className="img-contraseña">
               <span className="material-icons md-25">https</span>
             </div>
@@ -79,6 +127,7 @@ const Sesion = (props) => {
               contraseña?
             </Link>
           </p>
+          {error && <div className={"alert alert-danger"}>{error}</div>}
         </form>
       </div>
       <img src={ImgPersonas} className="miImg2" />
