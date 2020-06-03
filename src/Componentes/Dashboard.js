@@ -23,7 +23,6 @@ componentDidMount() {
         user: JSON.parse(localStorage.getItem('user')),
         users: { loading: true }
     });
-    userService.getAll().then(users => this.setState({ users }));
 }
 
   setRedirect = () => {

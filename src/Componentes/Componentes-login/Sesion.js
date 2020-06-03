@@ -14,8 +14,9 @@ const Sesion = (props) => {
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, password, value } = e.target;
     setName({ [name]: value });
+    setPassword({[password]: value});
   };
 
   const handleFormSubmit = (e) => {
@@ -53,7 +54,7 @@ const Sesion = (props) => {
       </div>
 
       <div className="login">
-        <form className="form" onSubmit={handleFormSubmit}>
+        <form className="form" onSubmit={() => handleFormSubmit()}>
           {/*div para introducir email */}
           <div
             className={
@@ -71,7 +72,7 @@ const Sesion = (props) => {
               name="user"
               placeholder="Myrna Mares"
               valueDefault={name}
-              onChange={handleChange}
+              onChange={(e) => handleChange(e)}
             />
             {submitted && !name && (
               <div className="help-block">El nombre es requerido</div>
@@ -97,7 +98,7 @@ const Sesion = (props) => {
               name="password"
               placeholder="**********"
               valueDefault={password}
-              onChange={handleChange}
+              onChange={(e) => handleChange(e)}
             />
             {submitted && !password && (
               <div className="help-block">La contraseña es requerida</div>

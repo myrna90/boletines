@@ -2,8 +2,8 @@ import { authHeader } from '../helpers/auth-header';
 
 export const userService = {
     login,
-    logout,
-    getAll
+    logout
+    //getAll
 };
 
 function login(name, password) {
@@ -33,14 +33,14 @@ function logout() {
     localStorage.removeItem('user');
 }
 
-function getAll() {
+/*function getAll() {
     const requestOptions = {
         method: 'GET',
         headers: authHeader()
     };
 
     return fetch('http://localhost:3000/user', requestOptions).then(handleResponse);
-}
+}*/
 
 function handleResponse(response) {
     return response.text().then(text => {
