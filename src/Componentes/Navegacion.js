@@ -6,7 +6,7 @@ import Boletines from "../Componentes/Componentes-boletines/Boletines";
 import MiPerfil from "../Componentes/MiPerfil";
 import BoletinesView from "../Componentes/Componentes-secundarios/BoletinesView";
 import Listado from "../Componentes/Componentes-Listado/ListadoBoletines";
-import PrivateRoute from "../Componentes/Componentes-login/PrivateRoute";
+//import PrivateRoute from "../Componentes/Componentes-login/PrivateRoute";
 
 const Navegacion = () => (
   <Switch>

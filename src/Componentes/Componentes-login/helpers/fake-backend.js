@@ -8,14 +8,15 @@ export function configureFakeBackend() {
       //envuelve en el tiempo de espera para simular la llamada a la API del servidor
       setTimeout(() => {
         //autenticación
-        if (url.endsWith("/users/authenticate") && opts.method === "POST") {
+        if (url.endsWith("/user/authenticate") && opts.method === "POST") {
           //obtener los parámetros de la solicitud post
-          let params = this.JSON.parse(opts.body);
+          let params = JSON.parse(opts.body);
 
           //encontrar si algún usuario coincide con las credenciales de acceso
           let filteredUsers = users.filter((user) => {
             return (
-              user.name === params.name && user.password === params.password
+              user.name === params.name && 
+              user.password === params.password
             );
           });
           if (filteredUsers.length) {

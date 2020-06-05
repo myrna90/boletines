@@ -109,6 +109,16 @@
       "role": "Ingeniería",
       "image": "",
       "status": "Active"
+    },
+    {
+      "name": "Mayra",
+      "lastName": "Cabello",
+      "email": "mcabello@telenetddemexico.com",
+      "password": "123456",
+      "role": "Administración",
+      "image": "",
+      "status": "active",
+      "id": 12
     }
   ]
 }

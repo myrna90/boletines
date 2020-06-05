@@ -13,7 +13,7 @@ function login(name, password) {
         body: JSON.stringify({ name, password })
     };
 
-    return fetch('http://localhost:3000/users/authenticate', requestOptions)
+    return fetch('http://localhost:3000/user/authenticate', requestOptions)
         .then(handleResponse)
         .then(user => {
            // el inicio de sesión es exitoso si hay un usuario en la respuesta

@@ -50,7 +50,10 @@
 .input-view  {
   grid-area: input;
   display: grid;
-  grid-template-areas: "proyecto cliente" "fecha sistema" ;
+  grid-template-areas: "proyecto cliente" 
+                       "fecha sistema" 
+                       "equipo marca" 
+                       "modelo modelo";
   margin-top: 0em;
   font-size: 16px;
 }

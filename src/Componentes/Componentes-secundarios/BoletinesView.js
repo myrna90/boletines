@@ -14,6 +14,7 @@ function BoletinesView() {
           <h2 className="h2">Vista Boletin</h2>
         </div>
         <UsuarioCabecera />
+        
       </div>
       <div className="contenido-view section">
         <div className="view">
