@@ -88,7 +88,7 @@ const MenuToggle = (props) => {
             className="Link link-out"
           >
             <i class="material-icons md-24">exit_to_app</i>
-            <div className="textMenu">Salir</div>
+            <div className="textMenu textOut">Salir</div>
           </button>
           {/**/}
         </div>

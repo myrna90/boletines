@@ -69,6 +69,7 @@ class Tabla extends Component {
             <td>{boletines.folio}</td>
             <td>{boletines.proyecto}</td>
             <td>{boletines.sistema}</td>
+            <td>{this.renderRedirect()}<button className="btn-list" onClick={this.setRedirect}><i class="material-icons  md-19">open_in_new</i></button></td>
           </tr>
         );
       });
@@ -97,13 +98,12 @@ class Tabla extends Component {
                 <th>
                   <strong>Sistema</strong>
                 </th>
-                {/*<th><strong>Vista</strong></th>*/}
+                <th><strong>Vista</strong></th>
               </tr>
             </thead>
 
             <tbody>
               {data}
-              {/*<td>{this.renderRedirect()}<button className="btn-list" onClick={this.setRedirect}><i class="material-icons  md-19">open_in_new</i></button></td>*/}
             </tbody>
           </table>
         </div>

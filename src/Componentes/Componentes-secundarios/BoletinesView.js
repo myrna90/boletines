@@ -8,13 +8,14 @@ function BoletinesView() {
   return (
     <div className="conteiner contenedor-view">
       <div id="cabecera" className="header">
-        <div className="div-icon-header"></div>
+        <div className="div-icon-header">
+          <span class="material-icons md-40">preview</span>
+        </div>
         <div className="div-h2">
           <hr className="v" />
           <h2 className="h2">Vista Boletin</h2>
         </div>
         <UsuarioCabecera />
-        
       </div>
       <div className="contenido-view section">
         <div className="view">
