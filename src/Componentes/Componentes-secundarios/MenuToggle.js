@@ -7,27 +7,14 @@ const MenuToggle = (props) => {
     const [link, setLink] = useState(false);
     const aside = createRef(true);
     const hide = createRef(true);
-    const hidedas = createRef(true);
-    const hidebol = createRef(true);
-    const hidelis = createRef(true);
-    const hideper = createRef(true);
 
    const changeWidth = () => {
-        if (aside.current.style.width !== "3.44em" && hide.current.style.display !== true && hidedas.current.style.display !== true && hidebol.current.style.display !== true && hidelis.current.style.display !== true && hideper.current.style.display !== true) {
+        if (aside.current.style.width !== "3.44em" && hide.current.style.display !== true) {
           aside.current.style.width = "3.44em";
           hide.current.style.display = "none";
-          hidedas.current.style.display = "none";
-          hidebol.current.style.display = "none";
-          hidelis.current.style.display = "none";
-          hideper.current.style.display = "none";
-         
         } else {
           aside.current.style.width = "12.5em";
           hide.current.style.display = "unset";
-          hidedas.current.style.display = "unset";
-          hidebol.current.style.display = "unset";
-          hidelis.current.style.display = "unset";
-          hideper.current.style.display = "unset";
         }
       }
     
@@ -62,19 +49,19 @@ const MenuToggle = (props) => {
             <div className="div-link">
               <Link to="/Vista/Dashboard" className="Link L-dashboard">
                 <i class="material-icons md-24">dashboard</i>
-                <div ref={hidedas} className="textMenu">Dashboard</div>
+                <div className="textMenu">Dashboard</div>
               </Link>
               <Link to="/Vista/Boletines" className="Link L-boletines">
                 <span class="material-icons md-24">add_circle</span>
-                <div ref={hidebol} className="textMenu">Crear Boletin</div>
+                <div className="textMenu">Crear Boletin</div>
               </Link>
               <Link to="/Vista/Listado" className="Link L-listado">
                 <span class="material-icons md-24">view_list</span>
-                <div ref={hidelis} className="textMenu">Listado boletines</div>
+                <div className="textMenu">Listado boletines</div>
               </Link>
               <Link to="/Vista/MiPerfil" className="Link L-miperfil">
                 <i class="material-icons md-24">person</i>
-                <div ref={hideper} className="textMenu">Mi Perfil</div>
+                <div className="textMenu">Mi Perfil</div>
               </Link>
             </div>
           </div>
