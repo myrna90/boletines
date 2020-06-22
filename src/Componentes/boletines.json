@@ -151,6 +151,23 @@
       "imgSolucion": null,
       "usuario": "Myrna Mares",
       "departamento": "Ingenieria"
+    },
+    {
+      "id": "10",
+      "folio": "00",
+      "proyecto": "Hains",
+      "cliente": "Hains",
+      "fecha": "04-04-20",
+      "sistema": "Cisco",
+      "equipo": "",
+      "marccca": "",
+      "modelo": "",
+      "problema": "El cableado estaba mal colocado",
+      "imgProblema": null,
+      "solucion": "Se cambio tod el cableado",
+      "imgSolucion": null,
+      "usuario": "Juan Perez",
+      "departamento": "Ingenieria"
     }
   ]
 }

@@ -9,7 +9,7 @@ class Listado extends Component {
       <div className="conteiner contenedor-dash contenedor-listado">
         <div id="cabecera" className="header">
           <div className="div-icon-header">
-            <span class="material-icons md-40">view_list</span>
+            <span className="material-icons md-40">view_list</span>
           </div>
           <div className="div-h2">
             <hr className="v" />

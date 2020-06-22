@@ -48,19 +48,19 @@ const MenuToggle = (props) => {
             </div>
             <div className="div-link">
               <Link to="/Vista/Dashboard" className="Link L-dashboard">
-                <i class="material-icons md-24">dashboard</i>
-                <div className="textMenu">Dashboard</div>
+                <i className="material-icons md-24">dashboard</i>
+                <div name="textMenu">Dashboard</div>
               </Link>
               <Link to="/Vista/Boletines" className="Link L-boletines">
-                <span class="material-icons md-24">add_circle</span>
+                <span className="material-icons md-24">add_circle</span>
                 <div className="textMenu">Crear Boletin</div>
               </Link>
               <Link to="/Vista/Listado" className="Link L-listado">
-                <span class="material-icons md-24">view_list</span>
+                <span className="material-icons md-24">view_list</span>
                 <div className="textMenu">Listado boletines</div>
               </Link>
               <Link to="/Vista/MiPerfil" className="Link L-miperfil">
-                <i class="material-icons md-24">person</i>
+                <i className="material-icons md-24">person</i>
                 <div className="textMenu">Mi Perfil</div>
               </Link>
             </div>
@@ -74,10 +74,9 @@ const MenuToggle = (props) => {
             onClick={() => redirectLink()}
             className="Link link-out"
           >
-            <i class="material-icons md-24">exit_to_app</i>
+            <i className="material-icons md-24">exit_to_app</i>
             <div className="textMenu textOut">Salir</div>
           </button>
-          {/**/}
         </div>
       </div>
 

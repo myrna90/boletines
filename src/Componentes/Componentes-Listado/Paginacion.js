@@ -1,24 +1,65 @@
-import React, { Component } from "react";
-import Axios from "axios";
+import React, { useState, useEffect, Component } from "react";
 import boletines from "../boletines.json";
-import usePagination from "use-pagination";
+import TablePagination from '@material-ui/core/TablePagination';
+import Pagination from "react-js-pagination";
 
-const data = boletines.boletines.map((boletines) => {
-  return console.log(boletines.folio);
-});
-const Paginacion = (props) => {
-  const pagination = usePagination({
-    data: [],
-    itemsPerPage: 2,
-  });
-  return (
-    <div>
-      <pre>{JSON.stringify(pagination, null, 2)}</pre>
-      <button onClick={pagination.onNextPage}>Next</button>
-      <button onClick={pagination.onPreviousPage}>Back</button>
-      <button onClick={pagination.onResetPage}>Reset</button>
-    </div>
-  );
-};
+class Paginacion extends Component {
+  constructor() {
+    super();
+    this.state = {
+      todos: boletines.boletines,
+      currentPage: 1,
+      todosPerPage: 3
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.setState({
+      currentPage: Number(event.target.id)
+    });
+  }
+
+  render() {
+    const { todos, currentPage, todosPerPage } = this.state;
+
+    // Logic for displaying current todos
+    const indexOfLastTodo = currentPage * todosPerPage;
+    const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
+    const currentTodos = todos.slice(indexOfFirstTodo, indexOfLastTodo);
+
+    const renderTodos = currentTodos.map((todos) => {
+      return <li>{todos}</li>;
+    });
+
+    // Logic for displaying page numbers
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(todos.length / todosPerPage); i++) {
+      pageNumbers.push(i);
+    }
+
+    const renderPageNumbers = pageNumbers.map(id => {
+      return (
+        <li
+          id={id}
+          onClick={this.handleClick}
+        >
+          {id}
+        </li>
+      );
+    });
+
+    return (
+      <div>
+        <ul>
+          {renderTodos}
+        </ul>
+        <ul id="page-numbers">
+          {renderPageNumbers}
+        </ul>
+      </div>
+    );
+  }
+}
 
 export default Paginacion;

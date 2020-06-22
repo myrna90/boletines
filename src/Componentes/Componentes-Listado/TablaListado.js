@@ -65,18 +65,15 @@ class Tabla extends Component {
       })
       .map((boletines) => {
         return (
-          <tr className="tr-general">
-            <td>{boletines.folio}</td>
-            <td>{boletines.proyecto}</td>
-            <td>{boletines.sistema}</td>
-            <td>{this.renderRedirect()}<button className="btn-list" onClick={this.setRedirect}><i class="material-icons  md-19">open_in_new</i></button></td>
-          </tr>
+          <tbody>
+            <Paginacion/>
+          </tbody>
         );
       });
     return (
       <div className="content-list">
         <div className="div-filtro">
-          <span class="material-icons md-28">filter_list</span>
+          <span className="material-icons md-28">filter_list</span>
           <input
             className="input-filter"
             type="text"
@@ -102,12 +99,9 @@ class Tabla extends Component {
               </tr>
             </thead>
 
-            <tbody>
-              {data}
-            </tbody>
           </table>
         </div>
-        {/*<Paginacion/>*/}
+        <Paginacion/>
       </div>
     );
   }
