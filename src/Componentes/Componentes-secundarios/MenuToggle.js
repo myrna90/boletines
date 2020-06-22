@@ -49,7 +49,7 @@ const MenuToggle = (props) => {
             <div className="div-link">
               <Link to="/Vista/Dashboard" className="Link L-dashboard">
                 <i className="material-icons md-24">dashboard</i>
-                <div name="textMenu">Dashboard</div>
+                <div className="textMenu">Dashboard</div>
               </Link>
               <Link to="/Vista/Boletines" className="Link L-boletines">
                 <span className="material-icons md-24">add_circle</span>

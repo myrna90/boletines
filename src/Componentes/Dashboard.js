@@ -55,7 +55,7 @@ componentDidMount() {
       <div className="conteiner contenedor-dash">
         <div id="cabecera" className="header">
           <div className="div-icon-header">
-            <i class="material-icons md-40">dashboard</i>
+            <i className="material-icons md-40">dashboard</i>
           </div>
 
           <div className="div-h2">
@@ -78,7 +78,7 @@ componentDidMount() {
     className="btn-bol contenedor-icon"
     onClick={this.setRedirect}
   >
-    <i class="material-icons  md-18">open_in_new</i>
+    <i className="material-icons  md-18">open_in_new</i>
   </button>
 </div>
 </div>
@@ -91,7 +91,7 @@ componentDidMount() {
     className="btn-bol contenedor-icon"
     onClick={this.setRedirect}
   >
-    <i class="material-icons  md-18">open_in_new</i>
+    <i className="material-icons  md-18">open_in_new</i>
   </button>
 </div>
 </div>
@@ -104,7 +104,7 @@ componentDidMount() {
     className="btn-bol contenedor-icon"
     onClick={this.setRedirect}
   >
-    <i class="material-icons  md-18">open_in_new</i>
+    <i className="material-icons  md-18">open_in_new</i>
   </button>
 </div>
 </div>
@@ -117,7 +117,7 @@ componentDidMount() {
     className="btn-bol contenedor-icon"
     onClick={this.setRedirect}
   >
-    <i class="material-icons  md-18">open_in_new</i>
+    <i className="material-icons  md-18">open_in_new</i>
   </button>
 </div>
 </div>
@@ -159,7 +159,7 @@ componentDidMount() {
                   </p>
                   {this.renderRedirect()}
                   <button className="btn-bol" onClick={this.setRedirect}>
-                    <i class="material-icons  md-18">open_in_new</i>
+                    <i className="material-icons  md-18">open_in_new</i>
                   </button>
                 </div>
                 <div className="bol-gen bol">
@@ -172,7 +172,7 @@ componentDidMount() {
                   </p>
                   {this.renderRedirect()}
                   <button className="btn-bol" onClick={this.setRedirect}>
-                    <i class="material-icons  md-18">open_in_new</i>
+                    <i className="material-icons  md-18">open_in_new</i>
                   </button>
                 </div>
                 <div className="bol-gen bol">
@@ -185,7 +185,7 @@ componentDidMount() {
                   </p>
                   {this.renderRedirect()}
                   <button className="btn-bol" onClick={this.setRedirect}>
-                    <i class="material-icons  md-18">open_in_new</i>
+                    <i className="material-icons  md-18">open_in_new</i>
                   </button>
                 </div>
                 <div className="bol-gen bol">
@@ -198,7 +198,7 @@ componentDidMount() {
                   </p>
                   {this.renderRedirect()}
                   <button className="btn-bol" onClick={this.setRedirect}>
-                    <i class="material-icons  md-18">open_in_new</i>
+                    <i className="material-icons  md-18">open_in_new</i>
                   </button>
                 </div>
                 <div className="bol-gen bol bol5">
@@ -211,7 +211,7 @@ componentDidMount() {
                   </p>
                   {this.renderRedirect()}
                   <button className="btn-bol" onClick={this.setRedirect}>
-                    <i class="material-icons  md-18">open_in_new</i>
+                    <i className="material-icons  md-18">open_in_new</i>
                   </button>
                 </div>
               </div>
