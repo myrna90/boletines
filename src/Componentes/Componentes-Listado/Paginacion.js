@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Component } from "react";
 import boletines from "../boletines.json";
-import TablePagination from '@material-ui/core/TablePagination';
 import Pagination from "react-js-pagination";
 
 class Paginacion extends Component {
@@ -22,7 +21,6 @@ class Paginacion extends Component {
 
   render() {
     const { todos, currentPage, todosPerPage } = this.state;
-
     // Logic for displaying current todos
     const indexOfLastTodo = currentPage * todosPerPage;
     const indexOfFirstTodo = indexOfLastTodo - todosPerPage;

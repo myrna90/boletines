@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import BarraFiltro from "./BarraFiltro";
 import boletines from "../boletines.json";
 import Paginacion from "./Paginacion";
 
