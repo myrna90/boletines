@@ -1,19 +1,63 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import boletines from "../boletines.json";
+import React, { useState } from "react";
 import Paginacion from "./Paginacion";
 
-class Tabla extends Component {
-  constructor(props) {
+const Tabla = () => {
+  /*constructor(props) {
     super(props);
     this.state = {
       redirect: false,
       boletines: [],
       search: null,
     };
-  }
+  }*/
 
-  data() {
+  return (
+    <div className="content-list">
+      <div className="div-filtro">
+        <span className="material-icons md-28">filter_list</span>
+        <input
+          className="input-filter"
+          type="text"
+          placeholder="Filtro"
+          /*onChange={(e) => this.searchSpace(e)}*/
+        />
+      </div>
+      <Paginacion />
+    </div>
+  );
+};
+
+export default Tabla;
+
+/*const data = boletines.boletines
+      .filter((boletines) => {
+        if (this.state.search == null) return boletines;
+        else if (
+          boletines.proyecto
+            .toLowerCase()
+            .includes(this.state.search.toLowerCase()) ||
+          boletines.sistema
+            .toLowerCase()
+            .includes(this.state.search.toLowerCase()) ||
+          boletines.cliente
+            .toLowerCase()
+            .includes(this.state.search.toLowerCase())
+        ) {
+          return boletines;
+        }
+      })
+      .map((boletines, index) => {
+        return (
+            <tr key={index} className="tr-general">
+            <td>{boletines.folio}</td>
+            <td>{boletines.proyecto}</td>
+            <td>{boletines.sistema}</td>
+            <td>{renderRedirect()}<button className="btn-list" onClick={handleRedirect}><i class="material-icons  md-19">open_in_new</i></button></td>
+          </tr>
+        );
+      }); 
+      
+       data() {
     fetch("http://localhost:3000/boletines", {
       method: "GET",
       headers: {
@@ -32,83 +76,4 @@ class Tabla extends Component {
   searchSpace = (event) => {
     let keyword = event.target.value;
     this.setState({ search: keyword });
-  };
-  setRedirect = () => {
-    this.setState({
-      redirect: true,
-    });
-  };
-
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to="/Vista/View" />;
-    }
-  };
-  render() {
-    const data = boletines.boletines
-      .filter((boletines) => {
-        if (this.state.search == null) return boletines;
-        else if (
-          boletines.proyecto
-            .toLowerCase()
-            .includes(this.state.search.toLowerCase()) ||
-          boletines.sistema
-            .toLowerCase()
-            .includes(this.state.search.toLowerCase()) ||
-          boletines.cliente
-            .toLowerCase()
-            .includes(this.state.search.toLowerCase())
-        ) {
-          return boletines;
-        }
-      })
-      .map((boletines) => {
-        return (
-            <tr className="tr-general">
-            <td>{boletines.folio}</td>
-            <td>{boletines.proyecto}</td>
-            <td>{boletines.sistema}</td>
-            <td>{this.renderRedirect()}<button className="btn-list" onClick={this.setRedirect}><i class="material-icons  md-19">open_in_new</i></button></td>
-          </tr>
-        );
-      });
-    return (
-      <div className="content-list">
-        <div className="div-filtro">
-          <span className="material-icons md-28">filter_list</span>
-          <input
-            className="input-filter"
-            type="text"
-            placeholder="Filtro"
-            onChange={(e) => this.searchSpace(e)}
-          />
-        </div>
-
-        <div className="div-tabla">
-          <table className="tabla">
-            <thead>
-              <tr className="tr-th">
-                <th>
-                  <strong>Folio</strong>
-                </th>
-                <th>
-                  <strong>Proyecto</strong>
-                </th>
-                <th>
-                  <strong>Sistema</strong>
-                </th>
-                <th><strong>Vista</strong></th>
-              </tr>
-            </thead>
-            <tbody>
-              {data}
-            </tbody>
-          </table>
-        </div>
-        {/*<Paginacion/>*/}
-      </div>
-    );
-  }
-}
-
-export default Tabla;
+  };*/
