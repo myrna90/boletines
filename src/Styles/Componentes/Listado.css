@@ -1,113 +1,125 @@
 .contenedor-listado {
-    overflow: hidden;
+  overflow: hidden;
 }
 .content-list {
-    display: grid;
-    grid-template-areas: "filtro" "tabla" "pag";
-    grid-template-rows: 50px auto 50px;
-    background-color: var(--color-white-light);
-    margin-top: 2em;
-    width: 100vw;
-    height: 78vh;
-    overflow: hidden;
-    box-shadow: var(--boxShadow-dash);
-    color: var(--color-border-input);
+  display: grid;
+  grid-template-areas: "filtro" "tabla" "pag";
+  grid-template-rows: 50px auto 50px;
+  background-color: var(--color-white-light);
+  margin-top: 2em;
+  width: 100vw;
+  height: 78vh;
+  overflow: hidden;
+  box-shadow: var(--boxShadow-dash);
+  color: var(--color-border-input);
 }
 
 /*Diseño area filtro*/
 .div-filtro {
-    grid-area: filtro;
-    display: inline-flex;
+  grid-area: filtro;
+  display: inline-flex;
 }
 
 .material-icons.md-28 {
-    color: var(--color-grey);
-    margin-top: .5em;
-    margin-left: 3em;
+  color: var(--color-grey);
+  margin-top: 0.5em;
+  margin-left: 3em;
 }
 
 .input-filter {
-    height: 2em;
-    margin-left: 1em;
-    margin-top: .5em;
-    border-radius: var(--border-radius-boton);
-    border: 1px solid var(--color-grey-border-img);
-    padding: 0.5em;
-    outline: none;
+  height: 2em;
+  margin-left: 1em;
+  margin-top: 0.5em;
+  border-radius: var(--border-radius-boton);
+  border: 1px solid var(--color-grey-border-img);
+  padding: 0.5em;
+  outline: none;
 }
-
 
 /*Diseño área tabla*/
 .div-tabla {
-    grid-area: tabla;
+  grid-area: tabla;
 }
 
 .tabla {
-    width: 82vw;
-    margin-left: 2em;
-    text-align: center;
-    border-bottom: var(--border-line);
+  width: 82vw;
+  margin-left: 2em;
+  text-align: center;
+  border-bottom: var(--border-line);
 }
 
 .tr-th {
-    border-top: var(--border-line);
-    border-bottom: var(--border-line);
-    height: 3em;
+  border-top: var(--border-line);
+  border-bottom: var(--border-line);
+  height: 3em;
 }
 
 table tbody tr:nth-child(odd) {
-    height: 2.5em;
-	background: var(--color-grey-border-img);
+  height: 2.5em;
+  background: var(--color-grey-border-img);
 }
 table tbody tr:nth-child(even) {
-    height: 2.5em;
-	background:var(--color-white-light);
+  height: 2.5em;
+  background: var(--color-white-light);
+}
+
+.page-numbers {
+  list-style: none;
+  display: flex;
+  margin-left: 3em;
+  margin-top: 2em;
+}
+
+.page-numbers > li {
+  margin-right: 1em;
+  color:var(--color-borde-redireccion);
+  user-select: none;
+  cursor: pointer;
 }
 
 .btn-list {
-    background: transparent;
-    border: none;
-    color: var(--color-morado)
+  background: transparent;
+  border: none;
+  color: var(--color-morado);
 }
 
 /*Diseño área paginación*/
 .div-paginacion {
-    grid-area: pag;
+  grid-area: pag;
 }
 
 @media only screen and (max-width: 600px) {
-    
-    .content-list {
-        width: auto;
-        margin-left: 0em;
-    }
+  .content-list {
+    width: auto;
+    margin-left: 0em;
+  }
 
-    .div-filtro {
-        width: auto;
-    }
+  .div-filtro {
+    width: auto;
+  }
 
-    .material-icons.md-28 {
-        margin-left: 1.5em;
-    }
+  .material-icons.md-28 {
+    margin-left: 1.5em;
+  }
 
-    .input-filter {
-        width: 13em;
-    }
+  .input-filter {
+    width: 13em;
+  }
 
-    .tabla {
-        margin-left: 1em;
-        width: 90%;
-    }
+  .tabla {
+    margin-left: 1em;
+    width: 90%;
+  }
 }
 
-@media(min-width:600px) and (max-width: 991px) {
-    .content-list {
-        height: 80vh;
-    }
+@media (min-width: 600px) and (max-width: 991px) {
+  .content-list {
+    height: 80vh;
+  }
 }
 
-@media(min-width:992px) and (max-width: 1024px) {
-    .content-list {
-        height: 78.5vh;
-    }
+@media (min-width: 992px) and (max-width: 1024px) {
+  .content-list {
+    height: 78.5vh;
+  }
 }

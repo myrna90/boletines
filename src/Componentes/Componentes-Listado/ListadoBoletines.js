@@ -18,7 +18,7 @@ class Listado extends Component {
           <UsuarioCabecera />
         </div>
         <div className="contenido contenido-list section">
-          <Tabla />
+          <Tabla/>
         </div>
       </div>
     );
