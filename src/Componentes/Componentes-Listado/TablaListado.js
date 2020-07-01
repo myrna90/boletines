@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import Paginacion from "./Paginacion";
 
-const Tabla = () => {
-  /*constructor(props) {
-    super(props);
-    this.state = {
-      redirect: false,
-      boletines: [],
-      search: null,
-    };
-  }*/
+const Tabla = (props) => {
+  const {currentBoletines} = props;
+  const [search, setSearch] = useState(null);
+  const [filter, setFilter] = useState([]);
+
 
   return (
     <div className="content-list">
@@ -19,7 +15,7 @@ const Tabla = () => {
           className="input-filter"
           type="text"
           placeholder="Filtro"
-          /*onChange={(e) => this.searchSpace(e)}*/
+          /*onChange={(e) => searchSpace(e)}*/
         />
       </div>
       <Paginacion />
