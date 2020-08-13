@@ -32,6 +32,8 @@ const Boletines = (props) => {
       4: ["usuario", "departamento"],
     };
 
+    
+
     const properties = Object.keys(identifier);
     properties.forEach((property) => {
       if (identifier[property].includes(name)) {
