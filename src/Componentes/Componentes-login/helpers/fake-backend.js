@@ -1,4 +1,4 @@
-import user from "../user.json";
+/*import user from "../user.json";
 
 export function configureFakeBackend() {
   let users = user.user;
@@ -62,4 +62,4 @@ export function configureFakeBackend() {
       }, 500);
     });
   };
-}
+}*/

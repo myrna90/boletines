@@ -3,18 +3,12 @@ import FormBoletines from "./FormBoletines";
 import Steps from "./Steps";
 
 const Boletines = (props) => {
-  const {formFolio, formImage, image, imageTwo, formProyecto, formUsuario} = props;
+  
 
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    JSON.stringify(console.log({formValues}))
-    
-    /*const values =
-            JSON.stringify(this.state);*/
-  };
+
   /*Va a recibir un objeto */
   const getCurrentForm = (name) => {
     const identifier = {
@@ -31,8 +25,6 @@ const Boletines = (props) => {
       ],
       4: ["usuario", "departamento"],
     };
-
-    
 
     const properties = Object.keys(identifier);
     properties.forEach((property) => {
@@ -64,13 +56,7 @@ const Boletines = (props) => {
         </div>
         <Steps currentForm={currentForm} />
         <div className="conteiner-boton">
-          <button
-            onSubmit={() => handleSubmit()}
-            type="submit"
-            className="btn-crear btn"
-          >
-            + Crear
-          </button>
+          
         </div>
       </div>
       <div className="contenido section ">

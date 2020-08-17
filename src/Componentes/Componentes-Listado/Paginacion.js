@@ -15,7 +15,7 @@ const Paginacion = () => {
 
   const boletinesReducer = (state, action) => {
     switch (action.type) {
-      case "SEX_LAST_INDEX":
+      case "SET_LAST_INDEX":
         return {
           ...state,
           indexOfLastBoletines: action.lastIndex,
@@ -50,7 +50,7 @@ const Paginacion = () => {
   useEffect(() => {
     if (state.currentPage && state.boletinesPerPage) {
       const lastIndex = state.currentPage * state.boletinesPerPage;
-      dispatch({ type: "SEX_LAST_INDEX", lastIndex });
+      dispatch({ type: "SET_LAST_INDEX", lastIndex });
     }
   }, [state.currentPage, state.boletinesPerPage]);
 
