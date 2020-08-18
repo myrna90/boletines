@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
 import { Redirect } from "react-router";
-import boletines from './boletines.json';
-import {userService} from '../Componentes/Componentes-login/services/user.service'
-
+import boletines from "./boletines.json";
+import { userService } from "../Componentes/Componentes-login/services/user.service";
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
 se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
@@ -14,16 +13,16 @@ class Dashboard extends Component {
       redirect: false,
       redirectList: false,
       user: {},
-      users: []
+      users: [],
     };
   }
 
-componentDidMount() {
-    this.setState({ 
-        user: JSON.parse(localStorage.getItem('user')),
-        users: { loading: true }
+  componentDidMount() {
+    this.setState({
+      user: JSON.parse(localStorage.getItem("user")),
+      users: { loading: true },
     });
-}
+  }
 
   setRedirect = () => {
     this.setState({
@@ -64,63 +63,63 @@ componentDidMount() {
           </div>
           <UsuarioCabecera />
         </div>
-        <div id="contenido" className="contenido contenido-dash section">
+        {/*<div id="contenido" className="contenido contenido-dash section">
           <div className="grid-contentDash">
             <div className="grid-publicados grids-dash">
               <h4 className="h4">Boletines</h4>
               <div className="digsn-dash">
-
-<div className="circulo-boletin"></div>
-<p className="p-boletines"></p><p></p>
-<div className="contenedor-icon">
-  {this.renderRedirect()}
-  <button
-    className="btn-bol contenedor-icon"
-    onClick={this.setRedirect}
-  >
-    <i className="material-icons  md-18">open_in_new</i>
-  </button>
-</div>
-</div>
-<div className="digsn-dash ">
-<div className="circulo-boletin2"></div>
-<p className="p-boletines">B-01 | Punto sur- CCTV</p>
-<div className="contenedor-icon">
-  {this.renderRedirect()}
-  <button
-    className="btn-bol contenedor-icon"
-    onClick={this.setRedirect}
-  >
-    <i className="material-icons  md-18">open_in_new</i>
-  </button>
-</div>
-</div>
-<div className="digsn-dash disgn ">
-<div className="circulo-boletin"></div>
-<p className="p-boletines">B-02 | Andares-Plaza comercial </p>
-<div className="contenedor-icon">
-  {this.renderRedirect()}
-  <button
-    className="btn-bol contenedor-icon"
-    onClick={this.setRedirect}
-  >
-    <i className="material-icons  md-18">open_in_new</i>
-  </button>
-</div>
-</div>
-<div className="digsn-dash disgn disgn1">
-<div className="circulo-boletin2"></div>
-<p className="p-boletines">B-03 | Hines-Control de accesos</p>
-<div className="contenedor-icon">
-  {this.renderRedirect()}
-  <button
-    className="btn-bol contenedor-icon"
-    onClick={this.setRedirect}
-  >
-    <i className="material-icons  md-18">open_in_new</i>
-  </button>
-</div>
-</div>
+                <div className="circulo-boletin"></div>
+                <p className="p-boletines"></p>
+                <p></p>
+                <div className="contenedor-icon">
+                  {this.renderRedirect()}
+                  <button
+                    className="btn-bol contenedor-icon"
+                    onClick={this.setRedirect}
+                  >
+                    <i className="material-icons  md-18">open_in_new</i>
+                  </button>
+                </div>
+              </div>
+              <div className="digsn-dash ">
+                <div className="circulo-boletin2"></div>
+                <p className="p-boletines">B-01 | Punto sur- CCTV</p>
+                <div className="contenedor-icon">
+                  {this.renderRedirect()}
+                  <button
+                    className="btn-bol contenedor-icon"
+                    onClick={this.setRedirect}
+                  >
+                    <i className="material-icons  md-18">open_in_new</i>
+                  </button>
+                </div>
+              </div>
+              <div className="digsn-dash disgn ">
+                <div className="circulo-boletin"></div>
+                <p className="p-boletines">B-02 | Andares-Plaza comercial </p>
+                <div className="contenedor-icon">
+                  {this.renderRedirect()}
+                  <button
+                    className="btn-bol contenedor-icon"
+                    onClick={this.setRedirect}
+                  >
+                    <i className="material-icons  md-18">open_in_new</i>
+                  </button>
+                </div>
+              </div>
+              <div className="digsn-dash disgn disgn1">
+                <div className="circulo-boletin2"></div>
+                <p className="p-boletines">B-03 | Hines-Control de accesos</p>
+                <div className="contenedor-icon">
+                  {this.renderRedirect()}
+                  <button
+                    className="btn-bol contenedor-icon"
+                    onClick={this.setRedirect}
+                  >
+                    <i className="material-icons  md-18">open_in_new</i>
+                  </button>
+                </div>
+              </div>
             </div>
             <div className="grid-proyectos grids-dash">
               <h4 className="h4">Mis proyectos</h4>
@@ -217,7 +216,7 @@ componentDidMount() {
               </div>
             </div>
           </div>
-        </div>
+        </div>*/}
       </div>
     );
   }

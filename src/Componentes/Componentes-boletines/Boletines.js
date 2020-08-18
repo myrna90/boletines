@@ -4,7 +4,7 @@ import Steps from "./Steps";
 
 const Boletines = (props) => {
   
-
+ const {formFolio, formImage, image, imageTwo, formProyecto, formUsuario} = props;
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
 
@@ -42,6 +42,7 @@ const Boletines = (props) => {
   };
   console.log("Form Values", formValues);
   console.log("currentForm", currentForm);
+
 
   return (
     <div className="conteiner conteiner-boletines">
