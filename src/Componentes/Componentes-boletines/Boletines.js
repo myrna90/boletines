@@ -4,8 +4,7 @@ import Steps from "./Steps";
 import axios from 'axios';
 
 const Boletines = (props) => {
-  
-  const {formFolio, formImage, image, imageTwo, formProyecto, formUsuario} = props;
+
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
 
@@ -49,8 +48,28 @@ const Boletines = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3000/api/boletines', {
-      project: formValues.proyecto
+    const boletin = {
+      folio: formValues.folio,
+      project: formValues.proyecto,
+      client: formValues.cliente,
+      date: formValues.fecha,
+      system: formValues.sistema,
+      description:  formValues.problema,
+      imgproblem: formValues.selectedFile,
+      solution: formValues.solucion,
+      imgsolution: formValues.selectedFile,
+      equipment: formValues.equipo,
+      brand: formValues.marca,
+      model: formValues.modelo,
+      user: formValues.usuario,
+      department: formValues.departamento
+    }
+    axios.post('http://localhost:3000/api/boletines', boletin) 
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
     })
     console.log('enviando datos...', formValues);
   }

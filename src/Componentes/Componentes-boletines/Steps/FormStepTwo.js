@@ -28,7 +28,12 @@ const FormStepTwo = (props) => {
             name="proyecto"
             defaultValue={formProyecto.proyecto}
             onChange={(e) => handleChange(e)}
-          ></select>
+            required
+          >
+            <option value="Sainz">Sainz</option>
+            <option value="Punto Sur">Punto Sur</option>
+            <option value="Andares">Andares</option>
+          </select>
           <a className="caja3">
             <span className="material-icons md-4">info</span>
             <span className="info">
@@ -67,7 +72,10 @@ const FormStepTwo = (props) => {
             name="sistema"
             defaultValue={formProyecto.sistema}
             onChange={(e) => handleChange(e)}
-          ></select>
+            required
+          ><option value="Bosch">Bosch</option>
+          <option value="Bosch2">Bosch2</option>
+          <option value="Bosch3">Bosch3</option></select>
           <a className="caja3">
             <span className="material-icons md-4">info</span>
             <span className="info">
