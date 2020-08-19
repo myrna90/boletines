@@ -3,16 +3,14 @@ import FormStepOne from "./Steps/FormStepOne";
 import FormStepTwo from "./Steps/FormStepTwo";
 import FormStepThree from "./Steps/FormStepThree";
 import FormStepFour from "./Steps/FormStepFour";
-import axios from 'axios';
+
 
 
 
 const FormBoletines = (props) => {
   /*Es un destructure al obejeto props y sacamos esa variable, para no tener que hacer props handleChange*/
-  const { formValues } = props;
-  const { handleChange } = props;
+  const { handleChange, handleSubmit } = props;
 
-console.log(props);
   /*useEffect(() => {
     fetch('http://localhost:3000/api/boletines')
       .then((res) => res.json())
@@ -20,12 +18,8 @@ console.log(props);
       .catch((err) => console.log('error'))
   }, []);*/
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('enviando datos...' + formValues);
-  }
-
-  /*const handlerSubmit = (event) => {
+  
+  /*const handleSubmit = (event) => {
     fetch('http://localhost:3000/api/boletines/add', {
       method: 'POST',
       body: JSON.stringify(formData),

@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useReducer } from "react";
 import boletines from "../boletines.json";
 import { Redirect } from "react-router-dom";
+import axios from "axios";
 
 const Paginacion = () => {
   const initialState = {
-    boletines: boletines.boletines,
+    boletines: undefined,
     currentPage: 1,
     boletinesPerPage: 10,
     indexOfLastBoletines: undefined,
@@ -40,12 +41,28 @@ const Paginacion = () => {
           ...state,
           currentPage: action.currentPage,
         };
+      case "FETCH_BOLETINES":
+        console.log("action entrando...", action);
+        return {
+          ...state,
+          boletines: action.boletines,
+        };
+
       default:
         return { state };
     }
   };
 
   const [state, dispatch] = useReducer(boletinesReducer, initialState);
+
+  useEffect(() => {
+    if (state.boletines === undefined) {
+      axios.get("http://localhost:3000/api/boletines").then(function(res) {
+        dispatch({ type: "FETCH_BOLETINES", boletines: res.data.data });
+      });
+      console.log("useEffect del req...");
+    }
+  }, []);
 
   useEffect(() => {
     if (state.currentPage && state.boletinesPerPage) {
@@ -62,16 +79,18 @@ const Paginacion = () => {
   }, [state.indexOfLastBoletines, state.boletinesPerPage]);
 
   useEffect(() => {
-    if (
-      state.indexOfFirstBoletines !== undefined &&
-      state.indexOfLastBoletines &&
-      state.boletines.length > 0
-    ) {
-      const currentBoletines = state.boletines.slice(
-        state.indexOfFirstBoletines,
-        state.indexOfLastBoletines
-      );
-      dispatch({ type: "SET_CURRENT_BOLETINES", currentBoletines });
+    if (state.boletines !== undefined) {
+      if (
+        state.indexOfFirstBoletines !== undefined &&
+        state.indexOfLastBoletines &&
+        state.boletines.length > 0
+      ) {
+        const currentBoletines = state.boletines.slice(
+          state.indexOfFirstBoletines,
+          state.indexOfLastBoletines
+        );
+        dispatch({ type: "SET_CURRENT_BOLETINES", currentBoletines });
+      }
     }
   }, [
     state.indexOfFirstBoletines,
@@ -92,6 +111,8 @@ const Paginacion = () => {
       dispatch({ type: "SET_PAGE_NUMBERS", resultPageNumbers });
     }
   }, [state.boletines, state.boletinesPerPage]);
+
+  console.log(state);
 
   const handleClick = (e) => {
     dispatch({ type: "SET_CURRENT_PAGE", currentPage: e.target.id });
@@ -134,8 +155,9 @@ const Paginacion = () => {
                 return (
                   <tr key={index} className="tr-general">
                     <td>{boletines.folio}</td>
-                    <td>{boletines.proyecto}</td>
-                    <td>{boletines.sistema}</td>
+                    {/*en fecha va proyecto y en descripcion va sistema corregir */}
+                    <td>{boletines.fecha}</td>
+                    <td>{boletines.descripcion}</td>
                     <td>
                       {renderRedirect()}
                       <button className="btn-list" onClick={handleRedirect}>

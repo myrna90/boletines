@@ -91,7 +91,7 @@ const FormStepThree = (props) => {
 
         {/*Div contenido espacio imagen problema */}
         <div className="contenForm conten-img">
-          <label for="myuniqueid" className="label label-img">
+          <label htmlFor="myuniqueid" className="label label-img">
             Problema imagen
           </label>
           <div className=" conten-export-img">
@@ -113,7 +113,7 @@ const FormStepThree = (props) => {
         </div>
         {/*Div contenido espacio imagen solución */}
         <div className="contenForm conten-img2">
-          <label for="myuniqueid2" className="label label-img">
+          <label htmlFor="myuniqueid2" className="label label-img">
             Solución imagen
           </label>
           <div className=" conten-export-img">

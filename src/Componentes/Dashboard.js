@@ -3,6 +3,7 @@ import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabe
 import { Redirect } from "react-router";
 import boletines from "./boletines.json";
 import { userService } from "../Componentes/Componentes-login/services/user.service";
+import {getPost} from './api'
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
 se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
@@ -14,15 +15,17 @@ class Dashboard extends Component {
       redirectList: false,
       user: {},
       users: [],
+      posts: [],
+      loading: true,
     };
   }
 
-  componentDidMount() {
+  /*componentDidMount() {
     this.setState({
       user: JSON.parse(localStorage.getItem("user")),
       users: { loading: true },
     });
-  }
+  }*/
 
   setRedirect = () => {
     this.setState({
@@ -50,6 +53,7 @@ class Dashboard extends Component {
 
   render() {
     const { user, users } = this.state;
+
     return (
       <div className="conteiner contenedor-dash">
         <div id="cabecera" className="header">
@@ -63,7 +67,7 @@ class Dashboard extends Component {
           </div>
           <UsuarioCabecera />
         </div>
-        {/*<div id="contenido" className="contenido contenido-dash section">
+        <div id="contenido" className="contenido contenido-dash section">
           <div className="grid-contentDash">
             <div className="grid-publicados grids-dash">
               <h4 className="h4">Boletines</h4>
@@ -216,7 +220,7 @@ class Dashboard extends Component {
               </div>
             </div>
           </div>
-        </div>*/}
+        </div>
       </div>
     );
   }

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import FormBoletines from "./FormBoletines";
 import Steps from "./Steps";
+import axios from 'axios';
 
 const Boletines = (props) => {
   
- const {formFolio, formImage, image, imageTwo, formProyecto, formUsuario} = props;
+  const {formFolio, formImage, image, imageTwo, formProyecto, formUsuario} = props;
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
 
@@ -38,11 +39,21 @@ const Boletines = (props) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     getCurrentForm(name);
-    setFormValues({ [name]: value });
+    setFormValues({ 
+      ...formValues,
+      [name]: value 
+    });
   };
   console.log("Form Values", formValues);
   console.log("currentForm", currentForm);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios.post('http://localhost:3000/api/boletines', {
+      project: formValues.proyecto
+    })
+    console.log('enviando datos...', formValues);
+  }
 
   return (
     <div className="conteiner conteiner-boletines">
@@ -62,7 +73,7 @@ const Boletines = (props) => {
       </div>
       <div className="contenido section ">
         {/*se pasa la función de handleChange como prop al componente de FormBoletines */}
-        <FormBoletines handleChange={handleChange} />
+        <FormBoletines handleChange={handleChange} handleSubmit={handleSubmit}/>
       </div>
     </div>
   );

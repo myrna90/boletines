@@ -18,7 +18,7 @@ const Tabla = (props) => {
           /*onChange={(e) => searchSpace(e)}*/
         />
       </div>
-      <Paginacion />
+      <Paginacion/>
     </div>
   );
 };
