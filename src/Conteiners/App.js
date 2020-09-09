@@ -9,6 +9,7 @@ import "../Styles/Componentes/Perfil.css";
 import "../Styles/Componentes/Soporte.css";
 import "../Styles/Componentes/BoletinesView.css";
 import "../Styles/Componentes/Listado.css";
+import "../Styles/Componentes/Admin.css";
 import Login from "../Componentes/Componentes-login/Login";
 import Vista from "./Vista";
 import { BrowserRouter as Router, Route } from "react-router-dom";

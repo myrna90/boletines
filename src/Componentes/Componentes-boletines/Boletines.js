@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormBoletines from "./FormBoletines";
 import Steps from "./Steps";
 import axios from 'axios';
@@ -7,13 +7,22 @@ const Boletines = (props) => {
 
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
+  const [projectData, setProjectData] = useState(undefined);
 
+  /*Mandamos a llamar el arreglo de objetos de los projectos desde el API */
+  useEffect(() => {
+    if (projectData === undefined) {
+      axios.get("http://localhost:3000/api/projects").then(function(res) {
+       setProjectData(res.data.data)
+      });
+    }
+  }, [projectData]);
 
   /*Va a recibir un objeto */
   const getCurrentForm = (name) => {
     const identifier = {
-      1: ["folio"],
-      2: ["proyecto", "cliente", "fecha", "sistema"],
+      1: ["folio", "title"],
+      2: ["project", "cliente", "createDate", "sistema"],
       3: [
         "problema",
         "imgProblema",
@@ -43,28 +52,29 @@ const Boletines = (props) => {
       [name]: value 
     });
   };
-  console.log("Form Values", formValues);
-  console.log("currentForm", currentForm);
-
+ 
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const boletin = {
+      title: formValues.title,
       folio: formValues.folio,
-      project: formValues.proyecto,
-      client: formValues.cliente,
-      date: formValues.fecha,
-      system: formValues.sistema,
-      description:  formValues.problema,
-      imgproblem: formValues.selectedFile,
-      solution: formValues.solucion,
-      imgsolution: formValues.selectedFile,
-      equipment: formValues.equipo,
-      brand: formValues.marca,
-      model: formValues.modelo,
-      user: formValues.usuario,
-      department: formValues.departamento
+      project: formValues.project,
+      //client: formValues.cliente,
+      createDate: formValues.createDate,
+      //system: formValues.sistema,
+      description:  formValues.description,
+      pictureName: formValues.selectedFile,
+      solution: formValues.solution,
+      //pictureName: formValues.selectedFile,
+      divice: formValues.divice,
+      //brand: formValues.marca,
+     // model: formValues.modelo,
+      owner: formValues.owner,
+      //department: formValues.departamento
+      status: true
     }
-    axios.post('http://localhost:3000/api/boletines', boletin) 
+    axios.post('http://localhost:3000/api/newsletters', boletin) 
     .then((res) => {
       console.log(res);
     })
@@ -87,12 +97,12 @@ const Boletines = (props) => {
         </div>
         <Steps currentForm={currentForm} />
         <div className="conteiner-boton">
-          
+       
         </div>
       </div>
       <div className="contenido section ">
         {/*se pasa la función de handleChange como prop al componente de FormBoletines */}
-        <FormBoletines handleChange={handleChange} handleSubmit={handleSubmit}/>
+        <FormBoletines handleChange={handleChange} handleSubmit={handleSubmit} projectData={projectData}/>
       </div>
     </div>
   );

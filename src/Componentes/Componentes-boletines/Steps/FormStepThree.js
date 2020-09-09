@@ -4,12 +4,12 @@ const FormStepThree = (props) => {
   const { handleChange } = props;
 
   const [formImage, setFormImage] = useState({
-    equipo: "",
+    divice: "",
     marca: "",
     modelo: "",
-    problema: "",
+    description: "",
     imgProblema: "",
-    solucion: "",
+    solution: "",
     imgSolucion: "",
   });
 
@@ -68,7 +68,7 @@ const FormStepThree = (props) => {
           </label>
           <textarea
             className=" text-problema text"
-            name="problema"
+            name="description"
             defaultValue={formImage.problema}
             onChange={(e) => handleChange(e)}
             required
@@ -82,7 +82,7 @@ const FormStepThree = (props) => {
           </label>
           <textarea
             className=" text-solucion text"
-            name="solucion"
+            name="solution"
             defaultValue={formImage.solucion}
             onChange={(e) => handleChange(e)}
             required
@@ -141,8 +141,8 @@ const FormStepThree = (props) => {
           <div className="div-icon-info">
             <input
               className="input input-div"
-              name="equipo"
-              defaultValue={formImage.equipo}
+              name="divice"
+              defaultValue={formImage.divice}
               onChange={(e) => handleChange(e)}
             ></input>
             <a className="caja3">

@@ -2,16 +2,17 @@ import React, { useState } from "react";
 
 const FormStepTwo = (props) => {
   const { handleChange } = props;
+  const { projectData } = props;
 
   const [formProyecto, setFormProyecto] = useState({
-    proyecto: "",
-    cliente: "",
-    fecha: "",
-    sistema: "",
+    project: "",
+    client: "",
+    createDate: "",
+    system: "",
   });
 
   return (
-    /*formulario para especificaciones del proyecto */
+    /* formulario para especificaciones del proyecto */
     <div className="div div-2">
       <div className="conteiner-numero numero-div2">
         <div className="numero">2</div>
@@ -23,17 +24,20 @@ const FormStepTwo = (props) => {
         {/*Input proyecto */}
         <label className="label label1">Proyecto</label>
         <div className="div-icon-info">
-          <select
-            className="input input1"
-            name="proyecto"
-            defaultValue={formProyecto.proyecto}
-            onChange={(e) => handleChange(e)}
-            required
-          >
-            <option value="Sainz">Sainz</option>
-            <option value="Punto Sur">Punto Sur</option>
-            <option value="Andares">Andares</option>
+        <select
+              className="input input1"
+              name="project"
+              /*Aqui se pone el id de cada project para todos los select-options */
+              defaultValue={formProyecto.proyecto}
+              onChange={(e) => handleChange(e)}
+              required
+            >  
+          {projectData && projectData.map((project) => (
+            <option value={project._id}>{project.name}</option>
+          ))
+          }
           </select>
+
           <a className="caja3">
             <span className="material-icons md-4">info</span>
             <span className="info">
@@ -43,12 +47,12 @@ const FormStepTwo = (props) => {
           </a>
         </div>
 
-        {/*Input cliente */}
-        <label className="label label2">Cliente</label>
+        {/*Input client */}
+        <label className="label label2">Cliene</label>
         <input
           className="input input2"
-          name="cliente"
-          defaultValue={formProyecto.cliente}
+          name="client"
+          defaultValue={formProyecto.client}
           onChange={(e) => handleChange(e)}
           required
         ></input>
@@ -56,30 +60,34 @@ const FormStepTwo = (props) => {
         {/*Input fecha */}
         <label className="label label3 label-fecha">Fecha</label>
         <input
-          className="input input3 input-fecha"
-          name="fecha"
+          className="input input3"
+          name="createDate"
           type="date"
           defaultValue={formProyecto.fecha}
           onChange={(e) => handleChange(e)}
           required
         ></input>
 
-        {/*Input sistema */}
+        {/*Input system */}
         <label className="label label4">Sistema</label>
         <div className="div-icon-info">
           <select
             className="input input4"
-            name="sistema"
-            defaultValue={formProyecto.sistema}
+            name="system"
+            defaultValue={formProyecto.system}
             onChange={(e) => handleChange(e)}
             required
-          ><option value="Bosch">Bosch</option>
-          <option value="Bosch2">Bosch2</option>
-          <option value="Bosch3">Bosch3</option></select>
+          >
+            <option value="-">-</option>
+            <option value="Bosch">Bosch</option>
+            <option value="Bosch2">Bosch2</option>
+            <option value="Bosch3">Bosch3</option>
+          </select>
           <a className="caja3">
             <span className="material-icons md-4">info</span>
             <span className="info">
-              Seleccionar proyecto <br />
+              Seleccionar proyecto
+              <br />
               donde ocurrio el problema
             </span>
           </a>
@@ -90,3 +98,4 @@ const FormStepTwo = (props) => {
 };
 
 export default FormStepTwo;
+

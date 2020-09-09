@@ -2,7 +2,6 @@ import React from "react";
 
 export default (props) => {
   const { currentForm } = props;
-  console.log(props, "steps");
 
   return (
     /*Componente steps tabla superios en boletines */

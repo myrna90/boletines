@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "../Componentes/Dashboard";
-import Soporte from "../Componentes/Soporte";
 import Boletines from "../Componentes/Componentes-boletines/Boletines";
 import MiPerfil from "../Componentes/MiPerfil";
 import BoletinesView from "../Componentes/Componentes-secundarios/BoletinesView";
 import Listado from "../Componentes/Componentes-Listado/ListadoBoletines";
+import Admin from "./Componentes-Admin/Admin";
 //import PrivateRoute from "../Componentes/Componentes-login/PrivateRoute";
 
 const Navegacion = () => (
@@ -33,7 +33,9 @@ const Navegacion = () => (
       component={MiPerfil}
       
     />
-    <Route path="/Vista/Soporte" component={Soporte}  />
+    <Route path="/Vista/Admin" 
+    component={Admin}  
+    />
     {/*<Route component={PageNotFound}/>*/}
   </Switch>
 );

@@ -1,0 +1,200 @@
+.label-admin {
+  font-size: 14px;
+  width: 15em;
+  color: var(--color-blue-bajo);
+}
+
+.input-admin {
+  width: 15em;
+  height: 1.8em;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid var(--color-border-input);
+  padding: 0.5em;
+}
+
+.input-admin:focus {
+  outline: none;
+  border: solid 1.1px var(--color-green-boletin);
+  background-color: var(--color-gray-bajo);
+}
+
+/*Formulario cliente*/
+.contenFormClient {
+  grid-area: contenForm1;
+  margin-left: 2em;
+  display: grid;
+  grid-template-areas: "label1 label2 btn-cliente" "input1 input2 btn-cliente";
+}
+
+.label-cliente-admin {
+  grid-area: label1;
+}
+
+.label-cliente-2 {
+  grid-area: label2;
+}
+
+.input-cliente-admin {
+  grid-area: input1;
+}
+
+.input-cliente-2 {
+  grid-area: input2;
+}
+
+.btn-crear-cliente {
+  grid-area: btn-cliente;
+  margin-left: auto;
+  margin-right: 2em;
+}
+
+/*Formulario Proyecto*/
+
+.contenFormProyecto {
+  grid-area: contenForm2;
+  margin-left: 2em;
+  display: grid;
+  grid-template-areas: "labelP labelP2 labelP3 btn-proyecto" "inputP inputP2 inputP3 btn-proyecto";
+}
+
+.label-proyecto-admin {
+  grid-area: labelP;
+}
+
+.label-cliente-fecha {
+  grid-area: labelP2;
+}
+
+.label-cliente-fecha2 {
+  grid-area: labelP3;
+}
+
+.label-cliente-status {
+  grid-area: labelP4;
+}
+
+.input-fecha {
+  width: 180px;
+}
+
+.input-proyecto-admin {
+  grid-area: inputP;
+}
+
+.input-cliente-fecha {
+  grid-area: inputP2;
+}
+
+.input-cliente-fecha2 {
+  grid-area: inputP3;
+}
+
+.input-cliente-status {
+  grid-area: inputP4;
+}
+
+.btn-crear-proyecto {
+  grid-area: btn-proyecto;
+  margin-left: auto;
+  margin-right: 2em;
+}
+
+.contenFormSistema {
+  grid-area: contenForm3;
+  margin-left: 2em;
+  display: grid;
+  grid-template-areas: "labelS btn-sistema" "inputS btn-sistema";
+}
+
+.label-sistema-admin {
+  grid-area: labelS;
+}
+
+.input-sistema-admin {
+  grid-area: inputS;
+}
+
+.btn-crear-sistema {
+  grid-area: btn-sistema;
+  margin-left: auto;
+  margin-right: 2em;
+}
+
+.contenFormUsuario {
+  grid-area: contenForm4;
+  margin-left: 2em;
+  display: grid;
+  grid-template-areas:
+    "labelU labelA labelU2 labelU3"
+    "inputU inputA inputU2 inputU3"
+    "labelU4 labelU5 labelU6 btnC"
+    "inputU4 inputU5 inputU6 btnC";
+}
+
+.label-usuario {
+  grid-area: labelU;
+}
+
+.label-usuario-2 {
+  grid-area: labelA;
+}
+
+.input-usuario-2 {
+  grid-area: inputA;
+}
+
+.btn-crear-usuario {
+  grid-area: btnC;
+  margin-left: auto;
+  margin-right: 2em;
+  margin-top: auto;
+}
+
+.label-usuario-3 {
+  grid-area: labelU2;
+}
+
+.label-usuario-4 {
+  grid-area: labelU3;
+}
+
+.label-usuario-5 {
+  grid-area: labelU4;
+  margin-top: 2em;
+}
+
+.label-usuario-6 {
+  grid-area: labelU5;
+  margin-top: 2em;
+}
+
+.label-usuario-7 {
+  grid-area: labelU6;
+  margin-top: 2em;
+}
+
+.input-usuario-alta {
+  grid-area: inputU;
+}
+
+.input-usuario-3 {
+  grid-area: inputU2;
+}
+
+.input-usuario-4 {
+  grid-area: inputU3;
+}
+
+.input-usuario-5 {
+  grid-area: inputU4;
+}
+
+.input-usuario-6 {
+  grid-area: inputU5;
+}
+
+.input-usuario-7 {
+  grid-area: inputU6;
+}

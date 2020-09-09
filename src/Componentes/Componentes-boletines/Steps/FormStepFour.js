@@ -5,7 +5,7 @@ const FormStepFour = (props) => {
   const { handleChange } = props;
 
   const [formUsuario, setFormUsuario] = useState({
-    usuario: "",
+    owner: "",
     departamento: "",
   });
   return (
@@ -22,8 +22,8 @@ const FormStepFour = (props) => {
         <div className="div-icon-info">
           <input
             className="input"
-            name="usuario"
-            defaultValue={formUsuario.usuario}
+            name="owner"
+            defaultValue={formUsuario.owner}
             onChange={(e) => handleChange(e)}
             required
           ></input>

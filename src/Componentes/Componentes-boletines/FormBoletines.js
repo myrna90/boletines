@@ -8,13 +8,14 @@ import FormStepFour from "./Steps/FormStepFour";
 const FormBoletines = (props) => {
   /*Es un destructure al obejeto props y sacamos esa variable, para no tener que hacer props handleChange*/
   const { handleChange, handleSubmit } = props;
+  const { projectData } = props;
 
   return (
     <div className="contenido section ">
       {/*Contenedor el cual muestra el fomulario para llenar los campos requeridos */}
       <form className="contenido-form" onSubmit={handleSubmit}>
         <FormStepOne handleChange={handleChange}/>
-        <FormStepTwo handleChange={handleChange}/>
+        <FormStepTwo handleChange={handleChange} projectData={projectData}/>
         <FormStepThree handleChange={handleChange}/>
         <FormStepFour handleChange={handleChange}/>
         <button

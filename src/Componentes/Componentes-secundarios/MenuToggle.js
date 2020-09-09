@@ -63,6 +63,10 @@ const MenuToggle = (props) => {
                 <i className="material-icons md-24">person</i>
                 <div className="textMenu">Mi Perfil</div>
               </Link>
+              <Link to="/Vista/Admin" className="Link L-admin">
+              <span className="material-icons md-24">admin_panel_settings</span>
+                <div className="textMenu">Administración</div>
+              </Link>
             </div>
           </div>
         </div> 
