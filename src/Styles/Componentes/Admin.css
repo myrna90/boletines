@@ -101,6 +101,7 @@
   margin-right: 2em;
 }
 
+/*Diseño componente sistema*/
 .contenFormSistema {
   grid-area: contenForm3;
   margin-left: 2em;
@@ -122,6 +123,8 @@
   margin-right: 2em;
 }
 
+
+/*Diseño componente usuario*/
 .contenFormUsuario {
   grid-area: contenForm4;
   margin-left: 2em;
@@ -197,4 +200,44 @@
 
 .input-usuario-7 {
   grid-area: inputU6;
+}
+
+/*Diseño componente Device*/
+.contenFormDevice {
+  margin-left: 2em;
+  display: grid;
+  grid-template-areas:
+    "labelD labelD2 labelD3 btnD"
+    "inputD1 inputD2 inputD3 btnD"
+}
+
+.label-device-admin {
+  grid-area: labelD;
+}
+
+.label-device {
+  grid-area: labelD2;
+}
+
+.label-device-2 {
+  grid-area: labelD3;
+}
+
+.input-device-admin {
+  grid-area: inputD1;
+}
+
+.input-device {
+  grid-area: inputD2;
+}
+
+.input-device-2 {
+  grid-area: inputD3;
+}
+
+.btn-crear-Device {
+  grid-area: btnD;
+  margin-left: auto;
+  margin-right: 2em;
+  margin-top: auto;
 }

@@ -2,10 +2,8 @@ import BtnLogin from "../Componentes-login/ButtonLogin";
 import ImgPersonas from "../imgs/img-login.png";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import { userService } from "./services/user.service";
 
 const Sesion = (props) => {
-  userService.logout();
 
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -21,26 +19,6 @@ const Sesion = (props) => {
     setPassword({[password]: value});
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-
-    setSubmitted({ submitted: true });
-    const { name, password, returnUrl } = useState;
-
-    // Deténgase aquí si la forma es inválida
-    if (!(name && password)) {
-      return;
-    }
-
-    setLoading({ loading: true });
-    userService.login(name, password).then(
-      (user) => {
-        const { from } = props.location.useState || { from: { pathname: "/" } };
-        props.history.push(from);
-      },
-      (error) => setError({ error, loading: false })
-    );
-  };
 
   const btnForgot = () => {
     return alert("favor de comunicarse con soporte técnico");
@@ -56,7 +34,7 @@ const Sesion = (props) => {
       </div>
 
       <div className="login">
-        <form className="form" onSubmit={() => handleFormSubmit()}>
+        <form className="form">
           {/*div para introducir email */}
           <div
             className={

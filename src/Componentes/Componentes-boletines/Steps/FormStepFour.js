@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const FormStepFour = (props) => {
   const { handleChange } = props;
+  const { userData } = props;
 
   const [formUsuario, setFormUsuario] = useState({
     owner: "",
@@ -20,13 +21,18 @@ const FormStepFour = (props) => {
       <div className="contenForm conteinerForm-2">
         <label className="label">Reporta</label>
         <div className="div-icon-info">
-          <input
-            className="input"
+          <select
+            className="input input-user"
             name="owner"
             defaultValue={formUsuario.owner}
             onChange={(e) => handleChange(e)}
             required
-          ></input>
+          >
+            <option>-</option>
+            {userData && userData.map((user) => (
+              <option value={user._id}>{user.username}</option>
+            ))}
+          </select>
         </div>
       </div>
 
@@ -34,7 +40,7 @@ const FormStepFour = (props) => {
         <label className="label">Departamento</label>
         <div className="div-icon-info">
           <input
-            className="input"
+            className="input input-user-2"
             name="departamento"
             defaultValue={formUsuario.departamento}
             onChange={(e) => handleChange(e)}

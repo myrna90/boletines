@@ -2,15 +2,16 @@ import React, { useState } from "react";
 
 const FormStepThree = (props) => {
   const { handleChange } = props;
+  const { deviceData } = props;
 
   const [formImage, setFormImage] = useState({
-    divice: "",
-    marca: "",
-    modelo: "",
+    device: "",
+    brand: "",
+    model: "",
     description: "",
     imgProblema: "",
     solution: "",
-    imgSolucion: "",
+    imgSolucion: ""
   });
 
   const [image, setImage] = useState({ file: "", imagePreview: "" });
@@ -69,7 +70,7 @@ const FormStepThree = (props) => {
           <textarea
             className=" text-problema text"
             name="description"
-            defaultValue={formImage.problema}
+            defaultValue={formImage.description}
             onChange={(e) => handleChange(e)}
             required
           ></textarea>
@@ -83,7 +84,7 @@ const FormStepThree = (props) => {
           <textarea
             className=" text-solucion text"
             name="solution"
-            defaultValue={formImage.solucion}
+            defaultValue={formImage.solution}
             onChange={(e) => handleChange(e)}
             required
           ></textarea>
@@ -139,12 +140,17 @@ const FormStepThree = (props) => {
           {/*Input equipo */}
           <label className=" label label-div">Equipo</label>
           <div className="div-icon-info">
-            <input
+            <select
               className="input input-div"
-              name="divice"
-              defaultValue={formImage.divice}
+              name="device"
+              defaultValue={formImage.device}
               onChange={(e) => handleChange(e)}
-            ></input>
+            >
+              <option>-</option>
+              {deviceData && deviceData.map((device) => (
+                <option value={device._id}>{device.name}</option>
+              ))}
+            </select>
             <a className="caja3">
               <span className="material-icons md-4">info</span>
               <span className="info">
@@ -157,12 +163,17 @@ const FormStepThree = (props) => {
           {/*Input marca */}
           <label className=" label label-div2">Marca</label>
           <div className="div-icon-info">
-            <input
+            <select
               className="input input-div2"
-              name="marca"
-              defaultValue={formImage.marca}
+              name="brand"
+              defaultValue={formImage.brand}
               onChange={(e) => handleChange(e)}
-            ></input>
+            >
+              <option>-</option>
+              {deviceData && deviceData.map((device) => (
+                <option value={device._id}>{device.brand}</option>
+              ))}
+            </select>
             <a className="caja3">
               <span className="material-icons md-4">info</span>
               <span className="info">
@@ -175,12 +186,17 @@ const FormStepThree = (props) => {
           {/*Input modelo */}
           <label className=" label label-div3">Modelo</label>
           <div className="div-icon-info">
-            <input
+            <select
               className="input input-div3"
-              name="modelo"
-              defaultValue={formImage.modelo}
+              name="model"
+              defaultValue={formImage.model}
               onChange={(e) => handleChange(e)}
-            ></input>
+            >
+              <option>-</option>
+               {deviceData && deviceData.map((device) => (
+                <option value={device._id}>{device.model}</option>
+              ))}
+            </select>
             <a className="caja3">
               <span className="material-icons md-4">info</span>
               <span className="info">

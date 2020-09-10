@@ -225,6 +225,7 @@
 .input2 {
     grid-area: I2;
     width: 230px;
+    padding: 0;
 }
 
 .input3 {
@@ -299,16 +300,19 @@
 .input-div {
     grid-area: b4;
     height: 2em;
+    padding: 0;
 }
 
 .input-div2 {
     grid-area: b5;
     height: 2em;
+    padding: 0;
 }
 
 .input-div3 {
     grid-area: b6;
     height: 2em;
+    padding: 0;
 }
 
 .text {
@@ -382,6 +386,16 @@ input[type="file"] {
 
 .conteinerForm-3 {
     grid-area: u3;
+}
+
+.input-user {
+    height: 2em;
+    padding: 0;
+}
+
+.input-user-2 {
+    height: 2em;
+    padding: 0;
 }
 
 @media only screen and (max-width: 600px) {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const FormStepTwo = (props) => {
   const { handleChange } = props;
-  const { projectData } = props;
+  const { projectData, clientData, systemData } = props;
 
   const [formProyecto, setFormProyecto] = useState({
     project: "",
@@ -32,6 +32,7 @@ const FormStepTwo = (props) => {
               onChange={(e) => handleChange(e)}
               required
             >  
+            <option>-</option>
           {projectData && projectData.map((project) => (
             <option value={project._id}>{project.name}</option>
           ))
@@ -49,13 +50,18 @@ const FormStepTwo = (props) => {
 
         {/*Input client */}
         <label className="label label2">Cliene</label>
-        <input
+        <select
           className="input input2"
           name="client"
           defaultValue={formProyecto.client}
           onChange={(e) => handleChange(e)}
           required
-        ></input>
+        >
+          <option>-</option>
+          {clientData && clientData.map((client) => (
+            <option value={client._id}>{client.name}</option>
+          ))}
+        </select>
 
         {/*Input fecha */}
         <label className="label label3 label-fecha">Fecha</label>
@@ -78,10 +84,10 @@ const FormStepTwo = (props) => {
             onChange={(e) => handleChange(e)}
             required
           >
-            <option value="-">-</option>
-            <option value="Bosch">Bosch</option>
-            <option value="Bosch2">Bosch2</option>
-            <option value="Bosch3">Bosch3</option>
+            <option>-</option>
+            {systemData && systemData.map((system) => (
+              <option value={system._id}>{system.name}</option>
+            ))}
           </select>
           <a className="caja3">
             <span className="material-icons md-4">info</span>

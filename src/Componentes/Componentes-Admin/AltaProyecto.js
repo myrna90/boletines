@@ -58,19 +58,3 @@ const AltaProyecto = (props) => {
 };
 
 export default AltaProyecto;
-
-
-
-
-/*<label className="label-admin label-cliente-status">Estado</label>
-        <select
-          className="input-admin input-fecha input-cliente-status"
-          name="status"
-          defaultValue={formProyecto.status}
-          onChange={(e) => handleChange(e)}
-          required
-        >
-          <option>-</option>
-          <option>Activo</option>
-          <option>Inactivo</option>
-        </select> */

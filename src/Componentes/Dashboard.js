@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
 import { Redirect } from "react-router";
 import boletines from "./boletines.json";
-import { userService } from "../Componentes/Componentes-login/services/user.service";
 import {getPost} from './api'
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 

@@ -3,6 +3,7 @@ import AltaCliente from './AltaCliente'
 import AltaProyecto from './AltaProyecto';
 import AltaSistema from './AltaSistema';
 import AltaUsuario from './AltaUsuario';
+import AltaDevice from './AltaEquipo';
 import axios from 'axios';
 
 const Admin = (props) => {
@@ -80,6 +81,22 @@ const [formValues, setFormValues] = useState({});
     });
   };
 
+  const submitDevice = (e) => {
+    e.preventDefault();
+    const system = {
+      name: formValues.name,
+      brand: formValues.brand,
+      model: formValues.model
+    }
+    axios.post('http://localhost:3000/api/devices', system)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  };
+
 
   console.log(formValues);
     return(
@@ -103,6 +120,7 @@ const [formValues, setFormValues] = useState({});
          <AltaProyecto handleChange={handleChange} submitProject={submitProject}/>
          <AltaSistema handleChange={handleChange} submitSystem={submitSystem}/>
          <AltaUsuario handleChange={handleChange} submitUser={submitUser}/>
+         <AltaDevice handleChange={handleChange} submitDevice={submitDevice}/>
         </div>
       </div>
     )

@@ -8,6 +8,10 @@ const Boletines = (props) => {
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
   const [projectData, setProjectData] = useState(undefined);
+  const [clientData, setClientData] = useState(undefined);
+  const [systemData, setSystemData] = useState(undefined);
+  const [deviceData, setDeviceData] = useState(undefined);
+  const [userData, setUserData] = useState(undefined);
 
   /*Mandamos a llamar el arreglo de objetos de los projectos desde el API */
   useEffect(() => {
@@ -17,6 +21,39 @@ const Boletines = (props) => {
       });
     }
   }, [projectData]);
+
+  useEffect(() => {
+    if (clientData === undefined) {
+      axios.get("http://localhost:3000/api/customers").then(function(res) {
+       setClientData(res.data.data)
+      });
+    }
+  }, [clientData]);
+
+  useEffect(() => {
+    if (systemData === undefined) {
+      axios.get("http://localhost:3000/api/systems").then(function(res) {
+       setSystemData(res.data.data)
+      });
+    }
+  }, [systemData]);
+
+  useEffect(() => {
+    if (deviceData === undefined) {
+      axios.get("http://localhost:3000/api/devices").then(function(res) {
+       setDeviceData(res.data.data)
+      });
+    }
+  }, [deviceData]);
+
+  useEffect(() => {
+    if (userData === undefined) {
+      axios.get("http://localhost:3000/api/users").then(function(res) {
+       setUserData(res.data.data)
+      });
+    }
+  }, [userData]);
+
 
   /*Va a recibir un objeto */
   const getCurrentForm = (name) => {
@@ -67,7 +104,7 @@ const Boletines = (props) => {
       pictureName: formValues.selectedFile,
       solution: formValues.solution,
       //pictureName: formValues.selectedFile,
-      divice: formValues.divice,
+      device: formValues.device,
       //brand: formValues.marca,
      // model: formValues.modelo,
       owner: formValues.owner,
@@ -81,7 +118,7 @@ const Boletines = (props) => {
     .catch((err) => {
       console.log(err);
     })
-    console.log('enviando datos...', formValues);
+    console.log('boletin', boletin);
   }
 
   return (
@@ -97,12 +134,18 @@ const Boletines = (props) => {
         </div>
         <Steps currentForm={currentForm} />
         <div className="conteiner-boton">
-       
+        <button
+            type="submit"
+            className="btn-crear btn"
+            form="CreateForm">
+            + Crear
+          </button>
         </div>
       </div>
       <div className="contenido section ">
         {/*se pasa la función de handleChange como prop al componente de FormBoletines */}
-        <FormBoletines handleChange={handleChange} handleSubmit={handleSubmit} projectData={projectData}/>
+        <FormBoletines handleChange={handleChange} handleSubmit={handleSubmit} projectData={projectData} 
+        clientData={clientData} systemData={systemData} deviceData={deviceData} userData={userData}/>
       </div>
     </div>
   );
