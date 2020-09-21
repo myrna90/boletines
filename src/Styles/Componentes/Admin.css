@@ -56,7 +56,7 @@
   grid-area: contenForm2;
   margin-left: 2em;
   display: grid;
-  grid-template-areas: "labelP labelP2 labelP3 btn-proyecto" "inputP inputP2 inputP3 btn-proyecto";
+  grid-template-areas: "labelP labelP2 labelP3 labelP4 btn-proyecto" "inputP inputP2 inputP3 inputP4 btn-proyecto";
 }
 
 .label-proyecto-admin {
@@ -71,7 +71,7 @@
   grid-area: labelP3;
 }
 
-.label-cliente-status {
+.label-cliente-cliente {
   grid-area: labelP4;
 }
 
@@ -91,8 +91,9 @@
   grid-area: inputP3;
 }
 
-.input-cliente-status {
+.input-cliente-cliente {
   grid-area: inputP4;
+  padding: 0;
 }
 
 .btn-crear-proyecto {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AltaCliente from './AltaCliente'
 import AltaProyecto from './AltaProyecto';
 import AltaSistema from './AltaSistema';
@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Admin = (props) => {
 const [formValues, setFormValues] = useState({});
-
+const [clientProjectData, setClientProjectData] = useState(undefined);
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormValues({ 
@@ -16,6 +16,15 @@ const [formValues, setFormValues] = useState({});
       [name]: value 
     });
   };
+
+  
+  useEffect(() => {
+    if (clientProjectData === undefined) {
+      axios.get("http://localhost:3000/api/customers").then(function(res) {
+       setClientProjectData(res.data.data)
+      });
+    }
+  }, [clientProjectData]);
 
   const submitClient = (e) => {
     e.preventDefault();
@@ -38,7 +47,8 @@ const [formValues, setFormValues] = useState({});
       name: formValues.nameProject,
       status: true,
       startDate: formValues.startDate,
-      endDate: formValues.endDate
+      endDate: formValues.endDate, 
+      customer: formValues.customer
     }
     axios.post('http://localhost:3000/api/projects', project)
     .then((res) => {
@@ -117,7 +127,7 @@ const [formValues, setFormValues] = useState({});
         <div className="contenido section ">
          
          <AltaCliente handleChange={handleChange} submitClient={submitClient}/>
-         <AltaProyecto handleChange={handleChange} submitProject={submitProject}/>
+         <AltaProyecto handleChange={handleChange} submitProject={submitProject} clientProjectData={clientProjectData}/>
          <AltaSistema handleChange={handleChange} submitSystem={submitSystem}/>
          <AltaUsuario handleChange={handleChange} submitUser={submitUser}/>
          <AltaDevice handleChange={handleChange} submitDevice={submitDevice}/>

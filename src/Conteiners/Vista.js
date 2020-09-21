@@ -6,9 +6,7 @@ class Vista extends Component {
     return (
       <div className="conteiner">
         <MenuToggle />
-       
-          <Navegacion />
-        
+          <Navegacion />       
       </div>
     );
   }

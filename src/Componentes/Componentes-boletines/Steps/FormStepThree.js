@@ -103,7 +103,7 @@ const FormStepThree = (props) => {
             <input
               id="myuniqueid"
               type="file"
-              name="selectedFile"
+              name="pictureName"
               className="inputimg"
               onChange={(e) => handleImageChange(e)}
               
@@ -125,7 +125,7 @@ const FormStepThree = (props) => {
             <input
               id="myuniqueid2"
               type="file"
-              name="selectedFile"
+              name="pictureName"
               className="inputimg"
               onChange={(e) => handleImageChangeTwo(e)}
               

@@ -93,15 +93,21 @@ const Boletines = (props) => {
   
   const handleSubmit = (event) => {
     event.preventDefault();
+    const form = new FormData();
+    form.append('image',{
+        uri : formValues.pictureName,
+        type : 'image/jpeg',
+        name : 'image.jpg'
+    })
     const boletin = {
       title: formValues.title,
       folio: formValues.folio,
       project: formValues.project,
-      //client: formValues.cliente,
+      client: formValues.cliente,
       createDate: formValues.createDate,
-      //system: formValues.sistema,
+      system: formValues.sistema,
       description:  formValues.description,
-      pictureName: formValues.selectedFile,
+      pictureName: formValues.pictureName,
       solution: formValues.solution,
       //pictureName: formValues.selectedFile,
       device: formValues.device,

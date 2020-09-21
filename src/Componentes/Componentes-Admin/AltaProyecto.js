@@ -1,15 +1,19 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios';
 
 const AltaProyecto = (props) => {
   const { handleChange, submitProject } = props;
+  const { clientProjectData } = props;
 
   const [formProyecto, setFormProyecto] = useState({
     nameProject: "",
     startDate: "",
     endDate: "",
     status: "",
+    customer: ""
   });
+
+
   return (
     <div className="div div-proyecto">
       <div className="conteiner-numero numero-div1">
@@ -48,6 +52,22 @@ const AltaProyecto = (props) => {
           defaultValue={formProyecto.endDate}
           onChange={(e) => handleChange(e)}
         ></input>
+
+<label className="label-admin label-cliente-cliente">
+          Cliente
+        </label>
+        <select
+          className="input input-cliente-cliente"
+          name="customer"
+          defaultValue={formProyecto.customer}
+          onChange={(e) => handleChange(e)}
+          required
+        >
+          <option>-</option>
+          {clientProjectData && clientProjectData.map((client) => (
+            <option value={client._id}>{client.name}</option>
+          ))}
+        </select>
 
         <button type="submit" className="btn-crear-proyecto btn">
           + Crear

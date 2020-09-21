@@ -1,32 +1,35 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
 import { Redirect } from "react-router";
-import boletines from "./boletines.json";
-import {getPost} from './api'
+import axios from 'axios'
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
 se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
-class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      redirect: false,
-      redirectList: false,
-      user: {},
-      users: [],
-      posts: [],
-      loading: true,
-    };
-  }
+const Dashboard= (props) => {
+  
+  const {renderRedirect} = props;
 
-  /*componentDidMount() {
-    this.setState({
-      user: JSON.parse(localStorage.getItem("user")),
-      users: { loading: true },
-    });
-  }*/
+  const [projectsData, setProjectsData] = useState(undefined);
+  const [newslettersData, setNewslettersData] = useState(undefined);
+  
 
-  setRedirect = () => {
+  useEffect(() => {
+    if (projectsData === undefined) {
+      axios.get("http://localhost:3000/api/projects").then(function(res) {
+       setProjectsData(res.data.data)
+      });
+    }
+  }, [projectsData]);
+
+  useEffect(() => {
+    if (newslettersData === undefined) {
+      axios.get("http://localhost:3000/api/newsletters").then(function(res) {
+       setNewslettersData(res.data.data)
+      });
+    }
+  }, [newslettersData]);
+
+  /*setRedirect = () => {
     this.setState({
       redirect: true,
     });
@@ -48,10 +51,7 @@ class Dashboard extends Component {
     if (this.state.redirect) {
       return <Redirect to="/Vista/View" />;
     }
-  };
-
-  render() {
-    const { user, users } = this.state;
+  };*/
 
     return (
       <div className="conteiner contenedor-dash">
@@ -70,54 +70,47 @@ class Dashboard extends Component {
           <div className="grid-contentDash">
             <div className="grid-publicados grids-dash">
               <h4 className="h4">Boletines</h4>
-              <div className="digsn-dash">
-                <div className="circulo-boletin"></div>
-                <p className="p-boletines"></p>
+             
+                
+                {newslettersData>= 5 && newslettersData.map((news) => (
+                   <div className="digsn-dash">
+                  <div className="circulo-boletin2"></div>
+                  <p className="p-boletines">{news.folio}</p>
+                <p>{news.title}</p>
+                <div className="contenedor-icon">
+                  
+                  <button
+                    className="btn-bol contenedor-icon"
+                    /*onClick={this.setRedirect}*/
+                  >
+                    <i className="material-icons  md-18">open_in_new</i>
+                  </button>
+                </div>
+              </div>
+                ))}
+                 <div className="digsn-dash">
+                  <div className="circulo-boletin2"></div>
+                  <p className="p-boletines"></p>
                 <p></p>
                 <div className="contenedor-icon">
-                  {this.renderRedirect()}
+                  
                   <button
                     className="btn-bol contenedor-icon"
-                    onClick={this.setRedirect}
+                    /*onClick={this.setRedirect}*/
                   >
                     <i className="material-icons  md-18">open_in_new</i>
                   </button>
                 </div>
               </div>
-              <div className="digsn-dash ">
-                <div className="circulo-boletin2"></div>
-                <p className="p-boletines">B-01 | Punto sur- CCTV</p>
+              <div className="digsn-dash">
+                  <div className="circulo-boletin2"></div>
+                  <p className="p-boletines"></p>
+                <p></p>
                 <div className="contenedor-icon">
-                  {this.renderRedirect()}
+                  
                   <button
                     className="btn-bol contenedor-icon"
-                    onClick={this.setRedirect}
-                  >
-                    <i className="material-icons  md-18">open_in_new</i>
-                  </button>
-                </div>
-              </div>
-              <div className="digsn-dash disgn ">
-                <div className="circulo-boletin"></div>
-                <p className="p-boletines">B-02 | Andares-Plaza comercial </p>
-                <div className="contenedor-icon">
-                  {this.renderRedirect()}
-                  <button
-                    className="btn-bol contenedor-icon"
-                    onClick={this.setRedirect}
-                  >
-                    <i className="material-icons  md-18">open_in_new</i>
-                  </button>
-                </div>
-              </div>
-              <div className="digsn-dash disgn disgn1">
-                <div className="circulo-boletin2"></div>
-                <p className="p-boletines">B-03 | Hines-Control de accesos</p>
-                <div className="contenedor-icon">
-                  {this.renderRedirect()}
-                  <button
-                    className="btn-bol contenedor-icon"
-                    onClick={this.setRedirect}
+                    /*onClick={this.setRedirect}*/
                   >
                     <i className="material-icons  md-18">open_in_new</i>
                   </button>
@@ -126,26 +119,22 @@ class Dashboard extends Component {
             </div>
             <div className="grid-proyectos grids-dash">
               <h4 className="h4">Mis proyectos</h4>
-              <div className="digsn-dash digsn-dash2">
-                <p className="p-boletines">Casa cuervo-La rioja</p>
-              </div>
-              <div className="digsn-dash digsn-dash2">
-                <p className="p-boletines">Punto sur- CVTV</p>
-              </div>
-              <div className="digsn-dash2 disgn disgn1">
-                <p className="p-boletines">Andares-Plaza comercial </p>
-              </div>
-              <div className="digsn-dash2 disgn ">
-                <p className="p-boletines">Hines-Control de accesos</p>
-              </div>
+              
+                {projectsData && projectsData.map((project) => (
+                  <div className="digsn-dash digsn-dash2">
+                    <div className="circulo-boletin2"></div>
+                  <p className="p-boletines">{project.name}</p>
+                  </div>
+                ))}
+                
             </div>
           </div>
 
           <div className="boletines-general">
             <div className="contenedor-Bgeneral">
               <div className="conteiner-encabezado">
-                {this.renderRedirectList()}
-                <button className="redirectList" onClick={this.setRedirectList}>
+                
+                <button className="redirectList" /*onClick={this.setRedirectList}*/>
                   <h4 className="h4-list h4">Listado Boletines</h4>
                 </button>
               </div>
@@ -153,76 +142,26 @@ class Dashboard extends Component {
               <div className="conteiner-bol-gen">
                 <div className="bol-gen">
                   <p className="p-bol-gen">
-                    <strong>B-00</strong>
+                    <strong></strong>
                     <br />
-                    Proyecto: Casa cuervo
+                    
                     <br />
-                    Problema: CCTV
+                    
                   </p>
-                  {this.renderRedirect()}
-                  <button className="btn-bol" onClick={this.setRedirect}>
+                  
+                  <button className="btn-bol" onClick={renderRedirect}>
                     <i className="material-icons  md-18">open_in_new</i>
                   </button>
                 </div>
-                <div className="bol-gen bol">
-                  <p className="p-bol-gen">
-                    <strong>B-02</strong>
-                    <br />
-                    Proyecto: Punto sur
-                    <br />
-                    Problema: Control
-                  </p>
-                  {this.renderRedirect()}
-                  <button className="btn-bol" onClick={this.setRedirect}>
-                    <i className="material-icons  md-18">open_in_new</i>
-                  </button>
-                </div>
-                <div className="bol-gen bol">
-                  <p className="p-bol-gen">
-                    <strong>B-03</strong>
-                    <br />
-                    Proyecto: Hines
-                    <br />
-                    Problema: CCTV
-                  </p>
-                  {this.renderRedirect()}
-                  <button className="btn-bol" onClick={this.setRedirect}>
-                    <i className="material-icons  md-18">open_in_new</i>
-                  </button>
-                </div>
-                <div className="bol-gen bol">
-                  <p className="p-bol-gen">
-                    <strong>B-04</strong>
-                    <br />
-                    Proyecto: Casa cuervo
-                    <br />
-                    Problema: CCTV
-                  </p>
-                  {this.renderRedirect()}
-                  <button className="btn-bol" onClick={this.setRedirect}>
-                    <i className="material-icons  md-18">open_in_new</i>
-                  </button>
-                </div>
-                <div className="bol-gen bol bol5">
-                  <p className="p-bol-gen">
-                    <strong>B-05</strong>
-                    <br />
-                    Proyecto: Punto sur
-                    <br />
-                    Problema: Control
-                  </p>
-                  {this.renderRedirect()}
-                  <button className="btn-bol" onClick={this.setRedirect}>
-                    <i className="material-icons  md-18">open_in_new</i>
-                  </button>
+
+                  
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     );
   }
-}
 
 export default Dashboard;
