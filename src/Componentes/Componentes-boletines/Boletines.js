@@ -8,7 +8,6 @@ const Boletines = (props) => {
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
   const [projectData, setProjectData] = useState(undefined);
-  const [clientData, setClientData] = useState(undefined);
   const [systemData, setSystemData] = useState(undefined);
   const [deviceData, setDeviceData] = useState(undefined);
   const [userData, setUserData] = useState(undefined);
@@ -21,14 +20,6 @@ const Boletines = (props) => {
       });
     }
   }, [projectData]);
-
-  useEffect(() => {
-    if (clientData === undefined) {
-      axios.get("http://localhost:3000/api/customers").then(function(res) {
-       setClientData(res.data.data)
-      });
-    }
-  }, [clientData]);
 
   useEffect(() => {
     if (systemData === undefined) {
@@ -103,7 +94,7 @@ const Boletines = (props) => {
       title: formValues.title,
       folio: formValues.folio,
       project: formValues.project,
-      client: formValues.cliente,
+      costumer: formValues.costumer,
       createDate: formValues.createDate,
       system: formValues.sistema,
       description:  formValues.description,
@@ -151,7 +142,7 @@ const Boletines = (props) => {
       <div className="contenido section ">
         {/*se pasa la función de handleChange como prop al componente de FormBoletines */}
         <FormBoletines handleChange={handleChange} handleSubmit={handleSubmit} projectData={projectData} 
-        clientData={clientData} systemData={systemData} deviceData={deviceData} userData={userData}/>
+         systemData={systemData} deviceData={deviceData} userData={userData}/>
       </div>
     </div>
   );

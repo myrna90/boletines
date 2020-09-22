@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, us } from "react";
 
 const FormStepTwo = (props) => {
   const { handleChange } = props;
-  const { projectData, clientData, systemData } = props;
+  const { projectData, systemData } = props;
 
   const [formProyecto, setFormProyecto] = useState({
     project: "",
     client: "",
     createDate: "",
     system: "",
+    customer: undefined
   });
 
   return (
@@ -49,18 +50,16 @@ const FormStepTwo = (props) => {
         </div>
 
         {/*Input client */}
-        <label className="label label2">Cliene</label>
+        <label className="label label2">Cliente</label>
         <select
           className="input input2"
-          name="client"
-          defaultValue={formProyecto.client}
+          name="customer"
+          defaultValue={formProyecto.customer}
           onChange={(e) => handleChange(e)}
           required
         >
           <option>-</option>
-          {clientData && clientData.map((client) => (
-            <option value={client._id}>{client.name}</option>
-          ))}
+          {projectData ? projectData.find(customer => customer._id === projectData.customer).customer: ''}
         </select>
 
         {/*Input fecha */}
