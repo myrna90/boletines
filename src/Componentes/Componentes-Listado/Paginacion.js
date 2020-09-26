@@ -13,7 +13,6 @@ const Paginacion = () => {
     currentBoletines: undefined,
     pageNumber: [],
     projects: undefined,
-    systems: undefined
   };
 
   const boletinesReducer = (state, action) => {
@@ -56,11 +55,6 @@ const Paginacion = () => {
           ...state,
           projects: action.projects,
         };
-        case "FETCH_SYSTEMS":
-          return {
-            ...state,
-            systems: action.systems
-          }
 
       default:
         return { state };
@@ -80,18 +74,11 @@ const Paginacion = () => {
   useEffect(() => {
     if (state.projects === undefined) {
       axios.get("http://localhost:3000/api/projects").then(function(res) {
-        dispatch({ type: "FETCH_PROJECTS", projects: res.data.data });
+        dispatch({ type: "FETCH_PROJECTS", projects: res.data.data.name });
       });
+      console.log("Projects", state.projects);
     }
   }, [state.projects]);
-
-  useEffect(() => {
-    if (state.systems === undefined) {
-      axios.get("http://localhost:3000/api/systems").then(function(res) {
-       dispatch({ type: "FETCH_SYSTEMS", systems: res.data.data })
-      });
-    }
-  }, [state.systems]);
 
   useEffect(() => {
     if (state.currentPage && state.boletinesPerPage) {
@@ -141,6 +128,8 @@ const Paginacion = () => {
     }
   }, [state.boletines, state.boletinesPerPage]);
 
+  console.log(state);
+
   const handleClick = (e) => {
     dispatch({ type: "SET_CURRENT_PAGE", currentPage: e.target.id });
   };
@@ -186,11 +175,9 @@ const Paginacion = () => {
                     {/*en fecha va proyecto y en descripcion va sistema corregir */}
                    
                     <td>
-                    { state.projects ? state.projects.find(project => project._id === boletines.project).name: ''}
+                    { /*state.projects ? state.projects.find(project => project._id === boletines.project).name: ''*/}
                     </td>
-                    <td>
-                    {/*state.systems ? state.systems.find(system => system._id === boletines.system).name: ''*/}
-                    </td>
+                    <td></td>
                     <td>
                       {renderRedirect()}
                       <button className="btn-list" onClick={handleRedirect}>

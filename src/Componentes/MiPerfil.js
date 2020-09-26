@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
+import AuthService from "../Componentes/Componentes-login/service/auth.service";
 
 const MiPerfil = () => {
-  
+  const currentUser = AuthService.getCurrentUser();
  
   return (
     
@@ -25,14 +26,14 @@ const MiPerfil = () => {
             <span class="material-icons md-51">account_circle</span>
           </div>
           <div className="div-nombre">
-            <h4 className="h4-nombre">Myrna Mares</h4>
+            <h4 className="h4-nombre">{currentUser.name}</h4>
             <h5 className="h5-area">Ingenieria</h5>
           </div>
         </div>
         <div className="div-info">
           <div className="correo-time correo">
             <span class="material-icons md-25">email</span>
-            <p className="p-correo-time">mmares@telenetdemexico.com</p>
+            <p className="p-correo-time">{currentUser.email}</p>
           </div>
           <div className="correo-time time">
             <span class="material-icons md-25">restore</span>

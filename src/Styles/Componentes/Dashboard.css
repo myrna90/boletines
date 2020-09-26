@@ -143,6 +143,11 @@
   color: var(--color-texts);
 }
 
+.p-boletines-2 {
+  margin-left: 1em;
+  color: var(--color-texts);
+}
+
 .p-boletines:hover {
   color: var(--color-boton);
 }

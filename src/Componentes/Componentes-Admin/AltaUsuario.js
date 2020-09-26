@@ -10,10 +10,23 @@ const AltaUsuario = (props) => {
     email: "",
     password: "",
     username: "",
-    //role: "",
+    role: "",
     //area: ""
   });
 
+  const isAdmin = (event) => {
+    const { name: role, value } = event.target;
+    setFormUsuario({ 
+      ...formUsuario,
+      [role]: value 
+    });
+    if(value === "Administrador"){
+      return true
+    }
+    else{
+      return false
+    }
+  }
   return (
     <div className="div div-usuario">
       <div className="conteiner-numero numero-div1">
@@ -64,12 +77,16 @@ const AltaUsuario = (props) => {
           required
         ></input>
         <label className="label-admin label-usuario-6">Rol</label>
-        <input
+        <select
           className="input-admin input-usuario-6"
           name="role"
           defaultValue={formUsuario.role}
           onChange={(e) => handleChange(e)}
-        ></input>
+        >
+          <option>-</option>
+          <option handleChange={(e) => isAdmin(e)} value="Administrador">Administrador</option>
+          <option handleChange={(e) => isAdmin(e)} value="Usuario">Usuario</option>
+        </select>
         <label className="label-admin label-usuario-7">Área</label>
         <input
           className="input-admin input-usuario-7"
