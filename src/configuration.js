@@ -1,0 +1,4 @@
+//REACT_APP_API_BASE_URL=$API_BASE_URL
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+export const ADMIN_TOKEN = process.env.REACT_APP_ADMIN_API_KEY_TOKEN;

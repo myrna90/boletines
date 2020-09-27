@@ -1,7 +1,8 @@
 import axios from "axios";
 import authHeader from "./auth-header";
+import {API_BASE_URL} from "../../../configuration";
 
-const API_URL = "http://localhost:3000/api/newsletters";
+const API_URL = `${API_BASE_URL}/api/newsletters`;
 
 const getPublicContent = () => {
   return axios.get(API_URL + "all");

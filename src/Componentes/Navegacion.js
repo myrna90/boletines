@@ -13,27 +13,27 @@ const Navegacion = () => (
     {/**/}
     <Route
       exact
-      path="/Vista/Dashboard"
+      path="/vista/dashboard"
       component={Dashboard}
      
     />
     <Route
-      path="/Vista/Boletines"
+      path="/vista/boletines"
       component={Boletines}
       
     />
-    <Route path="/Vista/Listado" component={Listado}  />
+    <Route path="/vista/listado" component={Listado}  />
     <Route
-      path="/Vista/View"
+      path="/vista/view"
       component={BoletinesView}
       
     />
     <Route
-      path="/Vista/MiPerfil"
+      path="/vista/miperfil"
       component={MiPerfil}
       
     />
-    <Route path="/Vista/Admin" 
+    <Route path="/vista/admin" 
     component={Admin}  
     />
     {/*<Route component={PageNotFound}/>*/}

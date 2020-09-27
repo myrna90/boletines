@@ -14,6 +14,7 @@ import Login from "../Componentes/Componentes-login/Login";
 import Vista from "./Vista";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 //import PageNotFound from './Componente-pageNotFound/PageNotFound';
+import history from '../history';
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
     <div>
       <Router>
         <Route exact path="/" component={Login} />
-        <Route path="/Vista">
-          <Vista />
+        <Route path="/vista">
+          <Vista/>
         </Route>
       </Router>
     </div>

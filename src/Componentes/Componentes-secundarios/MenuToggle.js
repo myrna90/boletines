@@ -47,23 +47,23 @@ const MenuToggle = (props) => {
               <img ref={hide} src={LogoW2} className="logoW-content" />
             </div>
             <div className="div-link">
-              <Link to="/Vista/Dashboard" className="Link L-dashboard">
+              <Link to="/vista/dashboard" className="Link L-dashboard">
                 <i className="material-icons md-24">dashboard</i>
                 <div className="textMenu">Dashboard</div>
               </Link>
-              <Link to="/Vista/Boletines" className="Link L-boletines">
+              <Link to="/vista/boletines" className="Link L-boletines">
                 <span className="material-icons md-24">add_circle</span>
                 <div className="textMenu">Crear Boletin</div>
               </Link>
-              <Link to="/Vista/Listado" className="Link L-listado">
+              <Link to="/vista/listado" className="Link L-listado">
                 <span className="material-icons md-24">view_list</span>
                 <div className="textMenu">Listado boletines</div>
               </Link>
-              <Link to="/Vista/MiPerfil" className="Link L-miperfil">
+              <Link to="/vista/miperfil" className="Link L-miperfil">
                 <i className="material-icons md-24">person</i>
                 <div className="textMenu">Mi Perfil</div>
               </Link>
-              <Link to="/Vista/Admin" className="Link L-admin">
+              <Link to="/vista/admin" className="Link L-admin">
               <span className="material-icons md-24">admin_panel_settings</span>
                 <div className="textMenu">Administración</div>
               </Link>

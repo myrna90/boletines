@@ -3,6 +3,7 @@ import ImgPersonas from "../imgs/img-login.png";
 import { Link } from "react-router-dom";
 import React, { useState, useRef } from "react";
 import AuthService from "./service/auth.service";
+import history from "../../history";
 
 const Sesion = (props) => {
 
@@ -21,6 +22,7 @@ const Sesion = (props) => {
     }
   };
 
+
   const onChangeemail = (e) => {
     const email = e.target.value;
     setemail(email);
@@ -36,11 +38,11 @@ const Sesion = (props) => {
 
     setMessage("");
     setLoading(true);
-
+    
     //form.current.validateAll();
       AuthService.login(email, password).then(
         () => {
-          props.history.push("/MiPerfil");
+          history.push("/vista/miperfil");
           window.location.reload();
         },
         (error) => {
@@ -76,14 +78,14 @@ const Sesion = (props) => {
           {/*div para introducir email */}
           <div className="form-group conten-inputs">
             <label className="text-login text-user" htmlFor="user">
-              Nombre de usuario:
+              Email:
             </label>
             <input
               required
               type="text"
               className="input-login"
               name="user"
-              placeholder="Myrna Mares"
+              placeholder="devteam@telenetdemexico.com"
               value={email}
               onChange={onChangeemail}
               validations={[required]}
