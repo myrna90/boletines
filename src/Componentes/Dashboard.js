@@ -12,24 +12,6 @@ const Dashboard = (props) => {
   const [projectsData, setProjectsData] = useState(undefined);
   const [newslettersData, setNewslettersData] = useState(undefined);
 
-  const [content, setContent] = useState("");
-
-  useEffect(() => {
-    UserService.getPublicContent().then(
-      (response) => {
-        setContent(response.data);
-      },
-      (error) => {
-        const _content =
-          (error.response && error.response.data) ||
-          error.message ||
-          error.toString();
-
-        setContent(_content);
-      }
-    );
-  }, []);
-
   useEffect(() => {
     if (projectsData === undefined) {
       axios.get("http://localhost:3000/api/projects").then(function(res) {

@@ -16,14 +16,13 @@ const login = (email, password) => {
       }
     })
     .then((res) => {
-      if (res.data.accessToken) {
+      if (res.data.token) {
         localStorage.setItem("user", JSON.stringify(res.data));
       }
       return res.data;
     });
     
 };
-
 
 const logout = () => {
   localStorage.removeItem("user");

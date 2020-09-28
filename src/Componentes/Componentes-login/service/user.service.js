@@ -5,24 +5,19 @@ import {API_BASE_URL} from "../../../configuration";
 const API_URL = `${API_BASE_URL}/api/newsletters`;
 
 const getPublicContent = () => {
-  return axios.get(API_URL + "all");
+  return axios.get(API_URL + "/");
 };
 
 const getUserBoard = () => {
-  return axios.get(API_URL + "user", { headers: authHeader() });
-};
-
-const getModeratorBoard = () => {
-  return axios.get(API_URL + "mod", { headers: authHeader() });
+  return axios.get(API_URL + "vista", { headers: authHeader() });
 };
 
 const getAdminBoard = () => {
-  return axios.get(API_URL + "admin", { headers: authHeader() });
+  return axios.get(API_URL + "vista/admin", { headers: authHeader() });
 };
 
 export default {
   getPublicContent,
   getUserBoard,
-  getModeratorBoard,
   getAdminBoard,
 };

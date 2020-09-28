@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
 import AuthService from "../Componentes/Componentes-login/service/auth.service";
 
-const MiPerfil = () => {
+const MiPerfil = (props) => {
  
+  //const currentUser = AuthService.getCurrentUser();
+
   return (
     
     <div className="conteiner contenedor-perfil">
@@ -27,6 +29,7 @@ const MiPerfil = () => {
           <div className="div-nombre">
             <h4 className="h4-nombre"></h4>
             <h5 className="h5-area">Ingenieria</h5>
+            <p></p>
           </div>
         </div>
         <div className="div-info">
