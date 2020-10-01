@@ -8,7 +8,7 @@ export default (props) => {
     <div className="div-steps">
       <div className="steps step1">
         <p className={currentForm === "1" ? "is-form-selected" : ""}>
-          1. Folio
+          1. Título
         </p>
       </div>
       <div className="steps step2">

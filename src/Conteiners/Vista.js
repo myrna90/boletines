@@ -14,10 +14,6 @@ const Vista = () => {
     }
   }, []);
 
-  const logOut = () => {
-    AuthService.logout();
-  };
-
   
     return (
       <div className="conteiner">

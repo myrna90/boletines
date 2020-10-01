@@ -1,15 +1,18 @@
-import React, { useState, us } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import { API_BASE_URL } from '../../../configuration';
+import AuthService from '../../Componentes-login/service/auth.service';
 
 const FormStepTwo = (props) => {
-  const { handleChange } = props;
-  const { projectData, systemData } = props;
+  const { handleChange, projectData, systemData, customerData } = props;
+  const token = AuthService.getCurrentUser();
 
   const [formProyecto, setFormProyecto] = useState({
     project: "",
     client: "",
     createDate: "",
     system: "",
-    customer: undefined
+    customer: ""
   });
 
   return (
@@ -59,7 +62,11 @@ const FormStepTwo = (props) => {
           required
         >
           <option>-</option>
-          {projectData ? projectData.find(customer => customer._id === projectData.customer).customer: ''}
+          {customerData && customerData.map((customer) => (
+            <option value={customer._id}>{customer.name}</option>
+          ))
+          }
+          {/*projectData ? projectData.find(customer => customer._id === projectData.customer).customer: ''*/}
         </select>
 
         {/*Input fecha */}

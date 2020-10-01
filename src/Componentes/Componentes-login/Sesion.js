@@ -6,7 +6,6 @@ import AuthService from "./service/auth.service";
 import history from "../../history";
 
 const Sesion = (props) => {
-
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,7 +20,6 @@ const Sesion = (props) => {
       );
     }
   };
-
 
   const onChangeemail = (e) => {
     const email = e.target.value;
@@ -38,25 +36,23 @@ const Sesion = (props) => {
 
     setMessage("");
     setLoading(true);
-    
-    //form.current.validateAll();
-      AuthService.login(email, password).then(
-        () => {
-          history.push("/vista/miperfil");
-          window.location.reload();
-        },
-        (error) => {
-          const resMessage =
-            (error.res &&
-              error.res.data &&
-              error.res.data.message) ||
-            error.message ||
-            error.toString();
 
-          setLoading(false);
-          setMessage(resMessage);
-        }
-      );
+    //form.current.validateAll();
+    AuthService.login(email, password).then(
+      () => {
+        history.push("/vista/dashboard");
+        window.location.reload();
+      },
+      (error) => {
+        const resMessage =
+          (error.res && error.res.data && error.res.data.message) ||
+          error.message ||
+          error.toString();
+
+        setLoading(false);
+        setMessage(resMessage);
+      }
+    );
   };
 
   const btnForgot = () => {
@@ -117,7 +113,7 @@ const Sesion = (props) => {
 
           {/*div para recordar usuario */}
 
-          <div className="custom-control custom-checkbox">
+          {/*<div className="custom-control custom-checkbox">
             <input
               type="submit"
               className="custom-control-input"
@@ -126,7 +122,7 @@ const Sesion = (props) => {
             <label className="custom-control-label" htmlFor="customCheck1">
               Recordarme
             </label>
-          </div>
+          </div>*/}
           {message && (
             <div className="form-group">
               <div className="alert alert-danger" role="alert">
@@ -134,7 +130,7 @@ const Sesion = (props) => {
               </div>
             </div>
           )}
-          <BtnLogin/>
+          <BtnLogin />
           <p className="forgot-password text-right">
             Olvidaste tu{" "}
             <Link className="a-forgot" onClick={btnForgot}>

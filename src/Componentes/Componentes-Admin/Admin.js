@@ -5,10 +5,14 @@ import AltaSistema from './AltaSistema';
 import AltaUsuario from './AltaUsuario';
 import AltaDevice from './AltaEquipo';
 import axios from 'axios';
+import {API_BASE_URL} from '../../configuration';
+import  AuthService from '../Componentes-login/service/auth.service';
 
-const Admin = (props) => {
+const Admin = (props) => {  
 const [formValues, setFormValues] = useState({});
 const [clientProjectData, setClientProjectData] = useState(undefined);
+const token = AuthService.getCurrentUser();
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormValues({ 
@@ -17,10 +21,17 @@ const [clientProjectData, setClientProjectData] = useState(undefined);
     });
   };
 
+  const customerGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/api/customers`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
   
   useEffect(() => {
     if (clientProjectData === undefined) {
-      axios.get("http://localhost:3000/api/customers").then(function(res) {
+      axios(customerGet).then(function(res) {
        setClientProjectData(res.data.data)
       });
     }
@@ -32,7 +43,7 @@ const [clientProjectData, setClientProjectData] = useState(undefined);
       name: formValues.name,
       location: formValues.location
     }
-    axios.post('http://localhost:3000/api/customers', client)
+    axios.post(`${API_BASE_URL}/api/customers`, client, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })
@@ -48,9 +59,10 @@ const [clientProjectData, setClientProjectData] = useState(undefined);
       status: true,
       startDate: formValues.startDate,
       endDate: formValues.endDate, 
-      customer: formValues.customer
+      customer: formValues.customer,
+      users: formValues.users
     }
-    axios.post('http://localhost:3000/api/projects', project)
+    axios.post(`${API_BASE_URL}/api/projects`, project, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })
@@ -64,7 +76,7 @@ const [clientProjectData, setClientProjectData] = useState(undefined);
     const system = {
       name: formValues.name
     }
-    axios.post('http://localhost:3000/api/systems', system)
+    axios.post(`${API_BASE_URL}/api/systems`, system, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })
@@ -82,7 +94,7 @@ const [clientProjectData, setClientProjectData] = useState(undefined);
       email: formValues.email,
       password: formValues.password
     }
-    axios.post('http://localhost:3000/api/users', user)
+    axios.post(`${API_BASE_URL}/api/users`, user, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })
@@ -98,7 +110,7 @@ const [clientProjectData, setClientProjectData] = useState(undefined);
       brand: formValues.brand,
       model: formValues.model
     }
-    axios.post('http://localhost:3000/api/devices', system)
+    axios.post(`${API_BASE_URL}/api/devices`, system, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })

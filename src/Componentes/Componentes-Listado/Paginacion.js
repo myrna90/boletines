@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useReducer } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
-import {arrayToObject} from '../../utils/utils';
+import { API_BASE_URL } from '../../configuration';
+import AuthService from '../../Componentes/Componentes-login/service/auth.service';
 
-const Paginacion = () => {
+const Paginacion = (props) => {
+  
   const initialState = {
     boletines: undefined,
     currentPage: 1,
@@ -14,6 +16,26 @@ const Paginacion = () => {
     pageNumber: [],
     projects: undefined,
   };
+
+  const token = AuthService.getCurrentUser();
+console.log('token:', token.token);
+  const projectsGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/api/projects`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
+
+  const newsGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/api/newsletters`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
+
+ 
 
   const boletinesReducer = (state, action) => {
     switch (action.type) {
@@ -43,7 +65,6 @@ const Paginacion = () => {
           currentPage: action.currentPage,
         };
       case "FETCH_BOLETINES":
-        console.log("action entrando...", action);
         return {
           ...state,
           boletines: action.boletines,
@@ -65,20 +86,25 @@ const Paginacion = () => {
 
   useEffect(() => {
     if (state.boletines === undefined) {
-      axios.get("http://localhost:3000/api/newsletters").then(function(res) {
+      axios(newsGet)
+      .then(function(res) {
         dispatch({ type: "FETCH_BOLETINES", boletines: res.data.data });
       });
     }
   }, [state.boletines]);
 
+  
+
   useEffect(() => {
     if (state.projects === undefined) {
-      axios.get("http://localhost:3000/api/projects").then(function(res) {
-        dispatch({ type: "FETCH_PROJECTS", projects: res.data.data.name });
+      axios(projectsGet)
+      .then(function(res) {
+        dispatch({ type: "FETCH_PROJECTS", projects: res.data.data });
       });
-      console.log("Projects", state.projects);
     }
   }, [state.projects]);
+
+  console.log('resp:', state.projects);
 
   useEffect(() => {
     if (state.currentPage && state.boletinesPerPage) {
@@ -128,7 +154,6 @@ const Paginacion = () => {
     }
   }, [state.boletines, state.boletinesPerPage]);
 
-  console.log(state);
 
   const handleClick = (e) => {
     dispatch({ type: "SET_CURRENT_PAGE", currentPage: e.target.id });
@@ -137,7 +162,7 @@ const Paginacion = () => {
   const [redirection, setRedirection] = useState(false);
   const renderRedirect = () => {
     if (redirection) {
-      return <Redirect to="/Vista/View" />;
+      return <Redirect to="/vista/view" />;
     }
   };
 
@@ -175,7 +200,7 @@ const Paginacion = () => {
                     {/*en fecha va proyecto y en descripcion va sistema corregir */}
                    
                     <td>
-                    { /*state.projects ? state.projects.find(project => project._id === boletines.project).name: ''*/}
+                    { /*state.projects ? state.projects.find(project => project._id === boletines.project).name: '' */} 
                     </td>
                     <td></td>
                     <td>

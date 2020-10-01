@@ -1,18 +1,23 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
+import { API_BASE_URL } from '../../configuration';
+import AuthService from '../Componentes-login/service/auth.service';
 
 const AltaProyecto = (props) => {
   const { handleChange, submitProject } = props;
   const { clientProjectData } = props;
+  const token = AuthService.getCurrentUser();
 
   const [formProyecto, setFormProyecto] = useState({
     nameProject: "",
     startDate: "",
     endDate: "",
     status: "",
-    customer: ""
+    customer: "",
+    users: ""
   });
 
+  
 
   return (
     <div className="div div-proyecto">

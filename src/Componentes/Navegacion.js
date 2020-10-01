@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "../Componentes/Dashboard";
 import Boletines from "../Componentes/Componentes-boletines/Boletines";

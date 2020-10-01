@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const FormStepOne = (props) => {
   const { handleChange } = props;
 
-  const [formFolio, setFormFolio] = useState({ folio: "", title: "" });
+  const [formFolio, setFormFolio] = useState({ title: "" });
 
   return (
     /*parte del fomulario para llenar folio */
@@ -20,14 +20,6 @@ const FormStepOne = (props) => {
           className="input input-div1"
           name="title"
           defaultValue={formFolio.titulo}
-          onChange={(e) => handleChange(e)}
-          required
-        ></input>
-        <label className="label label-div2-folio">Numero de folio</label>
-        <input
-          className="input input-div2-folio"
-          name="folio"
-          defaultValue={formFolio.folio}
           onChange={(e) => handleChange(e)}
           required
         ></input>

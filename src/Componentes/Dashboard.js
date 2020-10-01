@@ -2,19 +2,38 @@ import React, { useState, useEffect } from "react";
 import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
 import { Redirect } from "react-router";
 import axios from "axios";
-import UserService from "../Componentes/Componentes-login/service/user.service";
+import { API_BASE_URL } from '../configuration';
+import AuthService from '../Componentes/Componentes-login/service/auth.service';
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
 se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
 const Dashboard = (props) => {
   const { renderRedirect } = props;
-
   const [projectsData, setProjectsData] = useState(undefined);
   const [newslettersData, setNewslettersData] = useState(undefined);
+  const token = AuthService.getCurrentUser();
+ 
+  const projectsGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/api/projects`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
+
+  const newsGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/api/newsletters`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
 
   useEffect(() => {
+    
     if (projectsData === undefined) {
-      axios.get("http://localhost:3000/api/projects").then(function(res) {
+      axios(projectsGet)
+      .then(function(res) {
         setProjectsData(res.data.data);
       });
     }
@@ -22,7 +41,8 @@ const Dashboard = (props) => {
 
   useEffect(() => {
     if (newslettersData === undefined) {
-      axios.get("http://localhost:3000/api/newsletters").then(function(res) {
+      axios(newsGet)
+      .then(function(res) {
         setNewslettersData(res.data.data);
       });
     }
@@ -42,13 +62,13 @@ const Dashboard = (props) => {
 
   renderRedirectList = () => {
     if (this.state.redirectList) {
-      return <Redirect to="/Vista/Listado" />;
+      return <Redirect to="/vista/listado" />;
     }
   };
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to="/Vista/View" />;
+      return <Redirect to="/vista/view" />;
     }
   };*/
 

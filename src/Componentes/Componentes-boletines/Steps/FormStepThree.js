@@ -9,47 +9,10 @@ const FormStepThree = (props) => {
     brand: "",
     model: "",
     description: "",
-    imgProblema: "",
+    //imgProblema: "",
     solution: "",
-    imgSolucion: ""
+    //imgSolucion: ""
   });
-
-  const [image, setImage] = useState({ file: "", imagePreview: "" });
-  const [imageTwo, setImageTwo] = useState({ fileTwo: "", imagePreviewSol: "" });
-
-  const handleImageChange = (e) => {
-    e.preventDefault();
-
-    let reader = new FileReader();
-    let file = e.target.files[0];
-
-    reader.onloadend = () => {
-      setImage({
-        file,
-        imagePreview: reader.result,
-      });
-    };
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleImageChangeTwo = (e) => {
-    e.preventDefault();
-
-    let reader = new FileReader();
-    let fileTwo = e.target.files[0];
-
-    reader.onloadend = () => {
-      setImageTwo({
-        fileTwo,
-        imagePreviewSol: reader.result,
-      });
-    };
-    if (fileTwo) {
-      reader.readAsDataURL(fileTwo);
-    }
-  };
 
   return (
     /*parte del formulario para descripcion y solución del problema */
@@ -90,50 +53,7 @@ const FormStepThree = (props) => {
           ></textarea>
         </div>
 
-        {/*Div contenido espacio imagen problema */}
-        <div className="contenForm conten-img">
-          <label htmlFor="myuniqueid" className="label label-img">
-            Problema imagen
-          </label>
-          <div className=" conten-export-img">
-            {image.imagePreview ? (
-              <img src={image.imagePreview} className="imgExport" />
-            ) : (
-              <div>
-            <input
-              id="myuniqueid"
-              type="file"
-              name="pictureName"
-              className="inputimg"
-              onChange={(e) => handleImageChange(e)}
-              
-            />
-          </div>
-            )}
-          </div>
-        </div>
-        {/*Div contenido espacio imagen solución */}
-        <div className="contenForm conten-img2">
-          <label htmlFor="myuniqueid2" className="label label-img">
-            Solución imagen
-          </label>
-          <div className=" conten-export-img">
-          {imageTwo.imagePreviewSol ? (
-              <img src={imageTwo.imagePreviewSol} className="imgExport" />
-            ) : (
-              <div >
-            <input
-              id="myuniqueid2"
-              type="file"
-              name="pictureName"
-              className="inputimg"
-              onChange={(e) => handleImageChangeTwo(e)}
-              
-            />
-          </div>
-            )}
-          </div>
-        </div>
+       
 
         {/*Div contenido inputs equipo, modelo, marca */}
         <div className="content-inputs">
@@ -213,58 +133,3 @@ const FormStepThree = (props) => {
 
 export default FormStepThree;
 
-/*const upImage = useRef({ imagProb: '', imagSolu: '' });
-
-   imgUp = () => {
-        const file = this.refs.uploadImg.files[0]
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-            upImage({
-                imagProb: reader.result
-            })
-        }
-        if (file) {
-            reader.readAsDataURL(file);
-            upImage({
-                imagProb: reader.result
-            })
-        }
-        else {
-            upImage({
-                imagProb: ""
-            })
-        }
-    }
-
-    const imgUp2 = () => {
-
-        const file = this.refs.uploadImg2.files[0]
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-            this.setState({
-                imagSolu: reader.result
-            })
-        }
-        if (file) {
-            reader.readAsDataURL(file);
-            this.setState({
-                imagSolu: reader.result
-            })
-        }
-        else {
-            this.setState({
-                imagSolu: ""
-            })
-        }
-    }
-
-    const changeInput = (event) => {
-        const file = event.target.files[0]
-      
-        // User cancelled
-        if (!file) {
-          return
-        }
-    }*/

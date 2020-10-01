@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import FormBoletines from "./FormBoletines";
 import Steps from "./Steps";
 import axios from 'axios';
+import AuthService from '../Componentes-login/service/auth.service';
+import { API_BASE_URL } from '../../configuration';
 
 const Boletines = (props) => {
 
@@ -11,19 +13,69 @@ const Boletines = (props) => {
   const [systemData, setSystemData] = useState(undefined);
   const [deviceData, setDeviceData] = useState(undefined);
   const [userData, setUserData] = useState(undefined);
+  const [customerData, setCustomerData] = useState(undefined);
+  const token = AuthService.getCurrentUser();
+
+  const projectsGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/api/projects`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
+
+  const customerGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/api/customers`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
+
+  const devicesGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/api/devices`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
+
+  const systemsGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/api/systems`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
+
+  const usersGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/api/users`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
 
   /*Mandamos a llamar el arreglo de objetos de los projectos desde el API */
   useEffect(() => {
     if (projectData === undefined) {
-      axios.get("http://localhost:3000/api/projects").then(function(res) {
+      axios(projectsGet).then(function(res) {
        setProjectData(res.data.data)
       });
     }
   }, [projectData]);
 
   useEffect(() => {
+    if (customerData === undefined) {
+      axios(customerGet).then(function(res) {
+       setCustomerData(res.data.data)
+      });
+    }
+  }, [customerData]);
+
+  useEffect(() => {
     if (systemData === undefined) {
-      axios.get("http://localhost:3000/api/systems").then(function(res) {
+      axios(systemsGet).then(function(res) {
        setSystemData(res.data.data)
       });
     }
@@ -31,7 +83,7 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (deviceData === undefined) {
-      axios.get("http://localhost:3000/api/devices").then(function(res) {
+      axios(devicesGet).then(function(res) {
        setDeviceData(res.data.data)
       });
     }
@@ -39,7 +91,7 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (userData === undefined) {
-      axios.get("http://localhost:3000/api/users").then(function(res) {
+      axios(usersGet).then(function(res) {
        setUserData(res.data.data)
       });
     }
@@ -92,11 +144,10 @@ const Boletines = (props) => {
     })
     const boletin = {
       title: formValues.title,
-      folio: formValues.folio,
       project: formValues.project,
-      costumer: formValues.costumer,
+      custumer: formValues.custumer,
       createDate: formValues.createDate,
-      system: formValues.sistema,
+      system: formValues.system,
       description:  formValues.description,
       pictureName: formValues.pictureName,
       solution: formValues.solution,
@@ -108,7 +159,7 @@ const Boletines = (props) => {
       //department: formValues.departamento
       status: true
     }
-    axios.post('http://localhost:3000/api/newsletters', boletin) 
+    axios.post(`${API_BASE_URL}/api/newsletters`, boletin, { headers: {"Authorization" : `Bearer ${token.token}`} }) 
     .then((res) => {
       console.log(res);
     })

@@ -8,7 +8,7 @@ function UsuarioCabecera(props) {
   return (
     <div className="conteiner-usuario">
       <i className="material-icons md-12">person</i>
-      <p className="input-usuario">{currentUser.username}</p>
+      <p className="input-usuario">{currentUser.user.email}</p>
     </div>
   );
 }

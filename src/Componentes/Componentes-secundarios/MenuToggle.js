@@ -1,6 +1,7 @@
 import React, { useState, createRef  } from "react";
 import { Link, Redirect } from "react-router-dom";
 import LogoW2 from "../imgs/logotnW2.png";
+import AuthService from '../Componentes-login/service/auth.service'
 
 const MenuToggle = (props) => {
 
@@ -17,12 +18,17 @@ const MenuToggle = (props) => {
           hide.current.style.display = "unset";
         }
       }
+
+      
+  const logOut = () => {
+    AuthService.logout();
+  };
     
      const redirectLink = () => {
         setLink({
           redirect: true,
         });
-        localStorage.clear("user");
+        logOut();
       };
     
      const renderRedirect = () => {

@@ -1,17 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
 import AuthService from "../Componentes/Componentes-login/service/auth.service";
 
 const MiPerfil = (props) => {
- 
-  //const currentUser = AuthService.getCurrentUser();
+  const currentUser = AuthService.getCurrentUser();
 
   return (
-    
     <div className="conteiner contenedor-perfil">
       <div id="cabecera" className="header">
         <div className="div-icon-header">
-          <i class="material-icons md-40">person</i>
+          <i className="material-icons md-40">person</i>
         </div>
         <div className="div-h2">
           <hr className="v" />
@@ -22,26 +20,28 @@ const MiPerfil = (props) => {
       <div id="contenido" className="contenido contenido-perfil section">
         <div className="contenedor-vista">
           <div className="cont-perfil">
-          <div className="div-morado">
-          <div className="div-avatar">
-            <span class="material-icons md-51">account_circle</span>
-          </div>
-          <div className="div-nombre">
-            <h4 className="h4-nombre"></h4>
-            <h5 className="h5-area">Ingenieria</h5>
-            <p></p>
-          </div>
-        </div>
-        <div className="div-info">
-          <div className="correo-time correo">
-            <span class="material-icons md-25">email</span>
-            <p className="p-correo-time"></p>
-          </div>
-          <div className="correo-time time">
-            <span class="material-icons md-25">restore</span>
-            <p className="p-correo-time">15:30</p>
-          </div>
-        </div>
+            <div className="div-morado">
+              <div className="div-avatar">
+                <span className="material-icons md-51">account_circle</span>
+              </div>
+              <div className="div-nombre">
+                <h4 className="h4-nombre"></h4>
+                <h5 className="h5-area">Ingenieria</h5>
+                <p>
+                  {currentUser.user.firstname} {currentUser.user.lastname}
+                </p>
+              </div>
+            </div>
+            <div className="div-info">
+              <div className="correo-time correo">
+                <span class="material-icons md-25">email</span>
+                <p className="p-correo-time">{currentUser.user.email}</p>
+              </div>
+              <div className="correo-time time">
+                <span className="material-icons md-25">restore</span>
+                <p className="p-correo-time">15:30</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

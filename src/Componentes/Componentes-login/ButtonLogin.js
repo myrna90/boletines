@@ -7,7 +7,7 @@ const BtnLogin = (props) => {
     <div>
       <button className="btn-login btn" disabled={loading}>
       {loading && (
-                <img src={Loading}/>
+                {/*<img src={Loading}/>*/}
               )}
         Login
       </button>
