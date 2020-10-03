@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../../../configuration';
 import AuthService from '../../Componentes-login/service/auth.service';
 
 const FormStepTwo = (props) => {
-  const { handleChange, projectData, systemData, customerData } = props;
+  const { handleChange, projectData, systemData } = props;
   const token = AuthService.getCurrentUser();
 
   const [formProyecto, setFormProyecto] = useState({

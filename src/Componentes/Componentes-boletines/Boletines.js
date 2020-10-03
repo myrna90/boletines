@@ -65,21 +65,13 @@ const Boletines = (props) => {
     }
   }, [projectData]);
 
-  // useEffect(() => {
-  //   if (customerData === undefined) {
-  //     axios(customerGet).then(function(res) {
-  //      setCustomerData(res.data.data)
-  //     });
-  //   }
-  // }, [customerData]);
-
-  // useEffect(() => {
-  //   if (systemData === undefined) {
-  //     axios(systemsGet).then(function(res) {
-  //      setSystemData(res.data.data)
-  //     });
-  //   }
-  // }, [systemData]);
+  useEffect(() => {
+    if (systemData === undefined) {
+      axios(systemsGet).then(function(res) {
+       setSystemData(res.data.data)
+      });
+    }
+  }, [systemData]);
 
   useEffect(() => {
     if (deviceData === undefined) {
