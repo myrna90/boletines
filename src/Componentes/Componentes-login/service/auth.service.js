@@ -5,7 +5,7 @@ const login = (email, password) => {
   return axios
     .request({
       method: 'POST',
-      url: `${API_BASE_URL}/api/auth/sign-in`,
+      url: `${API_BASE_URL}/auth/sign-in`,
       
         auth: {
           username: email,

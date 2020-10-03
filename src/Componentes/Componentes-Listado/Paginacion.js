@@ -18,17 +18,10 @@ const Paginacion = (props) => {
   };
 
   const token = AuthService.getCurrentUser();
-  // const projectsGet = {
-  //   method: 'GET',
-  //   url: `${API_BASE_URL}/api/projects`,
-  //   headers: {
-  //     'Authorization': `Bearer ${token.token}`
-  //   }
-  // };
 
   const newsGet = {
     method: 'GET',
-    url: `${API_BASE_URL}/api/newsletters`,
+    url: `${API_BASE_URL}/newsletters`,
     headers: {
       'Authorization': `Bearer ${token.token}`
     }
@@ -92,7 +85,8 @@ const Paginacion = (props) => {
     }
   }, [state.boletines]);
 
-  console.log('system', state.boletines);
+  
+  console.log('resp:', state.boletines);
 
   useEffect(() => {
     if (state.currentPage && state.boletinesPerPage) {
@@ -158,7 +152,6 @@ const Paginacion = (props) => {
     setRedirection(true);
   };
 
-
   return (
     <div>
       <div className="div-tabla">
@@ -187,15 +180,14 @@ const Paginacion = (props) => {
                   <tr key={index} className="tr-general">
                     <td>{boletines.folio}</td>
                     {/*en fecha va proyecto y en descripcion va sistema corregir */}
-                   
                     <td>
                      {boletines.project[0].name}
                     </td>
-                <td>{boletines.system[0].name}</td>
+                    <td>{boletines.system[0].name}</td>
                     <td>
                       {renderRedirect()}
                       <button className="btn-list" onClick={handleRedirect}>
-                        <i class="material-icons  md-19">open_in_new</i>
+                        <i className="material-icons  md-19">open_in_new</i>
                       </button>
                     </td>
                   </tr>

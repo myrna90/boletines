@@ -15,7 +15,7 @@ const Dashboard = (props) => {
  
   const projectsGet = {
     method: 'GET',
-    url: `${API_BASE_URL}/api/projects`,
+    url: `${API_BASE_URL}/projects`,
     headers: {
       'Authorization': `Bearer ${token.token}`
     }
@@ -23,7 +23,7 @@ const Dashboard = (props) => {
 
   const newsGet = {
     method: 'GET',
-    url: `${API_BASE_URL}/api/newsletters`,
+    url: `${API_BASE_URL}/newsletters`,
     headers: {
       'Authorization': `Bearer ${token.token}`
     }
@@ -48,7 +48,7 @@ const Dashboard = (props) => {
     }
   }, [newslettersData]);
 
-  
+
 
   /*setRedirect = () => {
     this.setState({

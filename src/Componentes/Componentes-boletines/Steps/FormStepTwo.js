@@ -17,7 +17,6 @@ const FormStepTwo = (props) => {
 
   const [selectedProject, setSelectedProject] = useState("");
   const [currentProject, setCurrentProject] = useState(undefined);
-  console.log('selected:', selectedProject);
 
   useEffect(() => {
     if(selectedProject !== '') {

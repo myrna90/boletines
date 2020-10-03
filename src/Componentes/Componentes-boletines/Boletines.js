@@ -18,7 +18,7 @@ const Boletines = (props) => {
 
   const projectsGet = {
     method: 'GET',
-    url: `${API_BASE_URL}/api/projects`,
+    url: `${API_BASE_URL}/projects`,
     headers: {
       'Authorization': `Bearer ${token.token}`
     }
@@ -26,7 +26,7 @@ const Boletines = (props) => {
 
   const customerGet = {
     method: 'GET',
-    url: `${API_BASE_URL}/api/customers`,
+    url: `${API_BASE_URL}/customers`,
     headers: {
       'Authorization': `Bearer ${token.token}`
     }
@@ -34,7 +34,7 @@ const Boletines = (props) => {
 
   const devicesGet = {
     method: 'GET',
-    url: `${API_BASE_URL}/api/devices`,
+    url: `${API_BASE_URL}/devices`,
     headers: {
       'Authorization': `Bearer ${token.token}`
     }
@@ -42,7 +42,7 @@ const Boletines = (props) => {
 
   const systemsGet = {
     method: 'GET',
-    url: `${API_BASE_URL}/api/systems`,
+    url: `${API_BASE_URL}/systems`,
     headers: {
       'Authorization': `Bearer ${token.token}`
     }
@@ -50,7 +50,7 @@ const Boletines = (props) => {
 
   const usersGet = {
     method: 'GET',
-    url: `${API_BASE_URL}/api/users`,
+    url: `${API_BASE_URL}/users`,
     headers: {
       'Authorization': `Bearer ${token.token}`
     }
@@ -124,8 +124,6 @@ const Boletines = (props) => {
       [name]: value 
     });
   };
- 
-  console.log('respuesta:', formValues);
   
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -146,14 +144,13 @@ const Boletines = (props) => {
       //department: formValues.departamento
       status: true
     }
-    axios.post(`${API_BASE_URL}/api/newsletters`, boletin, { headers: {"Authorization" : `Bearer ${token.token}`} }) 
+    axios.post(`${API_BASE_URL}/newsletters`, boletin, { headers: {"Authorization" : `Bearer ${token.token}`} }) 
     .then((res) => {
       console.log(res);
     })
     .catch((err) => {
       console.log(err);
     })
-    console.log('boletin', boletin);
   };
 
   return (

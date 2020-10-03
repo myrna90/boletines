@@ -23,7 +23,7 @@ const token = AuthService.getCurrentUser();
 
   const customerGet = {
     method: 'GET',
-    url: `${API_BASE_URL}/api/customers`,
+    url: `${API_BASE_URL}/customers`,
     headers: {
       'Authorization': `Bearer ${token.token}`
     }
@@ -43,7 +43,7 @@ const token = AuthService.getCurrentUser();
       name: formValues.name,
       location: formValues.location
     }
-    axios.post(`${API_BASE_URL}/api/customers`, client, { headers: {"Authorization" : `Bearer ${token.token}`} })
+    axios.post(`${API_BASE_URL}/customers`, client, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })
@@ -62,7 +62,7 @@ const token = AuthService.getCurrentUser();
       customer: formValues.customer,
       users: formValues.users
     }
-    axios.post(`${API_BASE_URL}/api/projects`, project, { headers: {"Authorization" : `Bearer ${token.token}`} })
+    axios.post(`${API_BASE_URL}/projects`, project, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })
@@ -76,7 +76,7 @@ const token = AuthService.getCurrentUser();
     const system = {
       name: formValues.name
     }
-    axios.post(`${API_BASE_URL}/api/systems`, system, { headers: {"Authorization" : `Bearer ${token.token}`} })
+    axios.post(`${API_BASE_URL}/systems`, system, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })
@@ -94,7 +94,7 @@ const token = AuthService.getCurrentUser();
       email: formValues.email,
       password: formValues.password
     }
-    axios.post(`${API_BASE_URL}/api/users`, user, { headers: {"Authorization" : `Bearer ${token.token}`} })
+    axios.post(`${API_BASE_URL}/users`, user, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })
@@ -110,7 +110,7 @@ const token = AuthService.getCurrentUser();
       brand: formValues.brand,
       model: formValues.model
     }
-    axios.post(`${API_BASE_URL}/api/devices`, system, { headers: {"Authorization" : `Bearer ${token.token}`} })
+    axios.post(`${API_BASE_URL}/devices`, system, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })
