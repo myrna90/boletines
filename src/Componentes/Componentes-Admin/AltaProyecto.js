@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react";
-import axios from 'axios';
-import { API_BASE_URL } from '../../configuration';
-import AuthService from '../Componentes-login/service/auth.service';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { API_BASE_URL } from "../../configuration";
+import AuthService from "../Componentes-login/service/auth.service";
 
 const AltaProyecto = (props) => {
   const { handleChange, submitProject } = props;
@@ -14,10 +14,8 @@ const AltaProyecto = (props) => {
     endDate: "",
     status: "",
     customer: "",
-    users: ""
+    users: "",
   });
-
-  
 
   return (
     <div className="div div-proyecto">
@@ -58,9 +56,7 @@ const AltaProyecto = (props) => {
           onChange={(e) => handleChange(e)}
         ></input>
 
-<label className="label-admin label-cliente-cliente">
-          Cliente
-        </label>
+        <label className="label-admin label-cliente-cliente">Cliente</label>
         <select
           className="input input-cliente-cliente"
           name="customer"
@@ -69,9 +65,10 @@ const AltaProyecto = (props) => {
           required
         >
           <option>-</option>
-          {clientProjectData && clientProjectData.map((client) => (
-            <option value={client._id}>{client.name}</option>
-          ))}
+          {clientProjectData &&
+            clientProjectData.map((client) => (
+              <option value={client._id}>{client.name}</option>
+            ))}
         </select>
 
         <button type="submit" className="btn-crear-proyecto btn">

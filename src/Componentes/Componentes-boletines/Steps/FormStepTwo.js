@@ -15,6 +15,18 @@ const FormStepTwo = (props) => {
     customer: ""
   });
 
+  const [selectedProject, setSelectedProject] = useState("");
+  const [currentProject, setCurrentProject] = useState(undefined);
+  console.log('selected:', selectedProject);
+
+  useEffect(() => {
+    if(selectedProject !== '') {
+      setCurrentProject(projectData.find(project => project._id === selectedProject))  
+    }   
+  }, [selectedProject, projectData]);
+
+  
+
   return (
     /* formulario para especificaciones del proyecto */
     <div className="div div-2">
@@ -33,7 +45,9 @@ const FormStepTwo = (props) => {
               name="project"
               /*Aqui se pone el id de cada project para todos los select-options */
               defaultValue={formProyecto.proyecto}
-              onChange={(e) => handleChange(e)}
+              onChange={(e) => {handleChange(e); 
+              setSelectedProject(e.target.value)
+              }}
               required
             >  
             <option>-</option>
@@ -42,7 +56,6 @@ const FormStepTwo = (props) => {
           ))
           }
           </select>
-
           <a className="caja3">
             <span className="material-icons md-4">info</span>
             <span className="info">
@@ -51,7 +64,6 @@ const FormStepTwo = (props) => {
             </span>
           </a>
         </div>
-
         {/*Input client */}
         <label className="label label2">Cliente</label>
         <select
@@ -62,11 +74,8 @@ const FormStepTwo = (props) => {
           required
         >
           <option>-</option>
-          {customerData && customerData.map((customer) => (
-            <option value={customer._id}>{customer.name}</option>
-          ))
-          }
-          {/*projectData ? projectData.find(customer => customer._id === projectData.customer).customer: ''*/}
+          <option value={currentProject ? currentProject.customer[0]._id: ''}>{currentProject ? currentProject.customer[0].name: ''}</option>
+          
         </select>
 
         {/*Input fecha */}

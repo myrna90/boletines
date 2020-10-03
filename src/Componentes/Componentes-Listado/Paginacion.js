@@ -5,7 +5,7 @@ import { API_BASE_URL } from '../../configuration';
 import AuthService from '../../Componentes/Componentes-login/service/auth.service';
 
 const Paginacion = (props) => {
-  
+  const { projectData } = props;
   const initialState = {
     boletines: undefined,
     currentPage: 1,
@@ -18,14 +18,13 @@ const Paginacion = (props) => {
   };
 
   const token = AuthService.getCurrentUser();
-console.log('token:', token.token);
-  const projectsGet = {
-    method: 'GET',
-    url: `${API_BASE_URL}/api/projects`,
-    headers: {
-      'Authorization': `Bearer ${token.token}`
-    }
-  };
+  // const projectsGet = {
+  //   method: 'GET',
+  //   url: `${API_BASE_URL}/api/projects`,
+  //   headers: {
+  //     'Authorization': `Bearer ${token.token}`
+  //   }
+  // };
 
   const newsGet = {
     method: 'GET',
@@ -93,18 +92,7 @@ console.log('token:', token.token);
     }
   }, [state.boletines]);
 
-  
-
-  useEffect(() => {
-    if (state.projects === undefined) {
-      axios(projectsGet)
-      .then(function(res) {
-        dispatch({ type: "FETCH_PROJECTS", projects: res.data.data });
-      });
-    }
-  }, [state.projects]);
-
-  console.log('resp:', state.projects);
+  console.log('system', state.boletines);
 
   useEffect(() => {
     if (state.currentPage && state.boletinesPerPage) {
@@ -170,6 +158,7 @@ console.log('token:', token.token);
     setRedirection(true);
   };
 
+
   return (
     <div>
       <div className="div-tabla">
@@ -200,9 +189,9 @@ console.log('token:', token.token);
                     {/*en fecha va proyecto y en descripcion va sistema corregir */}
                    
                     <td>
-                    { /*state.projects ? state.projects.find(project => project._id === boletines.project).name: '' */} 
+                     {boletines.project[0].name}
                     </td>
-                    <td></td>
+                <td>{boletines.system[0].name}</td>
                     <td>
                       {renderRedirect()}
                       <button className="btn-list" onClick={handleRedirect}>

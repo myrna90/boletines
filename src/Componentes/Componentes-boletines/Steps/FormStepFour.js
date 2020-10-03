@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import { useState } from "react";
+import AuthService from '../../Componentes-login/service/auth.service';
+import { API_BASE_URL } from '../../../configuration';
 
 const FormStepFour = (props) => {
   const { handleChange } = props;
   const { userData } = props;
+  const currentUser = AuthService.getCurrentUser();
 
   const [formUsuario, setFormUsuario] = useState({
     owner: "",
     departamento: "",
   });
+
+
   return (
     /*parte del formulario para completar datos del usuario */
     <div className="div div-4">
@@ -21,18 +26,13 @@ const FormStepFour = (props) => {
       <div className="contenForm conteinerForm-2">
         <label className="label">Reporta</label>
         <div className="div-icon-info">
-          <select
-            className="input input-user"
+          <input className="input input-user"
             name="owner"
             defaultValue={formUsuario.owner}
             onChange={(e) => handleChange(e)}
-            required
-          >
-            <option>-</option>
-            {userData && userData.map((user) => (
-              <option value={user._id}>{user.username}</option>
-            ))}
-          </select>
+            required 
+            disabled={true}
+            value={`${currentUser.user.firstname} ${currentUser.user.lastname}`}/>
         </div>
       </div>
 

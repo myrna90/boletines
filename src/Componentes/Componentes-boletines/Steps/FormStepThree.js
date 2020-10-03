@@ -82,7 +82,7 @@ const FormStepThree = (props) => {
 
           {/*Input marca */}
           <label className=" label label-div2">Marca</label>
-          <div className="div-icon-info">
+          <div className="div-icon-info">           
             <select
               className="input input-div2"
               name="brand"
@@ -93,7 +93,7 @@ const FormStepThree = (props) => {
               {deviceData && deviceData.map((device) => (
                 <option value={device._id}>{device.brand}</option>
               ))}
-            </select>
+              </select>
             <a className="caja3">
               <span className="material-icons md-4">info</span>
               <span className="info">

@@ -65,21 +65,21 @@ const Boletines = (props) => {
     }
   }, [projectData]);
 
-  useEffect(() => {
-    if (customerData === undefined) {
-      axios(customerGet).then(function(res) {
-       setCustomerData(res.data.data)
-      });
-    }
-  }, [customerData]);
+  // useEffect(() => {
+  //   if (customerData === undefined) {
+  //     axios(customerGet).then(function(res) {
+  //      setCustomerData(res.data.data)
+  //     });
+  //   }
+  // }, [customerData]);
 
-  useEffect(() => {
-    if (systemData === undefined) {
-      axios(systemsGet).then(function(res) {
-       setSystemData(res.data.data)
-      });
-    }
-  }, [systemData]);
+  // useEffect(() => {
+  //   if (systemData === undefined) {
+  //     axios(systemsGet).then(function(res) {
+  //      setSystemData(res.data.data)
+  //     });
+  //   }
+  // }, [systemData]);
 
   useEffect(() => {
     if (deviceData === undefined) {
@@ -133,15 +133,11 @@ const Boletines = (props) => {
     });
   };
  
+  console.log('respuesta:', formValues);
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = new FormData();
-    form.append('image',{
-        uri : formValues.pictureName,
-        type : 'image/jpeg',
-        name : 'image.jpg'
-    })
+    
     const boletin = {
       title: formValues.title,
       project: formValues.project,
@@ -151,7 +147,6 @@ const Boletines = (props) => {
       description:  formValues.description,
       pictureName: formValues.pictureName,
       solution: formValues.solution,
-      //pictureName: formValues.selectedFile,
       device: formValues.device,
       //brand: formValues.marca,
      // model: formValues.modelo,
@@ -167,7 +162,7 @@ const Boletines = (props) => {
       console.log(err);
     })
     console.log('boletin', boletin);
-  }
+  };
 
   return (
     <div className="conteiner conteiner-boletines">

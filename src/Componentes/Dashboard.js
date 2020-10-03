@@ -48,6 +48,8 @@ const Dashboard = (props) => {
     }
   }, [newslettersData]);
 
+  
+
   /*setRedirect = () => {
     this.setState({
       redirect: true,
@@ -72,6 +74,8 @@ const Dashboard = (props) => {
     }
   };*/
 
+  
+
   return (
     <div className="conteiner contenedor-dash">
       <div id="cabecera" className="header">
@@ -89,7 +93,6 @@ const Dashboard = (props) => {
         <div className="grid-contentDash">
           <div className="grid-publicados grids-dash">
             <h4 className="h4">Boletines</h4>
-
             {newslettersData &&
               newslettersData
                 .filter((news) => news.folio)
@@ -100,7 +103,6 @@ const Dashboard = (props) => {
                     <div className="contenedor-icon">
                       <button
                         className="btn-bol contenedor-icon"
-                        /*onClick={this.setRedirect}*/
                       >
                         <i className="material-icons  md-18">open_in_new</i>
                       </button>
@@ -124,9 +126,7 @@ const Dashboard = (props) => {
         <div className="boletines-general">
           <div className="contenedor-Bgeneral">
             <div className="conteiner-encabezado">
-              <button
-                className="redirectList" /*onClick={this.setRedirectList}*/
-              >
+              <button className="redirectList">
                 <h4 className="h4-list h4">Listado Boletines</h4>
               </button>
             </div>
@@ -140,7 +140,7 @@ const Dashboard = (props) => {
                   <br />
                 </p>
 
-                <button className="btn-bol" onClick={renderRedirect}>
+                <button className="btn-bol">
                   <i className="material-icons  md-18">open_in_new</i>
                 </button>
               </div>
