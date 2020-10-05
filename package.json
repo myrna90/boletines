@@ -1,6 +1,7 @@
 {
   "name": "boletines",
   "version": "1.0.1",
+  "homepage": "https://apps.telenetdemexico.com/boletines/",
   "private": true,
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.8.2",

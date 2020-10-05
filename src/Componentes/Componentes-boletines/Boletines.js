@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import FormBoletines from "./FormBoletines";
-import Steps from "./Steps";
+import React, { useState, useEffect } from 'react';
+import FormBoletines from './FormBoletines';
+import Steps from './Steps';
 import axios from 'axios';
 import AuthService from '../Componentes-login/service/auth.service';
 import { API_BASE_URL } from '../../configuration';
 
 const Boletines = (props) => {
-
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
   const [projectData, setProjectData] = useState(undefined);
@@ -14,46 +13,45 @@ const Boletines = (props) => {
   const [deviceData, setDeviceData] = useState(undefined);
   const [userData, setUserData] = useState(undefined);
   const [customerData, setCustomerData] = useState(undefined);
-  const token = AuthService.getCurrentUser();
   const currentUser = AuthService.getCurrentUser();
-  
+
   const projectsGet = {
     method: 'GET',
     url: `${API_BASE_URL}/projects`,
     headers: {
-      'Authorization': `Bearer ${token.token}`
-    }
+      Authorization: `Bearer ${currentUser.token}`,
+    },
   };
 
   const devicesGet = {
     method: 'GET',
     url: `${API_BASE_URL}/devices`,
     headers: {
-      'Authorization': `Bearer ${token.token}`
-    }
+      Authorization: `Bearer ${currentUser.token}`,
+    },
   };
 
   const systemsGet = {
     method: 'GET',
     url: `${API_BASE_URL}/systems`,
     headers: {
-      'Authorization': `Bearer ${token.token}`
-    }
+      Authorization: `Bearer ${currentUser.token}`,
+    },
   };
 
   const usersGet = {
     method: 'GET',
     url: `${API_BASE_URL}/users`,
     headers: {
-      'Authorization': `Bearer ${token.token}`
-    }
+      Authorization: `Bearer ${currentUser.token}`,
+    },
   };
 
   /*Mandamos a llamar el arreglo de objetos de los projectos desde el API */
   useEffect(() => {
     if (projectData === undefined) {
       axios(projectsGet).then(function(res) {
-       setProjectData(res.data.data)
+        setProjectData(res.data.data);
       });
     }
   }, [projectData]);
@@ -61,7 +59,7 @@ const Boletines = (props) => {
   useEffect(() => {
     if (systemData === undefined) {
       axios(systemsGet).then(function(res) {
-       setSystemData(res.data.data)
+        setSystemData(res.data.data);
       });
     }
   }, [systemData]);
@@ -69,7 +67,7 @@ const Boletines = (props) => {
   useEffect(() => {
     if (deviceData === undefined) {
       axios(devicesGet).then(function(res) {
-       setDeviceData(res.data.data)
+        setDeviceData(res.data.data);
       });
     }
   }, [deviceData]);
@@ -77,27 +75,26 @@ const Boletines = (props) => {
   useEffect(() => {
     if (userData === undefined) {
       axios(usersGet).then(function(res) {
-       setUserData(res.data.data)
+        setUserData(res.data.data);
       });
     }
   }, [userData]);
 
-
   /*Va a recibir un objeto */
   const getCurrentForm = (name) => {
     const identifier = {
-      1: ["folio", "title"],
-      2: ["project", "cliente", "createDate", "sistema"],
+      1: ['folio', 'title'],
+      2: ['project', 'cliente', 'createDate', 'sistema'],
       3: [
-        "problema",
-        "imgProblema",
-        "solucion",
-        "imgSolucion",
-        "equipo",
-        "marca",
-        "modelo",
+        'problema',
+        'imgProblema',
+        'solucion',
+        'imgSolucion',
+        'equipo',
+        'marca',
+        'modelo',
       ],
-      4: ["usuario", "departamento"],
+      4: ['usuario', 'departamento'],
     };
 
     const properties = Object.keys(identifier);
@@ -112,65 +109,68 @@ const Boletines = (props) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     getCurrentForm(name);
-    setFormValues({ 
+    setFormValues({
       ...formValues,
-      [name]: value 
+      [name]: value,
     });
   };
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    
     const boletin = {
       title: formValues.title,
       project: formValues.project,
       custumer: formValues.custumer,
       createDate: formValues.createDate,
       system: formValues.system,
-      description:  formValues.description,
+      description: formValues.description,
       pictureName: formValues.pictureName,
       solution: formValues.solution,
       device: formValues.device,
-      //brand: formValues.marca,
-     // model: formValues.modelo,
-      owner: currentUser.user._id,
-      //department: formValues.departamento
-      status: true
-    }
-    axios.post(`${API_BASE_URL}/newsletters`, boletin, { headers: {"Authorization" : `Bearer ${token.token}`} }) 
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+      owner: currentUser.user.id,
+      status: true,
+    };
+
+    axios
+      .post(`${API_BASE_URL}newsletters`, boletin, {
+        headers: { Authorization: `Bearer ${currentUser.token}` },
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
-    <div className="conteiner conteiner-boletines">
+    <div className='conteiner conteiner-boletines'>
       {/*Contenedor general header */}
-      <div className="header-crear">
-        <div className="div-icon-header">
-          <span className="material-icons md-40">add_circle</span>
+      <div className='header-crear'>
+        <div className='div-icon-header'>
+          <span className='material-icons md-40'>add_circle</span>
         </div>
-        <div className="div-h2 div-h2-crear">
-          <hr className="v" />
-          <h2 className="h2">Crear boletín</h2>
+        <div className='div-h2 div-h2-crear'>
+          <hr className='v' />
+          <h2 className='h2'>Crear boletín</h2>
         </div>
         <Steps currentForm={currentForm} />
-        <div className="conteiner-boton">
-        <button
-            type="submit"
-            className="btn-crear btn"
-            form="CreateForm">
+        <div className='conteiner-boton'>
+          <button type='submit' className='btn-crear btn' form='CreateForm'>
             + Crear
           </button>
         </div>
       </div>
-      <div className="contenido section ">
+      <div className='contenido section '>
         {/*se pasa la función de handleChange como prop al componente de FormBoletines */}
-        <FormBoletines handleChange={handleChange} handleSubmit={handleSubmit} projectData={projectData} 
-         systemData={systemData} deviceData={deviceData} userData={userData}/>
+        <FormBoletines
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          projectData={projectData}
+          systemData={systemData}
+          deviceData={deviceData}
+          userData={userData}
+        />
       </div>
     </div>
   );
