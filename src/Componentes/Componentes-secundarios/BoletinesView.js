@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import UsuarioCabecera from "../Componentes-secundarios/Usuario-cabecera";
+import { useParams } from "react-router-dom";
 
-function BoletinesView(props) {
-  const [comment, setComment] = useState("");
-  const [count, setCount] = useState(0);
-  const { match: { params } } = props;
-  console.log(params.id)
+function BoletinesView({ location }) {
+  // const [comment, setComment] = useState("");
+  // const [count, setCount] = useState(0);
+
+  console.log(location.state.project);
   return (
     <div className="conteiner contenedor-view">
       <div id="cabecera" className="header">
         <div className="div-icon-header">
-          <span class="material-icons md-40">preview</span>
+          <span className="material-icons md-40">preview</span>
         </div>
         <div className="div-h2">
           <hr className="v" />
@@ -21,68 +22,78 @@ function BoletinesView(props) {
       <div className="contenido-view section">
         <div className="view">
           <div id="rectangle" className="titulo-view">
-            <h3 className="h3-bol">B-00</h3>
+            <h3 className="h3-bol">{location.state.folio}</h3>
           </div>
           <div className="input-view">
             <div className="div-input proyecto">
               <p>Proyecto:</p>{" "}
-              <input className="input-bol input-proyecto"></input>
+              <p className="input-bol input-proyecto">
+                {location.state.project}
+              </p>
             </div>
             <div className="div-input cliente">
               <p>Cliente:</p>{" "}
-              <input className="input-bol input-cliente"></input>
+              <p className="input-bol input-cliente">
+                {location.state.customer}
+              </p>
             </div>
             <div className="div-input fecha">
               <p>Fecha:</p>
-              <input className="input-bol input-fecha-vista"></input>
+              <p className="input-bol input-fecha-vista">
+                {location.state.create}
+              </p>
             </div>
             <div className="div-input sistema">
               <p>Sistema:</p>
-              <input className="input-bol input-sistema"></input>
+              <p className="input-bol input-sistema">{location.state.system}</p>
             </div>
             <div className="div-input equipo">
               <p>Equipo:</p>
-              <input className="input-bol input-equipo"></input>
+              <p className="input-bol input-equipo">{location.state.device}</p>
             </div>
             <div className="div-input marca">
               <p>Marca:</p>
-              <input className="input-bol input-marca"></input>
+              <p className="input-bol input-marca"></p>
             </div>
             <div className="div-input modelo">
               <p>Modelo:</p>
-              <input className="input-bol input-modelo"></input>
+              <p className="input-bol input-modelo"></p>
             </div>
           </div>
           <div className="problema-view disgn">
             <div className="conteiner-problema">
               <h6 className="titulo-problem">Problema:</h6>
-              <textarea className="input-problema"></textarea>
+              <textarea className="input-problema">
+                {location.state.description}
+              </textarea>
             </div>
-            <div className="conteiner-problema">
+            {/* <div className="conteiner-problema">
               <h6 className="titulo-problem">Imagen problema:</h6>
               <div className="img-problema">
                 <i className="img-export-bol" class="material-icons md-56">
                   add_photo_alternate
                 </i>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="solucion-view disgn">
             <div className="conteiner-problema">
               <h6 className="titulo-problem">Solución:</h6>
-              <textarea className="input-problema"></textarea>
+              <textarea className="input-problema">
+                {location.state.solution}
+              </textarea>
             </div>
-            <div className="conteiner-problema">
+            {/* <div className="conteiner-problema">
               <h6 className="titulo-problem">Imagen solución:</h6>
               <div className="img-problema">
                 <i className="img-export-bol" class="material-icons md-56">
                   add_photo_alternate
                 </i>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
-        <div className="view-coment">
+        {/* <div className="view-coment">
           <div className="titulo-coment">
             <h3 className="h3-bol">Comentarios</h3>
           </div>
@@ -110,7 +121,7 @@ function BoletinesView(props) {
               <p className="p.comentario">{comment}</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

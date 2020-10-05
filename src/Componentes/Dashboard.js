@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
 import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
-import { Redirect } from "react-router";
 import axios from "axios";
 import { API_BASE_URL } from '../configuration';
 import AuthService from '../Componentes/Componentes-login/service/auth.service';
+import { Link } from "react-router-dom";
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
 se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
 const Dashboard = (props) => {
-  const { renderRedirect } = props;
   const [projectsData, setProjectsData] = useState(undefined);
   const [newslettersData, setNewslettersData] = useState(undefined);
-  const [selectedNewsId, setSelectedNewsId] = useState("");
-  const [currentNews, setCurrentNews] = useState(undefined);
   const token = AuthService.getCurrentUser();
- 
+
   const projectsGet = {
     method: 'GET',
     url: `${API_BASE_URL}/projects`,
@@ -48,17 +45,8 @@ const Dashboard = (props) => {
         setNewslettersData(res.data.data);
       });
     }
+    console.log('news', newslettersData);
   }, [newslettersData]);
-
-  const sendNewsletter = () => {
-    axios.post(`${API_BASE_URL}/newsletters`)
-    .then(function(res) {
-      setNewslettersData(res.data.data)
-    })
-    console.log('object', setNewslettersData);
-  };
-
-
 
 
   return (
@@ -80,17 +68,18 @@ const Dashboard = (props) => {
             <h4 className="h4">Boletines</h4>
             <table className="table-dash">
               <tbody className="tbody-dash">
-                {newslettersData && newslettersData.filter((news) => news.folio)
-                .map((filterFolio, index) => (
+                {/* {.filter((news) => news.folio) */
+                newslettersData && newslettersData.map((filterFolio, index) => (
                   <tr className="tr-dash" key={index}>
                     <td> <div className="circulo-boletin2"> </div></td>
                     <td className="p-boletines">{filterFolio.folio}</td>
                     <td className="p-boletines-2">{filterFolio.title}</td>
                     <td>
-                      
-                      <button className="btn-list">
+                      <Link to={{pathname: '/vista/view/', state: {id: `${filterFolio._id}`, folio: `${filterFolio.folio}`, title: `${filterFolio.title}`, create: `${filterFolio.createDate}`, description: `${filterFolio.description}`, 
+                      solution: `${filterFolio.solution}`, project: `${filterFolio.project[0].name}`, system: `${filterFolio.system[0].name}`, device: `${filterFolio.device[0].name}` }}} className="btn-list">
+                        
                         <i className="material-icons  md-19">open_in_new</i>
-                      </button>
+                      </Link>
                     </td>
                   </tr>
                 ))}

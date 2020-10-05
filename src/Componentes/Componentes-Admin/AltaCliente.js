@@ -25,6 +25,7 @@ const AltaCliente = (props) => {
           defaultValue={formClient.name}
           onChange={(e) => handleChange(e)}
           required
+          
         ></input>
         <label className="label-admin label-cliente-2">Locación</label>
         <input

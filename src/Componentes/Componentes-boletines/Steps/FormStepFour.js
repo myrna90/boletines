@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { useState } from "react";
 import AuthService from '../../Componentes-login/service/auth.service';
-import { API_BASE_URL } from '../../../configuration';
 
 const FormStepFour = (props) => {
   const { handleChange } = props;
-  const { userData } = props;
   const currentUser = AuthService.getCurrentUser();
 
   const [formUsuario, setFormUsuario] = useState({
@@ -37,18 +35,6 @@ const FormStepFour = (props) => {
             <option>-</option>
           <option>{currentUser.user.firstname}</option>
             </select> 
-          {/* <select
-            className="input input-user"
-            name="owner"
-            defaultValue={formUsuario.owner}
-            onChange={(e) => handleChange(e)}
-            required
-          >
-            <option>-</option>
-            {userData && userData.map((user, index) => (
-              <option key={index} >{user.username}</option>
-            ))}
-            </select>  */}
         </div>
       </div>
 

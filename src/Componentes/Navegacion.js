@@ -6,40 +6,42 @@ import MiPerfil from "../Componentes/MiPerfil";
 import BoletinesView from "../Componentes/Componentes-secundarios/BoletinesView";
 import Listado from "../Componentes/Componentes-Listado/ListadoBoletines";
 import Admin from "./Componentes-Admin/Admin";
-//import PrivateRoute from "../Componentes/Componentes-login/PrivateRoute";
 
-const Navegacion = () => (
+function Navegacion() {
+
+ return(
   <Switch>
-    {/**/}
-    <Route
-      exact
-      path="/vista/dashboard"
-      component={Dashboard}
-     
-    />
-    <Route
-      path="/vista/boletines"
-      component={Boletines}
-      
-    />
-    <Route path="/vista/listado" 
-    component={Listado}  />
-
-    <Route
-      path="/vista/view:id"
-      component={BoletinesView}
-      
-    />
-    <Route
-      path="/vista/miperfil"
-      component={MiPerfil}
-      
-    />
-    <Route path="/vista/admin" 
-    component={Admin}  
-    />
-    {/*<Route component={PageNotFound}/>*/}
-  </Switch>
-);
+  {/**/}
+  <Route
+    exact
+    path="/vista/dashboard"
+    component={Dashboard}
+   
+  />
+  <Route
+    path="/vista/boletines"
+    component={Boletines}
+    
+  />
+  <Route path="/vista/listado" 
+  component={Listado}  />
+  
+  <Route
+  path="/vista/view/"
+    component={BoletinesView}
+    
+  />
+  <Route
+    path="/vista/miperfil"
+    component={MiPerfil}
+    
+  />
+  <Route path="/vista/admin" 
+  component={Admin}  
+  />
+  {/*<Route component={PageNotFound}/>*/}
+</Switch>
+ )
+};
 
 export default Navegacion;

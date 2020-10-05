@@ -18,7 +18,7 @@ const token = AuthService.getCurrentUser();
     const { name, value } = event.target;
     setFormValues({ 
       ...formValues,
-      [name]: value 
+      [name]: value
     });
   };
 
@@ -67,6 +67,7 @@ const token = AuthService.getCurrentUser();
     .catch((err) => {
       console.log(err);
     });
+    
   };
 
   const submitProject = (e) => {

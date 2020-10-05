@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../../../configuration';
 import AuthService from '../../Componentes-login/service/auth.service';
 
 const FormStepTwo = (props) => {
-  const { handleChange, projectData, systemData } = props;
+  const { handleChange, projectData, systemData, deviceData } = props;
   const token = AuthService.getCurrentUser();
 
   const [formProyecto, setFormProyecto] = useState({
@@ -17,12 +17,15 @@ const FormStepTwo = (props) => {
 
   const [selectedProject, setSelectedProject] = useState("");
   const [currentProject, setCurrentProject] = useState(undefined);
+  
 
   useEffect(() => {
     if(selectedProject !== '') {
       setCurrentProject(projectData.find(project => project._id === selectedProject))  
     }   
   }, [selectedProject, projectData]);
+
+  
 
   
 

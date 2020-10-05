@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const FormStepThree = (props) => {
   const { handleChange } = props;
@@ -13,6 +13,15 @@ const FormStepThree = (props) => {
     solution: '',
     //imgSolucion: ""
   });
+
+  const [selectedDevice, setSelectedDevice] = useState("");
+  const [currentDevice, setCurrentDevice] = useState(undefined);
+
+  useEffect(() => {
+    if(selectedDevice !== '') {
+      setCurrentDevice(deviceData.find(device => device._id === selectedDevice))  
+    }   
+  }, [selectedDevice, deviceData]);
 
   return (
     /*parte del formulario para descripcion y solución del problema */
@@ -64,7 +73,9 @@ const FormStepThree = (props) => {
               className='input input-div'
               name='device'
               defaultValue={formImage.device}
-              onChange={(e) => handleChange(e)}
+              onChange={(e) => {handleChange(e); 
+                setSelectedDevice(e.target.value)
+                }}
             >
               <option>-</option>
               {deviceData &&
@@ -93,13 +104,8 @@ const FormStepThree = (props) => {
               onChange={(e) => handleChange(e)}
             >
               <option>-</option>
-              {deviceData &&
-                deviceData.map((device, index) => (
-                  <option key={index} value={device._id}>
-                    {device.brand}
-                  </option>
-                ))}
-            </select>
+              <option value={currentDevice ? currentDevice.brand[0]._id: ''}>{currentDevice ? currentDevice.brand: ''}</option>
+              </select>
             <a className='caja3'>
               <span className='material-icons md-4'>info</span>
               <span className='info'>
@@ -119,12 +125,7 @@ const FormStepThree = (props) => {
               onChange={(e) => handleChange(e)}
             >
               <option>-</option>
-              {deviceData &&
-                deviceData.map((device, index) => (
-                  <option key={index} value={device._id}>
-                    {device.model}
-                  </option>
-                ))}
+              <option value={currentDevice ? currentDevice.model[0]._id: ''}>{currentDevice ? currentDevice.model: ''}</option>
             </select>
             <a className='caja3'>
               <span className='material-icons md-4'>info</span>

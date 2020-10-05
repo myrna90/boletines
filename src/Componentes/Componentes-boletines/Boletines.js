@@ -14,6 +14,7 @@ const Boletines = (props) => {
   const [userData, setUserData] = useState(undefined);
   const [customerData, setCustomerData] = useState(undefined);
   const currentUser = AuthService.getCurrentUser();
+  const {selectedProject, selectedDevice} = props;
 
   const projectsGet = {
     method: 'GET',
@@ -127,12 +128,14 @@ const Boletines = (props) => {
       pictureName: formValues.pictureName,
       solution: formValues.solution,
       device: formValues.device,
+      brand: formValues.brand,
+      model: formValues.model,
       owner: currentUser.user.id,
       status: true,
     };
 
     axios
-      .post(`${API_BASE_URL}newsletters`, boletin, {
+      .post(`${API_BASE_URL}/newsletters`, boletin, {
         headers: { Authorization: `Bearer ${currentUser.token}` },
       })
       .then((res) => {
