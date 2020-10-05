@@ -4,7 +4,7 @@ const FormStepOne = (props) => {
   const { handleChange } = props;
 
   const [formFolio, setFormFolio] = useState({ title: "" });
-
+  
   return (
     /*parte del fomulario para llenar folio */
     <div className="div div-1">

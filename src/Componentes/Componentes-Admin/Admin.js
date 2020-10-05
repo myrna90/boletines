@@ -11,8 +11,9 @@ import  AuthService from '../Componentes-login/service/auth.service';
 const Admin = (props) => {  
 const [formValues, setFormValues] = useState({});
 const [clientProjectData, setClientProjectData] = useState(undefined);
-const [userProjectData, setUserProjectData] = useState(undefined);
+
 const token = AuthService.getCurrentUser();
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -46,13 +47,6 @@ const token = AuthService.getCurrentUser();
     }
   }, [clientProjectData]);
 
-  useEffect(() => {
-    if (userProjectData === undefined) {
-      axios(userGet).then(function(res) {
-       setUserProjectData(res.data.data)
-      });
-    }
-  }, [userProjectData]);
 
   const submitClient = (e) => {
     e.preventDefault();

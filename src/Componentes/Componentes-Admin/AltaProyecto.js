@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-// import axios from "axios";
-// import { API_BASE_URL } from "../../configuration";
+import axios from "axios";
+import { API_BASE_URL } from "../../configuration";
 import AuthService from "../Componentes-login/service/auth.service";
 
 const AltaProyecto = (props) => {
   const { handleChange, submitProject } = props;
-  const { clientProjectData, userProjectData, userData } = props;
-  // const token = AuthService.getCurrentUser();
+  const { clientProjectData } = props;
+  const [userProjectData, setUserProjectData] = useState(undefined);
+  const token = AuthService.getCurrentUser();
 
   const [formProyecto, setFormProyecto] = useState({
     nameProject: "",
@@ -14,8 +15,24 @@ const AltaProyecto = (props) => {
     endDate: "",
     status: "",
     customer: "",
-    users: "",
+    users: [{}],
   });
+
+  const userGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/users`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
+
+  useEffect(() => {
+    if (userProjectData === undefined) {
+      axios(userGet).then(function(res) {
+       setUserProjectData(res.data.data)
+      });
+    }
+  }, [userProjectData]);
 
   return (
     <div className="div div-proyecto">
@@ -70,7 +87,7 @@ const AltaProyecto = (props) => {
               <option key={index} value={client._id}>{client.name}</option>
             ))}
         </select>
-        {/*<label className="label-admin label-cliente-user">Users</label>
+        <label className="label-admin label-cliente-user">Users</label>
         <select
           className="input input-cliente-user"
           name="users"
@@ -80,10 +97,10 @@ const AltaProyecto = (props) => {
         >
           <option>-</option>
           {userProjectData &&
-            userProjectData.map((user) => (
-              <option value={user._id}>{user.firstname}</option>
+            userProjectData.map((user, index) => (
+              <option key={index} value={user._id}>{user.firstname}</option>
             ))}
-            </select>*/}
+            </select>
 
         <button type="submit" className="btn-crear-proyecto btn">
           + Crear

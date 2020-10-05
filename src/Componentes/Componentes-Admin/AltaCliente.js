@@ -9,6 +9,11 @@ const AltaCliente = (props) => {
     location: ""
   });
 
+  const cleareState  = () => {
+    setFormCliente({name: "",
+    location: ""})
+  }
+
   return (
     <div className="div div-cliente">
       <div className="conteiner-numero numero-div1">

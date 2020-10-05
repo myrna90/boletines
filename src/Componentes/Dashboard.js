@@ -45,7 +45,6 @@ const Dashboard = (props) => {
         setNewslettersData(res.data.data);
       });
     }
-    console.log('news', newslettersData);
   }, [newslettersData]);
 
 

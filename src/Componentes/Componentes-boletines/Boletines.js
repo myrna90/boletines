@@ -14,7 +14,7 @@ const Boletines = (props) => {
   const [userData, setUserData] = useState(undefined);
   const [customerData, setCustomerData] = useState(undefined);
   const currentUser = AuthService.getCurrentUser();
-  const {selectedProject, selectedDevice} = props;
+  
 
   const projectsGet = {
     method: 'GET',
@@ -143,6 +143,7 @@ const Boletines = (props) => {
       })
       .catch((err) => {
         console.log(err);
+
       });
   };
 
