@@ -85,9 +85,6 @@ const Paginacion = (props) => {
     }
   }, [state.boletines]);
 
-  
-  console.log('resp:', state.boletines);
-
   useEffect(() => {
     if (state.currentPage && state.boletinesPerPage) {
       const lastIndex = state.currentPage * state.boletinesPerPage;
@@ -156,7 +153,7 @@ const Paginacion = (props) => {
     <div>
       <div className="div-tabla">
         <table className="tabla">
-          <thead>
+          <thead key="thead">
             <tr className="tr-th">
               <th>
                 <strong>Folio</strong>
@@ -173,7 +170,7 @@ const Paginacion = (props) => {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody key="tbody">
             {state.currentBoletines &&
               state.currentBoletines.map((boletines, index) => {
                 return (

@@ -9,10 +9,10 @@ const FormStepTwo = (props) => {
 
   const [formProyecto, setFormProyecto] = useState({
     project: "",
-    client: "",
+    client: undefined,
     createDate: "",
     system: "",
-    customer: ""
+    customer: undefined
   });
 
   const [selectedProject, setSelectedProject] = useState("");
@@ -50,8 +50,8 @@ const FormStepTwo = (props) => {
               required
             >  
             <option>-</option>
-          {projectData && projectData.map((project) => (
-            <option value={project._id}>{project.name}</option>
+          {projectData && projectData.map((project, index) => (
+            <option key={index} value={project._id}>{project.name}</option>
           ))
           }
           </select>
@@ -69,7 +69,7 @@ const FormStepTwo = (props) => {
           className="input input2"
           name="customer"
           defaultValue={formProyecto.customer}
-          onChange={(e) => handleChange(e)}
+          //onChange={(e) => handleChange(e)}
           required
         >
           <option>-</option>
@@ -99,8 +99,8 @@ const FormStepTwo = (props) => {
             required
           >
             <option>-</option>
-            {systemData && systemData.map((system) => (
-              <option value={system._id}>{system.name}</option>
+            {systemData && systemData.map((system, index) => (
+              <option key={index} value={system._id}>{system.name}</option>
             ))}
           </select>
           <a className="caja3">

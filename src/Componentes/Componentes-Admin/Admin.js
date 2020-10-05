@@ -11,6 +11,7 @@ import  AuthService from '../Componentes-login/service/auth.service';
 const Admin = (props) => {  
 const [formValues, setFormValues] = useState({});
 const [clientProjectData, setClientProjectData] = useState(undefined);
+const [userProjectData, setUserProjectData] = useState(undefined);
 const token = AuthService.getCurrentUser();
 
   const handleChange = (event) => {
@@ -28,6 +29,14 @@ const token = AuthService.getCurrentUser();
       'Authorization': `Bearer ${token.token}`
     }
   };
+
+  const userGet = {
+    method: 'GET',
+    url: `${API_BASE_URL}/users`,
+    headers: {
+      'Authorization': `Bearer ${token.token}`
+    }
+  };
   
   useEffect(() => {
     if (clientProjectData === undefined) {
@@ -36,6 +45,14 @@ const token = AuthService.getCurrentUser();
       });
     }
   }, [clientProjectData]);
+
+  useEffect(() => {
+    if (userProjectData === undefined) {
+      axios(userGet).then(function(res) {
+       setUserProjectData(res.data.data)
+      });
+    }
+  }, [userProjectData]);
 
   const submitClient = (e) => {
     e.preventDefault();
@@ -92,9 +109,10 @@ const token = AuthService.getCurrentUser();
       lastname: formValues.lastname,
       username: formValues.username,
       email: formValues.email,
-      password: formValues.password
+      password: formValues.password,
+      isAdmin: formValues.role 
     }
-    axios.post(`${API_BASE_URL}/users`, user, { headers: {"Authorization" : `Bearer ${token.token}`} })
+    axios.post(`${API_BASE_URL}/auth/sign-up`, user, { headers: {"Authorization" : `Bearer ${token.token}`} })
     .then((res) => {
       console.log(res);
     })
@@ -119,8 +137,6 @@ const token = AuthService.getCurrentUser();
     });
   };
 
-
-  console.log(formValues);
     return(
         <div className="conteiner conteiner-boletines">
         {/*Contenedor general header */}

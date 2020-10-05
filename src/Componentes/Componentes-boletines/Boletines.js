@@ -15,18 +15,11 @@ const Boletines = (props) => {
   const [userData, setUserData] = useState(undefined);
   const [customerData, setCustomerData] = useState(undefined);
   const token = AuthService.getCurrentUser();
-
+  const currentUser = AuthService.getCurrentUser();
+  
   const projectsGet = {
     method: 'GET',
     url: `${API_BASE_URL}/projects`,
-    headers: {
-      'Authorization': `Bearer ${token.token}`
-    }
-  };
-
-  const customerGet = {
-    method: 'GET',
-    url: `${API_BASE_URL}/customers`,
     headers: {
       'Authorization': `Bearer ${token.token}`
     }
@@ -140,7 +133,7 @@ const Boletines = (props) => {
       device: formValues.device,
       //brand: formValues.marca,
      // model: formValues.modelo,
-      owner: formValues.owner,
+      owner: currentUser.user._id,
       //department: formValues.departamento
       status: true
     }

@@ -4,7 +4,7 @@ import AuthService from "../Componentes/Componentes-login/service/auth.service";
 
 const MiPerfil = (props) => {
   const currentUser = AuthService.getCurrentUser();
-
+  
   return (
     <div className="conteiner contenedor-perfil">
       <div id="cabecera" className="header">
@@ -26,15 +26,16 @@ const MiPerfil = (props) => {
               </div>
               <div className="div-nombre">
                 <h4 className="h4-nombre"></h4>
-                <h5 className="h5-area">Ingenieria</h5>
-                <p>
+                {/*Aqui va el área de la persona y abajo el nombre del usuario */}
+                <h5 className="h5-area">{currentUser.user.firstname} {currentUser.user.lastname}</h5>
+                {/*<p>
                   {currentUser.user.firstname} {currentUser.user.lastname}
-                </p>
+                </p>*/}
               </div>
             </div>
             <div className="div-info">
               <div className="correo-time correo">
-                <span class="material-icons md-25">email</span>
+                <span className="material-icons md-25">email</span>
                 <p className="p-correo-time">{currentUser.user.email}</p>
               </div>
               <div className="correo-time time">

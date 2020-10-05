@@ -22,9 +22,11 @@ const Navegacion = () => (
       component={Boletines}
       
     />
-    <Route path="/vista/listado" component={Listado}  />
+    <Route path="/vista/listado" 
+    component={Listado}  />
+
     <Route
-      path="/vista/view"
+      path="/vista/view:id"
       component={BoletinesView}
       
     />

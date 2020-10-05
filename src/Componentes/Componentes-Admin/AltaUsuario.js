@@ -14,19 +14,6 @@ const AltaUsuario = (props) => {
     //area: ""
   });
 
-  const isAdmin = (event) => {
-    const { name: role, value } = event.target;
-    setFormUsuario({ 
-      ...formUsuario,
-      [role]: value 
-    });
-    if(value === "Administrador"){
-      return true
-    }
-    else{
-      return false
-    }
-  }
   return (
     <div className="div div-usuario">
       <div className="conteiner-numero numero-div1">
@@ -64,6 +51,7 @@ const AltaUsuario = (props) => {
         <input
           className="input-admin input-usuario-4"
           name="password"
+          type="password"
           defaultValue={formUsuario.password}
           onChange={(e) => handleChange(e)}
           required
@@ -84,16 +72,16 @@ const AltaUsuario = (props) => {
           onChange={(e) => handleChange(e)}
         >
           <option>-</option>
-          <option handleChange={(e) => isAdmin(e)} value="Administrador">Administrador</option>
-          <option handleChange={(e) => isAdmin(e)} value="Usuario">Usuario</option>
+          <option value={Boolean(true)} >Administrador</option>
+          <option value={Boolean(false)}>Usuario</option>
         </select>
-        <label className="label-admin label-usuario-7">Área</label>
+        {/* <label className="label-admin label-usuario-7">Área</label>
         <input
           className="input-admin input-usuario-7"
           name="area"
           defaultValue={formUsuario.area}
           onChange={(e) => handleChange(e)}
-        ></input>
+        ></input> */}
 
         <button type="submit" className="btn-crear-usuario btn">
           + Crear

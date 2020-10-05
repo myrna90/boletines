@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import UsuarioCabecera from "../Componentes-secundarios/Usuario-cabecera";
 
-function BoletinesView() {
+function BoletinesView(props) {
   const [comment, setComment] = useState("");
   const [count, setCount] = useState(0);
-
+  const { match: { params } } = props;
+  console.log(params.id)
   return (
     <div className="conteiner contenedor-view">
       <div id="cabecera" className="header">

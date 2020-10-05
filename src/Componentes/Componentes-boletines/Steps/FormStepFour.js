@@ -24,13 +24,8 @@ const FormStepFour = (props) => {
       <div className="contenForm conteinerForm-2">
         <label className="label">Reporta</label>
         <div className="div-icon-info">
-        <input className="input input-user"
-            name="owner"
-            defaultValue={formUsuario.owner}
-            onChange={(e) => handleChange(e)}
-            required 
-            value={`${currentUser.user.firstname} ${currentUser.user.lastname}`}/>
-          {/*
+        
+          
          
           <select
             className="input input-user"
@@ -42,8 +37,7 @@ const FormStepFour = (props) => {
             <option>-</option>
           <option>{currentUser.user.firstname}</option>
             </select> 
-            
-             <select
+          {/* <select
             className="input input-user"
             name="owner"
             defaultValue={formUsuario.owner}
@@ -51,12 +45,10 @@ const FormStepFour = (props) => {
             required
           >
             <option>-</option>
-            {userData && userData.map((user) => (
-              <option value={user._id}>{user.username}</option>
+            {userData && userData.map((user, index) => (
+              <option key={index} >{user.username}</option>
             ))}
-            </select>
-            */}
-         
+            </select>  */}
         </div>
       </div>
 

@@ -19,7 +19,7 @@ const AltaDevice = (props) => {
       </div>
       <form className="contenFormDevice" onSubmit={submitDevice}>
         <label className="label-admin label-device-admin">
-          Nombre Device
+          Nombre equipo
         </label>
         <input
           className="input-admin input-device-admin"

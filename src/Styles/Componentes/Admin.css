@@ -56,7 +56,7 @@
   grid-area: contenForm2;
   margin-left: 2em;
   display: grid;
-  grid-template-areas: "labelP labelP2 labelP3 labelP4 btn-proyecto" "inputP inputP2 inputP3 inputP4 btn-proyecto";
+  grid-template-areas: "labelP labelP2 labelP3 labelP4 labelP5 btn-proyecto" "inputP inputP2 inputP3 inputP4 inputP5 btn-proyecto";
 }
 
 .label-proyecto-admin {
@@ -73,6 +73,10 @@
 
 .label-cliente-cliente {
   grid-area: labelP4;
+}
+
+.label-cliente-user {
+  grid-area: labelP5;
 }
 
 .input-fecha {
@@ -93,6 +97,11 @@
 
 .input-cliente-cliente {
   grid-area: inputP4;
+  padding: 0;
+}
+
+.input-cliente-user {
+  grid-area: inputP5;
   padding: 0;
 }
 
@@ -203,6 +212,8 @@
 .input-usuario-7 {
   grid-area: inputU6;
 }
+
+
 
 /*Diseño componente Device*/
 .contenFormDevice {

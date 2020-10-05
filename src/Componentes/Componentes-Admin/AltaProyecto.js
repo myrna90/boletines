@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { API_BASE_URL } from "../../configuration";
+// import axios from "axios";
+// import { API_BASE_URL } from "../../configuration";
 import AuthService from "../Componentes-login/service/auth.service";
 
 const AltaProyecto = (props) => {
   const { handleChange, submitProject } = props;
-  const { clientProjectData } = props;
-  const token = AuthService.getCurrentUser();
+  const { clientProjectData, userProjectData, userData } = props;
+  // const token = AuthService.getCurrentUser();
 
   const [formProyecto, setFormProyecto] = useState({
     nameProject: "",
@@ -66,10 +66,24 @@ const AltaProyecto = (props) => {
         >
           <option>-</option>
           {clientProjectData &&
-            clientProjectData.map((client) => (
-              <option value={client._id}>{client.name}</option>
+            clientProjectData.map((client, index) => (
+              <option key={index} value={client._id}>{client.name}</option>
             ))}
         </select>
+        {/*<label className="label-admin label-cliente-user">Users</label>
+        <select
+          className="input input-cliente-user"
+          name="users"
+          defaultValue={formProyecto.users}
+          onChange={(e) => handleChange(e)}
+          required
+        >
+          <option>-</option>
+          {userProjectData &&
+            userProjectData.map((user) => (
+              <option value={user._id}>{user.firstname}</option>
+            ))}
+            </select>*/}
 
         <button type="submit" className="btn-crear-proyecto btn">
           + Crear

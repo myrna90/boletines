@@ -67,8 +67,8 @@ const FormStepThree = (props) => {
               onChange={(e) => handleChange(e)}
             >
               <option>-</option>
-              {deviceData && deviceData.map((device) => (
-                <option value={device._id}>{device.name}</option>
+              {deviceData && deviceData.map((device, index) => (
+                <option key={index} value={device._id}>{device.name}</option>
               ))}
             </select>
             <a className="caja3">
@@ -90,8 +90,8 @@ const FormStepThree = (props) => {
               onChange={(e) => handleChange(e)}
             >
               <option>-</option>
-              {deviceData && deviceData.map((device) => (
-                <option value={device._id}>{device.brand}</option>
+              {deviceData && deviceData.map((device, index) => (
+                <option key={index} value={device._id}>{device.brand}</option>
               ))}
               </select>
             <a className="caja3">
@@ -113,8 +113,8 @@ const FormStepThree = (props) => {
               onChange={(e) => handleChange(e)}
             >
               <option>-</option>
-               {deviceData && deviceData.map((device) => (
-                <option value={device._id}>{device.model}</option>
+               {deviceData && deviceData.map((device, index) => (
+                <option key={index} value={device._id}>{device.model}</option>
               ))}
             </select>
             <a className="caja3">
