@@ -25,10 +25,6 @@ const FormStepTwo = (props) => {
     }   
   }, [selectedProject, projectData]);
 
-  
-
-  
-
   return (
     /* formulario para especificaciones del proyecto */
     <div className="div div-2">

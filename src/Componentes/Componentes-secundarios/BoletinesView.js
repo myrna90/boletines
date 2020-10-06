@@ -6,7 +6,6 @@ function BoletinesView({ location }) {
   // const [comment, setComment] = useState("");
   // const [count, setCount] = useState(0);
 
-  console.log(location.state.project);
   return (
     <div className="conteiner contenedor-view">
       <div id="cabecera" className="header">

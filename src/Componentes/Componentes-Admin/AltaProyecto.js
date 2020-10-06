@@ -87,7 +87,7 @@ const AltaProyecto = (props) => {
               <option key={index} value={client._id}>{client.name}</option>
             ))}
         </select>
-        <label className="label-admin label-cliente-user">Users</label>
+        {/* <label className="label-admin label-cliente-user">Users</label>
         <select
           className="input input-cliente-user"
           name="users"
@@ -100,7 +100,7 @@ const AltaProyecto = (props) => {
             userProjectData.map((user, index) => (
               <option key={index} value={user._id}>{user.firstname}</option>
             ))}
-            </select>
+            </select> */}
 
         <button type="submit" className="btn-crear-proyecto btn">
           + Crear

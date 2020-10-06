@@ -1,11 +1,22 @@
 import React, { useState, useEffect, useReducer } from "react";
-import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import { API_BASE_URL } from '../../configuration';
-import AuthService from '../../Componentes/Componentes-login/service/auth.service';
+import { API_BASE_URL } from "../../configuration";
+import AuthService from "../../Componentes/Componentes-login/service/auth.service";
+import BarraFiltro from "./BarraFiltro";
 
 const Paginacion = (props) => {
-  const { projectData } = props;
+
+  const people = [
+    "Siri",
+    "Alexa",
+    "Google",
+    "Facebook",
+    "Twitter",
+    "Linkedin",
+    "Sinkedin"
+  ];
+
   const initialState = {
     boletines: undefined,
     currentPage: 1,
@@ -17,17 +28,17 @@ const Paginacion = (props) => {
     projects: undefined,
   };
 
-  const token = AuthService.getCurrentUser();
+    // const [search, setSearch] = useState("");
+    // const [resultSearch, setResultSearch] = useState([]);
+    const token = AuthService.getCurrentUser();
 
   const newsGet = {
-    method: 'GET',
+    method: "GET",
     url: `${API_BASE_URL}/newsletters`,
     headers: {
-      'Authorization': `Bearer ${token.token}`
-    }
+      Authorization: `Bearer ${token.token}`,
+    },
   };
-
- 
 
   const boletinesReducer = (state, action) => {
     switch (action.type) {
@@ -63,7 +74,6 @@ const Paginacion = (props) => {
         };
 
       case "FETCH_PROJECTS":
-      
         return {
           ...state,
           projects: action.projects,
@@ -78,8 +88,7 @@ const Paginacion = (props) => {
 
   useEffect(() => {
     if (state.boletines === undefined) {
-      axios(newsGet)
-      .then(function(res) {
+      axios(newsGet).then(function(res) {
         dispatch({ type: "FETCH_BOLETINES", boletines: res.data.data });
       });
     }
@@ -133,24 +142,35 @@ const Paginacion = (props) => {
     }
   }, [state.boletines, state.boletinesPerPage]);
 
-
   const handleClick = (e) => {
     dispatch({ type: "SET_CURRENT_PAGE", currentPage: e.target.id });
   };
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const [searchResults, setSearchResults] = useState([]);
 
-  const [redirection, setRedirection] = useState(false);
-  const renderRedirect = () => {
-    if (redirection) {
-      return <Redirect to="/vista/view" />;
-    }
-  };
+  // const handleChange = event => {
+  //    setSearchTerm(event.target.value);
+  //  };
+  // useEffect(() => {
+  //    const results = people.filter(person =>
+  //      person.toLowerCase().includes(searchTerm)
+  //    );
+  //    setSearchResults(results);
+  //  }, [searchTerm]);
 
-  const handleRedirect = () => {
-    setRedirection(true);
-  };
-
+  console.log("news", state.currentBoletines);
   return (
     <div>
+       <div className="div-filtro">
+        <span className="material-icons md-28">filter_list</span>
+        <input
+          className="input-filter"
+          type="text"
+          placeholder="Filtro"
+          // value={searchTerm}
+          // onChange={handleChange}
+        />
+      </div>
       <div className="div-tabla">
         <table className="tabla">
           <thead key="thead">
@@ -165,6 +185,9 @@ const Paginacion = (props) => {
                 <strong>Sistema</strong>
               </th>
               <th>
+                <strong>Reporta</strong>
+              </th>
+              <th>
                 <strong>Vista</strong>
               </th>
             </tr>
@@ -175,17 +198,35 @@ const Paginacion = (props) => {
               state.currentBoletines.map((boletines, index) => {
                 return (
                   <tr key={index} className="tr-general">
+                   
                     <td>{boletines.folio}</td>
                     {/*en fecha va proyecto y en descripcion va sistema corregir */}
-                    <td>
-                     {boletines.project[0].name}
-                    </td>
+                    <td>{boletines.project[0].name}</td>
                     <td>{boletines.system[0].name}</td>
                     <td>
-                      {renderRedirect()}
-                      <button className="btn-list" onClick={handleRedirect}>
+                      {boletines.owner[0].firstname}{" "}
+                      {boletines.owner[0].lastname} 
+                    </td>
+                    <td>
+                      <Link
+                        to={{
+                          pathname: "/vista/view/",
+                          state: {
+                            id: `${boletines._id}`,
+                            folio: `${boletines.folio}`,
+                            title: `${boletines.title}`,
+                            create: `${boletines.createDate}`,
+                            description: `${boletines.description}`,
+                            solution: `${boletines.solution}`,
+                            project: `${boletines.project[0].name}`,
+                            system: `${boletines.system[0].name}`,
+                            device: `${boletines.device[0].name}`,
+                          },
+                        }}
+                        className="btn-list"
+                      >
                         <i className="material-icons  md-19">open_in_new</i>
-                      </button>
+                      </Link>
                     </td>
                   </tr>
                 );

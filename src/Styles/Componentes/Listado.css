@@ -18,6 +18,8 @@
 .div-filtro {
   grid-area: filtro;
   display: inline-flex;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .material-icons.md-28 {

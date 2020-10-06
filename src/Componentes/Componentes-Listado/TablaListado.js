@@ -9,15 +9,7 @@ const Tabla = (props) => {
 
   return (
     <div className="content-list">
-      <div className="div-filtro">
-        <span className="material-icons md-28">filter_list</span>
-        <input
-          className="input-filter"
-          type="text"
-          placeholder="Filtro"
-          /*onChange={(e) => searchSpace(e)}*/
-        />
-      </div>
+     
       <Paginacion/>
     </div>
   );

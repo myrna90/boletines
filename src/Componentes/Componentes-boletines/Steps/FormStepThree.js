@@ -14,6 +14,7 @@ const FormStepThree = (props) => {
     //imgSolucion: ""
   });
 
+
   const [selectedDevice, setSelectedDevice] = useState("");
   const [currentDevice, setCurrentDevice] = useState(undefined);
 
@@ -101,7 +102,7 @@ const FormStepThree = (props) => {
               className='input input-div2'
               name='brand'
               defaultValue={formImage.brand}
-              onChange={(e) => handleChange(e)}
+              
             >
               <option>-</option>
               <option value={currentDevice ? currentDevice.brand[0]._id: ''}>{currentDevice ? currentDevice.brand: ''}</option>

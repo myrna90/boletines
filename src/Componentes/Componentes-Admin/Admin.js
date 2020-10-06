@@ -7,13 +7,15 @@ import AltaDevice from './AltaEquipo';
 import axios from 'axios';
 import {API_BASE_URL} from '../../configuration';
 import  AuthService from '../Componentes-login/service/auth.service';
+import { useForm } from "react-hook-form";
 
 const Admin = (props) => {  
+  const { reset }= useForm();
 const [formValues, setFormValues] = useState({});
 const [clientProjectData, setClientProjectData] = useState(undefined);
 
 const token = AuthService.getCurrentUser();
-
+const {clearForm} = props;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -50,6 +52,7 @@ const token = AuthService.getCurrentUser();
 
   const submitClient = (e) => {
     e.preventDefault();
+    e.target.reset();
     const client = {
       name: formValues.name,
       location: formValues.location
@@ -61,11 +64,11 @@ const token = AuthService.getCurrentUser();
     .catch((err) => {
       console.log(err);
     });
-    
   };
 
   const submitProject = (e) => {
     e.preventDefault();
+    e.target.reset();
     const project = {
       name: formValues.nameProject,
       status: true,
@@ -85,6 +88,7 @@ const token = AuthService.getCurrentUser();
 
   const submitSystem = (e) => {
     e.preventDefault();
+    e.target.reset();
     const system = {
       name: formValues.name
     }
@@ -95,10 +99,12 @@ const token = AuthService.getCurrentUser();
     .catch((err) => {
       console.log(err);
     });
+    reset({});
   };
 
   const submitUser = (e) => {
     e.preventDefault();
+    e.target.reset();
     const user = {
       firstname: formValues.firstname,
       lastname: formValues.lastname,
@@ -118,6 +124,7 @@ const token = AuthService.getCurrentUser();
 
   const submitDevice = (e) => {
     e.preventDefault();
+    e.target.reset();
     const system = {
       name: formValues.name,
       brand: formValues.brand,

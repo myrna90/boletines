@@ -6,6 +6,7 @@ import AuthService from '../Componentes-login/service/auth.service';
 import { API_BASE_URL } from '../../configuration';
 
 const Boletines = (props) => {
+  const {clearForm} = props;
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
   const [projectData, setProjectData] = useState(undefined);
@@ -118,6 +119,7 @@ const Boletines = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    event.target.reset();
     const boletin = {
       title: formValues.title,
       project: formValues.project,
@@ -133,7 +135,6 @@ const Boletines = (props) => {
       owner: currentUser.user.id,
       status: true,
     };
-
     axios
       .post(`${API_BASE_URL}/newsletters`, boletin, {
         headers: { Authorization: `Bearer ${currentUser.token}` },
@@ -143,7 +144,6 @@ const Boletines = (props) => {
       })
       .catch((err) => {
         console.log(err);
-
       });
   };
 
