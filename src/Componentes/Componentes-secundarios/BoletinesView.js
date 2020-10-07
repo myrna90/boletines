@@ -16,9 +16,7 @@ function BoletinesView({ location }) {
           setNewsletter(res.data);
         });
     }
-  }, [newsletter]);
-
-  console.log(newsletter);
+  });
   return (
     <div className='conteiner contenedor-view'>
       <div id='cabecera' className='header'>
@@ -34,106 +32,148 @@ function BoletinesView({ location }) {
       <div className='contenido-view section'>
         <div className='view'>
           <div id='rectangle' className='titulo-view'>
-            <h3 className='h3-bol'>{location.state.folio}</h3>
+            {newsletter ? (
+              <h4 className='h3-bol'>
+                {newsletter.data.folio} | <small>{newsletter.data.title}</small>
+              </h4>
+            ) : (
+              <h3 className='h3-bol'></h3>
+            )}
+            <span className='shareButton'>
+              compatir<i className='material-icons'>share</i>
+            </span>
           </div>
           <div className='input-view'>
             <div className='div-input proyecto'>
               <p>Proyecto:</p>{' '}
-              <p className='input-bol input-proyecto'>
-                {location.state.project}
-              </p>
+              {newsletter ? (
+                <p className='input-bol input-proyecto'>
+                  {newsletter.data.project[0].name}
+                </p>
+              ) : (
+                <p className='input-bol input-proyecto'></p>
+              )}
             </div>
             <div className='div-input cliente'>
-              <p>Cliente:</p>{' '}
-              <p className='input-bol input-cliente'>
-                {location.state.customer}
-              </p>
+              <p>Propietario:</p>{' '}
+              {newsletter ? (
+                <p className='input-bol input-cliente'>
+                  {newsletter.data.owner[0].firstname}
+                </p>
+              ) : (
+                <p className='input-bol input-cliente'></p>
+              )}
             </div>
             <div className='div-input fecha'>
-              <p>Fecha:</p>
-              <p className='input-bol input-fecha-vista'>
-                {location.state.create}
-              </p>
+              <p>Fecha de creación:</p>
+              {newsletter ? (
+                <p className='input-bol input-fecha-vista'>
+                  {newsletter.data.createDate.split('T')[0]}
+                </p>
+              ) : (
+                <p className='input-bol input-fecha-vista'></p>
+              )}
             </div>
             <div className='div-input sistema'>
               <p>Sistema:</p>
-              <p className='input-bol input-sistema'>{location.state.system}</p>
+              {newsletter ? (
+                <p className='input-bol input-sistema'>
+                  {newsletter.data.system[0].name}
+                </p>
+              ) : (
+                <p className='input-bol input-sistema'></p>
+              )}
             </div>
             <div className='div-input equipo'>
               <p>Equipo:</p>
-              <p className='input-bol input-equipo'>{location.state.device}</p>
+              {newsletter ? (
+                <p className='input-bol input-equipo'>
+                  {newsletter.data.device[0].name}
+                </p>
+              ) : (
+                <p className='input-bol input-equipo'></p>
+              )}
             </div>
             <div className='div-input marca'>
               <p>Marca:</p>
-              <p className='input-bol input-marca'></p>
+              {newsletter ? (
+                <p className='input-bol input-marca'>
+                  {' '}
+                  {newsletter.data.device[0].brand}
+                </p>
+              ) : (
+                <p className='input-bol input-marca'></p>
+              )}
             </div>
             <div className='div-input modelo'>
               <p>Modelo:</p>
-              <p className='input-bol input-modelo'></p>
+              {newsletter ? (
+                <p className='input-bol input-modelo'>
+                  {' '}
+                  {newsletter.data.device[0].model}
+                </p>
+              ) : (
+                <p className='input-bol input-modelo'></p>
+              )}
             </div>
           </div>
           <div className='problema-view disgn'>
             <div className='conteiner-problema'>
               <h6 className='titulo-problem'>Problema:</h6>
-              <textarea className='input-problema'>
-                {location.state.description}
-              </textarea>
+              {newsletter ? (
+                <textarea
+                  disabled
+                  className='input-problema'
+                  value={newsletter.data.description}
+                ></textarea>
+              ) : (
+                <textarea className='input-problema'></textarea>
+              )}
             </div>
             <div className='conteiner-problema'>
               <h6 className='titulo-problem'>Imagen problema:</h6>
               <div className='img-problema'>
-                <i className='img-export-bol' class='material-icons md-56'>
-                  add_photo_alternate
-                </i>
+                {newsletter ? (
+                  <img
+                    className='imgBase64'
+                    alt='problema'
+                    src={newsletter.images.imageProblem}
+                  ></img>
+                ) : (
+                  <i className='img-export-bol material-icons md-56'></i>
+                )}
               </div>
             </div>
           </div>
           <div className='solucion-view disgn'>
             <div className='conteiner-problema'>
               <h6 className='titulo-problem'>Solución:</h6>
-              <textarea className='input-problema'>
-                {location.state.solution}
-              </textarea>
+              {newsletter ? (
+                <textarea
+                  disabled
+                  className='input-problema'
+                  value={newsletter.data.solution}
+                ></textarea>
+              ) : (
+                <textarea className='input-problema'></textarea>
+              )}
             </div>
             <div className='conteiner-problema'>
               <h6 className='titulo-problem'>Imagen solución:</h6>
               <div className='img-problema'>
-                <i className='img-export-bol' class='material-icons md-56'>
-                  add_photo_alternate
-                </i>
+                {newsletter ? (
+                  <img
+                    className='imgBase64'
+                    alt='solución'
+                    src={newsletter.images.imageSolution}
+                  ></img>
+                ) : (
+                  <i className='img-export-bol material-icons md-56'></i>
+                )}
               </div>
             </div>
           </div>
         </div>
-        {/* <div className="view-coment">
-          <div className="titulo-coment">
-            <h3 className="h3-bol">Comentarios</h3>
-          </div>
-          <div className="div-contador">
-            <p className="input-contador">
-              <span class="material-icons md-5">mode_comment</span>
-              {count}{" "}
-            </p>
-          </div>
-          <div className="div-comentar">
-            <textarea
-              className="input-comentar"
-              onChange={(event) => setComment(event.target.value)}
-            ></textarea>
-            <button
-              className="btn btn-comentar"
-              onClick={() => setCount(count + 1)}
-            >
-              Comentar
-            </button>
-          </div>
-          <div className="div-comentarios">
-            <div className="div-comentario">
-              <span class="material-icons md-24">account_circle</span>
-              <p className="p.comentario">{comment}</p>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );

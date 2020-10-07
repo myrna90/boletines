@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 
 const FormStepThree = (props) => {
   const { handleChange } = props;
   const { deviceData } = props;
-  const imageProblem = React.createRef();
-  const imageSolution = React.createRef();
+  const imageProblem = createRef();
+  const imageSolution = createRef();
   const [formImage, setFormImage] = useState({
     description: '',
     solution: '',

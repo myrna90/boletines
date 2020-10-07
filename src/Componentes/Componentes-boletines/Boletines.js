@@ -51,7 +51,7 @@ const Boletines = (props) => {
   /*Mandamos a llamar el arreglo de objetos de los projectos desde el API */
   useEffect(() => {
     if (projectData === undefined) {
-      axios(projectsGet).then(function (res) {
+      axios(projectsGet).then(function(res) {
         setProjectData(res.data.data);
       });
     }
@@ -59,7 +59,7 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (systemData === undefined) {
-      axios(systemsGet).then(function (res) {
+      axios(systemsGet).then(function(res) {
         setSystemData(res.data.data);
       });
     }
@@ -67,7 +67,7 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (deviceData === undefined) {
-      axios(devicesGet).then(function (res) {
+      axios(devicesGet).then(function(res) {
         setDeviceData(res.data.data);
       });
     }
@@ -75,7 +75,7 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (userData === undefined) {
-      axios(usersGet).then(function (res) {
+      axios(usersGet).then(function(res) {
         setUserData(res.data.data);
       });
     }
@@ -171,6 +171,7 @@ const Boletines = (props) => {
       .catch((err) => {
         console.log(err);
       });
+    e.target.reset();
   };
 
   return (
