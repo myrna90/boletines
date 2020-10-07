@@ -196,21 +196,12 @@
 .contenedor-form-div2 {
     grid-area: cont2;
     display: grid;
-    grid-template-areas: "L1 L2 L3 L4" "I1 I2 I3 I4";
+    grid-template-areas: "L1 L4" "I1 I4";
     margin-left: 2em;
 }
 
 .label1 {
     grid-area: L1;
-}
-
-.label2 {
-    grid-area: L2;
-}
-
-.label3 {
-    grid-area: L3;
-    width: 180px;
 }
 
 .label4 {
@@ -220,17 +211,6 @@
 .input1 {
     grid-area: I1;
     padding: 0;
-}
-
-.input2 {
-    grid-area: I2;
-    width: 230px;
-    padding: 0;
-}
-
-.input3 {
-    grid-area: I3;
-    width: 180px;
 }
 
 .input4 {
@@ -281,20 +261,11 @@
 
 .content-inputs {
     grid-area: c5;
-    display: grid;
-    grid-template-areas: "b1" "b4" "b2" "b5" "b3" "b6";
+    display: inline-block;
 }
 
 .label-div {
     grid-area: b1;
-}
-
-.label-div2 {
-    grid-area: b2;
-}
-
-.label-div3 {
-    grid-area: b3;
 }
 
 .input-div {
@@ -303,17 +274,6 @@
     padding: 0;
 }
 
-.input-div2 {
-    grid-area: b5;
-    height: 2em;
-    padding: 0;
-}
-
-.input-div3 {
-    grid-area: b6;
-    height: 2em;
-    padding: 0;
-}
 
 .text {
     width: 23.75em;

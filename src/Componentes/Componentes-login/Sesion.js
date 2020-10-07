@@ -1,7 +1,7 @@
 import BtnLogin from "../Componentes-login/ButtonLogin";
 import ImgPersonas from "../imgs/img-login.png";
 import { Link } from "react-router-dom";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import AuthService from "./service/auth.service";
 import history from "../../history";
 
@@ -139,7 +139,7 @@ const Sesion = (props) => {
           </p>
         </form>
       </div>
-      <img src={ImgPersonas} className="miImg2" />
+      <img src={ImgPersonas} alt="" className="miImg2" />
     </div>
   );
 };

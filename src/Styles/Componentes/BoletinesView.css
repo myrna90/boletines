@@ -30,8 +30,7 @@
 /*Diseño grid titulo*/
 .titulo-view {
   grid-area: titulo;
-  height: 5em;
-  margin-left: 1em;
+  display: inline-flex;
 }
 
 #rectangle {
@@ -43,6 +42,12 @@
 
 .h3-bol {
   margin: 1em;
+  color: var(--color-white-light);
+}
+
+.title-bol {
+  margin-top: 1.3em;
+  margin-left: 1em;
   color: var(--color-white-light);
 }
 

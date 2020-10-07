@@ -25,12 +25,9 @@ const MiPerfil = (props) => {
                 <span className="material-icons md-51">account_circle</span>
               </div>
               <div className="div-nombre">
-                <h4 className="h4-nombre"></h4>
                 {/*Aqui va el área de la persona y abajo el nombre del usuario */}
                 <h5 className="h5-area">{currentUser.user.firstname} {currentUser.user.lastname}</h5>
-                {/*<p>
-                  {currentUser.user.firstname} {currentUser.user.lastname}
-                </p>*/}
+               
               </div>
             </div>
             <div className="div-info">

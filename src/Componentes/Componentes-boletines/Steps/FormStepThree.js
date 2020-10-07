@@ -95,47 +95,6 @@ const FormStepThree = (props) => {
             </a>
           </div>
 
-          {/*Input marca */}
-          <label className=' label label-div2'>Marca</label>
-          <div className='div-icon-info'>
-            <select
-              className='input input-div2'
-              name='brand'
-              defaultValue={formImage.brand}
-              
-            >
-              <option>-</option>
-              <option value={currentDevice ? currentDevice.brand[0]._id: ''}>{currentDevice ? currentDevice.brand: ''}</option>
-              </select>
-            <a className='caja3'>
-              <span className='material-icons md-4'>info</span>
-              <span className='info'>
-                Seleccionar proyecto <br />
-                donde ocurrio el problema
-              </span>
-            </a>
-          </div>
-
-          {/*Input modelo */}
-          <label className=' label label-div3'>Modelo</label>
-          <div className='div-icon-info'>
-            <select
-              className='input input-div3'
-              name='model'
-              defaultValue={formImage.model}
-              onChange={(e) => handleChange(e)}
-            >
-              <option>-</option>
-              <option value={currentDevice ? currentDevice.model[0]._id: ''}>{currentDevice ? currentDevice.model: ''}</option>
-            </select>
-            <a className='caja3'>
-              <span className='material-icons md-4'>info</span>
-              <span className='info'>
-                Seleccionar proyecto <br />
-                donde ocurrio el problema
-              </span>
-            </a>
-          </div>
         </div>
       </div>
     </div>

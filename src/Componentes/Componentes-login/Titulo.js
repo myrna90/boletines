@@ -12,9 +12,9 @@ const Titulo = () => {
       <div className="sub-titulo">
         <h5>Mejora continua</h5>
       </div>
-      <img src={Logo} className="logotn" />
-      <img src={LogoW} className="logoW" />
-      <img src={ImgPersonas} className="miImg" />
+      <img src={Logo} alt="" className="logotn" />
+      <img src={LogoW} alt="" className="logoW" />
+      <img src={ImgPersonas} alt="" className="miImg" />
     </div>
   );
 };

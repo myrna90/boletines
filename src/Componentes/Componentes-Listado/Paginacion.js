@@ -1,21 +1,10 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, {  useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_BASE_URL } from "../../configuration";
 import AuthService from "../../Componentes/Componentes-login/service/auth.service";
-import BarraFiltro from "./BarraFiltro";
 
 const Paginacion = (props) => {
-
-  const people = [
-    "Siri",
-    "Alexa",
-    "Google",
-    "Facebook",
-    "Twitter",
-    "Linkedin",
-    "Sinkedin"
-  ];
 
   const initialState = {
     boletines: undefined,
@@ -26,12 +15,11 @@ const Paginacion = (props) => {
     currentBoletines: undefined,
     pageNumber: [],
     projects: undefined,
-    search: ''
+    search: '',
+    currentChange: undefined
   };
 
-    // const [search, setSearch] = useState("");
-    // const [resultSearch, setResultSearch] = useState([]);
-    const token = AuthService.getCurrentUser();
+  const token = AuthService.getCurrentUser();
 
   const newsGet = {
     method: "GET",
@@ -84,6 +72,11 @@ const Paginacion = (props) => {
           ...state,
           search: action.search,
         }
+        case "SET_CURRENT_CHANGE":
+          return {
+            ...state,
+            change: action.change,
+          }
 
       default:
         return { state };
@@ -151,18 +144,19 @@ const Paginacion = (props) => {
   const handleClick = (e) => {
     dispatch({ type: "SET_CURRENT_PAGE", currentPage: e.target.id });
   };
-  // const [searchTerm, setSearchTerm] = useState("");
-  // const [searchResults, setSearchResults] = useState([]);
 
-  // const handleChange = event => {
-  //    setSearchTerm(event.target.value);
-  //  };
-  // useEffect(() => {
-  //    const results = people.filter(person =>
-  //      person.toLowerCase().includes(searchTerm)
-  //    );
-  //    setSearchResults(results);
-  //  }, [searchTerm]);
+  useEffect(() => {
+    if(state.boletines && state.search){
+      const results = state.boletines.filter(search => search.toLowerCase().includes(state.search));
+      state.boletines = results
+      dispatch({type: "SET_SEARCH", results})
+    }
+  }, [state.boletines, state.search]);
+
+  const handleChange = (e) => {
+    dispatch({ type: "SET_CURRENT_CHANGE", currentChange: e.target.value});
+    console.log('change', e.target.value);
+  };
 
   return (
     <div>
@@ -172,8 +166,8 @@ const Paginacion = (props) => {
           className="input-filter"
           type="text"
           placeholder="Filtro"
-          // value={searchTerm}
-          // onChange={handleChange}
+          defaultValue={state.search}
+          onChange={(e) => handleChange(e)}
         />
       </div>
       <div className="div-tabla">

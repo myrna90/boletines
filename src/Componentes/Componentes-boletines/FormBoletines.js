@@ -9,8 +9,6 @@ const FormBoletines = (props) => {
   /*Es un destructure al obejeto props y sacamos esa variable, para no tener que hacer props handleChange*/
   const { handleChange, handleSubmit, resetForm } = props;
   const { projectData, clientData, systemData, deviceData, userData } = props;
-
-  
   
   return (
     <div className="contenido section ">

@@ -47,7 +47,6 @@ const Dashboard = (props) => {
     }
   }, [newslettersData]);
 
-
   return (
     <div className="conteiner contenedor-dash">
       <div id="cabecera" className="header">
@@ -74,8 +73,8 @@ const Dashboard = (props) => {
                     <td className="p-boletines">{filterFolio.folio}</td>
                     <td className="p-boletines-2">{filterFolio.title}</td>
                     <td>
-                      <Link to={{pathname: '/vista/view/', state: {id: `${filterFolio._id}`, folio: `${filterFolio.folio}`, title: `${filterFolio.title}`, create: `${filterFolio.createDate}`, description: `${filterFolio.description}`, 
-                      solution: `${filterFolio.solution}`, project: `${filterFolio.project[0].name}`, system: `${filterFolio.system[0].name}`, device: `${filterFolio.device[0].name}` }}} className="btn-list">
+                      <Link to={{pathname: '/vista/view/', state: {id: `${filterFolio._id}`, folio: `${filterFolio.folio}`, title: `${filterFolio.title}`, description: `${filterFolio.description}`, /*create: `${filterFolio.createDate}`*/ 
+                      solution: `${filterFolio.solution}`, project: `${filterFolio.project[0].name}`, projectCustomer: `${filterFolio.project[0].customer}`, system: `${filterFolio.system[0].name}`, device: `${filterFolio.device[0].name}`, deviceBrand: `${filterFolio.device[0].brand}`,  deviceModel: `${filterFolio.device[0].model}`}}} className="btn-list">
                         
                         <i className="material-icons  md-19">open_in_new</i>
                       </Link>
@@ -84,23 +83,6 @@ const Dashboard = (props) => {
                 ))}
               </tbody>
             </table>
-            {/*newslettersData &&
-              newslettersData
-                .filter((news) => news.folio)
-                .map((filterFolio) => (
-                  <div className="digsn-dash">
-                    <div className="circulo-boletin2"> </div>
-                    <p className="p-boletines">{filterFolio.folio}</p> <p className="p-boletines">|</p> <p className="p-boletines-2">{filterFolio.title}</p>
-                    <div className="contenedor-icon">
-                      <button
-                        className="btn-bol contenedor-icon"
-                        // onClick={newslettersData._id}
-                      >
-                        <i className="material-icons  md-18">open_in_new</i>
-                      </button>
-                    </div>
-                  </div>
-                ))*/}
           </div>
           <div className="grid-proyectos grids-dash">
             <h4 className="h4">Mis proyectos</h4>

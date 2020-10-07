@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import { API_BASE_URL } from '../../../configuration';
-import AuthService from '../../Componentes-login/service/auth.service';
 
 const FormStepTwo = (props) => {
-  const { handleChange, projectData, systemData, deviceData } = props;
-  const token = AuthService.getCurrentUser();
+  const { handleChange, projectData, systemData } = props;
 
   const [formProyecto, setFormProyecto] = useState({
     project: "",
@@ -62,30 +58,6 @@ const FormStepTwo = (props) => {
             </span>
           </a>
         </div>
-        {/*Input client */}
-        <label className="label label2">Cliente</label>
-        <select
-          className="input input2"
-          name="customer"
-          defaultValue={formProyecto.customer}
-          //onChange={(e) => handleChange(e)}
-          required
-        >
-          <option>-</option>
-          <option value={currentProject ? currentProject.customer[0]._id: ''}>{currentProject ? currentProject.customer[0].name: ''}</option>
-          
-        </select>
-
-        {/*Input fecha */}
-        <label className="label label3 label-fecha">Fecha</label>
-        <input
-          className="input input3"
-          name="createDate"
-          type="date"
-          defaultValue={formProyecto.fecha}
-          onChange={(e) => handleChange(e)}
-          required
-        ></input>
 
         {/*Input system */}
         <label className="label label4">Sistema</label>

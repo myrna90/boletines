@@ -6,14 +6,12 @@ import AuthService from '../Componentes-login/service/auth.service';
 import { API_BASE_URL } from '../../configuration';
 
 const Boletines = (props) => {
-  const {clearForm} = props;
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
   const [projectData, setProjectData] = useState(undefined);
   const [systemData, setSystemData] = useState(undefined);
   const [deviceData, setDeviceData] = useState(undefined);
   const [userData, setUserData] = useState(undefined);
-  const [customerData, setCustomerData] = useState(undefined);
   const currentUser = AuthService.getCurrentUser();
   
 

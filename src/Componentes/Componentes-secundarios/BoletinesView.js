@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import UsuarioCabecera from "../Componentes-secundarios/Usuario-cabecera";
-import { useParams } from "react-router-dom";
 
 function BoletinesView({ location }) {
-  // const [comment, setComment] = useState("");
-  // const [count, setCount] = useState(0);
 
   return (
     <div className="conteiner contenedor-view">
@@ -22,6 +19,7 @@ function BoletinesView({ location }) {
         <div className="view">
           <div id="rectangle" className="titulo-view">
             <h3 className="h3-bol">{location.state.folio}</h3>
+            <h4 className="title-bol">{location.state.title}</h4>
           </div>
           <div className="input-view">
             <div className="div-input proyecto">
@@ -52,11 +50,11 @@ function BoletinesView({ location }) {
             </div>
             <div className="div-input marca">
               <p>Marca:</p>
-              <p className="input-bol input-marca"></p>
+  <p className="input-bol input-marca">{location.state.deviceBrand}</p>
             </div>
             <div className="div-input modelo">
               <p>Modelo:</p>
-              <p className="input-bol input-modelo"></p>
+              <p className="input-bol input-modelo">{location.state.deviceModel}</p>
             </div>
           </div>
           <div className="problema-view disgn">

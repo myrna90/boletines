@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_BASE_URL, ADMIN_TOKEN, USER_TOKEN } from "../../../configuration";
+import { API_BASE_URL, ADMIN_TOKEN } from "../../../configuration";
 
 const login = (email, password) => {
   return axios
@@ -20,7 +20,7 @@ const login = (email, password) => {
         localStorage.setItem("user", JSON.stringify(res.data));
       }
       return res.data;
-    });
+    })
     
 };
 

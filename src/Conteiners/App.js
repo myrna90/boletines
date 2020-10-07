@@ -13,8 +13,6 @@ import "../Styles/Componentes/Admin.css";
 import Login from "../Componentes/Componentes-login/Login";
 import Vista from "./Vista";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-//import PageNotFound from './Componente-pageNotFound/PageNotFound';
-import history from '../history';
 
 function App() {
   return (
