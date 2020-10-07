@@ -7,19 +7,19 @@ function BoletinesView({ location }) {
   const { token } = AuthService.getCurrentUser();
   const [newsletter, setNewsletter] = useState(undefined);
 
-  useEffect(() => {
-    if (newsletter === undefined) {
-      axios
-        .get(`${API_BASE_URL}/newsletters/${location.state.id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        })
-        .then((res) => {
-          setNewsletter(res.data.data);
-        });
-    }
-  }, [newsletter]);
+  // useEffect(() => {
+  //   if (newsletter === undefined) {
+  //     axios
+  //       .get(`${API_BASE_URL}/newsletters/${location.state.id}`, {
+  //         headers: { Authorization: `Bearer ${token}` },
+  //       })
+  //       .then((res) => {
+  //         setNewsletter(res.data);
+  //       });
+  //   }
+    
+  // }, [newsletter]);
 
-  console.log(newsletter);
   return (
     <div className='conteiner contenedor-view'>
       <div id='cabecera' className='header'>
@@ -35,7 +35,8 @@ function BoletinesView({ location }) {
       <div className='contenido-view section'>
         <div className='view'>
           <div id='rectangle' className='titulo-view'>
-            <h3 className='h3-bol'></h3>
+           
+  <h3 className='h3-bol'>{location.state.folio}</h3>
           </div>
           <div className='input-view'>
             <div className='div-input proyecto'>
@@ -112,7 +113,7 @@ function BoletinesView({ location }) {
           </div>
           <div className="div-contador">
             <p className="input-contador">
-              <span class="material-icons md-5">mode_comment</span>
+              <span className="material-icons md-5">mode_comment</span>
               {count}{" "}
             </p>
           </div>
