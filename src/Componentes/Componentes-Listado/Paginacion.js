@@ -6,6 +6,8 @@ import AuthService from "../../Componentes/Componentes-login/service/auth.servic
 
 const Paginacion = (props) => {
 
+
+
   const initialState = {
     boletines: undefined,
     currentPage: 1,
@@ -18,7 +20,7 @@ const Paginacion = (props) => {
     search: '',
     currentChange: undefined
   };
-
+  
   const token = AuthService.getCurrentUser();
 
   const newsGet = {
@@ -128,6 +130,16 @@ const Paginacion = (props) => {
   ]);
 
   useEffect(() => {
+      const search = state.currentBoletines && state.currentBoletines.filter(search => search.toLowerCase().includes(state.search));
+      dispatch({type: "SET_SEARCH", search})
+  }, [state.boletines, state.search]);
+
+  const handleChange = (e) => {
+    dispatch({ type: "SET_CURRENT_CHANGE", currentChange: e.target.value});
+    console.log('change', e.target.value);
+  };
+
+  useEffect(() => {
     if (state.boletines && state.boletinesPerPage) {
       const resultPageNumbers = [];
       for (
@@ -143,19 +155,6 @@ const Paginacion = (props) => {
 
   const handleClick = (e) => {
     dispatch({ type: "SET_CURRENT_PAGE", currentPage: e.target.id });
-  };
-
-  useEffect(() => {
-    if(state.boletines && state.search){
-      const results = state.boletines.filter(search => search.toLowerCase().includes(state.search));
-      state.boletines = results
-      dispatch({type: "SET_SEARCH", results})
-    }
-  }, [state.boletines, state.search]);
-
-  const handleChange = (e) => {
-    dispatch({ type: "SET_CURRENT_CHANGE", currentChange: e.target.value});
-    console.log('change', e.target.value);
   };
 
   return (
