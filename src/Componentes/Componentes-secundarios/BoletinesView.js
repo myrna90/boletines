@@ -7,18 +7,19 @@ function BoletinesView({ location }) {
   const { token } = AuthService.getCurrentUser();
   const [newsletter, setNewsletter] = useState(undefined);
 
-  // useEffect(() => {
-  //   if (newsletter === undefined) {
-  //     axios
-  //       .get(`${API_BASE_URL}/newsletters/${location.state.id}`, {
-  //         headers: { Authorization: `Bearer ${token}` },
-  //       })
-  //       .then((res) => {
-  //         setNewsletter(res.data);
-  //       });
-  //   }
-    
-  // }, [newsletter]);
+  useEffect(() => {
+    if (newsletter === undefined) {
+      axios
+        .get(`${API_BASE_URL}/newsletters/${location.state.id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => {
+          setNewsletter(res.data.data);
+        });
+    }
+  }, [newsletter]);
+
+  console.log('object', newsletter);
 
   return (
     <div className='conteiner contenedor-view'>
@@ -84,7 +85,7 @@ function BoletinesView({ location }) {
             <div className='conteiner-problema'>
               <h6 className='titulo-problem'>Imagen problema:</h6>
               <div className='img-problema'>
-                <i className='img-export-bol' class='material-icons md-56'>
+                <i className='img-export-bol material-icons md-56'>
                   add_photo_alternate
                 </i>
               </div>
@@ -100,7 +101,7 @@ function BoletinesView({ location }) {
             <div className='conteiner-problema'>
               <h6 className='titulo-problem'>Imagen solución:</h6>
               <div className='img-problema'>
-                <i className='img-export-bol' class='material-icons md-56'>
+                <i className='img-export-bol material-icons md-56'>
                   add_photo_alternate
                 </i>
               </div>
