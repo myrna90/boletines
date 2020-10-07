@@ -13,9 +13,9 @@ const Admin = (props) => {
   const { reset }= useForm();
 const [formValues, setFormValues] = useState({});
 const [clientProjectData, setClientProjectData] = useState(undefined);
+const [userProjectData, setUserProjectData] = useState(undefined);
 
 const token = AuthService.getCurrentUser();
-const {clearForm} = props;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -48,6 +48,14 @@ const {clearForm} = props;
       });
     }
   }, [clientProjectData]);
+
+  useEffect(() => {
+    if (userProjectData === undefined) {
+      axios(userGet).then(function(res) {
+       setUserProjectData(res.data.data)
+      });
+    }
+  }, [userProjectData]);
 
 
   const submitClient = (e) => {

@@ -56,7 +56,10 @@
   grid-area: contenForm2;
   margin-left: 2em;
   display: grid;
-  grid-template-areas: "labelP labelP2 labelP3 labelP4 labelP5 btn-proyecto" "inputP inputP2 inputP3 inputP4 inputP5 btn-proyecto";
+  grid-template-areas: "labelP labelP2 labelP3 " 
+                       "inputP inputP2 inputP3 "
+                       "labelP4 labelP5 btn-proyecto" 
+                       "inputP4 inputP5 btn-proyecto";
 }
 
 .label-proyecto-admin {
@@ -73,10 +76,12 @@
 
 .label-cliente-cliente {
   grid-area: labelP4;
+  margin-top: 1em;
 }
 
 .label-cliente-user {
   grid-area: labelP5;
+  margin-top: 1em;
 }
 
 .input-fecha {

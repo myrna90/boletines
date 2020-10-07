@@ -5,34 +5,17 @@ import AuthService from "../Componentes-login/service/auth.service";
 
 const AltaProyecto = (props) => {
   const { handleChange, submitProject } = props;
-  const { clientProjectData } = props;
-  const [userProjectData, setUserProjectData] = useState(undefined);
+  const { clientProjectData, userProjectData } = props;
   const token = AuthService.getCurrentUser();
 
   const [formProyecto, setFormProyecto] = useState({
-    nameProject: "",
-    startDate: "",
-    endDate: "",
-    status: "",
-    customer: "",
-    users: [{}],
+    nameProject: '',
+    startDate: '',
+    endDate: '',
+    status: '',
+    customer: '',
+    users: {},
   });
-
-  const userGet = {
-    method: 'GET',
-    url: `${API_BASE_URL}/users`,
-    headers: {
-      'Authorization': `Bearer ${token.token}`
-    }
-  };
-
-  useEffect(() => {
-    if (userProjectData === undefined) {
-      axios(userGet).then(function(res) {
-       setUserProjectData(res.data.data)
-      });
-    }
-  }, [userProjectData]);
 
   return (
     <div className="div div-proyecto">
@@ -98,7 +81,7 @@ const AltaProyecto = (props) => {
           <option>-</option>
           {userProjectData &&
             userProjectData.map((user, index) => (
-              <option key={index} value={user._id}>{user.firstname}</option>
+            <option key={index} value={user._id}>{user.firstname} {user.lastname}</option>
             ))}
             </select> */}
 

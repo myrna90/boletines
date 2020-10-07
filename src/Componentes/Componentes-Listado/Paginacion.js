@@ -26,6 +26,7 @@ const Paginacion = (props) => {
     currentBoletines: undefined,
     pageNumber: [],
     projects: undefined,
+    search: ''
   };
 
     // const [search, setSearch] = useState("");
@@ -78,6 +79,11 @@ const Paginacion = (props) => {
           ...state,
           projects: action.projects,
         };
+      case "SET_SEARCH":
+        return {
+          ...state,
+          search: action.search,
+        }
 
       default:
         return { state };
@@ -158,7 +164,6 @@ const Paginacion = (props) => {
   //    setSearchResults(results);
   //  }, [searchTerm]);
 
-  console.log("news", state.currentBoletines);
   return (
     <div>
        <div className="div-filtro">
