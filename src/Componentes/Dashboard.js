@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import UsuarioCabecera from "../Componentes/Componentes-secundarios/Usuario-cabecera";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import UsuarioCabecera from '../Componentes/Componentes-secundarios/Usuario-cabecera';
+import axios from 'axios';
 import { API_BASE_URL } from '../configuration';
 import AuthService from '../Componentes/Componentes-login/service/auth.service';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 /*Componente Dashboard dentro se manda a llamar a los componentes MenuToglle y Cabecera, 
 se separaron los contenedores grid, para poder dar una mejor funcionalidad al codigó */
@@ -16,23 +16,21 @@ const Dashboard = (props) => {
     method: 'GET',
     url: `${API_BASE_URL}/projects`,
     headers: {
-      'Authorization': `Bearer ${token.token}`
-    }
+      Authorization: `Bearer ${token.token}`,
+    },
   };
 
   const newsGet = {
     method: 'GET',
     url: `${API_BASE_URL}/newsletters`,
     headers: {
-      'Authorization': `Bearer ${token.token}`
-    }
+      Authorization: `Bearer ${token.token}`,
+    },
   };
 
   useEffect(() => {
-    
     if (projectsData === undefined) {
-      axios(projectsGet)
-      .then(function(res) {
+      axios(projectsGet).then(function(res) {
         setProjectsData(res.data.data);
       });
     }
@@ -40,49 +38,57 @@ const Dashboard = (props) => {
 
   useEffect(() => {
     if (newslettersData === undefined) {
-      axios(newsGet)
-      .then(function(res) {
+      axios(newsGet).then(function(res) {
         setNewslettersData(res.data.data);
       });
     }
     console.log('news', newslettersData);
   }, [newslettersData]);
 
-
   return (
-    <div className="conteiner contenedor-dash">
-      <div id="cabecera" className="header">
-        <div className="div-icon-header">
-          <i className="material-icons md-40">dashboard</i>
+    <div className='conteiner contenedor-dash'>
+      <div id='cabecera' className='header'>
+        <div className='div-icon-header'>
+          <i className='material-icons md-40'>dashboard</i>
         </div>
 
-        <div className="div-h2">
-          <hr className="v" />
-          <h2 className="h2">Dashboard</h2>
+        <div className='div-h2'>
+          <hr className='v' />
+          <h2 className='h2'>Dashboard</h2>
         </div>
         <UsuarioCabecera />
       </div>
-      <div id="contenido" className="contenido contenido-dash section">
-        <div className="grid-contentDash">
-          <div className="grid-publicados grids-dash">
-            <h4 className="h4">Boletines</h4>
-            <table className="table-dash">
-              <tbody className="tbody-dash">
+      <div id='contenido' className='contenido contenido-dash section'>
+        <div className='grid-contentDash'>
+          <div className='grid-publicados grids-dash'>
+            <h4 className='h4'>Boletines</h4>
+            <table className='table-dash'>
+              <tbody className='tbody-dash'>
                 {/* {.filter((news) => news.folio) */
-                newslettersData && newslettersData.map((filterFolio, index) => (
-                  <tr className="tr-dash" key={index}>
-                    <td> <div className="circulo-boletin2"> </div></td>
-                    <td className="p-boletines">{filterFolio.folio}</td>
-                    <td className="p-boletines-2">{filterFolio.title}</td>
-                    <td>
-                      <Link to={{pathname: '/vista/view/', state: {id: `${filterFolio._id}`, folio: `${filterFolio.folio}`, title: `${filterFolio.title}`, create: `${filterFolio.createDate}`, description: `${filterFolio.description}`, 
-                      solution: `${filterFolio.solution}`, project: `${filterFolio.project[0].name}`, system: `${filterFolio.system[0].name}`, device: `${filterFolio.device[0].name}` }}} className="btn-list">
-                        
-                        <i className="material-icons  md-19">open_in_new</i>
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
+                newslettersData &&
+                  newslettersData.map((filterFolio, index) => (
+                    <tr className='tr-dash' key={index}>
+                      <td>
+                        {' '}
+                        <div className='circulo-boletin2'> </div>
+                      </td>
+                      <td className='p-boletines'>{filterFolio.folio}</td>
+                      <td className='p-boletines-2'>{filterFolio.title}</td>
+                      <td>
+                        <Link
+                          to={{
+                            pathname: '/vista/view/',
+                            state: {
+                              id: `${filterFolio._id}`,
+                            },
+                          }}
+                          className='btn-list'
+                        >
+                          <i className='material-icons  md-19'>open_in_new</i>
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
             {/*newslettersData &&
@@ -103,14 +109,14 @@ const Dashboard = (props) => {
                   </div>
                 ))*/}
           </div>
-          <div className="grid-proyectos grids-dash">
-            <h4 className="h4">Mis proyectos</h4>
+          <div className='grid-proyectos grids-dash'>
+            <h4 className='h4'>Mis proyectos</h4>
 
             {projectsData &&
               projectsData.map((project, index) => (
-                <div className="digsn-dash digsn-dash2" key={index}>
-                  <div className="circulo-boletin2"></div>
-                  <p className="p-boletines">{project.name}</p>
+                <div className='digsn-dash digsn-dash2' key={index}>
+                  <div className='circulo-boletin2'></div>
+                  <p className='p-boletines'>{project.name}</p>
                 </div>
               ))}
           </div>

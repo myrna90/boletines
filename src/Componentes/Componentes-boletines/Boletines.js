@@ -14,7 +14,7 @@ const Boletines = (props) => {
   const [userData, setUserData] = useState(undefined);
   const [customerData, setCustomerData] = useState(undefined);
   const currentUser = AuthService.getCurrentUser();
-  const {selectedProject, selectedDevice} = props;
+  const { selectedProject, selectedDevice } = props;
 
   const projectsGet = {
     method: 'GET',
@@ -51,7 +51,7 @@ const Boletines = (props) => {
   /*Mandamos a llamar el arreglo de objetos de los projectos desde el API */
   useEffect(() => {
     if (projectData === undefined) {
-      axios(projectsGet).then(function(res) {
+      axios(projectsGet).then(function (res) {
         setProjectData(res.data.data);
       });
     }
@@ -59,7 +59,7 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (systemData === undefined) {
-      axios(systemsGet).then(function(res) {
+      axios(systemsGet).then(function (res) {
         setSystemData(res.data.data);
       });
     }
@@ -67,7 +67,7 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (deviceData === undefined) {
-      axios(devicesGet).then(function(res) {
+      axios(devicesGet).then(function (res) {
         setDeviceData(res.data.data);
       });
     }
@@ -75,7 +75,7 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (userData === undefined) {
-      axios(usersGet).then(function(res) {
+      axios(usersGet).then(function (res) {
         setUserData(res.data.data);
       });
     }
@@ -88,9 +88,9 @@ const Boletines = (props) => {
       2: ['project', 'cliente', 'createDate', 'sistema'],
       3: [
         'problema',
-        'imgProblema',
         'solucion',
-        'imgSolucion',
+        'problemImage',
+        'solutionImage',
         'equipo',
         'marca',
         'modelo',
@@ -101,38 +101,52 @@ const Boletines = (props) => {
     const properties = Object.keys(identifier);
     properties.forEach((property) => {
       if (identifier[property].includes(name)) {
-        //console.log('entrando');
         setCurrentForm(property);
       }
     });
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    getCurrentForm(name);
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
+  const handleChange = (e) => {
+    if (e.target.type === 'file') {
+      const { name, files } = e.target;
+      getCurrentForm(name);
+      setFormValues({
+        ...formValues,
+        [name]: files,
+      });
+    } else {
+      const { name, value } = e.target;
+      getCurrentForm(name);
+      setFormValues({
+        ...formValues,
+        [name]: value,
+      });
+    }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const boletin = {
       title: formValues.title,
       project: formValues.project,
-      custumer: formValues.custumer,
-      createDate: formValues.createDate,
+      customer: formValues.customer,
+      createDate: new Date(),
       system: formValues.system,
       description: formValues.description,
-      pictureName: formValues.pictureName,
+      problemImage: formValues.problemImage,
       solution: formValues.solution,
+      solutionImage: formValues.solutionImage,
       device: formValues.device,
       brand: formValues.brand,
       model: formValues.model,
       owner: currentUser.user.id,
       status: true,
     };
+    const formData = new FormData();
+    const problem = boletin.problemImage[0];
+    const solution = boletin.solutionImage[0];
+    delete boletin.problemImage;
+    delete boletin.solutionImage;
 
     axios
       .post(`${API_BASE_URL}/newsletters`, boletin, {
@@ -140,6 +154,19 @@ const Boletines = (props) => {
       })
       .then((res) => {
         console.log(res.data);
+        formData.append('createdNewsletterId', res.data.data);
+        formData.append('problem', problem);
+        formData.append('solution', solution);
+        axios
+          .post(`${API_BASE_URL}/newsletters/upload-image`, formData, {
+            headers: { Authorization: `Bearer ${currentUser.token}` },
+          })
+          .then((res) => {
+            console.log(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         console.log(err);
