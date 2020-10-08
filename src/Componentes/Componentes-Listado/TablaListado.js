@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Paginacion from "./Paginacion";
+import SearchBar from "./searchBar";
 
 const Tabla = (props) => {
   const {currentBoletines} = props;
@@ -10,7 +11,8 @@ const Tabla = (props) => {
   return (
     <div className="content-list">
      
-      <Paginacion/>
+      <SearchBar/>
+      {/* <Paginacion/> */}
     </div>
   );
 };

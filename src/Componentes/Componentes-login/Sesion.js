@@ -111,18 +111,6 @@ const Sesion = (props) => {
             </div>
           </div>
 
-          {/*div para recordar usuario */}
-
-          {/*<div className="custom-control custom-checkbox">
-            <input
-              type="submit"
-              className="custom-control-input"
-              id="customCheck1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck1">
-              Recordarme
-            </label>
-          </div>*/}
           {message && (
             <div className="form-group">
               <div className="alert alert-danger" role="alert">

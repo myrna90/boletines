@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "../Componentes/Dashboard";
 import Boletines from "../Componentes/Componentes-boletines/Boletines";
@@ -6,9 +6,21 @@ import MiPerfil from "../Componentes/MiPerfil";
 import BoletinesView from "../Componentes/Componentes-secundarios/BoletinesView";
 import Listado from "../Componentes/Componentes-Listado/ListadoBoletines";
 import Admin from "./Componentes-Admin/Admin";
+import AuthService from "../Componentes/Componentes-login/service/auth.service";
+import { useEffect } from "react";
 
 function Navegacion() {
+  const [showAdminBoard, setShowAdminBoard] = useState(false);
+  const [currentUser, setCurrentUser] = useState(undefined);
 
+
+  useEffect(() => {
+    const user = AuthService.getCurrentUser();
+    if(user) {
+      setCurrentUser(user);
+      //setShowAdminBoard(user.isAdmin.includes(true));
+    }
+  }, [])
  return(
   <Switch>
   {/**/}
@@ -36,9 +48,9 @@ function Navegacion() {
     component={MiPerfil}
     
   />
-  <Route path="/vista/admin" 
+  {showAdminBoard &&(<Route path="/vista/admin" 
   component={Admin}  
-  />
+  />)}
   {/*<Route component={PageNotFound}/>*/}
 </Switch>
  )

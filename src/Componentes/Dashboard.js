@@ -37,7 +37,7 @@ const Dashboard = (props) => {
       });
     }
   }, [projectsData]);
-
+ 
   useEffect(() => {
     if (newslettersData === undefined) {
       axios(newsGet)
@@ -46,7 +46,7 @@ const Dashboard = (props) => {
       });
     }
   }, [newslettersData]);
-
+  console.log('dataDash', newslettersData);
   return (
     <div className="conteiner contenedor-dash">
       <div id="cabecera" className="header">
