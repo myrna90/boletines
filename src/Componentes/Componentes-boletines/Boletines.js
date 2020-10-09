@@ -156,7 +156,6 @@ const Boletines = (props) => {
         headers: { Authorization: `Bearer ${currentUser.token}` },
       })
       .then((res) => {
-        console.log(res.data);
         formData.append('createdNewsletterId', res.data.data);
         formData.append('problem', problem);
         formData.append('solution', solution);

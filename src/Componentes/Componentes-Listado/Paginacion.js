@@ -4,19 +4,9 @@ import axios from "axios";
 import { API_BASE_URL } from "../../configuration";
 import AuthService from "../../Componentes/Componentes-login/service/auth.service";
 import BarraFiltro from "./BarraFiltro";
+import { act } from "react-dom/test-utils";
 
 const Paginacion = (props) => {
-
-  const people = [
-    "Siri",
-    "Alexa",
-    "Google",
-    "Facebook",
-    "Twitter",
-    "Linkedin",
-    "Sinkedin"
-  ];
-
   const initialState = {
     boletines: undefined,
     currentPage: 1,
@@ -26,7 +16,8 @@ const Paginacion = (props) => {
     currentBoletines: undefined,
     pageNumber: [],
     projects: undefined,
-    search: ''
+    search: '',
+    resultSearch: []
   };
 
     // const [search, setSearch] = useState("");
@@ -84,6 +75,11 @@ const Paginacion = (props) => {
           ...state,
           search: action.search,
         }
+       case "SET_RESULT_SEARCH":
+         return {
+           ...state,
+           resultSearch: action.resultSearch
+         } 
 
       default:
         return { state };
@@ -93,11 +89,13 @@ const Paginacion = (props) => {
   const [state, dispatch] = useReducer(boletinesReducer, initialState);
 
   useEffect(() => {
+    
     if (state.boletines === undefined) {
       axios(newsGet).then(function(res) {
         dispatch({ type: "FETCH_BOLETINES", boletines: res.data.data });
       });
     }
+    
   }, [state.boletines]);
 
   useEffect(() => {
@@ -151,18 +149,21 @@ const Paginacion = (props) => {
   const handleClick = (e) => {
     dispatch({ type: "SET_CURRENT_PAGE", currentPage: e.target.id });
   };
-  // const [searchTerm, setSearchTerm] = useState("");
-  // const [searchResults, setSearchResults] = useState([]);
 
-  // const handleChange = event => {
-  //    setSearchTerm(event.target.value);
-  //  };
-  // useEffect(() => {
-  //    const results = people.filter(person =>
-  //      person.toLowerCase().includes(searchTerm)
-  //    );
-  //    setSearchResults(results);
-  //  }, [searchTerm]);
+  const handleChange = (e) => {
+    dispatch({type: "SET_SEARCH", search: e.target.value});
+   };
+
+  useEffect(() => {
+    if(state.currentBoletines && state.search) {
+      const resultSearch = [];
+      const results = state.currentBoletines && state.currentBoletines.filter(boletin =>
+        boletin.folio.toLowerCase().includes(state.search.toLowerCase())
+      )
+      resultSearch(results)
+      dispatch({type: "SET_SEARCH", resultSearch})
+    }
+   }, [state.search]);
 
   return (
     <div>
@@ -172,8 +173,8 @@ const Paginacion = (props) => {
           className="input-filter"
           type="text"
           placeholder="Filtro"
-          // value={searchTerm}
-          // onChange={handleChange}
+          defaultValue={state.search}
+          onChange={(e) => handleChange(e)}
         />
       </div>
       <div className="div-tabla">
@@ -213,25 +214,17 @@ const Paginacion = (props) => {
                       {boletines.owner[0].lastname} 
                     </td>
                     <td>
-                      <Link
-                        to={{
-                          pathname: "/vista/view/",
-                          state: {
-                            id: `${boletines._id}`,
-                            folio: `${boletines.folio}`,
-                            title: `${boletines.title}`,
-                            create: `${boletines.createDate}`,
-                            description: `${boletines.description}`,
-                            solution: `${boletines.solution}`,
-                            project: `${boletines.project[0].name}`,
-                            system: `${boletines.system[0].name}`,
-                            device: `${boletines.device[0].name}`,
-                          },
-                        }}
-                        className="btn-list"
-                      >
-                        <i className="material-icons  md-19">open_in_new</i>
-                      </Link>
+                    <Link
+                          to={{
+                            pathname: '/vista/view/',
+                            state: {
+                              id: `${boletines._id}`,
+                            },
+                          }}
+                          className='btn-list'
+                        >
+                          <i className='material-icons  md-19'>open_in_new</i>
+                        </Link>
                     </td>
                   </tr>
                 );

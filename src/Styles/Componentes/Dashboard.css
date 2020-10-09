@@ -34,16 +34,16 @@
 
 .grid-publicados {
   grid-area: publicados;
-  width: 450px;
+  width: 500px;
   height: 362px;
   margin-left: 30px;
 }
 
 .grid-proyectos {
   grid-area: proyectos;
-  width: 576px;
+  width: 585px;
   height: 362px;
-  margin-left: 40px;
+  margin-left: 70px;
 }
 
 .boletines-general {
@@ -122,7 +122,7 @@
 }
 
 .table-dash {
-  width: 88%;
+  width: 92%;
   margin-left: 1.5em;
 }
 
@@ -145,10 +145,12 @@
 .p-boletines {
   color: var(--color-texts);
   margin-left: 1em;
+  font-size: 14px;
 }
 
 .p-boletines-2 {
   color: var(--color-texts);
+  font-size: 14px;
 }
 
 .p-boletines:hover {
