@@ -86,24 +86,16 @@ console.log('result', searchResults);
                   </td>
                   <td>
                     <Link
-                      to={{
-                        pathname: "/vista/view/",
-                        state: {
-                          id: `${boletines._id}`,
-                          folio: `${boletines.folio}`,
-                          title: `${boletines.title}`,
-                          create: `${boletines.createDate}`,
-                          description: `${boletines.description}`,
-                          solution: `${boletines.solution}`,
-                          project: `${boletines.project[0].name}`,
-                          system: `${boletines.system[0].name}`,
-                          device: `${boletines.device[0].name}`,
-                        },
-                      }}
-                      className="btn-list"
-                    >
-                      <i className="material-icons  md-19">open_in_new</i>
-                    </Link>
+                          to={{
+                            pathname: '/vista/view/',
+                            state: {
+                              id: `${filterFolio._id}`,
+                            },
+                          }}
+                          className='btn-list'
+                        >
+                          <i className='material-icons  md-19'>open_in_new</i>
+                        </Link>
                   </td>
                 </tr>
               ))}
