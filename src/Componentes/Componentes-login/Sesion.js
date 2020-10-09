@@ -37,7 +37,6 @@ const Sesion = (props) => {
     setMessage("");
     setLoading(true);
 
-    //form.current.validateAll();
     AuthService.login(email, password).then(
       () => {
         history.push("/vista/dashboard");

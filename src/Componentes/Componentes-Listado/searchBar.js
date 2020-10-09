@@ -78,7 +78,7 @@ console.log('result', searchResults);
               newslettersData.map((boletines, index) => (
                 <tr key={index} className="tr-general">
                   <td>{boletines.folio}</td>
-                  {/*en fecha va proyecto y en descripcion va sistema corregir }
+                  
                   <td>{boletines.project[0].name}</td>
                   <td>{boletines.system[0].name}</td>
                   <td>
