@@ -3,6 +3,10 @@ import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
 import AuthService from '../Componentes-login/service/auth.service';
 import axios from 'axios';
 import { API_BASE_URL } from '../../configuration';
+
+//Modal
+import ModalShare from './modalShare';
+
 function BoletinesView({ location }) {
   const { token } = AuthService.getCurrentUser();
   const [newsletter, setNewsletter] = useState(undefined);
@@ -37,11 +41,23 @@ function BoletinesView({ location }) {
                 {newsletter.data.folio} | <small>{newsletter.data.title}</small>
               </h4>
             ) : (
-              <h3 className='h3-bol'></h3>
+              <h3 className='h3-bol'> </h3>
             )}
-            <span className='shareButton'>
-              compatir<i className='material-icons'>share</i>
-            </span>
+            {newsletter ? (
+              <ModalShare
+                parentSelector={() => document.querySelector('#root')}
+                idNewsletter={newsletter.data._id}
+              >
+                <p>Modal Content.</p>
+              </ModalShare>
+            ) : (
+              <ModalShare
+                parentSelector={() => document.querySelector('#root')}
+                idNewsletter
+              >
+                <p>Modal Content.</p>
+              </ModalShare>
+            )}
           </div>
           <div className='input-view'>
             <div className='div-input proyecto'>

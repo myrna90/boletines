@@ -42,7 +42,6 @@ const Dashboard = (props) => {
         setNewslettersData(res.data.data);
       });
     }
-    console.log('news', newslettersData);
   }, [newslettersData]);
 
   return (
@@ -61,7 +60,7 @@ const Dashboard = (props) => {
       <div id='contenido' className='contenido contenido-dash section'>
         <div className='grid-contentDash'>
           <div className='grid-publicados grids-dash'>
-            <h4 className='h4'>Boletines</h4>
+            <h4 className='h4'>Mis Boletines</h4>
             <table className='table-dash'>
               <tbody className='tbody-dash'>
                 {/* {.filter((news) => news.folio) */

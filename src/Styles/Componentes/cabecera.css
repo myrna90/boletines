@@ -1,61 +1,61 @@
 .header {
   display: grid;
-  grid-template-areas: "icono h2 usuario";
+  grid-template-areas: 'icono h2 usuario';
   grid-template-columns: 50px;
   overflow: hidden;
   align-items: center;
 }
 
 .div-icon-header {
-  grid-area: icono;   
+  grid-area: icono;
   text-align: center;
   width: 60px;
 }
 
 .material-icons.md-40 {
-    font-size: 2em; 
-  }
+  font-size: 2em;
+}
 
-hr.v{
-    position: fixed;
-    width: 1px;
-    height: 48px;
-    background-color: var(--color-separacion-header);
-    margin-top: -.6em;
-  }
+hr.v {
+  position: fixed;
+  width: 1px;
+  height: 48px;
+  background-color: var(--color-separacion-header);
+  margin-top: -0.6em;
+}
 
 .div-h2 {
   grid-area: h2;
   padding: 0.6em;
-  }  
+}
 
 .h2 {
-    font-size: 25px;
-    text-align: left;
-    margin-left: 15px;
-    color: var(--color-grey-border);
-  }
+  font-size: 25px;
+  text-align: left;
+  margin-left: 15px;
+  color: var(--color-grey-border);
+}
 
 .conteiner-usuario {
-    grid-area: usuario;
-    display: inline-flex;
-    width: 215px;
-    margin-left: auto;
-    margin-right: 1em;
-  }
+  grid-area: usuario;
+  display: inline-flex;
+  width: 215px;
+  margin-left: auto;
+  margin-right: 2em;
+}
 
-  .material-icons.md-12 {
-    font-size: 18px;
-  }
+.material-icons.md-12 {
+  font-size: 18px;
+}
 
-  .input-usuario {
-    margin-bottom: 0em;
-    font-size: 12px;
-    margin-left: 0.5em;
-  }
+.input-usuario {
+  margin-bottom: 0em;
+  font-size: 12px;
+  margin-left: 0.5em;
+}
 
-  @media only screen and (max-width: 600px) {
-    .conteiner-usuario {
-      display: none;
-    }
+@media only screen and (max-width: 600px) {
+  .conteiner-usuario {
+    display: none;
   }
+}

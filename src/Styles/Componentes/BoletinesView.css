@@ -50,13 +50,17 @@
   color: var(--color-white-light);
   font-size: 14px;
   background: #0d9494;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.1s;
 }
-.material-icons {
+.material-icons-share {
   margin-left: 10px;
   vertical-align: middle;
+}
+.shareButton:hover {
+  box-shadow: var(--boxShadow-button);
 }
 /*Diseño grid informacion de inputs*/
 .input-view {

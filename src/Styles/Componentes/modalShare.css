@@ -1,0 +1,149 @@
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: all 100ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.modal__share_newsletter {
+  padding: 10px;
+}
+.modal__share_newsletter--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+.modal__share_newsletter__header--title {
+  margin: 0;
+  color: var(--color-green-boletin);
+  font-size: 20px;
+}
+.modal__share_newsletter__header--close {
+  background-color: grey;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.material-icons-close {
+  font-size: 14px;
+  color: white;
+}
+.modal__share_newsletter--content {
+  margin-top: 5px;
+  min-width: 30vw;
+  min-height: 300px;
+  position: relative;
+}
+.modal__share_newsletter--content-formgroup {
+  margin-bottom: 20px;
+}
+.modal__share_newsletter--content-formgroup label {
+  display: block;
+}
+.modal__share_newsletter--content-formgroup input {
+  width: 100%;
+}
+.modal__share_newsletter--content-formgroup textarea {
+  width: 100%;
+}
+.modal__share_newsletter--content-submit {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.modal__share_newsletter--content-submit button {
+  background-color: var(--color-blue);
+  color: white;
+  padding: 3px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+}
+
+.modal__share_newsletter__send-content {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+.modal__share_newsletter__send-content span {
+  font-size: 14px;
+  color: #007f7f;
+  margin-top: -20px;
+}
+
+/* LOADING ALERT*/
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #007f7f;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+::placeholder {
+  color: #cecece;
+}
