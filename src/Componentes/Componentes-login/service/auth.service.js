@@ -1,35 +1,40 @@
-import axios from "axios";
-import { API_BASE_URL, ADMIN_TOKEN, USER_TOKEN } from "../../../configuration";
+import axios from 'axios';
+import { API_BASE_URL, ADMIN_TOKEN, USER_TOKEN } from '../../../configuration';
 
 const login = (email, password) => {
   return axios
     .request({
       method: 'POST',
       url: `${API_BASE_URL}/auth/sign-in`,
-      
-        auth: {
-          username: email,
-          password
-        },
+
+      auth: {
+        username: email,
+        password,
+      },
       data: {
-        apiKeyToken: ADMIN_TOKEN
-      }
+        apiKeyToken: ADMIN_TOKEN,
+      },
+      validateStatus: () => true,
     })
     .then((res) => {
-      if (res.data.token) {
-        localStorage.setItem("user", JSON.stringify(res.data));
+      if (res.status !== 401) {
+        if (res.data.token) {
+          localStorage.setItem('user', JSON.stringify(res.data));
+        }
       }
-      return res.data;
+      return res;
+    })
+    .catch((err) => {
+      return err;
     });
-    
 };
 
 const logout = () => {
-  localStorage.removeItem("user");
+  localStorage.removeItem('user');
 };
 
 const getCurrentUser = () => {
-  return JSON.parse(localStorage.getItem("user"));
+  return JSON.parse(localStorage.getItem('user'));
 };
 
 export default {

@@ -4,37 +4,38 @@
 :root {
   /*colores verdes*/
   --grid-color-blue: #004040;
-  --color-blue: #0E8C8C;
+  --color-blue: #0e8c8c;
   --color-green-boletin: #006666;
-  --color-green-steps: #007F7F;
-  --color-blue-bajo: #98D2DE;
-  --color-boton: #A3E2BA;
+  --color-green-steps: #007f7f;
+  --color-blue-bajo: #98d2de;
+  --color-boton: #a3e2ba;
   /*colores blancos*/
-  --color-white: #FBFBFB;
-  --color-white-light: #FFFFFF;
+  --color-white: #fbfbfb;
+  --color-white-light: #ffffff;
   /*colores grices*/
   --color-grey: #3e3e3e;
   --color-grey-border: #bebed2;
-  --color-grey-border-img: #EBEBEB;
-  --color-separacion-header: #DBDBDB;
+  --color-grey-border-img: #ebebeb;
+  --color-separacion-header: #dbdbdb;
   --color-texts: #707070;
-  --color-border-input: #A7A7A7;
-  --color-gray-bajo: #F2F2F2;
+  --color-border-input: #a7a7a7;
+  --color-gray-bajo: #f2f2f2;
   /*colores rosas*/
-  --color-borde-redireccion: #99125C;
-  --color-morado: #800D61;
-  --color-pink: #D47F7F;
-  
+  --color-borde-redireccion: #99125c;
+  --color-morado: #800d61;
+  --color-pink: #d47f7f;
+
   /*medidas, color y bordes de los botones*/
   --height-boton: 1.9em;
   --width-boton: 6.87em;
-  --border-radius-boton: .32em;
+  --border-radius-boton: 0.32em;
   --border-boton: none;
   --align-boton: center;
-  --top-boton: .06em;
-  --border-line: solid .06em #A7A7A7;
-  --borde-steps: solid 0.2em #007F7F;
-  --boxShadow-dash: 0px 1px 6px 0px rgba(0,0,0,0.16);
+  --top-boton: 0.06em;
+  --border-line: solid 0.06em #a7a7a7;
+  --borde-steps: solid 0.2em #007f7f;
+  --boxShadow-dash: 0px 1px 6px 0px rgba(0, 0, 0, 0.16);
+  --boxShadow-button: 0px 1px 6px 0px rgba(0, 0, 0, 0.5);
   /*css contenedores perfil y view boletines*/
   --width-conten-view: 45em;
   --height-conten-view: 41em;
@@ -45,7 +46,7 @@
 .conteiner {
   display: grid;
   grid-template: 3.12em auto/auto 1fr;
-  grid-template-areas: "aside header" "aside section";
+  grid-template-areas: 'aside header' 'aside section';
   height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -75,10 +76,10 @@
 }
 
 .footer-content {
-grid-area: footer;
-text-align: center;
-margin-top: 2em;
-color: var(--color-grey);
+  grid-area: footer;
+  text-align: center;
+  margin-top: 2em;
+  color: var(--color-grey);
 }
 
 h2 {
@@ -101,7 +102,7 @@ h2 {
 .btn:hover {
   background-color: var(--color-blue);
   opacity: 0.7;
-  color:  var(--color-white);
+  color: var(--color-white);
 }
 
 @media only screen and (max-width: 600px) {
@@ -109,17 +110,17 @@ h2 {
     height: 92.5vh;
   }
 }
-@media(min-width:600px) and (max-width: 991px) {
+@media (min-width: 600px) and (max-width: 991px) {
   .conteiner {
     height: 92vh;
   }
-  
+
   .footer-content {
     margin-top: -3em;
   }
 }
 
-@media(min-width:992px) and (max-width: 1024px) {
+@media (min-width: 992px) and (max-width: 1024px) {
   .footer-content {
     margin-top: -3em;
   }
