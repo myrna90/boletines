@@ -11,8 +11,8 @@ const Tabla = (props) => {
   return (
     <div className="content-list">
      
-      <SearchBar/>
-      {/* <Paginacion/> */}
+      {/* <SearchBar/> */}
+      <Paginacion/>
     </div>
   );
 };

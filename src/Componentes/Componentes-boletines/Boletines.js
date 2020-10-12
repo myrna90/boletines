@@ -12,8 +12,10 @@ const Boletines = (props) => {
   const [systemData, setSystemData] = useState(undefined);
   const [deviceData, setDeviceData] = useState(undefined);
   const [userData, setUserData] = useState(undefined);
+  const [currentProject, setCurrentProject] = useState(undefined);
+  const [selectedProject, setSelectedProject] = useState('');
   const currentUser = AuthService.getCurrentUser();
-  const { selectedProject, selectedDevice } = props;
+  // const { selectedProject, selectedDevice } = props;
 
   const projectsGet = {
     method: 'GET',
@@ -60,7 +62,7 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (systemData === undefined) {
-      axios(systemsGet).then(function (res) {
+      axios(systemsGet).then(function(res) {
         setSystemData(res.data.data);
       });
     }
@@ -68,7 +70,7 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (deviceData === undefined) {
-      axios(devicesGet).then(function (res) {
+      axios(devicesGet).then(function(res) {
         setDeviceData(res.data.data);
       });
     }
@@ -76,11 +78,20 @@ const Boletines = (props) => {
 
   useEffect(() => {
     if (userData === undefined) {
-      axios(usersGet).then(function (res) {
+      axios(usersGet).then(function(res) {
         setUserData(res.data.data);
       });
     }
   }, [userData]);
+
+  /* Se utiliza en form step two */
+  useEffect(() => {
+    if (selectedProject !== '') {
+      setCurrentProject(
+        projectData.find((project) => project._id === selectedProject),
+      );
+    }
+  }, [selectedProject, projectData]);
 
   /*Va a recibir un objeto */
   const getCurrentForm = (name) => {
@@ -130,7 +141,7 @@ const Boletines = (props) => {
     const boletin = {
       title: formValues.title,
       project: formValues.project,
-      customer: formValues.customer,
+      customer: currentProject.customer[0]._id,
       createDate: new Date(),
       system: formValues.system,
       description: formValues.description,
@@ -154,7 +165,6 @@ const Boletines = (props) => {
         headers: { Authorization: `Bearer ${currentUser.token}` },
       })
       .then((res) => {
-        console.log(res.data);
         formData.append('createdNewsletterId', res.data.data);
         formData.append('problem', problem);
         formData.append('solution', solution);
@@ -172,6 +182,7 @@ const Boletines = (props) => {
       .catch((err) => {
         console.log(err);
       });
+    e.target.reset();
   };
 
   return (
@@ -201,6 +212,8 @@ const Boletines = (props) => {
           systemData={systemData}
           deviceData={deviceData}
           userData={userData}
+          setSelectedProject={setSelectedProject}
+          currentProject={currentProject}
         />
       </div>
     </div>

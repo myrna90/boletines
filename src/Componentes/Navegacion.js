@@ -48,9 +48,10 @@ function Navegacion() {
     component={MiPerfil}
     
   />
-  {showAdminBoard &&(<Route path="/vista/admin" 
-  component={Admin}  
-  />)}
+  {/* {showAdminBoard &&(
+  )} */}
+  <Route path="/vista/admin" 
+  component={Admin}/>
   {/*<Route component={PageNotFound}/>*/}
 </Switch>
  )

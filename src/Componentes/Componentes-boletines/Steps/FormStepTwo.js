@@ -4,8 +4,8 @@ import { API_BASE_URL } from '../../../configuration';
 import AuthService from '../../Componentes-login/service/auth.service';
 
 const FormStepTwo = (props) => {
-  const { handleChange, projectData, systemData } = props;
-
+  const { handleChange, setSelectedProject } = props;
+  const { currentProject, projectData, systemData} = props;
   const [formProyecto, setFormProyecto] = useState({
     project: '',
     client: undefined,
@@ -14,19 +14,19 @@ const FormStepTwo = (props) => {
     customer: undefined,
   });
 
-  const [selectedProject, setSelectedProject] = useState('');
-  const [currentProject, setCurrentProject] = useState(undefined);
+  // const [selectedProject, setSelectedProject] = useState('');
+  // const [currentProject, setCurrentProject] = useState(undefined);
   //default date
   var curr = new Date();
   var date = curr.toISOString().substr(0, 10);
 
-  useEffect(() => {
-    if (selectedProject !== '') {
-      setCurrentProject(
-        projectData.find((project) => project._id === selectedProject),
-      );
-    }
-  }, [selectedProject, projectData]);
+  // useEffect(() => {
+  //   if (selectedProject !== '') {
+  //     setCurrentProject(
+  //       projectData.find((project) => project._id === selectedProject),
+  //     );
+  //   }
+  // }, [selectedProject, projectData]);
 
   //placeholder
 
