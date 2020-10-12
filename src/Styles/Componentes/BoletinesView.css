@@ -133,6 +133,7 @@
 }
 
 .input-bol {
+  width: 40%;
   height: 2em;
   border-radius: var(--border-radius-boton);
 }

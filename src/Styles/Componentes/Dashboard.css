@@ -2,22 +2,23 @@
 .contenedor-dash {
   height: 100vh;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .contenido-dash {
   overflow: hidden;
   background-color: var(--color-white);
   display: grid;
   grid-template-areas: 'bolProy' 'generales';
-  /* width: 100%; */
+  width: 100%;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .grid-contentDash {
   grid-area: bolProy;
-  /* overflow: hidden; */
   display: grid;
   grid-template-areas: 'publicados proyectos';
-  grid-template-columns: 1rf 1fr;
+  grid-template-columns: 60% calc(40% - 2%);
   gap: 2%;
 }
 
@@ -36,12 +37,14 @@
 
 .grid-publicados {
   grid-area: publicados;
+  overflow: auto;
   width: 100%;
   height: 362px;
 }
 
 .grid-proyectos {
   grid-area: proyectos;
+  overflow: auto;
   width: 100%;
   height: 362px;
 }

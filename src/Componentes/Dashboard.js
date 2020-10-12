@@ -11,7 +11,7 @@ const Dashboard = (props) => {
   const [projectsData, setProjectsData] = useState(undefined);
   const [newslettersData, setNewslettersData] = useState(undefined);
   const token = AuthService.getCurrentUser();
-
+  const id = '5f8266cc9113201c385718ed';
   const projectsGet = {
     method: 'GET',
     url: `${API_BASE_URL}/projects`,
@@ -63,8 +63,7 @@ const Dashboard = (props) => {
             <h4 className='h4'>Mis Boletines</h4>
             <table className='table-dash'>
               <tbody className='tbody-dash'>
-                {/* {.filter((news) => news.folio) */
-                newslettersData &&
+                {newslettersData &&
                   newslettersData.map((filterFolio, index) => (
                     <tr className='tr-dash' key={index}>
                       <td>
@@ -75,12 +74,7 @@ const Dashboard = (props) => {
                       <td className='p-boletines-2'>{filterFolio.title}</td>
                       <td>
                         <Link
-                          to={{
-                            pathname: '/vista/view/',
-                            state: {
-                              id: `${filterFolio._id}`,
-                            },
-                          }}
+                          to={`/vista/view/${filterFolio._id}`}
                           className='btn-list'
                         >
                           <i className='material-icons  md-19'>open_in_new</i>
@@ -110,7 +104,6 @@ const Dashboard = (props) => {
           </div>
           <div className='grid-proyectos grids-dash'>
             <h4 className='h4'>Mis proyectos</h4>
-
             {projectsData &&
               projectsData.map((project, index) => (
                 <div className='digsn-dash digsn-dash2' key={index}>

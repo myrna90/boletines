@@ -25,7 +25,7 @@ const login = (email, password) => {
       return res;
     })
     .catch((err) => {
-      return err;
+      return 'ERR_CONNECTION_REFUSE';
     });
 };
 
