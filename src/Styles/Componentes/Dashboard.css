@@ -1,32 +1,35 @@
 /*Diseño dashboard*/
 .contenedor-dash {
-    height: 100vh;
-    overflow: hidden;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .contenido-dash {
-  overflow: hidden; 
+  overflow: hidden;
   background-color: var(--color-white);
   display: grid;
-  grid-template-areas: "bolProy" "generales";
+  grid-template-areas: 'bolProy' 'generales';
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .grid-contentDash {
   grid-area: bolProy;
-  overflow: hidden;
   display: grid;
-  grid-template-areas: "publicados proyectos";
-  grid-template-columns: 500px 650px;
+  grid-template-areas: 'publicados proyectos';
+  grid-template-columns: 60% calc(40% - 2%);
+  gap: 2%;
 }
 
 .h4 {
-  font-size: 20px;
-  margin-left: 1.5em;
-  margin-top: .8em;
+  font-size: 18px;
+  border: 0;
+  padding: 20px;
   color: var(--color-blue-bajo);
 }
 
 .grids-dash {
-  margin-top: 2em;
   background-color: var(--color-white-light);
   box-shadow: var(--boxShadow-dash);
   border-radius: var(--border-radius-boton);
@@ -34,16 +37,16 @@
 
 .grid-publicados {
   grid-area: publicados;
-  width: 450px;
+  overflow: auto;
+  width: 100%;
   height: 362px;
-  margin-left: 30px;
 }
 
 .grid-proyectos {
   grid-area: proyectos;
-  width: 576px;
+  overflow: auto;
+  width: 100%;
   height: 362px;
-  margin-left: 40px;
 }
 
 .boletines-general {
@@ -53,10 +56,9 @@
 }
 
 .contenedor-Bgeneral {
-  
   width: 81.5%;
   height: 210px;
-  margin-top: .5em;
+  margin-top: 0.5em;
   margin-left: 30px;
   background-color: var(--color-white-light);
   border-radius: var(--border-radius-boton);
@@ -73,7 +75,7 @@
   background: transparent;
   border: none;
   color: var(--color-blue-bajo);
-  margin-left: .8em;
+  margin-left: 0.8em;
 }
 
 .conteiner-bol-gen {
@@ -96,17 +98,16 @@
   margin-left: 3em;
 }
 
-
 .p-bol-gen {
-  margin: .6em;
-  color: var(--color-grey)
+  margin: 0.6em;
+  color: var(--color-grey);
 }
 
 .digsn-dash {
   display: inline-flex;
   border-bottom: 1px solid var(--color-grey-border);
   margin: 1.5em;
-  margin-top: .5em;
+  margin-top: 0.5em;
   width: 410px;
   height: 40px;
 }
@@ -116,38 +117,40 @@
   border-bottom: 1px solid var(--color-grey-border);
   margin: 1.5em;
   margin-left: 2em;
-  margin-top: .5em;
+  margin-top: 0.5em;
   width: 31em;
   height: 40px;
 }
 
 .table-dash {
-  width: 88%;
+  width: 94%;
   margin-left: 1.5em;
 }
 
 .circulo-boletin {
-  margin-top: .3em;
   background-color: var(--color-boton);
   border-radius: 50%;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 }
 
 .circulo-boletin2 {
-  margin-top: .3em;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: var(--color-blue);
   border-radius: 50%;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 }
 
 .p-boletines {
   color: var(--color-texts);
+  font-size: 14px;
   margin-left: 1em;
 }
 
 .p-boletines-2 {
+  font-size: 14px;
   color: var(--color-texts);
 }
 
@@ -160,7 +163,7 @@
 }
 
 .material-icons.md-18:hover {
- color: var(--color-boton);
+  color: var(--color-boton);
 }
 
 .contenedor-icon {
@@ -177,10 +180,10 @@
   outline: none;
 }
 
-@media only screen and (max-width: 600px){
-.contenedor-dash{
-  height: 92vh;
-}
+@media only screen and (max-width: 600px) {
+  .contenedor-dash {
+    height: 92vh;
+  }
 
   .grid-contentDash {
     display: inline-table;
@@ -192,26 +195,26 @@
     height: 35%;
     padding: 0.4em;
   }
-.h4 {
-  margin-left: 1em;
-}
-.circulo-boletin {
-  width: 10px;
-  height: 10px;
-}
+  .h4 {
+    margin-left: 1em;
+  }
+  .circulo-boletin {
+    width: 10px;
+    height: 10px;
+  }
 
-.circulo-boletin2 {
-  width: 10px;
-  height: 10px;
-}
+  .circulo-boletin2 {
+    width: 10px;
+    height: 10px;
+  }
 
-.p-boletines {
-  margin-left: 0.5em;
-}
-.contenedor-icon {
-  margin-left: 7em;
-  margin-top: 0.5em;
-}
+  .p-boletines {
+    margin-left: 0.5em;
+  }
+  .contenedor-icon {
+    margin-left: 7em;
+    margin-top: 0.5em;
+  }
   .digsn-dash {
     width: 85%;
     font-size: 12px;
@@ -222,9 +225,8 @@
   .disgn1 {
     display: none;
   }
- 
+
   .grid-proyectos {
-   
     margin-top: 3em;
     margin-left: 2em;
     width: 80%;
@@ -232,53 +234,51 @@
     padding: 0.4em;
   }
 
-.digsn-dash2 {
-  font-size: 13px;
-  margin-top: 0.5em;
-  margin-bottom: .9em;
-  width: 15.5em;
-}
-  
+  .digsn-dash2 {
+    font-size: 13px;
+    margin-top: 0.5em;
+    margin-bottom: 0.9em;
+    width: 15.5em;
+  }
+
   .boletines-general {
     display: none;
   }
 }
 
-@media(min-width:600px) and (max-width: 991px){
+@media (min-width: 600px) and (max-width: 991px) {
   .contenedor-dash {
     width: auto;
-    
   }
-.grid-contentDash {
-  display: inline-table;
-}
+  .grid-contentDash {
+    display: inline-table;
+  }
 
-.grid-publicados {
-  width: 500px;
-  margin-left: 5em;
-  padding: 1em;
-}
+  .grid-publicados {
+    width: 500px;
+    margin-left: 5em;
+    padding: 1em;
+  }
 
+  .grid-proyectos {
+    width: 500px;
+    margin-left: 5em;
+    margin-top: 4em;
+    padding: 1em;
+  }
 
-.grid-proyectos {
-  width: 500px;
-  margin-left: 5em;
-  margin-top: 4em;
-  padding: 1em;
-}
-
-.digsn-dash2 {
-  width: 420px;
-}
+  .digsn-dash2 {
+    width: 420px;
+  }
   .boletines-general {
     display: none;
   }
 }
 
-@media(min-width:992px) and (max-width: 1024px) {
+@media (min-width: 992px) and (max-width: 1024px) {
   .grid-proyectos {
     margin-left: 0em;
-    width: 450px
+    width: 450px;
   }
 
   .digsn-dash2 {
