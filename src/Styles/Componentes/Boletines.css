@@ -484,6 +484,14 @@ input[type='file'] {
   }
 }
 
+/* LOADING */
+.creating-newsletter-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+}
+
 @media (min-width: 600px) and (max-width: 991px) {
   .div-h2-crear {
     display: none;

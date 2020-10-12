@@ -19,9 +19,11 @@ const FormStepThree = (props) => {
     e.preventDefault();
     const file = e.target.files[0];
     if (file) {
-      handleChange(e);
       const image = URL.createObjectURL(file);
       imageProblem.current.src = image;
+      handleChange(e);
+    } else {
+      imageProblem.current.src = '';
     }
   };
 
@@ -32,6 +34,8 @@ const FormStepThree = (props) => {
       const image = URL.createObjectURL(file);
       imageSolution.current.src = image;
       handleChange(e);
+    } else {
+      imageSolution.current.src = '';
     }
   };
 
