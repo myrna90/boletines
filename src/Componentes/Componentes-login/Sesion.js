@@ -1,25 +1,16 @@
 import BtnLogin from '../Componentes-login/ButtonLogin';
 import ImgPersonas from '../imgs/img-login.png';
 import { Link } from 'react-router-dom';
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import AuthService from './service/auth.service';
 import history from '../../history';
+import Loader from 'react-loader-spinner';
 
 const Sesion = (props) => {
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-
-  const required = (value) => {
-    if (!value) {
-      return (
-        <div className='alert alert-danger' role='alert'>
-          This field is required!
-        </div>
-      );
-    }
-  };
 
   const onChangeemail = (e) => {
     const email = e.target.value;
@@ -33,14 +24,17 @@ const Sesion = (props) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
     setMessage('');
     setLoading(true);
-
     //form.current.validateAll();
     AuthService.login(email, password).then((res) => {
+      console.log(res);
       if (res.status === 401) {
         const resMessage = 'El usuario y/o contraseña no valido';
+        setLoading(false);
+        setMessage(resMessage);
+      } else if (res === 'ERR_CONNECTION_REFUSE') {
+        const resMessage = 'El servidor no está disponible, intente mas tarde';
         setLoading(false);
         setMessage(resMessage);
       } else {
@@ -55,7 +49,14 @@ const Sesion = (props) => {
   };
 
   return (
-    <div className='conteiner-sesion'>
+    <div className='container-sesion'>
+      {loading ? (
+        <div className='loading-container'>
+          <Loader type='Grid' color='#ffffff' height={30} width={30} />
+          <br />
+          <span>Iniciando sesión</span>
+        </div>
+      ) : null}
       <div className='text-inicio'>
         <h2 className='text-conten'>Inicie sesión ahora...</h2>
         <p className='p-conten'>
@@ -63,7 +64,6 @@ const Sesion = (props) => {
           usando las mismas credenciales.
         </p>
       </div>
-
       <div className='login'>
         <form className='form' onSubmit={handleLogin}>
           {/*div para introducir email */}
@@ -72,14 +72,13 @@ const Sesion = (props) => {
               Email:
             </label>
             <input
-              required
               type='email'
               className='input-login'
               name='user'
-              placeholder='devteam@telenetdemexico.com'
+              placeholder='usuario@telenetdemexico.com'
               value={email}
               onChange={onChangeemail}
-              validations={[required]}
+              disabled={loading}
             />
             <div className='img-correo'>
               <span className='material-icons md-25'>email</span>
@@ -92,14 +91,14 @@ const Sesion = (props) => {
               Contraseña:{' '}
             </label>
             <input
+              required
               className='input-login'
               type='password'
               name='password'
               placeholder='**********'
               value={password}
               onChange={onChangePassword}
-              validations={[required]}
-              required
+              disabled={loading}
             />
 
             <div className='img-contraseña'>
@@ -109,7 +108,7 @@ const Sesion = (props) => {
 
           {message && (
             <div className='form-group'>
-              <div className='alert alert-danger' role='alert'>
+              <div className='alert alert-danger ' role='alert'>
                 {message}
               </div>
             </div>

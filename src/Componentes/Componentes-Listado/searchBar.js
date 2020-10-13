@@ -6,14 +6,9 @@ import AuthService from "../../Componentes/Componentes-login/service/auth.servic
 
 const SearchBar = (props) => {
   const token = AuthService.getCurrentUser();
-  // const [search, setSearch] = useState("");
-  // const [searchResults, setSearchResults] = useState([]);
-  // // const [newslettersData, setNewslettersData] = useState({data: []});
-
-  // const [newsletter, setNewsletter] = useState([]);
-  const [data ,setData] = useState([]);
-  const [filtered ,setFilterd] = useState([]);
-  const [result , setResult] = useState("");
+  const [newslettersData, setNewslettersData] = useState([]);
+  const [currentSearch ,setCurrentSearch] = useState([]);
+  const [search , setSearch] = useState("");
 
   useEffect(()=>{
     const fetchData = async () => {
@@ -21,25 +16,45 @@ const SearchBar = (props) => {
                 const res = await axios.get(`${API_BASE_URL}/newsletters`, {
                   headers: { Authorization: `Bearer ${token.token}` },
                 });
-                setData(res.data.data);
-                setFilterd(res.data);
+                setNewslettersData(res.data.data);
+                setCurrentSearch(res.data.data);
             }catch(err){
                 throw new Error(err);
             }
              };
           fetchData(); 
 },[]);
-  console.log(data);
 
-//   useEffect(()=> {
-//     const results = filtered.filter(res => res.project[0].name.toLowerCase().includes(result.toLowerCase())
-//     ); 
-//     setData(results)
-// } ,[result]);
 
-const onChange = (e) => {
-  setResult(e.target.value);
+const onChangeSearch = (e) => {
+  setSearch(e.target.value);
 }
+
+useEffect(() => {
+    const searchResult = currentSearch.filter(boletinesFilter);
+    console.log('result', searchResult);
+    setNewslettersData(searchResult)
+}, [search]);
+ 
+  function boletinesFilter(boletin) {
+    if(boletin.project[0].name.toLowerCase().includes(search.toLowerCase()) 
+       || boletin.system[0].name.toLowerCase().includes(search.toLowerCase())){
+      return true
+    } 
+  //   if(){
+  //     //firstname lastname
+  //     console.log('name case')
+  //     return true
+  //   }
+  //   if() {
+  //     //busuqeda por folio
+  //     console.log('folio case')
+  //     return true
+  //   }
+    else {
+      return false
+    }
+  }
 
   return (
     <div>
@@ -49,8 +64,8 @@ const onChange = (e) => {
           className="input-filter"
           type="text"
           placeholder="Filtro"
-          defaultValue={result}
-          onChange={(e) => onChange(e.target.value)}
+          defaultValue={search}
+          onChange={(e) => onChangeSearch(e)}
         />
       </div>
       <div className="div-tabla">
@@ -74,9 +89,9 @@ const onChange = (e) => {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="tbody-listado">
           {/* */}
-          {data && data.map((boletin, index) => (
+          {newslettersData && newslettersData.map((boletin, index) => (
             <tr key={index} className="tr-general">
             <td>{boletin.folio}</td>
             

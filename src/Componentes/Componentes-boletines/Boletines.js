@@ -4,6 +4,11 @@ import Steps from './Steps';
 import axios from 'axios';
 import AuthService from '../Componentes-login/service/auth.service';
 import { API_BASE_URL } from '../../configuration';
+//Modal
+import Modal from 'react-modal';
+
+//Loading animation
+import Loader from 'react-loader-spinner';
 
 const Boletines = (props) => {
   const [formValues, setFormValues] = useState({});
@@ -16,6 +21,23 @@ const Boletines = (props) => {
   const [selectedProject, setSelectedProject] = useState('');
   const currentUser = AuthService.getCurrentUser();
   // const { selectedProject, selectedDevice } = props;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const customStylesModal = {
+    overlay: {
+      backgroundColor: 'rgba(255, 255, 255, 0.75)',
+    },
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      padding: '20px',
+      background: 'none',
+      border: '0',
+    },
+  };
 
   const projectsGet = {
     method: 'GET',
@@ -135,9 +157,9 @@ const Boletines = (props) => {
       });
     }
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsOpen(true);
     const boletin = {
       title: formValues.title,
       project: formValues.project,
@@ -172,8 +194,10 @@ const Boletines = (props) => {
           .post(`${API_BASE_URL}/newsletters/upload-image`, formData, {
             headers: { Authorization: `Bearer ${currentUser.token}` },
           })
-          .then((res) => {
-            console.log(res.data);
+          .then((respons) => {
+            console.log(respons.data);
+            props.history.push(`/vista/view/${res.data.data}`);
+            setIsOpen(false);
           })
           .catch((err) => {
             console.log(err);
@@ -182,7 +206,6 @@ const Boletines = (props) => {
       .catch((err) => {
         console.log(err);
       });
-    e.target.reset();
   };
 
   return (
@@ -215,6 +238,11 @@ const Boletines = (props) => {
           setSelectedProject={setSelectedProject}
           currentProject={currentProject}
         />
+        <Modal isOpen={modalIsOpen} style={customStylesModal}>
+          <div className='creating-newsletter-loader'>
+            <Loader type='Grid' color='#004040' height={40} width={40} />
+          </div>
+        </Modal>
       </div>
     </div>
   );

@@ -143,6 +143,7 @@ const Paginacion = (props) => {
   useEffect(() => {
     if (state.boletines && state.boletinesPerPage) {
       const resultPageNumbers = [];
+      
       for (
         let i = 1;
         i <= Math.ceil(state.boletines.length / state.boletinesPerPage);
@@ -152,14 +153,15 @@ const Paginacion = (props) => {
       }
       dispatch({ type: "SET_PAGE_NUMBERS", resultPageNumbers });
     }
-  }, [state.boletines, state.boletinesPerPage]);
+  }, [state.boletines, state.boletinesPerPage, state.searchResult]);
 
   useEffect(() => {
-    if(state.search) {
-    const searchResult = state.boletines.filter(boletinesFilter)
-    console.log('result', searchResult);
-    dispatch({type: "SET_RESULT_SEARCH", searchResult}) 
-    }
+    
+      if(state.search) {
+        const searchResult = state.boletines.filter(boletinesFilter)
+        console.log('result', searchResult);
+        dispatch({type: "SET_RESULT_SEARCH", searchResult}) 
+        }
    }, [state.search]);
 
 
@@ -227,8 +229,8 @@ const Paginacion = (props) => {
           </thead>
 
           <tbody key="tbody">
-            {state.currentBoletines &&
-              state.currentBoletines.map((boletines, index) => {
+            {state.boletines &&
+              state.boletines.map((boletines, index) => {
                 return (
                   <tr key={index} className="tr-general">
                    

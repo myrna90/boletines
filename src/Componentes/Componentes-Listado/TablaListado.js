@@ -4,15 +4,12 @@ import SearchBar from "./searchBar";
 
 const Tabla = (props) => {
   const {currentBoletines} = props;
-  const [search, setSearch] = useState(null);
-  const [filter, setFilter] = useState([]);
-
-
+  
   return (
     <div className="content-list">
      
-      {/* <SearchBar/> */}
-      <Paginacion/>
+      <SearchBar/>
+      {/* <Paginacion/> */}
     </div>
   );
 };

@@ -4,18 +4,21 @@ import AuthService from '../Componentes-login/service/auth.service';
 import axios from 'axios';
 import { API_BASE_URL } from '../../configuration';
 
+//Loading
+import Skeleton from 'react-loading-skeleton';
 //Modal
 import ModalShare from './modalShare';
 
-function BoletinesView({ location }) {
+function BoletinesView(props) {
+  const { id } = props.match.params;
   const { token } = AuthService.getCurrentUser();
   const [newsletter, setNewsletter] = useState(undefined);
 
   useEffect(() => {
     if (newsletter === undefined) {
       axios
-        .get(`${API_BASE_URL}/newsletters/${location.state.id}`, {
-          headers: { Authorization: `Bearer ${token.token}` },
+        .get(`${API_BASE_URL}/newsletters/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {
           setNewsletter(res.data.data);
@@ -63,13 +66,16 @@ function BoletinesView({ location }) {
           </div>
           <div className='input-view'>
             <div className='div-input proyecto'>
-              <p>Proyecto:</p>{' '}
+              <p>Proyecto:</p>
+              {''}
               {newsletter ? (
                 <p className='input-bol input-proyecto'>
                   {newsletter.data.project[0].name}
                 </p>
               ) : (
-                <p className='input-bol input-proyecto'></p>
+                <p className='input-bol input-proyecto'>
+                  <Skeleton />
+                </p>
               )}
             </div>
             <div className='div-input cliente'>
@@ -79,7 +85,9 @@ function BoletinesView({ location }) {
                   {newsletter.data.owner[0].firstname}
                 </p>
               ) : (
-                <p className='input-bol input-cliente'></p>
+                <p className='input-bol input-cliente'>
+                  <Skeleton />
+                </p>
               )}
             </div>
             <div className='div-input fecha'>
@@ -89,7 +97,9 @@ function BoletinesView({ location }) {
                   {newsletter.data.createDate.split('T')[0]}
                 </p>
               ) : (
-                <p className='input-bol input-fecha-vista'></p>
+                <p className='input-bol input-fecha-vista'>
+                  <Skeleton />
+                </p>
               )}
             </div>
             <div className='div-input sistema'>
@@ -99,7 +109,9 @@ function BoletinesView({ location }) {
                   {newsletter.data.system[0].name}
                 </p>
               ) : (
-                <p className='input-bol input-sistema'></p>
+                <p className='input-bol input-sistema'>
+                  <Skeleton />
+                </p>
               )}
             </div>
             <div className='div-input equipo'>
@@ -109,7 +121,9 @@ function BoletinesView({ location }) {
                   {newsletter.data.device[0].name}
                 </p>
               ) : (
-                <p className='input-bol input-equipo'></p>
+                <p className='input-bol input-equipo'>
+                  <Skeleton />
+                </p>
               )}
             </div>
             <div className='div-input marca'>
@@ -120,7 +134,9 @@ function BoletinesView({ location }) {
                   {newsletter.data.device[0].brand}
                 </p>
               ) : (
-                <p className='input-bol input-marca'></p>
+                <p className='input-bol input-marca'>
+                  <Skeleton />
+                </p>
               )}
             </div>
             <div className='div-input modelo'>
@@ -131,7 +147,9 @@ function BoletinesView({ location }) {
                   {newsletter.data.device[0].model}
                 </p>
               ) : (
-                <p className='input-bol input-modelo'></p>
+                <p className='input-bol input-modelo'>
+                  <Skeleton />
+                </p>
               )}
             </div>
           </div>
@@ -145,7 +163,7 @@ function BoletinesView({ location }) {
                   value={newsletter.data.description}
                 ></textarea>
               ) : (
-                <textarea className='input-problema'></textarea>
+                <Skeleton count={5} />
               )}
             </div>
             <div className='conteiner-problema'>
@@ -158,7 +176,7 @@ function BoletinesView({ location }) {
                     src={newsletter.images.imageProblem}
                   ></img>
                 ) : (
-                  <i className='img-export-bol material-icons md-56'></i>
+                  <Skeleton height={100} />
                 )}
               </div>
             </div>
@@ -173,7 +191,7 @@ function BoletinesView({ location }) {
                   value={newsletter.data.solution}
                 ></textarea>
               ) : (
-                <textarea className='input-problema'></textarea>
+                <Skeleton count={5} />
               )}
             </div>
             <div className='conteiner-problema'>
@@ -186,7 +204,7 @@ function BoletinesView({ location }) {
                     src={newsletter.images.imageSolution}
                   ></img>
                 ) : (
-                  <i className='img-export-bol material-icons md-56'></i>
+                  <Skeleton height={100} />
                 )}
               </div>
             </div>

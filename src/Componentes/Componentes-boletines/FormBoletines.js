@@ -11,12 +11,7 @@ const FormBoletines = (props) => {
   return (
     <div className='contenido section '>
       {/*Contenedor el cual muestra el fomulario para llenar los campos requeridos */}
-      <form
-        className='contenido-form'
-        onSubmit={handleSubmit}
-        onReset={resetForm}
-        id='CreateForm'
-      >
+      <form className='contenido-form' onSubmit={handleSubmit} id='CreateForm'>
         <FormStepOne handleChange={handleChange} />
         <FormStepTwo
           handleChange={handleChange}
