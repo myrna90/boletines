@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { API_BASE_URL } from '../../../configuration';
-import AuthService from '../../Componentes-login/service/auth.service';
+import React, { useState } from 'react';
 
 const FormStepTwo = (props) => {
   const { handleChange, setSelectedProject } = props;

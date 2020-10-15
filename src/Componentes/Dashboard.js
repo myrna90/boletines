@@ -11,7 +11,6 @@ const Dashboard = (props) => {
   const [projectsData, setProjectsData] = useState(undefined);
   const [newslettersData, setNewslettersData] = useState(undefined);
   const token = AuthService.getCurrentUser();
-  const id = '5f8266cc9113201c385718ed';
   const projectsGet = {
     method: 'GET',
     url: `${API_BASE_URL}/projects`,

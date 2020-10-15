@@ -116,13 +116,13 @@ const Sesion = (props) => {
           <BtnLogin />
           <p className='forgot-password text-right'>
             Olvidaste tu{' '}
-            <Link className='a-forgot' onClick={btnForgot}>
+            <Link className='a-forgot' to="" onClick={btnForgot}>
               contraseña?
             </Link>
           </p>
         </form>
       </div>
-      <img src={ImgPersonas} className='miImg2' />
+      <img src={ImgPersonas} alt="" className='miImg2' />
     </div>
   );
 };

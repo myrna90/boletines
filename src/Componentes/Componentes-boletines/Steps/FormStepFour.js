@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
-import { useState } from 'react';
+import React from 'react';
 import AuthService from '../../Componentes-login/service/auth.service';
 
 const FormStepFour = (props) => {
   const { handleChange } = props;
   const currentUser = AuthService.getCurrentUser();
 
-  const [formUsuario, setFormUsuario] = useState({
-    owner: '',
-    departamento: '',
-  });
   return (
     /*parte del formulario para completar datos del usuario */
     <div className='div div-4'>

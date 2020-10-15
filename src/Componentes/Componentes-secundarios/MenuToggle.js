@@ -50,7 +50,7 @@ const MenuToggle = (props) => {
           
           <div className="nav-menu">
             <div className="div-logoW">
-              <img ref={hide} src={LogoW2} className="logoW-content" />
+              <img ref={hide} src={LogoW2} alt="" className="logoW-content" />
             </div>
             <div className="div-link">
               <Link to="/vista/dashboard" className="Link L-dashboard">
