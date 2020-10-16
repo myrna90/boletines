@@ -54,7 +54,6 @@ const Admin = (props) => {
     }
   }, [userProjectData]);
 
-
   const submitClient = (e) => {
     e.preventDefault();
     e.target.reset();
