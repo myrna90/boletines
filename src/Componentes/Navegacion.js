@@ -9,23 +9,7 @@ import Admin from './Componentes-Admin/Admin';
 import AuthService from './Componentes-login/service/auth.service';
 
 function Navegacion() {
-  const [showAdminBoard, setShowAdminBoard] = useState(false);
-  const [currentUser, setCurrentUser] = useState(undefined);
 
-  useEffect(() => {
-    const user = AuthService.getCurrentUser();
-    if(user) {
-      setCurrentUser(user);
-      setShowAdminBoard(user.user.includes(user.isAdmin));
-    }
-    console.log('user', user.user.isAdmin);
-  }, []);
-
-  // function roleRestric(user){
-  //   if(user.user.isAdmin.includes(true || 'true')){
-  //     return true
-  //   }
-  // }
   return (
     <Switch>
       {/**/}
@@ -35,7 +19,7 @@ function Navegacion() {
 
       <Route path='/vista/view/:id' component={BoletinesView} />
       <Route path='/vista/miperfil' component={MiPerfil} />
-     {setShowAdminBoard && (<Route path='/vista/admin' component={Admin} />)} 
+     <Route path='/vista/admin' component={Admin} />
       {/*<Route component={PageNotFound}/>*/}
     </Switch>
   );
