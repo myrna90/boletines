@@ -20,8 +20,9 @@ function BoletinesView(props) {
         .get(`${API_BASE_URL}/newsletters/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
-        .then((res) => {
-          setNewsletter(res.data.data);
+        .then(res => {
+          console.log(res.data);
+          setNewsletter(res.data);
         });
     }
   });
@@ -49,17 +50,11 @@ function BoletinesView(props) {
               <h3 className='h3-bol'> </h3>
             )}
             {newsletter ? (
-              <ModalShare
-                parentSelector={() => document.querySelector('#root')}
-                idNewsletter={newsletter.data._id}
-              >
+              <ModalShare parentSelector={() => document.querySelector('#root')} idNewsletter={newsletter.data._id}>
                 <p>Modal Content.</p>
               </ModalShare>
             ) : (
-              <ModalShare
-                parentSelector={() => document.querySelector('#root')}
-                idNewsletter
-              >
+              <ModalShare parentSelector={() => document.querySelector('#root')} idNewsletter>
                 <p>Modal Content.</p>
               </ModalShare>
             )}
@@ -69,9 +64,7 @@ function BoletinesView(props) {
               <p>Proyecto:</p>
               {''}
               {newsletter ? (
-                <p className='input-bol input-proyecto'>
-                  {newsletter.data.project[0].name}
-                </p>
+                <p className='input-bol input-proyecto'>{newsletter.data.project[0].name}</p>
               ) : (
                 <p className='input-bol input-proyecto'>
                   <Skeleton />
@@ -81,9 +74,7 @@ function BoletinesView(props) {
             <div className='div-input cliente'>
               <p>Propietario:</p>{' '}
               {newsletter ? (
-                <p className='input-bol input-cliente'>
-                  {newsletter.data.owner[0].firstname}
-                </p>
+                <p className='input-bol input-cliente'>{newsletter.data.owner[0].firstname}</p>
               ) : (
                 <p className='input-bol input-cliente'>
                   <Skeleton />
@@ -93,9 +84,7 @@ function BoletinesView(props) {
             <div className='div-input fecha'>
               <p>Fecha de creación:</p>
               {newsletter ? (
-                <p className='input-bol input-fecha-vista'>
-                  {newsletter.data.createDate.split('T')[0]}
-                </p>
+                <p className='input-bol input-fecha-vista'>{newsletter.data.createDate.split('T')[0]}</p>
               ) : (
                 <p className='input-bol input-fecha-vista'>
                   <Skeleton />
@@ -105,9 +94,7 @@ function BoletinesView(props) {
             <div className='div-input sistema'>
               <p>Sistema:</p>
               {newsletter ? (
-                <p className='input-bol input-sistema'>
-                  {newsletter.data.system[0].name}
-                </p>
+                <p className='input-bol input-sistema'>{newsletter.data.system[0].name}</p>
               ) : (
                 <p className='input-bol input-sistema'>
                   <Skeleton />
@@ -118,7 +105,7 @@ function BoletinesView(props) {
               <p>Equipo:</p>
               {newsletter ? (
                 <p className='input-bol input-equipo'>
-                  {newsletter.data.device[0].name}
+                  {newsletter.data.device.length === 0 ? '-' : newsletter.data.device[0].name}
                 </p>
               ) : (
                 <p className='input-bol input-equipo'>
@@ -130,8 +117,7 @@ function BoletinesView(props) {
               <p>Marca:</p>
               {newsletter ? (
                 <p className='input-bol input-marca'>
-                  {' '}
-                  {newsletter.data.device[0].brand}
+                  {newsletter.data.device.length === 0 ? '-' : newsletter.data.device[0].brand}
                 </p>
               ) : (
                 <p className='input-bol input-marca'>
@@ -143,8 +129,7 @@ function BoletinesView(props) {
               <p>Modelo:</p>
               {newsletter ? (
                 <p className='input-bol input-modelo'>
-                  {' '}
-                  {newsletter.data.device[0].model}
+                  {newsletter.data.device.length === 0 ? '-' : newsletter.data.device[0].model}
                 </p>
               ) : (
                 <p className='input-bol input-modelo'>
@@ -157,11 +142,7 @@ function BoletinesView(props) {
             <div className='conteiner-problema'>
               <h6 className='titulo-problem'>Problema:</h6>
               {newsletter ? (
-                <textarea
-                  disabled
-                  className='input-problema'
-                  value={newsletter.data.description}
-                ></textarea>
+                <textarea disabled className='input-problema' value={newsletter.data.description}></textarea>
               ) : (
                 <Skeleton count={5} />
               )}
@@ -170,11 +151,7 @@ function BoletinesView(props) {
               <h6 className='titulo-problem'>Imagen problema:</h6>
               <div className='img-problema'>
                 {newsletter ? (
-                  <img
-                    className='imgBase64'
-                    alt='problema'
-                    src={newsletter.images.imageProblem}
-                  ></img>
+                  <img className='imgBase64' alt='problema' src={newsletter.images.imageProblem}></img>
                 ) : (
                   <Skeleton height={100} />
                 )}
@@ -185,11 +162,7 @@ function BoletinesView(props) {
             <div className='conteiner-problema'>
               <h6 className='titulo-problem'>Solución:</h6>
               {newsletter ? (
-                <textarea
-                  disabled
-                  className='input-problema'
-                  value={newsletter.data.solution}
-                ></textarea>
+                <textarea disabled className='input-problema' value={newsletter.data.solution}></textarea>
               ) : (
                 <Skeleton count={5} />
               )}
@@ -198,11 +171,7 @@ function BoletinesView(props) {
               <h6 className='titulo-problem'>Imagen solución:</h6>
               <div className='img-problema'>
                 {newsletter ? (
-                  <img
-                    className='imgBase64'
-                    alt='solución'
-                    src={newsletter.images.imageSolution}
-                  ></img>
+                  <img className='imgBase64' alt='solución' src={newsletter.images.imageSolution}></img>
                 ) : (
                   <Skeleton height={100} />
                 )}

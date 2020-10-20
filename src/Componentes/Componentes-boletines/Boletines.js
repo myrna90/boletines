@@ -10,7 +10,7 @@ import Modal from 'react-modal';
 //Loading animation
 import Loader from 'react-loader-spinner';
 
-const Boletines = (props) => {
+const Boletines = props => {
   const [formValues, setFormValues] = useState({});
   const [currentForm, setCurrentForm] = useState(0);
   const [projectData, setProjectData] = useState(undefined);
@@ -20,7 +20,6 @@ const Boletines = (props) => {
   const [currentProject, setCurrentProject] = useState(undefined);
   const [selectedProject, setSelectedProject] = useState('');
   const currentUser = AuthService.getCurrentUser();
-  // const { selectedProject, selectedDevice } = props;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const customStylesModal = {
     overlay: {
@@ -80,8 +79,6 @@ const Boletines = (props) => {
     }
   }, [projectData]);
 
-  console.log('project', projectData);
-
   useEffect(() => {
     if (systemData === undefined) {
       axios(systemsGet).then(function(res) {
@@ -109,38 +106,28 @@ const Boletines = (props) => {
   /* Se utiliza en form step two */
   useEffect(() => {
     if (selectedProject !== '') {
-      setCurrentProject(
-        projectData.find((project) => project._id === selectedProject),
-      );
+      setCurrentProject(projectData.find(project => project._id === selectedProject));
     }
   }, [selectedProject, projectData]);
 
   /*Va a recibir un objeto */
-  const getCurrentForm = (name) => {
+  const getCurrentForm = name => {
     const identifier = {
       1: ['folio', 'title'],
       2: ['project', 'cliente', 'createDate', 'sistema'],
-      3: [
-        'problema',
-        'solucion',
-        'problemImage',
-        'solutionImage',
-        'equipo',
-        'marca',
-        'modelo',
-      ],
+      3: ['problema', 'solucion', 'problemImage', 'solutionImage', 'equipo', 'marca', 'modelo'],
       4: ['usuario', 'departamento'],
     };
 
     const properties = Object.keys(identifier);
-    properties.forEach((property) => {
+    properties.forEach(property => {
       if (identifier[property].includes(name)) {
         setCurrentForm(property);
       }
     });
   };
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     if (e.target.type === 'file') {
       const { name, files } = e.target;
       getCurrentForm(name);
@@ -157,19 +144,18 @@ const Boletines = (props) => {
       });
     }
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     setIsOpen(true);
     const boletin = {
       title: formValues.title,
       project: formValues.project,
-      customer: currentProject.customer[0]._id,
       createDate: new Date(),
       system: formValues.system,
       description: formValues.description,
-      problemImage: formValues.problemImage,
+      problemImage: formValues.problemImage || null,
       solution: formValues.solution,
-      solutionImage: formValues.solutionImage,
+      solutionImage: formValues.solutionImage || null,
       device: formValues.device,
       brand: formValues.brand,
       model: formValues.model,
@@ -177,8 +163,8 @@ const Boletines = (props) => {
       status: true,
     };
     const formData = new FormData();
-    const problem = boletin.problemImage[0];
-    const solution = boletin.solutionImage[0];
+    const problem = boletin.problemImage ? boletin.problemImage[0] : null;
+    const solution = boletin.solutionImage ? boletin.solutionImage[0] : null;
     delete boletin.problemImage;
     delete boletin.solutionImage;
 
@@ -186,24 +172,30 @@ const Boletines = (props) => {
       .post(`${API_BASE_URL}/newsletters`, boletin, {
         headers: { Authorization: `Bearer ${currentUser.token}` },
       })
-      .then((res) => {
-        formData.append('createdNewsletterId', res.data.data);
-        formData.append('problem', problem);
-        formData.append('solution', solution);
-        axios
-          .post(`${API_BASE_URL}/newsletters/upload-image`, formData, {
-            headers: { Authorization: `Bearer ${currentUser.token}` },
-          })
-          .then((respons) => {
-            console.log(respons.data);
-            props.history.push(`/vista/view/${res.data.data}`);
-            setIsOpen(false);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+      .then(res => {
+        if (problem || solution) {
+          formData.append('createdNewsletterId', res.data.data);
+          formData.append('problem', problem);
+          formData.append('solution', solution);
+          axios
+            .post(`${API_BASE_URL}/newsletters/upload-image`, formData, {
+              headers: { Authorization: `Bearer ${currentUser.token}` },
+            })
+            .then(respons => {
+              console.log(respons.data);
+              props.history.push(`/vista/view/${res.data.data}`);
+              setIsOpen(false);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        } else {
+          console.log(res.data);
+          props.history.push(`/vista/view/${res.data.data}`);
+          setIsOpen(false);
+        }
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   };
