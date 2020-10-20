@@ -105,7 +105,6 @@ const FormStepThree = (props) => {
               accept='image/jpeg'
               defaultValue={formImage.problemImage}
               onChange={(e) => handleImageChange(e)}
-              required
             />
             <img ref={imageProblem} alt='' className='imgExport' />
           </div>
@@ -126,7 +125,6 @@ const FormStepThree = (props) => {
                 accept='image/jpeg'
                 defaultValue={formImage.solutionImage}
                 onChange={(e) => handleImageChangeTwo(e)}
-                required
               />
             </div>
             <img ref={imageSolution} alt='' className='imgExport' />
