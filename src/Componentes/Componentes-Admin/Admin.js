@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import AltaCliente from './AltaCliente';
-import AltaProyecto from './AltaProyecto';
-import AltaSistema from './AltaSistema';
-import AltaUsuario from './AltaUsuario';
-import AltaDevice from './AltaEquipo';
-import axios from 'axios';
-import { API_BASE_URL } from '../../configuration';
-import AuthService from '../Componentes-login/service/auth.service';
+import React, { useState, useEffect } from "react";
+import AltaCliente from "./AltaCliente";
+import AltaProyecto from "./proyectos/AltaProyecto";
+import AltaSistema from "./AltaSistema";
+import AltaUsuario from "./AltaUsuario";
+import AltaDevice from "./AltaEquipo";
+import UsuarioCabecera from '../Componentes-secundarios/Usuario-cabecera';
+import axios from "axios";
+import { API_BASE_URL } from "../../configuration";
+import AuthService from "../Componentes-login/service/auth.service";
 
 const Admin = (props) => {
   const [formValues, setFormValues] = useState({});
   const [clientProjectData, setClientProjectData] = useState(undefined);
+  const [projectData, setProjectData] = useState(undefined);
   const [userProjectData, setUserProjectData] = useState(undefined);
   const token = AuthService.getCurrentUser();
 
@@ -23,15 +25,23 @@ const Admin = (props) => {
   };
 
   const customerGet = {
-    method: 'GET',
+    method: "GET",
     url: `${API_BASE_URL}/customers`,
     headers: {
       Authorization: `Bearer ${token.token}`,
     },
   };
 
+  const projectGet = {
+    method: "GET",
+    url: `${API_BASE_URL}/projects`,
+    headers: {
+      Authorization: `Bearer ${token.token}`,
+    },
+  };
+
   const userGet = {
-    method: 'GET',
+    method: "GET",
     url: `${API_BASE_URL}/users`,
     headers: {
       Authorization: `Bearer ${token.token}`,
@@ -45,6 +55,14 @@ const Admin = (props) => {
       });
     }
   }, [clientProjectData]);
+
+  useEffect(() => {
+    if (projectData === undefined) {
+      axios(projectGet).then(function(res) {
+        setProjectData(res.data.data);
+      });
+    }
+  }, [projectData]);
 
   useEffect(() => {
     if (userProjectData === undefined) {
@@ -163,20 +181,49 @@ const Admin = (props) => {
   };
 
   return (
-    <div className='conteiner conteiner-boletines'>
+    <div className="conteiner conteiner-boletines">
       {/*Contenedor general header */}
-      <div className='header-crear'>
-        <div className='div-icon-header'>
-          <span className='material-icons md-40'>admin_panel_settings</span>
+      <div className="header-crear">
+        <div className="div-icon-header">
+          <span className="material-icons md-40">admin_panel_settings</span>
         </div>
-        <div className='div-h2 div-h2-crear'>
-          <hr className='v' />
-          <h2 className='h2'>Panel Administración</h2>
+        <div className="div-h2 div-h2-crear">
+          <hr className="v" />
+          <h2 className="h2">Panel Administración</h2>
         </div>
-        <div className='conteiner-boton'></div>
+        <UsuarioCabecera />
       </div>
-      <div className='contenido section '>
-        <AltaCliente handleChange={handleChange} submitClient={submitClient} />
+      <div className="contenido section section-admin">
+        <div className="conteiner-panel">
+          <button className="boton-proyectos  btn-admin">
+            <span class="material-icons md-30">work_outline</span>
+            <p className="p-btn-adim">Poryectos</p>
+          </button>
+          <button className="boton-usuarios btn-admin">
+            <span class="material-icons md-30">person_outline</span>
+            <p className="p-btn-adim"> Usuarios</p>
+          </button>
+          <button className="boton-sistemas btn-admin">
+            <span class="material-icons md-30">settings_input_component</span>
+            <p className="p-btn-adim">Sistema</p>
+          </button>
+          <button className="boton-clientes btn-admin">
+            <span class="material-icons md-30">people_outline</span>
+            <p className="p-btn-adim">Clientes</p>
+          </button>
+          <button className="boton-equipos btn-admin">
+            <span class="material-icons md-30">devices_other</span>
+            <p className="p-btn-adim">Equipos</p>
+          </button>
+        </div>
+
+        <div className="conteiner-result">
+        <AltaProyecto handleChange={handleChange}
+          submitProject={submitProject}
+          clientProjectData={clientProjectData}/>
+        </div>
+        
+        {/* <AltaCliente handleChange={handleChange} submitClient={submitClient} />
         <AltaProyecto
           handleChange={handleChange}
           submitProject={submitProject}
@@ -184,7 +231,7 @@ const Admin = (props) => {
         />
         <AltaSistema handleChange={handleChange} submitSystem={submitSystem} />
         <AltaUsuario handleChange={handleChange} submitUser={submitUser} />
-        <AltaDevice handleChange={handleChange} submitDevice={submitDevice} />
+        <AltaDevice handleChange={handleChange} submitDevice={submitDevice} /> */}
       </div>
     </div>
   );

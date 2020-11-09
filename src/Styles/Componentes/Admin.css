@@ -1,7 +1,70 @@
+.section-admin{
+ display: flex;
+}
+
+.conteiner-panel {
+  width: 400px;
+  height: 650px;
+  background-color: var(--color-white-light);
+  margin-top: 2em;
+  margin-left: 6em;
+  box-shadow: var(--boxShadow-dash);
+  border-radius: var(--border-radius-boton);
+}
+
+.btn-admin {
+  width: 150px;
+  height: 130px;
+  background-color: var(--color-white);
+  border: none;
+  box-shadow: var(--boxShadow-dash);
+  border-radius: var(--border-radius-boton);
+  margin-left: 2em;
+  margin-top: 2em;
+}
+
+.material-icons.md-30 {
+  color: var(--color-green-steps);
+  font-size: 3em;
+}
+
+.p-btn-adim {
+  color: var(--color-border-input);
+}
+
+.conteiner-result {
+  width: 680px;
+  height: 650px;
+  margin-top: 2em;
+  margin-left: 4em;
+  background-color: var(--color-white-light);
+  box-shadow: var(--boxShadow-dash);
+  border-radius: var(--border-radius-boton);
+}
+
+.contenedor-titulo-admin {
+  display: flex;
+  grid-area: title;
+  color: var(--color-border-input);
+  margin-top: 2em;
+}
+
+.material-icons.md-13 {
+  font-size: 2em;
+  color: var(--color-green-steps);
+  margin-left: 1em;
+}
+
+.title-add {
+  margin-top: 0.3em;
+  margin-left: .5em;
+}
+
 .label-admin {
   font-size: 14px;
   width: 15em;
   color: var(--color-blue-bajo);
+  margin-top: 1em;
 }
 
 .input-admin {
@@ -20,242 +83,73 @@
   background-color: var(--color-gray-bajo);
 }
 
-/*Formulario cliente*/
-.contenFormClient {
-  grid-area: contenForm1;
-  margin-left: 2em;
+.contentAdminForm {
   display: grid;
-  grid-template-areas: "label1 label2 btn-cliente" "input1 input2 btn-cliente";
+  grid-template-areas: 'label1 label2 label2' 
+                       'input1 input2 input2'
+                       'label3 label4 label4'
+                       'input3 input4 btn';
+  margin-left: 2.5em;
+
 }
 
-.label-cliente-admin {
+.label-admin-1 {
   grid-area: label1;
+  
 }
 
-.label-cliente-2 {
+.label-admin-2 {
   grid-area: label2;
 }
 
-.input-cliente-admin {
+.label-admin-3 {
+  grid-area: label3;
+}
+
+.label-admin-4 {
+  grid-area: label4;
+}
+
+.input-admin-1 {
   grid-area: input1;
 }
 
-.input-cliente-2 {
+.input-admin-2 {
   grid-area: input2;
+  width: 11.5em;
 }
 
-.btn-crear-cliente {
-  grid-area: btn-cliente;
-  margin-left: auto;
-  margin-right: 2em;
+.input-admin-3 {
+  grid-area: input3;
+  width: 11.5em;
 }
 
-/*Formulario Proyecto*/
-
-.contenFormProyecto {
-  grid-area: contenForm2;
-  margin-left: 2em;
-  display: grid;
-  grid-template-areas: "labelP labelP2 labelP3 " 
-                       "inputP inputP2 inputP3 "
-                       "labelP4 labelP5 btn-proyecto" 
-                       "inputP4 inputP5 btn-proyecto";
-}
-
-.label-proyecto-admin {
-  grid-area: labelP;
-}
-
-.label-cliente-fecha {
-  grid-area: labelP2;
-}
-
-.label-cliente-fecha2 {
-  grid-area: labelP3;
-}
-
-.label-cliente-cliente {
-  grid-area: labelP4;
-  margin-top: 1em;
-}
-
-.label-cliente-user {
-  grid-area: labelP5;
-  margin-top: 1em;
-}
-
-.input-fecha {
-  width: 180px;
-}
-
-.input-proyecto-admin {
-  grid-area: inputP;
-}
-
-.input-cliente-fecha {
-  grid-area: inputP2;
-}
-
-.input-cliente-fecha2 {
-  grid-area: inputP3;
-}
-
-.input-cliente-cliente {
-  grid-area: inputP4;
-  padding: 0;
-}
-
-.input-cliente-user {
-  grid-area: inputP5;
-  padding: 0;
+.input-admin-4 {
+  grid-area: input4;
 }
 
 .btn-crear-proyecto {
-  grid-area: btn-proyecto;
-  margin-left: auto;
-  margin-right: 2em;
+  grid-area: btn;
 }
 
-/*Diseño componente sistema*/
-.contenFormSistema {
-  grid-area: contenForm3;
+.listado-admin {
+  margin-top: 5em;
+  color: var(--color-border-input);
+}
+
+.tabla-proyecto {
+  width: 40vw;
   margin-left: 2em;
-  display: grid;
-  grid-template-areas: "labelS btn-sistema" "inputS btn-sistema";
+  text-align: center;
+  border-bottom: var(--border-line);
 }
 
-.label-sistema-admin {
-  grid-area: labelS;
+.tabla-proyecto tbody tr:nth-child(odd) {
+  height: 2.5em;
+  background: var(--color-grey-border-img);
 }
 
-.input-sistema-admin {
-  grid-area: inputS;
-}
-
-.btn-crear-sistema {
-  grid-area: btn-sistema;
-  margin-left: auto;
-  margin-right: 2em;
-}
-
-
-/*Diseño componente usuario*/
-.contenFormUsuario {
-  grid-area: contenForm4;
-  margin-left: 2em;
-  display: grid;
-  grid-template-areas:
-    "labelU labelA labelU2 labelU3"
-    "inputU inputA inputU2 inputU3"
-    "labelU4 labelU5 labelU6 btnC"
-    "inputU4 inputU5 inputU6 btnC";
-}
-
-.label-usuario {
-  grid-area: labelU;
-}
-
-.label-usuario-2 {
-  grid-area: labelA;
-}
-
-.input-usuario-2 {
-  grid-area: inputA;
-}
-
-.btn-crear-usuario {
-  grid-area: btnC;
-  margin-left: auto;
-  margin-right: 2em;
-  margin-top: auto;
-}
-
-.label-usuario-3 {
-  grid-area: labelU2;
-}
-
-.label-usuario-4 {
-  grid-area: labelU3;
-}
-
-.label-usuario-5 {
-  grid-area: labelU4;
-  margin-top: 2em;
-}
-
-.label-usuario-6 {
-  grid-area: labelU5;
-  margin-top: 2em;
-}
-
-.label-usuario-7 {
-  grid-area: labelU6;
-  margin-top: 2em;
-}
-
-.input-usuario-alta {
-  grid-area: inputU;
-}
-
-.input-usuario-3 {
-  grid-area: inputU2;
-}
-
-.input-usuario-4 {
-  grid-area: inputU3;
-}
-
-.input-usuario-5 {
-  grid-area: inputU4;
-}
-
-.input-usuario-6 {
-  grid-area: inputU5;
-  padding: 0;
-}
-
-.input-usuario-7 {
-  grid-area: inputU6;
-}
-
-
-
-/*Diseño componente Device*/
-.contenFormDevice {
-  margin-left: 2em;
-  display: grid;
-  grid-template-areas:
-    "labelD labelD2 labelD3 btnD"
-    "inputD1 inputD2 inputD3 btnD"
-}
-
-.label-device-admin {
-  grid-area: labelD;
-}
-
-.label-device {
-  grid-area: labelD2;
-}
-
-.label-device-2 {
-  grid-area: labelD3;
-}
-
-.input-device-admin {
-  grid-area: inputD1;
-}
-
-.input-device {
-  grid-area: inputD2;
-}
-
-.input-device-2 {
-  grid-area: inputD3;
-}
-
-.btn-crear-Device {
-  grid-area: btnD;
-  margin-left: auto;
-  margin-right: 2em;
-  margin-top: auto;
+.tabla-proyecto tbody tr:nth-child(even) {
+  height: 2.5em;
+  background: var(--color-white-light);
 }

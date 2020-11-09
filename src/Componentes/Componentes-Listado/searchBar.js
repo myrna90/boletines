@@ -71,6 +71,7 @@ useEffect(() => {
       <div className="div-tabla">
         <table className="tabla">
           <thead key="thead">
+            
             <tr className="tr-th">
               <th>
                 <strong>Folio</strong>

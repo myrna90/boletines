@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const AltaUsuario = (props) => {
-  const { handleChange, submitUser } = props;
+  const { handleChange, submitUser, projectData } = props;
 
   const [formUsuario, setFormUsuario] = useState({
     firstname: "",
@@ -11,7 +11,7 @@ const AltaUsuario = (props) => {
     password: "",
     username: "",
     role: "",
-    //area: ""
+    proyectos: "",
   });
 
   return (
@@ -72,16 +72,26 @@ const AltaUsuario = (props) => {
           onChange={(e) => handleChange(e)}
         >
           <option>-</option>
-          <option value={Boolean(true)} >Administrador</option>
+          <option value={Boolean(true)}>Administrador</option>
           <option value={Boolean(false)}>Usuario</option>
         </select>
-        {/* <label className="label-admin label-usuario-7">Área</label>
-        <input
+        <label className="label-admin label-usuario-7">Proyectos</label>
+        <select
           className="input-admin input-usuario-7"
-          name="area"
-          defaultValue={formUsuario.area}
+          name="proyectos"
+          defaultValue={formUsuario.proyectos}
           onChange={(e) => handleChange(e)}
-        ></input> */}
+        >
+          <option value="" disabled>
+            Seleccione...
+          </option>
+          {projectData &&
+            projectData.map((project, index) => (
+              <option key={index} value={project._id}>
+                {project.name}
+              </option>
+            ))}
+        </select>
 
         <button type="submit" className="btn-crear-usuario btn">
           + Crear
